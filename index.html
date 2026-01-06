@@ -1,203 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>PromptPlug™ – Instant AI Business Tools</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Reset + Base */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0a0a0a;
-      color: #fff;
-      line-height: 1.6;
-      display: flex;
-      min-height: 100vh;
-    }
-
-    /* Side Menu */
-    nav {
-      width: 260px;
-      background-color: #111;
-      padding: 2em 1em;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      overflow-y: auto;
-      border-right: 3px solid #FF7A00;
-    }
-
-    nav h1 {
-      font-size: 1.6em;
-      color: #FF1F1F;
-      margin-bottom: 1em;
-    }
-
-    nav ul {
-      list-style: none;
-    }
-
-    nav ul li {
-      margin: 1.2em 0;
-    }
-
-    nav ul li a {
-      color: #ccc;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #FF7A00;
-    }
-
-    /* Main Content */
-    .content {
-      margin-left: 260px;
-      padding: 3em 2em;
-      max-width: 1000px;
-    }
-
-    .hero {
-      margin-bottom: 3em;
-    }
-
-    .hero h2 {
-      font-size: 2.5em;
-      color: #FF7A00;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      margin-top: 1em;
-    }
-
-    .cta {
-      display: inline-block;
-      background-color: #FF1F1F;
-      color: white;
-      padding: 0.8em 1.5em;
-      font-size: 1.1em;
-      border-radius: 6px;
-      margin-top: 1.5em;
-      text-decoration: none;
-    }
-
-    .section {
-      margin-top: 4em;
-    }
-
-    .section h3 {
-      font-size: 1.8em;
-      margin-bottom: 1em;
-      color: #005CFF;
-    }
-
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2em;
-    }
-
-    .product {
-      flex: 1 1 300px;
-      background-color: #1a1a1a;
-      border-left: 4px solid #FF7A00;
-      padding: 1.5em;
-      border-radius: 6px;
-    }
-
-    .product h4 {
-      color: #FF7A00;
-      margin-bottom: 0.5em;
-    }
-
-    .product p {
-      margin-bottom: 1em;
-    }
-
-    .product a {
-      color: #FF1F1F;
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 5em;
-      padding-top: 2em;
-      border-top: 1px solid #333;
-      color: #aaa;
-      font-size: 0.9em;
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        position: static;
-        width: 100%;
-        border-right: none;
-        border-bottom: 2px solid #FF7A00;
-      }
-      .content {
-        margin-left: 0;
-        padding: 1.5em;
-      }
-    }
-  </style>
+    <title>Omaha Water Emergency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 20px; background-color: #f0f0f0; }
+        .card { background: white; border: 4px solid #ce2029; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        h1 { color: #ce2029; font-size: 28px; }
+        .phone { font-size: 32px; font-weight: bold; margin: 20px 0; display: block; color: #333; }
+        button { background: #ce2029; color: white; padding: 20px; width: 100%; font-size: 22px; border: none; border-radius: 10px; font-weight: bold; }
+    </style>
 </head>
 <body>
-
-  <!-- Side Menu -->
-  <nav>
-    <h1>PromptPlug™</h1>
-    <ul>
-      <li><a href="#">🏠 Home</a></li>
-      <li><a href="#">🛠 Tools</a></li>
-      <li><a href="#">📦 Services</a></li>
-      <li><a href="#">💰 Monetize</a></li>
-      <li><a href="#">📚 Blog</a></li>
-      <li><a href="#">✅ Success Stories</a></li>
-      <li><a href="#">📞 Contact</a></li>
-      <li><a href="#">⚖️ Terms</a></li>
-    </ul>
-  </nav>
-
-  <!-- Main Page -->
-  <div class="content">
-    <div class="hero">
-      <h2>Turn Prompts into Profit — Instantly</h2>
-      <p>PromptPlug™ gives you instant-access AI business tools, services, and ready-to-sell digital products — no skills, no delays, no BS.</p>
-      <a class="cta" href="#">Browse Instant Products</a>
+    <div class="card">
+        <h1>Omaha Water Damage?</h1>
+        <p>We dry basements fast. 24/7 Emergency Service.</p>
+        <div class="phone" id="num">402-555-0199</div>
+        <button onclick="copyIt()">COPY NUMBER</button>
     </div>
-
-    <div class="section">
-      <h3>🔥 Hot Tools You Can Use Today</h3>
-      <div class="products">
-        <div class="product">
-          <h4>💡 100 Viral Blog Ideas (AI-Ready)</h4>
-          <p>Get 100 blog titles you can plug into ChatGPT or any AI writer — built for SEO and engagement.</p>
-          <a href="#">Buy Now for $7 →</a>
-        </div>
-        <div class="product">
-          <h4>📘 eBook Outline Generator</h4>
-          <p>Done-for-you nonfiction book outline ready to sell, teach, or launch on Amazon KDP.</p>
-          <a href="#">Buy Now for $12 →</a>
-        </div>
-        <div class="product">
-          <h4>🎯 Niche Business Starter Kit</h4>
-          <p>Includes domain ideas, product examples, and a full content plan — perfect for first-timers.</p>
-          <a href="#">Buy Now for $15 →</a>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      &copy; 2025 PromptPlug™ | Built with AI. Powered by Hustle.<br/>
-      Need help? <a href="#">Contact Support</a> | <a href="#">Privacy Policy</a>
-    </footer>
-  </div>
-
+    <script>
+        function copyIt() {
+            var n = document.getElementById("num").innerText;
+            navigator.clipboard.writeText(n);
+            alert("Number Copied! Paste it into your phone dialer.");
+        }
+    </script>
 </body>
 </html>
