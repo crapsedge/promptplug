@@ -13,8 +13,10 @@
         .hero p { font-size: 19px; color: #86868b; margin-top: 15px; }
         .main-cta { padding: 0 25px 60px; }
         .premium-card { background: var(--black); border-radius: 24px; padding: 50px 30px; text-align: center; color: var(--white); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .phone-number { font-size: 36px; font-weight: 600; color: var(--white); text-decoration: none; display: block; margin-bottom: 25px; }
-        #copyBtn { background: var(--white); color: var(--black); width: 100%; padding: 20px; border: none; border-radius: 12px; font-size: 17px; font-weight: 600; cursor: pointer; }
+        .phone-number { font-size: 36px; font-weight: 600; color: var(--white); text-decoration: none; display: block; margin-bottom: 25px; transition: opacity 0.2s; }
+        .phone-number:active { opacity: 0.7; }
+        #copyBtn { background: var(--white); color: var(--black); width: 100%; padding: 20px; border: none; border-radius: 12px; font-size: 17px; font-weight: 600; cursor: pointer; transition: transform 0.1s; }
+        #copyBtn:active { transform: scale(0.98); }
         
         .legal-shield { background: var(--grey); padding: 60px 30px; border-top: 1px solid #e5e5e5; }
         .disclaimer-box { max-width: 600px; margin: 0 auto; text-align: left; }
@@ -40,7 +42,7 @@
 
     <div class="main-cta">
         <div class="premium-card">
-            <a href="tel:4025550199" class="phone-number" id="num">402-555-0199</a>
+            <a href="tel:+14028198803" class="phone-number" id="num">(402) 819-8803</a>
             <button onclick="copyNum()" id="copyBtn">Secure Dispatch</button>
         </div>
     </div>
