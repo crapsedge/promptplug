@@ -3,58 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Murray's Empire | Premium Water Restoration</title>
+    <title>Murray’s Empire | Premier Restoration</title>
     <style>
-        :root { --black: #000000; --white: #ffffff; --grey: #f5f5f7; --accent: #0071e3; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; margin: 0; background-color: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
-        .nav { padding: 20px; text-align: center; font-size: 14px; font-weight: 600; letter-spacing: -0.01em; border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .hero { padding: 80px 30px; text-align: center; background: var(--white); }
-        .hero h1 { font-size: 42px; font-weight: 700; letter-spacing: -0.015em; margin: 0; line-height: 1.1; }
-        .hero p { font-size: 19px; color: #86868b; margin-top: 15px; font-weight: 400; max-width: 300px; margin-left: auto; margin-right: auto; }
-        .cta-container { padding: 0 30px 60px; }
-        .glass-card { background: var(--grey); border-radius: 22px; padding: 40px 20px; text-align: center; }
-        .phone-link { font-size: 34px; font-weight: 600; color: var(--black); text-decoration: none; display: block; margin-bottom: 25px; letter-spacing: -0.02em; }
-        #copyBtn { background: var(--black); color: var(--white); width: 100%; padding: 18px; border: none; border-radius: 12px; font-size: 17px; font-weight: 500; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-        .features { display: flex; flex-direction: column; gap: 20px; padding: 40px 30px; text-align: left; }
-        .feature-item { border-bottom: 1px solid #e5e5e5; padding-bottom: 15px; }
-        .feature-item span { font-size: 17px; font-weight: 600; }
-        .feature-item p { font-size: 15px; color: #86868b; margin: 5px 0 0; }
-        .footer { padding: 60px 30px; font-size: 12px; color: #86868b; line-height: 1.6; }
+        :root { --black: #000000; --white: #ffffff; --grey: #f5f5f7; --gold: #d4af37; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; margin: 0; background-color: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+        .nav { padding: 30px; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; border-bottom: 1px solid rgba(0,0,0,0.03); }
+        .hero { padding: 100px 40px 60px; text-align: center; }
+        .hero h1 { font-size: 48px; font-weight: 700; letter-spacing: -0.04em; margin: 0; line-height: 1; }
+        .hero p { font-size: 20px; color: #86868b; margin-top: 20px; font-weight: 400; max-width: 280px; margin-left: auto; margin-right: auto; line-height: 1.4; }
+        .main-cta { padding: 0 25px 80px; }
+        .premium-card { background: var(--black); border-radius: 28px; padding: 50px 30px; text-align: center; color: var(--white); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+        .phone-number { font-size: 38px; font-weight: 600; color: var(--white); text-decoration: none; display: block; margin-bottom: 30px; letter-spacing: -0.03em; }
+        #copyBtn { background: var(--white); color: var(--black); width: 100%; padding: 20px; border: none; border-radius: 14px; font-size: 18px; font-weight: 600; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+        .value-props { padding: 40px; background: var(--grey); border-radius: 40px 40px 0 0; }
+        .prop { margin-bottom: 40px; }
+        .prop h3 { font-size: 22px; margin: 0 0 10px; font-weight: 600; letter-spacing: -0.02em; }
+        .prop p { font-size: 16px; color: #86868b; margin: 0; line-height: 1.5; }
+        .footer { padding: 80px 40px; font-size: 11px; color: #adbdcc; line-height: 1.8; text-align: center; background: var(--grey); }
     </style>
 </head>
 <body>
 
-    <div class="nav">MURRAY'S EMPIRE</div>
+    <div class="nav">MURRAY’S EMPIRE</div>
 
     <section class="hero">
-        <h1>Restore. Better.</h1>
-        <p>Advanced water restoration for Omaha's finest properties.</p>
+        <h1>Excellence in Restoration.</h1>
+        <p>The gold standard for Omaha’s elite property recovery.</p>
     </section>
 
-    <div class="cta-container">
-        <div class="glass-card">
-            <a href="tel:4025550199" class="phone-link" id="num">402-555-0199</a>
-            <button onclick="copyNum()" id="copyBtn">Copy Number</button>
+    <div class="main-cta">
+        <div class="premium-card">
+            <a href="tel:4025550199" class="phone-number" id="num">402-555-0199</a>
+            <button onclick="copyNum()" id="copyBtn">Secure Service</button>
         </div>
     </div>
 
-    <section class="features">
-        <div class="feature-item">
-            <span>60-Minute Response</span>
-            <p>Time is the most critical factor in restoration.</p>
+    <section class="value-props">
+        <div class="prop">
+            <h3>Immediate Response</h3>
+            <p>Our 60-minute arrival window is the foundation of our reputation.</p>
         </div>
-        <div class="feature-item">
-            <span>Insurance Integrated</span>
-            <p>We manage the complexity of claims for you.</p>
+        <div class="prop">
+            <h3>Seamless Integration</h3>
+            <p>Direct insurance coordination. We handle the complexity; you get the result.</p>
         </div>
-        <div class="feature-item">
-            <span>Industrial Precision</span>
-            <p>Using 2026 grade thermal drying technology.</p>
+        <div class="prop">
+            <h3>Precision Technology</h3>
+            <p>Utilizing 2026-grade thermal imaging and moisture diagnostics.</p>
         </div>
     </section>
 
     <footer class="footer">
-        Murray's Empire LLC is a premier referral agency. Professional services are rendered by licensed local Omaha contractors. Fully compliant with Nebraska AI Transparency Act (LB 642).
+        MURRAY’S EMPIRE LLC. A PREMIER SERVICE NETWORK.<br>
+        OMAHA, NEBRASKA | SINCE 2026<br><br>
+        Legal: We are a high-tier lead referral agency. Professional services are executed by licensed local partners. Fully compliant with Nebraska LB 642.
     </footer>
 
     <script>
@@ -62,8 +64,8 @@
             const text = document.getElementById("num").innerText;
             navigator.clipboard.writeText(text);
             const b = document.getElementById("copyBtn");
-            b.innerHTML = "Copied to Clipboard";
-            setTimeout(() => { b.innerHTML = "Copy Number"; }, 2000);
+            b.innerHTML = "✓ Copied to Clipboard";
+            setTimeout(() => { b.innerHTML = "Secure Service"; }, 2000);
         }
     </script>
 
