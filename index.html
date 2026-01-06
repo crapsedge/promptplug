@@ -12,16 +12,21 @@
         .hero h1 { font-size: 44px; font-weight: 700; letter-spacing: -0.04em; margin: 0; }
         .hero p { font-size: 19px; color: #86868b; margin-top: 15px; }
         .main-cta { padding: 0 25px 60px; }
-        .premium-card { background: var(--black); border-radius: 24px; padding: 50px 30px; text-align: center; color: var(--white); }
+        .premium-card { background: var(--black); border-radius: 24px; padding: 50px 30px; text-align: center; color: var(--white); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
         .phone-number { font-size: 36px; font-weight: 600; color: var(--white); text-decoration: none; display: block; margin-bottom: 25px; }
         #copyBtn { background: var(--white); color: var(--black); width: 100%; padding: 20px; border: none; border-radius: 12px; font-size: 17px; font-weight: 600; cursor: pointer; }
         
-        /* THE LEGAL SHIELD STYLING */
         .legal-shield { background: var(--grey); padding: 60px 30px; border-top: 1px solid #e5e5e5; }
         .disclaimer-box { max-width: 600px; margin: 0 auto; text-align: left; }
         .disclaimer-box h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
         .disclaimer-text { font-size: 12px; color: #6e6e73; line-height: 1.6; }
-        .ai-notice { margin-top: 20px; padding: 15px; border: 1px solid #d2d2d7; border-radius: 8px; font-style: italic; }
+        .policy-links { margin-top: 30px; border-top: 1px solid #d2d2d7; padding-top: 20px; }
+        .policy-links a { color: #0071e3; text-decoration: none; margin-right: 20px; font-weight: 500; cursor: pointer; }
+        
+        /* Modal Style for Policies */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 1000; overflow-y: auto; padding: 40px 20px; box-sizing: border-box; }
+        .modal-content { max-width: 600px; margin: auto; }
+        .close-btn { background: var(--black); color: white; padding: 10px 20px; border-radius: 8px; display: inline-block; margin-bottom: 20px; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -42,20 +47,36 @@
 
     <footer class="legal-shield">
         <div class="disclaimer-box">
-            <h4>Legal Disclosures & Terms</h4>
+            <h4>Legal Disclosures</h4>
             <div class="disclaimer-text">
-                <p><strong>Referral Service Notice:</strong> Murray’s Empire LLC is a marketing and lead-generation firm. We are not a licensed contractor, plumber, or restoration company. All physical services are performed by independent, third-party licensed professionals within the Omaha metro area. Murray’s Empire LLC does not warrant or guarantee the work of any referred contractor.</p>
+                <p><strong>Referral Notice:</strong> Murray’s Empire LLC is a marketing firm, not a licensed contractor. Services are performed by independent local Omaha professionals. We do not warrant the work of referred partners.</p>
+                <p><strong>AI Disclosure:</strong> This site uses AI systems to optimize routing per Nebraska LB 642.</p>
                 
-                <p><strong>Limitation of Liability:</strong> By using this site or calling the listed number, you agree that Murray’s Empire LLC shall not be held liable for any direct, indirect, or incidental damages resulting from services provided by third-party partners. Your sole remedy for service disputes is with the performing contractor.</p>
-
-                <div class="disclaimer-text ai-notice">
-                    <strong>NE LB 642 AI Disclosure:</strong> This digital interface and its background optimization systems utilize Artificial Intelligence (AI) to enhance consumer routing and information accuracy.
+                <div class="policy-links">
+                    <a onclick="showPolicy('privacy')">Privacy Policy</a>
+                    <a onclick="showPolicy('terms')">Terms of Service</a>
                 </div>
-                
-                <p style="margin-top:20px;">© 2026 Murray’s Empire LLC. All Rights Reserved. Omaha, NE.</p>
+                <p style="margin-top:30px;">© 2026 Murray’s Empire LLC. Omaha, NE.</p>
             </div>
         </div>
     </footer>
+
+    <div id="privacy" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closePolicy()">← Back</div>
+            <h2>Privacy Policy</h2>
+            <p><strong>Effective 2026:</strong> Murray’s Empire LLC complies with the Nebraska Data Privacy Act (NDPA). We collect phone and location data strictly to facilitate local service referrals. We do not sell your data.</p>
+        </div>
+    </div>
+
+    <div id="terms" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closePolicy()">← Back</div>
+            <h2>Terms of Service</h2>
+            <p><strong>1. Limitation of Liability:</strong> By using this referral service, you agree that Murray’s Empire LLC is not liable for damages or service disputes arising from third-party contractor work.</p>
+            <p><strong>2. Jurisdiction:</strong> These terms are governed by the laws of the State of Nebraska.</p>
+        </div>
+    </div>
 
     <script>
         function copyNum() {
@@ -65,8 +86,12 @@
             b.innerHTML = "✓ Number Secured";
             setTimeout(() => { b.innerHTML = "Secure Dispatch"; }, 2000);
         }
+        function showPolicy(id) { document.getElementById(id).style.display = 'block'; }
+        function closePolicy() { 
+            document.getElementById('privacy').style.display = 'none'; 
+            document.getElementById('terms').style.display = 'none'; 
+        }
     </script>
 
 </body>
 </html>
-
