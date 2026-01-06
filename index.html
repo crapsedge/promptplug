@@ -1,29 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Omaha Water Emergency</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Murray's Empire | Premium Water Restoration</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 20px; background-color: #f0f0f0; }
-        .card { background: white; border: 4px solid #ce2029; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        h1 { color: #ce2029; font-size: 28px; }
-        .phone { font-size: 32px; font-weight: bold; margin: 20px 0; display: block; color: #333; }
-        button { background: #ce2029; color: white; padding: 20px; width: 100%; font-size: 22px; border: none; border-radius: 10px; font-weight: bold; }
+        :root { --black: #000000; --white: #ffffff; --grey: #f5f5f7; --accent: #0071e3; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; margin: 0; background-color: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+        .nav { padding: 20px; text-align: center; font-size: 14px; font-weight: 600; letter-spacing: -0.01em; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .hero { padding: 80px 30px; text-align: center; background: var(--white); }
+        .hero h1 { font-size: 42px; font-weight: 700; letter-spacing: -0.015em; margin: 0; line-height: 1.1; }
+        .hero p { font-size: 19px; color: #86868b; margin-top: 15px; font-weight: 400; max-width: 300px; margin-left: auto; margin-right: auto; }
+        .cta-container { padding: 0 30px 60px; }
+        .glass-card { background: var(--grey); border-radius: 22px; padding: 40px 20px; text-align: center; }
+        .phone-link { font-size: 34px; font-weight: 600; color: var(--black); text-decoration: none; display: block; margin-bottom: 25px; letter-spacing: -0.02em; }
+        #copyBtn { background: var(--black); color: var(--white); width: 100%; padding: 18px; border: none; border-radius: 12px; font-size: 17px; font-weight: 500; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+        .features { display: flex; flex-direction: column; gap: 20px; padding: 40px 30px; text-align: left; }
+        .feature-item { border-bottom: 1px solid #e5e5e5; padding-bottom: 15px; }
+        .feature-item span { font-size: 17px; font-weight: 600; }
+        .feature-item p { font-size: 15px; color: #86868b; margin: 5px 0 0; }
+        .footer { padding: 60px 30px; font-size: 12px; color: #86868b; line-height: 1.6; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Omaha Water Damage?</h1>
-        <p>We dry basements fast. 24/7 Emergency Service.</p>
-        <div class="phone" id="num">402-555-0199</div>
-        <button onclick="copyIt()">COPY NUMBER</button>
+
+    <div class="nav">MURRAY'S EMPIRE</div>
+
+    <section class="hero">
+        <h1>Restore. Better.</h1>
+        <p>Advanced water restoration for Omaha's finest properties.</p>
+    </section>
+
+    <div class="cta-container">
+        <div class="glass-card">
+            <a href="tel:4025550199" class="phone-link" id="num">402-555-0199</a>
+            <button onclick="copyNum()" id="copyBtn">Copy Number</button>
+        </div>
     </div>
+
+    <section class="features">
+        <div class="feature-item">
+            <span>60-Minute Response</span>
+            <p>Time is the most critical factor in restoration.</p>
+        </div>
+        <div class="feature-item">
+            <span>Insurance Integrated</span>
+            <p>We manage the complexity of claims for you.</p>
+        </div>
+        <div class="feature-item">
+            <span>Industrial Precision</span>
+            <p>Using 2026 grade thermal drying technology.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        Murray's Empire LLC is a premier referral agency. Professional services are rendered by licensed local Omaha contractors. Fully compliant with Nebraska AI Transparency Act (LB 642).
+    </footer>
+
     <script>
-        function copyIt() {
-            var n = document.getElementById("num").innerText;
-            navigator.clipboard.writeText(n);
-            alert("Number Copied! Paste it into your phone dialer.");
+        function copyNum() {
+            const text = document.getElementById("num").innerText;
+            navigator.clipboard.writeText(text);
+            const b = document.getElementById("copyBtn");
+            b.innerHTML = "Copied to Clipboard";
+            setTimeout(() => { b.innerHTML = "Copy Number"; }, 2000);
         }
     </script>
+
 </body>
 </html>
