@@ -156,6 +156,12 @@
             line-height: 1.4;
         }
 
+        .lock-text a{
+            color: #cfcfcf;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
         /* BUTTON (LOCKED BY DEFAULT) */
         .referral-btn { 
             background: #222; 
@@ -171,7 +177,7 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            pointer-events: none; /* User cannot click this until box is checked */
+            pointer-events: none;
         }
 
         .referral-btn.active {
@@ -241,7 +247,9 @@
             <label class="safety-lock">
                 <input type="checkbox" id="legal-check">
                 <span class="lock-text">
-                    I agree to the Legal Disclaimer and acknowledge that Murray's Empire LLC is a referral platform only.
+                    By checking this box, I agree to the
+                    <a href="/legal.html" target="_blank" rel="noopener noreferrer">Legal Disclaimer</a>
+                    and acknowledge that Murray’s Empire LLC is a referral platform only.
                 </span>
             </label>
 
@@ -284,8 +292,8 @@
         </div>
 
         <div class="policy-links">
-            <a onclick="alert('Terms: Omaha Restoration™ is a passive referral platform only. By using this site, you accept the Legal Disclaimer and Liability waiver.')">Terms</a>
-            <a onclick="alert('Privacy: No personal data is sold. We do not collect sensitive info.')">Privacy</a>
+            <a href="/legal.html">Terms</a>
+            <a href="/legal.html#privacy">Privacy</a>
         </div>
 
         <p style="margin-top:40px; opacity:0.35;">
@@ -298,7 +306,7 @@
         const btn = document.getElementById('referral-btn');
 
         checkbox.addEventListener('change', function() {
-            if(this.checked) {
+            if (this.checked) {
                 btn.classList.add('active');
             } else {
                 btn.classList.remove('active');
