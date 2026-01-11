@@ -1,10 +1,10 @@
-<div id="clean-empire-code">
+<div id="simple-empire-code">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Murray’s Empire | Premium Restoration Dispatch</title>
+    <title>Omaha Restoration | Fast Emergency Help</title>
     <style>
         :root { 
             --black: #050505; 
@@ -17,61 +17,71 @@
         }
         
         body { 
-            font-family: -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif; 
+            font-family: -apple-system, "SF Pro Display", sans-serif; 
             margin: 0; 
             background-color: var(--app-bg); 
             color: var(--black); 
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
         
         /* NAVIGATION */
         .nav { padding: 18px; text-align: center; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(251, 251, 253, 0.8); backdrop-filter: saturate(180%) blur(20px); z-index: 100; }
-        .nav-logo { display: flex; align-items: center; justify-content: center; gap: 12px; }
+        .nav-logo { display: flex; align-items: center; justify-content: center; gap: 10px; }
         .mini-shield { width: 25px; height: 30px; background: var(--black); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); display: flex; align-items: center; justify-content: center; color: var(--empire-gold); font-size: 9px; font-weight: 800; }
-        .brand-name { font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+        .brand-name { font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 
-        /* HERO */
-        .hero { padding: 90px 20px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 56px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 20px; line-height: 1.07; }
-        .hero p { font-size: 24px; color: #6e6e73; margin-bottom: 30px; font-weight: 500; }
+        /* HERO - Simple Language */
+        .hero { padding: 80px 20px 30px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 52px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 15px; line-height: 1.1; }
+        .hero p { font-size: 22px; color: #6e6e73; margin-bottom: 30px; font-weight: 500; }
 
-        /* EMERGENCY DISPATCH CARD */
+        /* EMERGENCY CARD */
         .main-cta { padding: 0 20px 20px; max-width: 440px; margin: 0 auto; }
         .premium-card { 
             background: var(--black); 
-            border-radius: 24px; 
-            padding: 50px 30px; 
+            border-radius: 28px; 
+            padding: 50px 20px; 
             text-align: center; 
             color: var(--white); 
-            box-shadow: 0 20px 80px rgba(0,0,0,0.15); 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2); 
         }
-        .status-indicator { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: var(--safe-green); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.05em; }
-        .dot { width: 8px; height: 8px; background: var(--safe-green); border-radius: 50%; animation: blink 1.5s infinite; }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-        .phone-number { font-size: 40px; font-weight: 600; color: var(--white); text-decoration: none; display: block; margin-bottom: 35px; letter-spacing: -0.02em; }
-        #copyBtn { background: var(--restoration-blue); color: white; width: 100%; padding: 20px; border: none; border-radius: 12px; font-size: 17px; font-weight: 600; cursor: pointer; }
+        .status-indicator { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--safe-green); margin-bottom: 25px; text-transform: uppercase; }
+        .dot { width: 10px; height: 10px; background: var(--safe-green); border-radius: 50%; animation: blink 1.5s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.2; } 100% { opacity: 1; } }
+        .phone-number { font-size: 42px; font-weight: 800; color: var(--white); text-decoration: none; display: block; margin-bottom: 30px; }
+        
+        /* SIMPLE BUTTON */
+        #copyBtn { 
+            background: var(--restoration-blue); 
+            color: white; 
+            width: 100%; 
+            padding: 22px; 
+            border: none; 
+            border-radius: 16px; 
+            font-size: 20px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3);
+        }
 
         /* TRUST BAR */
-        .trust-bar { text-align: center; max-width: 400px; margin: 40px auto 100px; padding: 0 20px; }
-        .trust-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--black); margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .trust-text { font-size: 15px; color: #6e6e73; line-height: 1.6; }
+        .trust-bar { text-align: center; max-width: 400px; margin: 40px auto 80px; padding: 0 20px; }
+        .trust-title { font-size: 14px; font-weight: 700; text-transform: uppercase; color: var(--black); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .trust-text { font-size: 15px; color: #6e6e73; line-height: 1.5; }
 
-        /* LEGAL FOOTER */
-        .legal-footer { background: #000; color: #86868b; padding: 100px 25px; font-size: 12px; border-top: 1px solid #333; }
-        .legal-container { max-width: 980px; margin: 0 auto; }
-        .legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 60px; }
-        @media (max-width: 734px) { .legal-grid { grid-template-columns: 1fr; gap: 40px; } }
-        .legal-box h4 { color: #f5f5f7; margin-bottom: 15px; font-size: 14px; font-weight: 600; }
-        .policy-links { margin-top: 60px; padding-top: 25px; border-top: 1px solid #333; }
-        .policy-links a { color: var(--restoration-blue); text-decoration: none; margin-right: 30px; cursor: pointer; }
+        /* FOOTER */
+        .legal-footer { background: #000; color: #86868b; padding: 80px 25px; font-size: 12px; border-top: 1px solid var(--empire-gold); }
+        .legal-container { max-width: 800px; margin: 0 auto; }
+        .legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        @media (max-width: 600px) { .legal-grid { grid-template-columns: 1fr; } }
+        .legal-box h4 { color: #fff; margin-bottom: 10px; font-size: 14px; }
+        .policy-links a { color: var(--restoration-blue); text-decoration: none; margin-right: 25px; font-weight: 600; cursor: pointer; }
 
         /* MODAL */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--app-bg); z-index: 2000; overflow-y: auto; padding: 60px 20px; color: black; }
-        .modal-content { max-width: 680px; margin: auto; }
-        .close-btn { color: var(--restoration-blue); font-weight: 600; cursor: pointer; display: inline-block; margin-bottom: 30px; font-size: 17px; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 2000; padding: 40px 20px; color: black; }
+        .modal-content { max-width: 600px; margin: auto; }
+        .close-btn { color: var(--restoration-blue); font-weight: 700; cursor: pointer; display: inline-block; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -85,57 +95,57 @@
 
     <section class="hero">
         <h1>Omaha Asset Restoration</h1>
-        <p>Premium property recovery and emergency stabilization.</p>
+        <p>Local help for water, fire, or mold damage.</p>
     </section>
 
     <div class="main-cta">
         <div class="premium-card">
-            <div class="status-indicator"><span class="dot"></span> 24/7 Dispatch Live</div>
+            <div class="status-indicator"><span class="dot"></span> We are open now</div>
             <a href="tel:+14028198803" class="phone-number">(402) 819-8803</a>
-            <button onclick="handleContact()" id="copyBtn">Secure Priority Dispatch</button>
+            <button onclick="handleContact()" id="copyBtn">Call Now For Help</button>
         </div>
     </div>
 
     <div class="trust-bar">
         <div class="trust-title">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--safe-green)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            Verified Provider Network
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color:var(--safe-green)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Licensed & Insured
         </div>
-        <p class="trust-text">Murray’s Empire™ exclusively routes dispatch requests to independent, licensed, and fully insured restoration specialists.</p>
+        <p class="trust-text">We connect you with the best local pros who are fully licensed and ready to work.</p>
     </div>
 
     <footer class="legal-footer">
         <div class="legal-container">
             <div class="legal-grid">
                 <div class="legal-box">
-                    <h4>Liability & Referral Notice</h4>
-                    <p>Murray’s Empire LLC is a professional referral agency. We do not provide direct restoration, plumbing, or construction services. All physical work is performed by independent Omaha-based contractors. Murray’s Empire LLC maintains no liability for service outcomes or property damage.</p>
+                    <h4>How it works</h4>
+                    <p>Murray’s Empire LLC is a referral company. We find the best local workers for you. We do not do the repair work ourselves. Independent contractors do all the work.</p>
                 </div>
                 <div class="legal-box">
-                    <h4>AI Systems Notice</h4>
-                    <p>This platform utilizes Artificial Intelligence for intake optimization and call routing. By using this service, you acknowledge that AI systems facilitate the coordination of your dispatch to ensure emergency response efficiency.</p>
+                    <h4>AI Notice</h4>
+                    <p>We use smart AI computers to make sure your call gets to the right person as fast as possible.</p>
                 </div>
             </div>
             
-            <p style="color:#424245;"><strong>Corporate:</strong> Murray’s Empire™ is a registered brand. Details at <a href="https://murrayempires.com" style="color:#86868b; text-decoration:underline;">murrayempires.com</a>.</p>
+            <p style="color:#444;">Part of the <a href="https://murrayempires.com" style="color:#777;">Murray’s Empire™</a> family.</p>
 
             <div class="policy-links">
-                <a onclick="showPolicy('terms')">Terms of Service</a>
-                <a onclick="showPolicy('privacy')">Privacy Policy</a>
+                <a onclick="showPolicy('terms')">Rules of Use</a>
+                <a onclick="showPolicy('privacy')">Your Privacy</a>
             </div>
-            <p style="margin-top:30px; opacity:0.4;">© 2026 Murray’s Empire LLC. Omaha, Nebraska.</p>
+            <p style="margin-top:20px; opacity:0.3;">© 2026 Murray’s Empire LLC. Omaha, Nebraska.</p>
         </div>
     </footer>
 
-    <div id="terms" class="modal"><div class="modal-content"><span class="close-btn" onclick="closePolicy()">← Back</span><h2>Terms of Service</h2><p>Standard lead generation and referral agency terms apply.</p></div></div>
-    <div id="privacy" class="modal"><div class="modal-content"><span class="close-btn" onclick="closePolicy()">← Back</span><h2>Privacy Policy</h2><p>Data is protected under the Nebraska Data Privacy Act.</p></div></div>
+    <div id="terms" class="modal"><div class="modal-content"><span class="close-btn" onclick="closePolicy()">← Back</span><h2>Rules</h2><p>We connect you to workers. We are not responsible for their work.</p></div></div>
+    <div id="privacy" class="modal"><div class="modal-content"><span class="close-btn" onclick="closePolicy()">← Back</span><h2>Privacy</h2><p>Your info is safe and only used to help you.</p></div></div>
 
     <script>
         function handleContact() {
             navigator.clipboard.writeText("(402) 819-8803");
             const b = document.getElementById("copyBtn");
-            b.innerHTML = "✓ Number Copied";
-            setTimeout(() => { window.location.href = "tel:+14028198803"; b.innerHTML = "Secure Priority Dispatch"; }, 800);
+            b.innerHTML = "✓ Copied!";
+            setTimeout(() => { window.location.href = "tel:+14028198803"; b.innerHTML = "Call Now For Help"; }, 800);
         }
         function showPolicy(id) { document.getElementById(id).style.display = 'block'; }
         function closePolicy() { document.getElementById('terms').style.display = 'none'; document.getElementById('privacy').style.display = 'none'; }
