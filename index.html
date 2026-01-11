@@ -129,9 +129,37 @@
             100% { opacity: 1; }
         }
 
+        /* CHECKBOX STYLE */
+        .safety-lock {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        #legal-check {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: var(--empire-gold);
+            cursor: pointer;
+        }
+
+        .lock-text {
+            font-size: 13px;
+            color: var(--text-grey);
+            line-height: 1.4;
+        }
+
+        /* BUTTON (LOCKED BY DEFAULT) */
         .referral-btn { 
-            background: var(--white); 
-            color: var(--black); 
+            background: #222; 
+            color: #555; 
             width: 100%; 
             padding: 22px 0; 
             border: none;
@@ -142,10 +170,18 @@
             letter-spacing: 1px;
             text-decoration: none;
             display: inline-block;
-            transition: all 0.25s ease;
+            transition: all 0.3s ease;
+            pointer-events: none; /* User cannot click this until box is checked */
         }
 
-        .referral-btn:hover { 
+        .referral-btn.active {
+            background: var(--white); 
+            color: var(--black); 
+            pointer-events: auto;
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+        }
+
+        .referral-btn.active:hover { 
             background: var(--empire-gold); 
             color: white; 
             transform: scale(1.03); 
@@ -165,6 +201,7 @@
             max-width: 620px; 
             margin: 0 auto 40px; 
             line-height: 1.9; 
+            text-align: left;
         }
 
         .policy-links a { 
@@ -201,16 +238,19 @@
                 Matching Portal Online
             </div>
 
-            <a href="https://www.angi.com" class="referral-btn">
+            <label class="safety-lock">
+                <input type="checkbox" id="legal-check">
+                <span class="lock-text">
+                    I agree to the Legal Disclaimer and acknowledge that Murray's Empire LLC is a referral platform only.
+                </span>
+            </label>
+
+            <a href="https://www.angi.com" class="referral-btn" id="referral-btn">
                 Request A Referral
             </a>
 
             <p style="margin-top:24px; font-size:13px; color:var(--text-grey);">
                 Connections vary by provider availability.
-            </p>
-
-            <p style="margin-top:12px; font-size:11px; color:#777;">
-                Use of this platform constitutes acceptance of our legal disclaimer and limitation of liability.
             </p>
         </div>
     </div>
@@ -235,25 +275,36 @@
             By using this website, you acknowledge and agree that any services obtained through referrals
             are pursued entirely at your own risk. Murray’s Empire LLC shall not be liable for any direct,
             indirect, incidental, consequential, or special damages arising out of or related to the use
-            of this platform or any referred services, including but not limited to negligence,
-            misconduct, errors, omissions, or service failures by third parties.
+            of this platform or any referred services.
 
             <br><br>
 
             You agree to indemnify, defend, and hold harmless Murray’s Empire LLC from and against any
-            claims, liabilities, damages, costs, or expenses (including attorney’s fees) arising from
-            your use of this website or any services obtained through referrals.
+            claims, liabilities, damages, costs, or expenses arising from your use of this website or any services obtained through referrals.
         </div>
 
         <div class="policy-links">
-            <a onclick="alert('Terms: Omaha Restoration™ is a passive referral platform only and does not provide, control, or guarantee services. By using this site, you accept the Legal Disclaimer and Limitation of Liability displayed on this page.')">Terms</a>
-            <a onclick="alert('Privacy: No personal data is sold. If you contact or engage with third-party providers, your information is subject to their policies. This site does not collect sensitive personal information.')">Privacy</a>
+            <a onclick="alert('Terms: Omaha Restoration™ is a passive referral platform only. By using this site, you accept the Legal Disclaimer and Liability waiver.')">Terms</a>
+            <a onclick="alert('Privacy: No personal data is sold. We do not collect sensitive info.')">Privacy</a>
         </div>
 
         <p style="margin-top:40px; opacity:0.35;">
             © 2026 Murray’s Empire LLC · Omaha, Nebraska
         </p>
     </footer>
+
+    <script>
+        const checkbox = document.getElementById('legal-check');
+        const btn = document.getElementById('referral-btn');
+
+        checkbox.addEventListener('change', function() {
+            if(this.checked) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    </script>
 
 </body>
 </html>
