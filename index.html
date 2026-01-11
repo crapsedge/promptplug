@@ -134,12 +134,13 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             padding: 15px;
             background: rgba(255,255,255,0.03);
             border-radius: 16px;
             cursor: pointer;
             text-align: left;
+            user-select: none;
         }
 
         #legal-check {
@@ -177,7 +178,7 @@
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
-            pointer-events: none;
+            pointer-events: none; /* locked until checkbox */
         }
 
         .referral-btn.active {
@@ -193,10 +194,23 @@
             transform: scale(1.03); 
         }
 
+        .micro-note {
+            margin-top: 14px;
+            font-size: 11px;
+            color: #777;
+            line-height: 1.4;
+        }
+
+        .micro-note a {
+            color: #9a9a9a;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
         /* FOOTER */
         .legal-footer { 
             background: var(--black); 
-            padding: 80px 24px; 
+            padding: 70px 24px; 
             font-size: 11px; 
             border-top: 1px solid #1a1a1a; 
             text-align: center; 
@@ -204,10 +218,9 @@
         }
 
         .disclosure-box { 
-            max-width: 620px; 
-            margin: 0 auto 40px; 
-            line-height: 1.9; 
-            text-align: left;
+            max-width: 720px; 
+            margin: 0 auto 26px; 
+            line-height: 1.8; 
         }
 
         .policy-links a { 
@@ -215,8 +228,9 @@
             text-decoration: none; 
             margin: 0 15px; 
             font-weight: 700; 
-            cursor: pointer; 
         }
+
+        .policy-links a:hover { text-decoration: underline; }
     </style>
 </head>
 
@@ -244,56 +258,42 @@
                 Matching Portal Online
             </div>
 
-            <label class="safety-lock">
-                <input type="checkbox" id="legal-check">
+            <label class="safety-lock" for="legal-check">
+                <input type="checkbox" id="legal-check" aria-label="Agree to legal disclaimer, terms, and privacy policy">
                 <span class="lock-text">
                     By checking this box, I agree to the
-                    <a href="/legal.html" target="_blank" rel="noopener noreferrer">Legal Disclaimer</a>
+                    <a href="/legal.html" target="_blank" rel="noopener noreferrer">Legal Disclaimer, Terms & Privacy Policy</a>
                     and acknowledge that Murray’s Empire LLC is a referral platform only.
                 </span>
             </label>
 
-            <a href="https://www.angi.com" class="referral-btn" id="referral-btn">
+            <a href="https://www.angi.com" class="referral-btn" id="referral-btn" aria-disabled="true">
                 Request A Referral
             </a>
 
-            <p style="margin-top:24px; font-size:13px; color:var(--text-grey);">
+            <p style="margin-top:18px; font-size:13px; color:var(--text-grey);">
                 Connections vary by provider availability.
             </p>
+
+            <div class="micro-note">
+                You will be redirected to a third-party provider. Read the full
+                <a href="/legal.html" target="_blank" rel="noopener noreferrer">Legal Disclaimer</a>.
+            </div>
         </div>
     </div>
 
     <footer class="legal-footer">
         <div class="disclosure-box">
-            <strong>Legal Disclaimer, Limitation of Liability & Assumption of Risk:</strong><br><br>
-
-            Omaha Restoration™ is a passive, automated online referral platform operated by Murray’s Empire LLC.
-            We do not provide restoration services, emergency response, inspections, estimates, supervision,
-            endorsements, warranties, or guarantees of any kind. We do not employ, license, vet, control,
-            or oversee any service provider.
-
-            <br><br>
-
-            All services are performed solely by independent third-party contractors. Any agreements,
-            work performed, payments, damages, injuries, losses, delays, or disputes are strictly
-            between the user and the service provider.
-
-            <br><br>
-
-            By using this website, you acknowledge and agree that any services obtained through referrals
-            are pursued entirely at your own risk. Murray’s Empire LLC shall not be liable for any direct,
-            indirect, incidental, consequential, or special damages arising out of or related to the use
-            of this platform or any referred services.
-
-            <br><br>
-
-            You agree to indemnify, defend, and hold harmless Murray’s Empire LLC from and against any
-            claims, liabilities, damages, costs, or expenses arising from your use of this website or any services obtained through referrals.
+            <strong>Referral-Only Notice:</strong><br><br>
+            Omaha Restoration™ is a passive, automated referral platform operated by Murray’s Empire LLC.
+            We do not provide restoration services, emergency response, inspections, estimates, supervision, or guarantees.
+            All services are performed by independent third-party contractors. Full terms, limitations of liability,
+            and privacy details are available on our Legal page.
         </div>
 
         <div class="policy-links">
-            <a href="/legal.html">Terms</a>
-            <a href="/legal.html#privacy">Privacy</a>
+            <a href="/legal.html" target="_blank" rel="noopener noreferrer">Legal / Terms</a>
+            <a href="/legal.html#privacy" target="_blank" rel="noopener noreferrer">Privacy</a>
         </div>
 
         <p style="margin-top:40px; opacity:0.35;">
@@ -305,12 +305,21 @@
         const checkbox = document.getElementById('legal-check');
         const btn = document.getElementById('referral-btn');
 
-        checkbox.addEventListener('change', function() {
-            if (this.checked) {
+        function setBtnState(isActive) {
+            if (isActive) {
                 btn.classList.add('active');
+                btn.setAttribute('aria-disabled', 'false');
             } else {
                 btn.classList.remove('active');
+                btn.setAttribute('aria-disabled', 'true');
             }
+        }
+
+        // ensure correct state on load
+        setBtnState(checkbox.checked);
+
+        checkbox.addEventListener('change', function() {
+            setBtnState(this.checked);
         });
     </script>
 
