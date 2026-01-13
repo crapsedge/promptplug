@@ -9,86 +9,28 @@
   <meta name="robots" content="noindex, nofollow" />
 
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #0b0b0b;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 25px;
-    }
-
-    h1 {
-      font-size: 34px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-top: 40px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #cfcfcf;
-      margin-bottom: 14px;
-    }
-
-    ul {
-      padding-left: 20px;
-      color: #cfcfcf;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .box {
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 25px;
-      background: #111;
-    }
-
-    .price {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .cta {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 26px;
-      background: #c5a059;
-      color: #000;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 6px;
-    }
-
-    .cta:hover {
-      background: #dab777;
-    }
-
-    footer {
-      margin-top: 60px;
-      font-size: 12px;
-      color: #888;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 20px;
-    }
+    body { margin:0; padding:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:#0b0b0b; color:#fff; line-height:1.6; }
+    .container { max-width:900px; margin:auto; padding:60px 25px; }
+    h1 { font-size:34px; margin:0 0 10px; }
+    h2 { font-size:22px; margin:40px 0 10px; }
+    p, li { color:#cfcfcf; }
+    ul { padding-left:20px; }
+    .box { border:1px solid rgba(255,255,255,0.12); padding:20px; border-radius:10px; margin-top:25px; background:#111; }
+    .price { font-size:18px; margin:0 0 8px; }
+    .grid { display:grid; grid-template-columns:1fr; gap:14px; margin-top:14px; }
+    .card { border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:16px; background:#0f0f0f; }
+    .tag { display:inline-block; font-size:12px; padding:5px 10px; border-radius:999px; background:rgba(197,160,89,0.15); color:#dab777; border:1px solid rgba(197,160,89,0.35); margin-bottom:10px; }
+    .btn { display:inline-block; width:100%; text-align:center; margin-top:10px; padding:12px 16px; background:#c5a059; color:#000; text-decoration:none; font-weight:700; border-radius:8px; }
+    .btn:hover { background:#dab777; }
+    .muted { font-size:12px; color:#9a9a9a; margin-top:10px; }
+    input, select { width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.18); background:#0b0b0b; color:#fff; margin-top:8px; }
+    label { display:block; margin-top:12px; font-size:13px; color:#cfcfcf; }
+    .divider { height:1px; background:rgba(255,255,255,0.08); margin:18px 0; }
+    footer { margin-top:60px; font-size:12px; color:#888; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; }
   </style>
 </head>
 
 <body>
-
   <div class="container">
 
     <h1>Exclusive Emergency Routing<br>Contractors Only</h1>
@@ -101,23 +43,12 @@
       <h2>What This Is</h2>
       <p>
         Omaha Restoration™ is a local <strong>advertising and call-routing platform</strong>
-        that connects emergency service requests directly to one approved contractor
-        per category.
+        that connects emergency requests directly to one approved contractor per category.
       </p>
       <p>
         This is not a lead marketplace. There is no bidding, no shared leads,
         and no performance guarantees.
       </p>
-    </div>
-
-    <div class="box">
-      <h2>How It Works</h2>
-      <ul>
-        <li>Homeowners select a service category</li>
-        <li>Calls or messages route directly to the approved contractor</li>
-        <li>No forms, no delays, no competition</li>
-        <li>Month-to-month access</li>
-      </ul>
     </div>
 
     <div class="box">
@@ -129,35 +60,85 @@
     </div>
 
     <div class="box">
-      <h2>What You Get</h2>
-      <ul>
-        <li>Exclusive placement by category</li>
-        <li>Direct call or SMS routing</li>
-        <li>No shared calls</li>
-        <li>No contracts</li>
-        <li>Cancel anytime</li>
-      </ul>
+      <h2>Step 1: Contractor Info (No Calls)</h2>
+      <p>Fill this out so routing can be activated after payment.</p>
+
+      <!-- This stores info locally and shows it on the success page instructions. No emails required. -->
+      <form id="contractorForm" autocomplete="on">
+        <label>Business Name</label>
+        <input required id="bizName" placeholder="Example: ABC Restoration" />
+
+        <label>Service Category</label>
+        <select required id="category">
+          <option value="" selected disabled>Select one…</option>
+          <option value="water">Water Damage</option>
+          <option value="fire">Fire Damage</option>
+          <option value="storm">Storm / Emergency</option>
+        </select>
+
+        <label>Service ZIP Codes (comma separated)</label>
+        <input required id="zips" placeholder="Example: 68102, 68104, 68114" />
+
+        <label>Routing Phone Number</label>
+        <input required id="phone" placeholder="Example: (402) 555-1234" />
+
+        <label>Billing Email</label>
+        <input required id="email" type="email" placeholder="you@company.com" />
+
+        <div class="divider"></div>
+
+        <p class="muted">
+          By continuing, you agree this is <strong>advertising/call-routing access only</strong>.
+          No guaranteed leads, volume, or outcomes.
+        </p>
+      </form>
     </div>
 
     <div class="box">
-      <h2>What This Is Not</h2>
-      <ul>
-        <li>No guaranteed leads or volume</li>
-        <li>No job guarantees</li>
-        <li>No Angi-style bidding</li>
-        <li>No resale of customer data</li>
-      </ul>
-    </div>
+      <h2>Step 2: Pay to Activate (Choose Your Category)</h2>
+      <p>Click the matching Pay button. After checkout, you’ll land on the activation page.</p>
 
-    <div class="box">
-      <h2>Request Contractor Access</h2>
-      <p>
-        Founder access is reviewed on a first-come basis.
-        Payment activates routing.
+      <div class="grid">
+
+        <div class="card">
+          <div class="tag">Founder Slot</div>
+          <h3 style="margin:0 0 6px;">Water Damage Routing</h3>
+          <p style="margin:0;">$199 / month — Exclusive category placement</p>
+
+          <!-- PASTE YOUR STRIPE PAYMENT LINK HERE -->
+          <a class="btn" id="payWater" href="PASTE_STRIPE_LINK_WATER" target="_blank" rel="noopener">Pay $199/mo (Water)</a>
+
+          <div class="muted">If the slot is already filled, do not purchase.</div>
+        </div>
+
+        <div class="card">
+          <div class="tag">Founder Slot</div>
+          <h3 style="margin:0 0 6px;">Fire Damage Routing</h3>
+          <p style="margin:0;">$199 / month — Exclusive category placement</p>
+
+          <!-- PASTE YOUR STRIPE PAYMENT LINK HERE -->
+          <a class="btn" id="payFire" href="PASTE_STRIPE_LINK_FIRE" target="_blank" rel="noopener">Pay $199/mo (Fire)</a>
+
+          <div class="muted">If the slot is already filled, do not purchase.</div>
+        </div>
+
+        <div class="card">
+          <div class="tag">Founder Slot</div>
+          <h3 style="margin:0 0 6px;">Storm / Emergency Routing</h3>
+          <p style="margin:0;">$149 / month — Exclusive category placement</p>
+
+          <!-- PASTE YOUR STRIPE PAYMENT LINK HERE -->
+          <a class="btn" id="payStorm" href="PASTE_STRIPE_LINK_STORM" target="_blank" rel="noopener">Pay $149/mo (Storm)</a>
+
+          <div class="muted">If the slot is already filled, do not purchase.</div>
+        </div>
+
+      </div>
+
+      <p class="muted" style="margin-top:14px;">
+        After payment: return to this page and click your category again if needed.
+        Activation instructions are on the Success page.
       </p>
-
-      <!-- Phase 2 will replace this link -->
-      <a href="#" class="cta">Request Placement</a>
     </div>
 
     <footer>
@@ -170,5 +151,36 @@
 
   </div>
 
+  <script>
+    // Save contractor info locally so they can reference it after payment without emailing you.
+    const fields = ["bizName","category","zips","phone","email"];
+    function saveForm() {
+      const data = {};
+      fields.forEach(id => data[id] = (document.getElementById(id)?.value || "").trim());
+      localStorage.setItem("omaha_restoration_contractor", JSON.stringify(data));
+    }
+    fields.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener("input", saveForm);
+      el.addEventListener("change", saveForm);
+    });
+
+    // Warn if they try to pay without filling the form
+    function guardPay(e) {
+      const data = JSON.parse(localStorage.getItem("omaha_restoration_contractor") || "{}");
+      const missing = ["bizName","category","zips","phone","email"].filter(k => !data[k]);
+      if (missing.length) {
+        e.preventDefault();
+        alert("Please complete the contractor info form first (Business, Category, ZIPs, Phone, Email).");
+        return false;
+      }
+      return true;
+    }
+    ["payWater","payFire","payStorm"].forEach(id => {
+      const btn = document.getElementById(id);
+      if (btn) btn.addEventListener("click", guardPay);
+    });
+  </script>
 </body>
 </html>
