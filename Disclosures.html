@@ -1,33 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disclosures | Omaha Restoration</title>
-    <style>
-        body { font-family: -apple-system, sans-serif; line-height: 1.6; padding: 40px 20px; max-width: 800px; margin: auto; color: #333; background-color: #fff; }
-        h1 { border-bottom: 2px solid #c5a059; padding-bottom: 10px; color: #000; }
-        .box { background: #f9f9f9; border-left: 5px solid #c5a059; padding: 20px; margin: 20px 0; }
-        .back-link { display: inline-block; margin-top: 30px; color: #000; font-weight: bold; text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <h1>Legal Disclosures</h1>
-    <p><strong>Last Updated: January 2026</strong></p>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclosures | Omaha Restoration™</title>
 
-    <div class="box">
-        <strong>1. Referral Only:</strong> Omaha Restoration™ is a referral-only brand. We are a digital doorway. We do not do the physical work, and we do not know the people who do the work.
+  <style>
+    :root{
+      --black:#000;
+      --dark:#111;
+      --white:#fff;
+      --gold:#c5a059;
+      --text:#d7d7d7;
+      --muted:#9a9a9a;
+      --border:rgba(255,255,255,0.08);
+    }
+
+    body{
+      margin:0;
+      font-family:-apple-system, "SF Pro Display", sans-serif;
+      background:var(--black);
+      color:var(--text);
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .wrap{
+      max-width:900px;
+      margin:0 auto;
+      padding:56px 18px 80px;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      background:rgba(0,0,0,0.9);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--border);
+      z-index:10;
+    }
+
+    .topbar-inner{
+      max-width:900px;
+      margin:0 auto;
+      padding:16px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-transform:uppercase;
+      letter-spacing:0.22em;
+      font-weight:800;
+      font-size:12px;
+      color:var(--white);
+      white-space:nowrap;
+    }
+
+    .shield{
+      width:22px; height:26px;
+      background:var(--white);
+      clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--black);
+      font-size:8px;
+      font-weight:900;
+    }
+
+    .home-link{
+      color:#cfcfcf;
+      text-decoration:none;
+      font-weight:800;
+      font-size:12px;
+      border:1px solid rgba(255,255,255,0.12);
+      padding:10px 14px;
+      border-radius:999px;
+      transition:all .2s ease;
+      white-space:nowrap;
+    }
+    .home-link:hover{
+      border-color:rgba(255,255,255,0.25);
+      transform:translateY(-1px);
+    }
+
+    h1{
+      margin:0 0 10px;
+      color:var(--white);
+      font-size:clamp(30px, 5vw, 44px);
+      letter-spacing:-0.03em;
+      line-height:1.1;
+    }
+
+    .sub{
+      color:var(--muted);
+      margin:0 0 26px;
+      font-size:14px;
+    }
+
+    .notice{
+      background:var(--dark);
+      border:1px solid var(--border);
+      border-left:5px solid var(--gold);
+      border-radius:18px;
+      padding:18px 16px;
+      margin:18px 0 22px;
+      color:#e3e3e3;
+    }
+
+    h2{
+      color:var(--white);
+      margin:26px 0 10px;
+      font-size:18px;
+      letter-spacing:-0.01em;
+    }
+
+    p, li{
+      color:var(--text);
+      font-size:14px;
+    }
+
+    ul{
+      margin:10px 0 0 18px;
+      padding:0;
+    }
+
+    a{
+      color:#d8d8d8;
+      text-decoration:underline;
+      font-weight:800;
+    }
+
+    .foot{
+      margin-top:34px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .mini{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .kbd{
+      display:inline-block;
+      padding:2px 8px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.10);
+      color:#cfcfcf;
+      font-weight:800;
+      font-size:11px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="shield">OR</div>
+        Omaha Restoration™
+      </div>
+      <a class="home-link" href="index.html">Return to Home</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h1>Legal Disclosures</h1>
+    <p class="sub"><strong>Last Updated:</strong> January 2026</p>
+
+    <div class="notice">
+      <strong>Plain-English Summary:</strong> Omaha Restoration™ is a routing / referral platform. We do not provide restoration services. When you click outbound links, you are dealing directly with third parties. Always verify licensing, insurance, and terms before hiring anyone.
     </div>
 
-    <h2>2. No Personal Data</h2>
-    <p>We do not want your name. We do not want your phone number. We do not collect or save any of your info. We just provide a link for you to click.</p>
+    <h2>1) Referral & Routing Only</h2>
+    <p>
+      Omaha Restoration™ is a digital routing platform that may direct visitors to third-party providers, directories, or matching services.
+      We are not a restoration contractor and we do not perform water, fire, mold, storm, demolition, or repair services.
+    </p>
 
-    <h2>3. Compensation</h2>
-    <p>If you click a link and hire a company, they might pay us a small referral fee. This is how we keep the lights on without charging you a penny.</p>
+    <h2>2) No Personal Data Collected on This Site</h2>
+    <p>
+      This website does not ask for or store your name, phone number, address, or other personal information through forms.
+      If you choose to contact a third party after leaving this site, the third party’s privacy policy and data practices apply.
+    </p>
+    <p class="mini">
+      Note: Like most websites, standard hosting may automatically collect basic technical logs (for example, IP address, device type, and timestamp) for security and performance purposes.
+      If you want this minimized, we can configure your hosting/analytics accordingly.
+    </p>
 
-    <h2>4. Your Responsibility</h2>
-    <p>Because we are a 100% automated system, you must check the license and insurance of any company you hire. Murray’s Empire LLC is not responsible for any work done by third parties.</p>
+    <h2>3) Compensation & Affiliate Disclosure</h2>
+    <p>
+      Some outbound links on this site may be affiliate, referral, or tracking links. If you click a link and later purchase services or submit a request with a third party, Omaha Restoration™ / Murray’s Empire LLC may receive compensation at no additional cost to you.
+    </p>
 
-    <a href="index.html" class="back-link">← Return to Home</a>
+    <h2>4) No Guarantees</h2>
+    <p>
+      We do not guarantee provider availability, response times, pricing, scope of work, insurance coverage, or outcomes. Any estimates, timelines, or representations are made solely by the third party.
+    </p>
+
+    <h2>5) Your Responsibility When Hiring</h2>
+    <p>
+      You are responsible for evaluating any provider you choose to hire. At a minimum, you should confirm:
+    </p>
+    <ul>
+      <li>Proper licensing (if required in your jurisdiction)</li>
+      <li>Insurance coverage (general liability and, where applicable, workers’ compensation)</li>
+      <li>Written scope, pricing, and warranty terms</li>
+      <li>References and complaint history where available</li>
+    </ul>
+
+    <h2>6) Limitation of Liability</h2>
+    <p>
+      To the maximum extent permitted by law, Omaha Restoration™ and Murray’s Empire LLC are not liable for any damages, losses, disputes, injuries, or claims arising from services provided by third parties or from your use of outbound links.
+    </p>
+
+    <h2>7) Emergency Notice</h2>
+    <p>
+      If you have an immediate emergency or life-safety concern, contact emergency services first.
+      This site is not an emergency response provider.
+    </p>
+
+    <div class="foot">
+      <div><span class="kbd">Contact</span> If you need to report an issue with an outbound link, use the contact method listed on the website footer (if provided).</div>
+      <div style="margin-top:10px;">© <span id="yr"></span> Omaha Restoration™. All rights reserved.</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
