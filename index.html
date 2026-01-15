@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- FlexOffers Site Verification -->
   <meta name="fo-verify" content="7644c88f-0d5e-46da-b90b-378e62aa4736" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -26,6 +25,7 @@
       color: var(--white); 
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth; /* This makes the jump look smooth */
     }
     .nav { 
       padding: 20px; 
@@ -176,11 +176,6 @@
       color: #777;
       line-height: 1.4;
     }
-    .micro-note a {
-      color: #9a9a9a;
-      text-decoration: underline;
-      font-weight: 700;
-    }
 
     .legal-footer { 
       background: var(--black); 
@@ -195,13 +190,6 @@
       margin: 0 auto 26px; 
       line-height: 1.8; 
     }
-    .policy-links a { 
-      color: #666; 
-      text-decoration: none; 
-      margin: 0 15px; 
-      font-weight: 700; 
-    }
-    .policy-links a:hover { text-decoration: underline; }
   </style>
 </head>
 
@@ -215,8 +203,8 @@
   </div>
 
   <section class="hero">
-    <h1>Automated Restoration Routing</h1>
-    <p>Submit your request and get connected to available restoration providers. No guarantees. This site is a referral routing platform.</p>
+    <h1>Restoration Help Routing</h1>
+    <p>We connect you to local pros instantly. 100% automated referral service.</p>
   </section>
 
   <div class="main-cta">
@@ -224,57 +212,44 @@
 
       <div class="status-indicator">
         <span class="dot"></span>
-        LIVE ROUTING ACTIVE
+        SYSTEMS ONLINE
       </div>
 
       <label class="safety-lock" for="legal-check">
         <input id="legal-check" type="checkbox" />
         <div class="lock-text">
-          I understand this website is a referral and information platform, not the service provider, and there is no guarantee of availability or outcome.
-          <br><a href="disclosures.html">Read full disclosure</a>
+          I understand Omaha Restoration is a referral platform, not a contractor. 
+          <br><a href="#legal">Read full disclosure</a>
         </div>
       </label>
 
-      <!-- FIX: This MUST be a real destination -->
       <a id="referralBtn" class="referral-btn"
-         href="DESTINATION_URL_HERE"
+         href="YOUR_MONEY_LINK_HERE"
          target="_blank"
          rel="nofollow noopener">
         Get Connected Now
       </a>
 
       <div class="micro-note">
-        If this is an emergency, contact local emergency services first.
+        Automated routing to verified third-party providers.
       </div>
 
     </div>
   </div>
 
-  <footer class="legal-footer">
+  <footer id="legal" class="legal-footer">
     <div class="disclosure-box">
-      <strong>Disclosure:</strong> Omaha Restoration™ is a referral routing and informational platform. We are not a restoration contractor and do not perform restoration work. Any services are provided by third parties. You are responsible for verifying licensing, insurance, and suitability of any provider. No guarantees are made regarding response times, availability, pricing, or outcomes.
+      <strong>Full Disclosure:</strong> Omaha Restoration™ is a referral routing platform owned by Murray’s Empire LLC. We are an online-only referral business. We are not a restoration contractor and do not perform any physical restoration work. We do not know the providers personally. Any services are provided by third parties. You are responsible for verifying licensing, insurance, and suitability of any provider. No guarantees are made regarding response times, availability, pricing, or outcomes. We may receive compensation if you use a service through our routing links.
     </div>
-
-    <div class="policy-links">
-      <!-- FIX: Now these go to real pages -->
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="disclosures.html">Disclosures</a>
-    </div>
-
     <div style="margin-top:18px; color:#666;">
       © <span id="yr"></span> Omaha Restoration™. All rights reserved.
     </div>
   </footer>
 
   <script>
-    // year
     document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // lock/unlock button
     const check = document.getElementById('legal-check');
     const btn = document.getElementById('referralBtn');
-
     function sync() {
       if (check.checked) btn.classList.add('active');
       else btn.classList.remove('active');
