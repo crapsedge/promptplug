@@ -19,6 +19,7 @@
       --text-grey: #86868b;
       --border: rgba(255,255,255,0.08); 
     }
+
     body { 
       font-family: -apple-system, "SF Pro Display", sans-serif; 
       margin: 0; 
@@ -27,6 +28,7 @@
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
+
     .nav { 
       padding: 20px; 
       text-align: center; 
@@ -37,12 +39,14 @@
       backdrop-filter: blur(20px); 
       z-index: 100; 
     }
+
     .nav-logo { 
       display: flex; 
       align-items: center; 
       justify-content: center; 
       gap: 12px; 
     }
+
     .mini-shield { 
       width: 22px; 
       height: 26px; 
@@ -55,18 +59,21 @@
       font-size: 8px; 
       font-weight: 900; 
     }
+
     .brand-name { 
       font-size: 13px; 
       font-weight: 800; 
       letter-spacing: 0.25em; 
       text-transform: uppercase; 
     }
+
     .hero { 
       padding: 80px 24px 40px; 
       text-align: center; 
       max-width: 800px; 
       margin: 0 auto; 
     }
+
     .hero h1 { 
       font-size: clamp(38px, 8vw, 58px); 
       font-weight: 800; 
@@ -74,17 +81,20 @@
       margin-bottom: 16px; 
       line-height: 1.1; 
     }
+
     .hero p { 
       font-size: 18px; 
       color: var(--text-grey); 
       max-width: 560px; 
       margin: 0 auto; 
     }
+
     .main-cta { 
       padding: 0 20px 40px; 
       max-width: 440px; 
       margin: 0 auto; 
     }
+
     .premium-card { 
       background: var(--dark-grey); 
       border-radius: 32px; 
@@ -93,6 +103,7 @@
       border: 1px solid var(--border);
       box-shadow: 0 40px 100px rgba(0,0,0,0.8);
     }
+
     .status-indicator { 
       display: inline-flex; 
       align-items: center; 
@@ -104,6 +115,7 @@
       text-transform: uppercase; 
       letter-spacing: 2px; 
     }
+
     .dot { 
       width: 8px; 
       height: 8px; 
@@ -111,7 +123,12 @@
       border-radius: 50%; 
       animation: blink 1.5s infinite; 
     }
-    @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
 
     .safety-lock {
       display: flex;
@@ -121,10 +138,9 @@
       padding: 15px;
       background: rgba(255,255,255,0.03);
       border-radius: 16px;
-      cursor: pointer;
       text-align: left;
-      user-select: none;
     }
+
     #legal-check {
       width: 20px;
       height: 20px;
@@ -132,12 +148,14 @@
       accent-color: var(--empire-gold);
       cursor: pointer;
     }
+
     .lock-text {
       font-size: 13px;
       color: var(--text-grey);
       line-height: 1.4;
     }
-    .lock-text a{
+
+    .lock-text a {
       color: #cfcfcf;
       text-decoration: underline;
       font-weight: 700;
@@ -159,27 +177,24 @@
       transition: all 0.3s ease;
       pointer-events: none;
     }
+
     .referral-btn.active {
       background: var(--white); 
       color: var(--black); 
       pointer-events: auto;
-      box-shadow: 0 10px 20px rgba(255,255,255,0.1);
     }
-    .referral-btn.active:hover { 
-      background: var(--empire-gold); 
-      color: white; 
-      transform: scale(1.03); 
+
+    .referral-btn.active:hover {
+      background: var(--empire-gold);
+      color: white;
+      transform: scale(1.03);
     }
+
     .micro-note {
       margin-top: 14px;
       font-size: 11px;
       color: #777;
       line-height: 1.4;
-    }
-    .micro-note a {
-      color: #9a9a9a;
-      text-decoration: underline;
-      font-weight: 700;
     }
 
     .legal-footer { 
@@ -190,17 +205,20 @@
       text-align: center; 
       color: var(--text-grey);
     }
+
     .disclosure-box { 
       max-width: 720px; 
       margin: 0 auto 26px; 
       line-height: 1.8; 
     }
+
     .policy-links a { 
       color: #666; 
       text-decoration: none; 
       margin: 0 15px; 
       font-weight: 700; 
     }
+
     .policy-links a:hover { text-decoration: underline; }
   </style>
 </head>
@@ -216,7 +234,7 @@
 
   <section class="hero">
     <h1>Automated Restoration Routing</h1>
-    <p>Submit your request and get connected to available restoration providers. No guarantees. This site is a referral routing platform.</p>
+    <p>This website routes visitors to third-party restoration resources. We do not perform services or collect personal information.</p>
   </section>
 
   <div class="main-cta">
@@ -227,17 +245,20 @@
         LIVE ROUTING ACTIVE
       </div>
 
-      <label class="safety-lock" for="legal-check">
-        <input id="legal-check" type="checkbox" />
+      <div class="safety-lock">
+        <input id="legal-check" type="checkbox">
         <div class="lock-text">
-          I understand this website is a referral and information platform, not the service provider, and there is no guarantee of availability or outcome.
-          <br><a href="disclosures.html">Read full disclosure</a>
+          <label for="legal-check">
+            I understand this website is a referral / routing platform, not the service provider.
+          </label>
+          <br>
+          <a href="disclosures.html" target="_blank" rel="noopener">Read full disclosure</a>
         </div>
-      </label>
+      </div>
 
-      <!-- FIX: This MUST be a real destination -->
+      <!-- WORKING DESTINATION -->
       <a id="referralBtn" class="referral-btn"
-         href="DESTINATION_URL_HERE"
+         href="https://iicrc.org/iicrcgloballocator/"
          target="_blank"
          rel="nofollow noopener">
         Get Connected Now
@@ -252,11 +273,10 @@
 
   <footer class="legal-footer">
     <div class="disclosure-box">
-      <strong>Disclosure:</strong> Omaha Restoration™ is a referral routing and informational platform. We are not a restoration contractor and do not perform restoration work. Any services are provided by third parties. You are responsible for verifying licensing, insurance, and suitability of any provider. No guarantees are made regarding response times, availability, pricing, or outcomes.
+      <strong>Disclosure:</strong> Omaha Restoration™ is not a restoration contractor. This site provides third-party routing only.
     </div>
 
     <div class="policy-links">
-      <!-- FIX: Now these go to real pages -->
       <a href="terms.html">Terms</a>
       <a href="privacy.html">Privacy</a>
       <a href="disclosures.html">Disclosures</a>
@@ -268,10 +288,8 @@
   </footer>
 
   <script>
-    // year
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // lock/unlock button
     const check = document.getElementById('legal-check');
     const btn = document.getElementById('referralBtn');
 
@@ -279,6 +297,7 @@
       if (check.checked) btn.classList.add('active');
       else btn.classList.remove('active');
     }
+
     check.addEventListener('change', sync);
     sync();
   </script>
