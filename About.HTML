@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Omaha Restoration™</title>
+  <meta name="description" content="About Omaha Restoration™ — a referral and routing platform operated by Murrays Empire LLC.">
+
+  <style>
+    :root { 
+      --black: #000000; 
+      --dark-grey: #111111;
+      --white: #ffffff; 
+      --empire-gold: #c5a059; 
+      --text-grey: #86868b;
+      --border: rgba(255,255,255,0.08); 
+    }
+    
+    body { 
+      font-family: -apple-system, sans-serif; 
+      margin: 0; 
+      background-color: var(--black); 
+      color: var(--white); 
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container { max-width: 800px; margin: 0 auto; }
+    
+    .back-link { 
+      text-decoration: none; 
+      color: var(--empire-gold); 
+      font-size: 14px; 
+      font-weight: 700; 
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+
+    h1 { font-size: 32px; letter-spacing: -0.02em; margin-bottom: 10px; }
+    h2 { font-size: 20px; color: var(--empire-gold); margin-top: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    
+    .content { color: var(--text-grey); font-size: 15px; }
+    p { margin-bottom: 20px; }
+    ul { padding-left: 20px; margin-top: 10px; }
+
+    .shield-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--white);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      margin-bottom: 20px;
+    }
+
+    .notice {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin: 18px 0 26px;
+      color: #cfcfcf;
+      font-size: 14px;
+    }
+
+    a { color: var(--empire-gold); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← BACK TO HOME</a>
+
+    <div class="shield-icon"></div>
+    <h1>About Omaha Restoration™</h1>
+    <p style="color: var(--white); font-weight: 600;">Routing, referrals, and resources — not a contractor.</p>
+
+    <div class="notice">
+      Omaha Restoration™ is a referral / routing platform operated by <strong>Murrays Empire LLC</strong>.
+      We do not perform restoration services, emergency response, inspections, estimates, or repairs.
+    </div>
+
+    <div class="content">
+      <section>
+        <h2>1. What This Site Is</h2>
+        <p>
+          Omaha Restoration™ exists to help visitors quickly reach third-party restoration resources.
+          When you click outbound links on this website, you may be directed to independent companies, directories,
+          or networks that can connect you with service providers.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. What This Site Is NOT</h2>
+        <p>
+          This website is <strong>not</strong> a restoration company, and it does not dispatch technicians.
+          We do not provide on-site work, and we do not control contractor pricing, availability, timing, or outcomes.
+        </p>
+        <ul>
+          <li>No emergency response or 24/7 dispatch.</li>
+          <li>No estimates, inspections, remediation, or repairs.</li>
+          <li>No contractor supervision, licensing, or warranties.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. How We Stay Simple</h2>
+        <p>
+          Omaha Restoration™ is designed to be lightweight and privacy-respecting. The homepage routing button is meant to help
+          visitors move forward without needing to create an account, call anyone, or submit information on this site.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Compensation Disclosure</h2>
+        <p>
+          Some outbound links may be affiliate or referral links. If you engage a third-party after clicking,
+          <strong>Murrays Empire LLC</strong> may receive compensation at no additional cost to you.
+          See our <a href="disclosures.html">Disclosures</a> for details.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Questions</h2>
+        <p>
+          If you have a legal or business inquiry, use our contact page:
+          <a href="contact.html">Contact</a>.
+        </p>
+      </section>
+    </div>
+
+    <footer style="margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; opacity: 0.5;">
+      © <span id="yr"></span> Murrays Empire LLC. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
