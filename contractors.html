@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contractor Access | Omaha Restoration™</title>
+  <title>Contractor Enrollment | Omaha Restoration™</title>
 
-  <!-- Keep this page private-ish -->
   <meta name="robots" content="noindex, nofollow" />
 
   <style>
@@ -29,328 +28,245 @@
       background:var(--bg); color:var(--text);
       line-height:1.6;
     }
-    .container{ max-width:980px; margin:auto; padding:56px 20px; }
-    h1{ font-size:34px; margin:0 0 8px; letter-spacing:-0.4px; }
-    h2{ font-size:20px; margin:34px 0 10px; }
-    h3{ font-size:16px; margin:0 0 6px; }
-    p, li{ color:var(--muted); }
-    .sub{ color:var(--muted2); margin:6px 0 0; font-size:13px; }
-    .row{ display:grid; grid-template-columns:1.2fr 0.8fr; gap:16px; margin-top:20px; }
-    @media (max-width:880px){ .row{ grid-template-columns:1fr; } }
+    .container{ max-width:760px; margin:auto; padding:52px 20px; }
+    h1{ font-size:32px; margin:0 0 8px; letter-spacing:-0.4px; }
+    h2{ font-size:18px; margin:24px 0 10px; border-bottom:1px solid var(--border); padding-bottom:8px; }
+    p{ color:var(--muted); }
+    .sub{ color:var(--muted2); font-size:13px; margin-top:6px; }
     .box{
       border:1px solid var(--border);
       background:var(--panel);
-      padding:18px;
+      padding:24px;
       border-radius:12px;
+      margin-bottom:20px;
     }
     .pill{
       display:inline-block;
       font-size:12px;
-      padding:5px 10px;
+      padding:5px 12px;
       border-radius:999px;
-      background:rgba(197,160,89,0.14);
+      background:rgba(197,160,89,0.1);
       color:var(--gold2);
-      border:1px solid rgba(197,160,89,0.35);
-      margin-bottom:10px;
+      border:1px solid rgba(197,160,89,0.3);
+      margin-bottom:12px;
     }
-    .divider{ height:1px; background:rgba(255,255,255,0.08); margin:16px 0; }
-    .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px; }
-    @media (max-width:880px){ .grid{ grid-template-columns:1fr; } }
-    .card{
-      border:1px solid var(--border);
-      background:var(--panel2);
-      border-radius:12px;
-      padding:16px;
-    }
-    .price{ font-weight:800; color:#fff; }
     .btn{
-      display:inline-block;
+      display:block;
       width:100%;
       text-align:center;
-      margin-top:10px;
-      padding:12px 16px;
+      margin-top:16px;
+      padding:16px;
       background:var(--gold);
       color:#000;
       text-decoration:none;
-      font-weight:800;
-      border-radius:10px;
+      font-weight:900;
+      border-radius:12px;
       border:0;
       cursor:pointer;
+      font-size:16px;
     }
     .btn:hover{ background:var(--gold2); }
-    .btn:disabled{ opacity:0.5; cursor:not-allowed; }
-    label{ display:block; margin-top:12px; font-size:13px; color:var(--muted); }
+    label{ display:block; margin-top:16px; font-size:14px; color:var(--muted); }
     input, select, textarea{
       width:100%;
-      padding:12px;
+      padding:14px;
       border-radius:10px;
-      border:1px solid rgba(255,255,255,0.18);
-      background:#0b0b0b;
+      border:1px solid rgba(255,255,255,0.15);
+      background:#000;
       color:#fff;
       margin-top:8px;
       outline:none;
     }
-    textarea{ min-height:90px; resize:vertical; }
-    .tiny{ font-size:12px; color:var(--muted2); margin-top:10px; }
-    .warn{ color:var(--danger); font-weight:700; }
-    .ok{ color:var(--ok); font-weight:700; }
-    details{
-      border:1px solid rgba(255,255,255,0.10);
-      border-radius:12px;
-      padding:14px;
-      background:#0e0e0e;
-      margin-top:12px;
-    }
-    summary{ cursor:pointer; font-weight:800; }
-    footer{
-      margin-top:46px;
-      font-size:12px;
-      color:#888;
-      border-top:1px solid rgba(255,255,255,0.1);
-      padding-top:18px;
-    }
-    .badge{
-      font-size:12px;
-      color:#000;
-      background:#fff;
-      display:inline-block;
-      padding:4px 8px;
-      border-radius:8px;
-      font-weight:800;
-      margin-left:8px;
-    }
-    .tos{
-      font-size:12.5px;
-      color:var(--muted);
-    }
-    .tos strong{ color:#fff; }
+    textarea{ min-height:86px; resize:vertical; }
+    .tos-text{ font-size:13px; color:var(--muted2); line-height:1.45; }
     .checkline{
       display:flex;
-      gap:10px;
+      gap:12px;
       align-items:flex-start;
-      margin-top:12px;
-      padding:12px;
+      margin-top:18px;
+      padding:14px;
       border-radius:12px;
-      border:1px solid rgba(255,255,255,0.14);
-      background:#0e0e0e;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.10);
     }
-    .checkline input{ width:auto; margin-top:3px; }
+    .checkline input{ width:auto; margin-top:4px; }
+    details{
+      margin-top:18px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px;
+      background:var(--panel2);
+    }
+    summary{ cursor:pointer; font-size:14px; font-weight:900; color:var(--gold2); }
+    .tiny{ font-size:12px; color:var(--muted2); margin-top:10px; }
+    .warn{ color:var(--danger); font-weight:900; }
+    .ok{ color:var(--ok); font-weight:900; }
+    .line{ height:1px; background:rgba(255,255,255,0.08); margin:14px 0; }
+    .kv{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:10px; }
+    @media (max-width:720px){ .kv{ grid-template-columns:1fr; } }
+    .k{ border:1px solid rgba(255,255,255,0.10); border-radius:12px; padding:12px; background:#0e0e0e; }
+    .k b{ color:#fff; }
+    footer{ margin-top:38px; text-align:center; font-size:12px; color:var(--muted2); }
   </style>
 </head>
 
 <body>
   <div class="container">
 
-    <span class="pill">Contractors Only • Private Access</span>
-    <h1>Contractor Access Portal</h1>
+    <span class="pill">No Upfront Fees • Pay Per Job Start</span>
+    <h1>Contractor Enrollment</h1>
+    <p>
+      Omaha Restoration™ is a <strong>referral-only</strong> marketing and routing platform.
+      We <strong>do not</strong> perform restoration work, provide estimates, or guarantee lead volume.
+    </p>
     <p class="sub">
-      Omaha Restoration™ provides <strong>advertising and call-routing</strong> services only.
-      We do <strong>not</strong> perform restoration work and we do <strong>not</strong> guarantee lead volume, job awards, or revenue.
+      Contractors enroll to receive homeowner requests. Contractors remain solely responsible for all work, pricing,
+      licensing, insurance, safety, permits, and customer satisfaction.
     </p>
 
-    <div class="row">
-      <div class="box">
-        <h2 style="margin-top:0;">What This Is</h2>
-        <p>
-          This portal is for independent restoration professionals who want to receive inbound homeowner requests routed from
-          Omaha Restoration™. We are an <strong>independent marketing and routing platform</strong> (referral/advertising).
-        </p>
-        <ul>
-          <li><strong>No employment.</strong> No partnership. No joint venture. No agency relationship.</li>
-          <li><strong>No guarantees.</strong> Requests may be intermittent and seasonal.</li>
-          <li><strong>Contractor-controlled.</strong> You control pricing, scheduling, job acceptance, and workmanship.</li>
-        </ul>
+    <div class="box">
+      <h2>1. Company Profile</h2>
 
-        <div class="divider"></div>
+      <form id="enrollForm" autocomplete="on">
 
-        <h3>Eligibility Requirements</h3>
-        <ul>
-          <li>Proper licensing/registration where required for your services.</li>
-          <li>Active insurance appropriate to your work (e.g., general liability; workers comp if applicable).</li>
-          <li>Compliance with all laws (including marketing/telecom rules if you call or text leads).</li>
-        </ul>
+        <label>Company Legal Name</label>
+        <input required id="bizName" placeholder="Example: ABC Restoration LLC" />
+
+        <label>Primary Contact Name</label>
+        <input required id="contactName" placeholder="Example: John Smith" />
+
+        <label>Primary Email</label>
+        <input required id="email" type="email" placeholder="you@company.com" />
+
+        <label>Primary Phone Number (Contractor Contact)</label>
+        <input required id="phone" placeholder="(402) 555-0000" />
+
+        <label>Service Area (ZIP codes or cities)</label>
+        <input required id="serviceArea" placeholder="Example: 68102, 68104, 68114 (or Omaha, Bellevue, Papillion)" />
+
+        <label>Service Category</label>
+        <select required id="category">
+          <option value="" disabled selected>Select your specialty...</option>
+          <option value="water">Water Mitigation / Water Damage</option>
+          <option value="fire">Fire & Smoke Damage</option>
+          <option value="storm">Storm / Roof Emergency</option>
+          <option value="mold">Mold Remediation</option>
+          <option value="other">Other (describe below)</option>
+        </select>
+
+        <label>License / Insurance Note (optional)</label>
+        <textarea id="licenseNote" placeholder="Example: Licensed where required; GL insurance active; 24/7 response available."></textarea>
+
+        <div class="line"></div>
+
+        <!-- Fee terms: SET THESE ONCE AND LEAVE THEM CONSISTENT -->
+        <div class="kv">
+          <div class="k">
+            <b>Referral Fee</b><br>
+            $150 per Job Start
+          </div>
+          <div class="k">
+            <b>Fee Due</b><br>
+            When a referred customer signs/authorizes work (job start)
+          </div>
+        </div>
 
         <p class="tiny">
-          If you are not licensed/insured where required, do not enroll.
+          <span class="ok">Plain language:</span> you only pay when you actually start a job from our referral.
+          <span class="warn">No job start = no fee.</span>
         </p>
-      </div>
 
-      <div class="box">
-        <h2 style="margin-top:0;">Quick Summary</h2>
-        <p class="tos">
-          By submitting your information and checking the acceptance box below, you agree to the
-          <strong>Contractor Participation Terms</strong> on this page (binding terms).
-        </p>
-        <div class="divider"></div>
-        <p class="tos">
-          <strong>Important:</strong> Omaha Restoration™ is not responsible for your work, damages, injuries, disputes,
-          collections, permits, code compliance, or customer satisfaction. Those obligations remain solely with you.
-        </p>
-        <p class="tiny">
-          Contact: <strong>murraysempirellc@gmail.com</strong>
-        </p>
-      </div>
+        <div class="checkline">
+          <input id="acceptTerms" type="checkbox" required />
+          <label for="acceptTerms" style="margin:0;" class="tos-text">
+            I have read and agree to the <strong>Contractor Participation Agreement</strong> below (including
+            <strong>indemnification</strong>, <strong>limitation of liability</strong>, and <strong>independent contractor</strong> terms).
+            I understand Omaha Restoration™ is referral-only and I am solely responsible for all work performed.
+          </label>
+        </div>
+
+      </form>
     </div>
 
-    <div class="box" style="margin-top:16px;">
-      <h2 style="margin-top:0;">Programs & Pricing</h2>
-      <p class="sub">Founder availability is limited. Categories may be closed at any time.</p>
+    <div class="box">
+      <h2>2. Finalize Enrollment</h2>
+      <p class="tos-text">
+        Clicking submit records your electronic acceptance and saves a confirmation on your device.
+        This page does not collect payment at enrollment. Referral fees apply only if a job start occurs from a platform referral.
+      </p>
 
-      <div class="grid">
-        <div class="card">
-          <div class="pill">Founder Slot</div>
-          <h3>Water Damage Routing</h3>
-          <p class="sub"><span class="price">$199 / month</span> — Category placement + routing</p>
-          <a class="btn" id="payWater" href="PASTE_STRIPE_LINK_WATER" target="_blank" rel="noopener">Pay $199/mo (Water)</a>
-          <div class="tiny">Do not purchase if your category is already filled.</div>
-        </div>
-
-        <div class="card">
-          <div class="pill">Founder Slot</div>
-          <h3>Fire Damage Routing</h3>
-          <p class="sub"><span class="price">$199 / month</span> — Category placement + routing</p>
-          <a class="btn" id="payFire" href="PASTE_STRIPE_LINK_FIRE" target="_blank" rel="noopener">Pay $199/mo (Fire)</a>
-          <div class="tiny">Do not purchase if your category is already filled.</div>
-        </div>
-
-        <div class="card">
-          <div class="pill">Founder Slot</div>
-          <h3>Storm / Emergency Routing</h3>
-          <p class="sub"><span class="price">$149 / month</span> — Category placement + routing</p>
-          <a class="btn" id="payStorm" href="PASTE_STRIPE_LINK_STORM" target="_blank" rel="noopener">Pay $149/mo (Storm)</a>
-          <div class="tiny">Do not purchase if your category is already filled.</div>
-        </div>
-      </div>
+      <button class="btn" id="submitBtn">Submit Enrollment</button>
 
       <details>
-        <summary>Cancellation / Refund Policy <span class="badge">Read</span></summary>
-        <div class="tos" style="margin-top:10px;">
-          <ul>
-            <li><strong>Subscription fees are for advertising/routing access</strong>, not for guaranteed jobs or lead volume.</li>
-            <li><strong>No refunds</strong> for prior billing periods once access is granted, due to the nature of advertising services.</li>
-            <li>You may request cancellation before the next billing date to avoid future charges.</li>
-          </ul>
+        <summary>View Contractor Participation Agreement (Binding)</summary>
+        <div class="tos-text" style="padding-top:10px;">
+
+          <p><strong>1) Parties; Purpose.</strong> Omaha Restoration™ (“Platform”) provides marketing/referral coordination and routing of homeowner requests. The enrolling contractor (“Contractor,” “you”) is an independent business that may receive homeowner requests from the Platform.</p>
+
+          <p><strong>2) Independent Contractor; No Agency.</strong> Contractor is not an employee, agent, partner, joint venturer, or legal representative of Platform. Contractor has no authority to bind Platform. Contractor controls all communications, estimates, pricing, contracts, work performance, and collections.</p>
+
+          <p><strong>3) No Guarantees.</strong> Platform does not guarantee leads, call volume, job awards, revenue, exclusivity, or outcomes. Homeowner requests may be intermittent, seasonal, or unavailable.</p>
+
+          <p><strong>4) Contractor Duties.</strong> Contractor is solely responsible for (a) licensing/registration where required; (b) insurance; (c) safety; (d) permits/code compliance; (e) subcontractors/employees; (f) quality of work and warranties; and (g) all customer disputes, refunds, and chargebacks related to Contractor’s services.</p>
+
+          <p><strong>5) Referral Fee; Job Start Definition.</strong> Contractor agrees to pay a referral fee of <strong>$150 per Job Start</strong> for each customer referral originating from the Platform. A “Job Start” means the referred customer signs, authorizes, or otherwise approves Contractor to begin paid work (including emergency authorization, work authorization, or signed estimate). <strong>No Job Start = no referral fee.</strong></p>
+
+          <p><strong>6) Payment Timing.</strong> Referral fees are due within <strong>5 business days</strong> of Job Start unless otherwise agreed in writing. Acceptable payment methods may include ACH, check, or other methods provided by Platform.</p>
+
+          <p><strong>7) No Responsibility for Contractor Services.</strong> Platform does not supervise, direct, or control Contractor’s work and is not responsible for workmanship, delays, safety, injuries, property damage, permits, code compliance, or customer satisfaction.</p>
+
+          <p><strong>8) Indemnification (Key Protection).</strong> Contractor agrees to defend, indemnify, and hold harmless Platform and its owners/affiliates from any and all claims, damages, liabilities, losses, costs, penalties, and expenses (including reasonable attorneys’ fees) arising out of or related to: (a) Contractor’s work/services; (b) injuries or property damage; (c) licensing/insurance issues; (d) customer disputes; (e) Contractor’s communications/marketing; or (f) Contractor’s breach of this Agreement.</p>
+
+          <p><strong>9) Limitation of Liability.</strong> To the maximum extent permitted by law, Platform will not be liable for indirect, incidental, special, consequential, punitive, or exemplary damages. Platform’s total liability for any claim is limited to the lesser of (a) fees paid by Contractor to Platform in the prior 30 days, or (b) <strong>$100</strong>.</p>
+
+          <p><strong>10) Termination.</strong> Either party may terminate participation at any time by written notice (email acceptable). Termination does not eliminate amounts due for Job Starts that occurred prior to termination.</p>
+
+          <p><strong>11) Governing Law; Venue.</strong> This Agreement is governed by Nebraska law. Any dispute must be brought in state or federal courts located in Nebraska, and the parties consent to jurisdiction there.</p>
+
+          <p><strong>12) Electronic Acceptance; Entire Agreement.</strong> Checking the acceptance box and submitting enrollment constitutes electronic acceptance of this Agreement. This Agreement is the entire understanding regarding participation and supersedes prior discussions.</p>
+
           <p class="tiny">
-            (This is a standard advertising policy. Adjust if your payment processor requires different language.)
+            Note: This contract language is general business drafting and not a substitute for a licensed attorney review of your specific facts.
           </p>
         </div>
       </details>
     </div>
 
-    <div class="box" style="margin-top:16px;">
-      <h2 style="margin-top:0;">Step 1: Contractor Enrollment (No Calls)</h2>
-      <p class="sub">Provide accurate information. This is used for routing and compliance documentation.</p>
-
-      <form id="contractorForm" autocomplete="on">
-        <label>Business Legal Name</label>
-        <input required id="bizName" placeholder="Example: ABC Restoration LLC" />
-
-        <label>Service Category</label>
-        <select required id="category">
-          <option value="" selected disabled>Select one…</option>
-          <option value="water">Water Damage</option>
-          <option value="fire">Fire Damage</option>
-          <option value="storm">Storm / Emergency</option>
-        </select>
-
-        <label>Primary Service Area (ZIPs or cities)</label>
-        <input required id="zips" placeholder="Example: 68102, 68104, 68114" />
-
-        <label>Routing Phone Number</label>
-        <input required id="phone" placeholder="Example: (402) 555-1234" />
-
-        <label>Billing / Compliance Email</label>
-        <input required id="email" type="email" placeholder="you@company.com" />
-
-        <label>License / Insurance Note (optional)</label>
-        <textarea id="licenseNote" placeholder="Example: Licensed in NE; GL policy active; available 24/7."></textarea>
-
-        <div class="checkline">
-          <input id="acceptTerms" type="checkbox" required />
-          <label for="acceptTerms" style="margin:0;">
-            I have read and agree to the <strong>Contractor Participation Terms</strong> below, including
-            <strong>indemnification</strong>, <strong>limitation of liability</strong>, and <strong>independent contractor</strong> terms.
-          </label>
-        </div>
-
-        <p class="tiny">
-          <span class="ok">Binding acceptance:</span> Checking the box and submitting/using this portal constitutes electronic acceptance.
-        </p>
-      </form>
-    </div>
-
-    <div class="box" style="margin-top:16px;">
-      <h2 style="margin-top:0;">Contractor Participation Terms (Binding)</h2>
-      <p class="sub">Last updated: January 2026. These terms govern your access and participation.</p>
-
-      <div class="tos">
-        <p><strong>1) Parties / Purpose.</strong> Omaha Restoration™ (“Platform”) provides advertising and call-routing/referral coordination only. Contractor (“You”) is an independent business seeking inbound homeowner requests. The Platform is not a general contractor and does not perform restoration services.</p>
-
-        <p><strong>2) Independent Contractor; No Agency.</strong> You are not an employee, agent, representative, partner, or joint venturer of the Platform. You have no authority to bind the Platform. You control all work, pricing, staffing, safety, permits, and job performance.</p>
-
-        <p><strong>3) No Guarantee.</strong> The Platform does not guarantee any number of leads, calls, requests, booked jobs, revenue, service area exclusivity, or outcomes. Requests may be intermittent, seasonal, or unavailable.</p>
-
-        <p><strong>4) Contractor Responsibilities.</strong> You are solely responsible for:
-          (a) licensing/registration where required; (b) insurance; (c) safety and compliance; (d) customer communications;
-          (e) estimates/quotes/contracts; (f) collections and payment disputes; (g) workmanship and warranties; and (h) all subcontractors/employees you use.
-        </p>
-
-        <p><strong>5) Consumer & Telecom Compliance.</strong> If you call or text any lead, you agree to comply with all applicable laws and carrier policies (including Do-Not-Call rules and consent requirements). You are solely responsible for any claims, complaints, or penalties arising from your outreach or communications.</p>
-
-        <p><strong>6) Indemnification (Major Protection).</strong> You agree to defend, indemnify, and hold harmless the Platform, its owners, and affiliates from and against any and all claims, demands, damages, losses, liabilities, fines, penalties, and expenses (including reasonable attorneys’ fees) arising out of or related to:
-          (a) your services/workmanship; (b) injuries, property damage, or losses; (c) licensing/insurance issues; (d) customer disputes; (e) your communications/marketing; or (f) your breach of these terms.
-        </p>
-
-        <p><strong>7) Limitation of Liability.</strong> To the maximum extent permitted by law, the Platform will not be liable for any indirect, incidental, special, consequential, punitive, or exemplary damages, or for lost profits/revenue, even if advised of the possibility. The Platform’s total liability for any claim is limited to the fees paid by you to the Platform in the prior 30 days (or $100, whichever is less).</p>
-
-        <p><strong>8) Payment Terms (If Subscription Applies).</strong> If you purchase a subscription, you are purchasing advertising/routing access only. Fees are not contingent on leads or jobs. Unless required by law, fees are non-refundable once access is granted. You may cancel future billing prior to renewal.</p>
-
-        <p><strong>9) Suspension / Removal.</strong> The Platform may suspend or remove routing to you at any time for suspected fraud, consumer complaints, safety issues, non-compliance, misrepresentation, or conduct that may harm consumers or the Platform.</p>
-
-        <p><strong>10) Confidentiality.</strong> Leads and routing details may be considered confidential. You agree not to scrape, resell, or misuse lead data. Use lead data only for responding to that consumer’s request.</p>
-
-        <p><strong>11) Dispute Resolution; Governing Law; Venue.</strong> These terms are governed by Nebraska law (without regard to conflict-of-law rules). Any dispute will be brought in the state or federal courts located in Nebraska, and each party consents to personal jurisdiction there.</p>
-
-        <p><strong>12) Entire Agreement; Updates.</strong> These terms constitute the entire agreement regarding this portal. The Platform may update terms periodically by posting updates here with a revised “Last updated” date. Continued use after updates constitutes acceptance.</p>
-
-        <p class="tiny">
-          Note: This page provides general contract language and is not a substitute for a licensed attorney reviewing your specific business.
-        </p>
-      </div>
-    </div>
-
     <footer>
-      Omaha Restoration™ provides advertising and call-routing services only and does not perform restoration work.
-      All restoration services are provided by independent contractors. Contractor is solely responsible for licensing, insurance,
-      permits, safety, and all job performance.
-      <br><br>
-      © Omaha Restoration™ — Advertising & Call Routing Platform
+      © Omaha Restoration™ — A Murray’s Empire™ Brand.<br>
+      Referral-Only Marketing Platform
     </footer>
 
   </div>
 
   <script>
-    // Save contractor info locally (optional convenience).
-    const fields = ["bizName","category","zips","phone","email","licenseNote","acceptTerms"];
-    function saveForm(){
-      const data = {};
-      fields.forEach(id => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        data[id] = (el.type === "checkbox") ? el.checked : (el.value || "").trim();
-      });
-      localStorage.setItem("omaha_restoration_contractor", JSON.stringify(data));
+    // Local record (no backend): saves enrollment details on the contractor device as proof-of-acceptance
+    const fields = ["bizName","contactName","email","phone","serviceArea","category","licenseNote","acceptTerms"];
+
+    function getVal(id){
+      const el = document.getElementById(id);
+      if (!el) return "";
+      if (el.type === "checkbox") return el.checked;
+      return (el.value || "").trim();
     }
+
+    function saveDraft(){
+      const data = {};
+      fields.forEach(id => data[id] = getVal(id));
+      data.savedAt = new Date().toISOString();
+      localStorage.setItem("omaha_restoration_enrollment", JSON.stringify(data));
+    }
+
     fields.forEach(id => {
       const el = document.getElementById(id);
       if (!el) return;
-      el.addEventListener("input", saveForm);
-      el.addEventListener("change", saveForm);
+      el.addEventListener("input", saveDraft);
+      el.addEventListener("change", saveDraft);
     });
 
-    // Restore if present
+    // Restore draft
     try{
-      const saved = JSON.parse(localStorage.getItem("omaha_restoration_contractor") || "{}");
+      const saved = JSON.parse(localStorage.getItem("omaha_restoration_enrollment") || "{}");
       fields.forEach(id => {
         const el = document.getElementById(id);
         if (!el || saved[id] === undefined) return;
@@ -359,25 +275,29 @@
       });
     }catch(e){}
 
-    // Block pay clicks unless required enrollment fields are completed AND terms accepted
-    function guardPay(e){
-      const saved = JSON.parse(localStorage.getItem("omaha_restoration_contractor") || "{}");
-      const missing = ["bizName","category","zips","phone","email"].filter(k => !saved[k]);
-      if (!saved.acceptTerms) {
-        e.preventDefault();
-        alert("Please check the acceptance box to agree to the Contractor Participation Terms.");
-        return false;
-      }
-      if (missing.length){
-        e.preventDefault();
-        alert("Please complete the enrollment form first (Business, Category, Service Area, Phone, Email).");
-        return false;
-      }
-      return true;
+    function missingRequired(){
+      const required = ["bizName","contactName","email","phone","serviceArea","category"];
+      const missing = required.filter(id => !getVal(id));
+      if (!getVal("acceptTerms")) missing.push("acceptTerms");
+      return missing;
     }
-    ["payWater","payFire","payStorm"].forEach(id => {
-      const btn = document.getElementById(id);
-      if (btn) btn.addEventListener("click", guardPay);
+
+    document.getElementById("submitBtn").addEventListener("click", function(){
+      const missing = missingRequired();
+      if (missing.length){
+        alert("Please complete all required fields and accept the agreement before submitting.");
+        return;
+      }
+
+      // Save final acceptance record locally (timestamped)
+      const record = {};
+      fields.forEach(id => record[id] = getVal(id));
+      record.acceptedAt = new Date().toISOString();
+      record.referralFee = "$150 per Job Start";
+      record.feeDue = "Within 5 business days of Job Start";
+      localStorage.setItem("omaha_restoration_enrollment_final", JSON.stringify(record));
+
+      alert("Enrollment submitted successfully. A confirmation has been saved on this device.");
     });
   </script>
 </body>
