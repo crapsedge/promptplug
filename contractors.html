@@ -3,70 +3,247 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contractor Access | Omaha Restoration</title>
+  <title>Contractor Access | Omaha Restoration™</title>
 
-  <!-- Prevent search engine indexing -->
+  <!-- Keep this page private-ish -->
   <meta name="robots" content="noindex, nofollow" />
 
   <style>
-    body { margin:0; padding:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:#0b0b0b; color:#fff; line-height:1.6; }
-    .container { max-width:900px; margin:auto; padding:60px 25px; }
-    h1 { font-size:34px; margin:0 0 10px; }
-    h2 { font-size:22px; margin:40px 0 10px; }
-    p, li { color:#cfcfcf; }
-    ul { padding-left:20px; }
-    .box { border:1px solid rgba(255,255,255,0.12); padding:20px; border-radius:10px; margin-top:25px; background:#111; }
-    .price { font-size:18px; margin:0 0 8px; }
-    .grid { display:grid; grid-template-columns:1fr; gap:14px; margin-top:14px; }
-    .card { border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:16px; background:#0f0f0f; }
-    .tag { display:inline-block; font-size:12px; padding:5px 10px; border-radius:999px; background:rgba(197,160,89,0.15); color:#dab777; border:1px solid rgba(197,160,89,0.35); margin-bottom:10px; }
-    .btn { display:inline-block; width:100%; text-align:center; margin-top:10px; padding:12px 16px; background:#c5a059; color:#000; text-decoration:none; font-weight:700; border-radius:8px; }
-    .btn:hover { background:#dab777; }
-    .muted { font-size:12px; color:#9a9a9a; margin-top:10px; }
-    input, select { width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.18); background:#0b0b0b; color:#fff; margin-top:8px; }
-    label { display:block; margin-top:12px; font-size:13px; color:#cfcfcf; }
-    .divider { height:1px; background:rgba(255,255,255,0.08); margin:18px 0; }
-    footer { margin-top:60px; font-size:12px; color:#888; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; }
+    :root{
+      --bg:#0b0b0b;
+      --panel:#101010;
+      --panel2:#0f0f0f;
+      --text:#ffffff;
+      --muted:#cfcfcf;
+      --muted2:#9a9a9a;
+      --border:rgba(255,255,255,0.12);
+      --gold:#c5a059;
+      --gold2:#dab777;
+      --danger:#ff5b5b;
+      --ok:#2ee59d;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; padding:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:var(--bg); color:var(--text);
+      line-height:1.6;
+    }
+    .container{ max-width:980px; margin:auto; padding:56px 20px; }
+    h1{ font-size:34px; margin:0 0 8px; letter-spacing:-0.4px; }
+    h2{ font-size:20px; margin:34px 0 10px; }
+    h3{ font-size:16px; margin:0 0 6px; }
+    p, li{ color:var(--muted); }
+    .sub{ color:var(--muted2); margin:6px 0 0; font-size:13px; }
+    .row{ display:grid; grid-template-columns:1.2fr 0.8fr; gap:16px; margin-top:20px; }
+    @media (max-width:880px){ .row{ grid-template-columns:1fr; } }
+    .box{
+      border:1px solid var(--border);
+      background:var(--panel);
+      padding:18px;
+      border-radius:12px;
+    }
+    .pill{
+      display:inline-block;
+      font-size:12px;
+      padding:5px 10px;
+      border-radius:999px;
+      background:rgba(197,160,89,0.14);
+      color:var(--gold2);
+      border:1px solid rgba(197,160,89,0.35);
+      margin-bottom:10px;
+    }
+    .divider{ height:1px; background:rgba(255,255,255,0.08); margin:16px 0; }
+    .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px; }
+    @media (max-width:880px){ .grid{ grid-template-columns:1fr; } }
+    .card{
+      border:1px solid var(--border);
+      background:var(--panel2);
+      border-radius:12px;
+      padding:16px;
+    }
+    .price{ font-weight:800; color:#fff; }
+    .btn{
+      display:inline-block;
+      width:100%;
+      text-align:center;
+      margin-top:10px;
+      padding:12px 16px;
+      background:var(--gold);
+      color:#000;
+      text-decoration:none;
+      font-weight:800;
+      border-radius:10px;
+      border:0;
+      cursor:pointer;
+    }
+    .btn:hover{ background:var(--gold2); }
+    .btn:disabled{ opacity:0.5; cursor:not-allowed; }
+    label{ display:block; margin-top:12px; font-size:13px; color:var(--muted); }
+    input, select, textarea{
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.18);
+      background:#0b0b0b;
+      color:#fff;
+      margin-top:8px;
+      outline:none;
+    }
+    textarea{ min-height:90px; resize:vertical; }
+    .tiny{ font-size:12px; color:var(--muted2); margin-top:10px; }
+    .warn{ color:var(--danger); font-weight:700; }
+    .ok{ color:var(--ok); font-weight:700; }
+    details{
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:12px;
+      padding:14px;
+      background:#0e0e0e;
+      margin-top:12px;
+    }
+    summary{ cursor:pointer; font-weight:800; }
+    footer{
+      margin-top:46px;
+      font-size:12px;
+      color:#888;
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:18px;
+    }
+    .badge{
+      font-size:12px;
+      color:#000;
+      background:#fff;
+      display:inline-block;
+      padding:4px 8px;
+      border-radius:8px;
+      font-weight:800;
+      margin-left:8px;
+    }
+    .tos{
+      font-size:12.5px;
+      color:var(--muted);
+    }
+    .tos strong{ color:#fff; }
+    .checkline{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin-top:12px;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.14);
+      background:#0e0e0e;
+    }
+    .checkline input{ width:auto; margin-top:3px; }
   </style>
 </head>
 
 <body>
   <div class="container">
 
-    <h1>Exclusive Emergency Routing<br>Contractors Only</h1>
-    <p>
-      Private access for restoration professionals.<br>
-      One company per category. No shared calls. Fixed monthly access.
+    <span class="pill">Contractors Only • Private Access</span>
+    <h1>Contractor Access Portal</h1>
+    <p class="sub">
+      Omaha Restoration™ provides <strong>advertising and call-routing</strong> services only.
+      We do <strong>not</strong> perform restoration work and we do <strong>not</strong> guarantee lead volume, job awards, or revenue.
     </p>
 
-    <div class="box">
-      <h2>What This Is</h2>
-      <p>
-        Omaha Restoration™ is a local <strong>advertising and call-routing platform</strong>
-        that connects emergency requests directly to one approved contractor per category.
-      </p>
-      <p>
-        This is not a lead marketplace. There is no bidding, no shared leads,
-        and no performance guarantees.
-      </p>
+    <div class="row">
+      <div class="box">
+        <h2 style="margin-top:0;">What This Is</h2>
+        <p>
+          This portal is for independent restoration professionals who want to receive inbound homeowner requests routed from
+          Omaha Restoration™. We are an <strong>independent marketing and routing platform</strong> (referral/advertising).
+        </p>
+        <ul>
+          <li><strong>No employment.</strong> No partnership. No joint venture. No agency relationship.</li>
+          <li><strong>No guarantees.</strong> Requests may be intermittent and seasonal.</li>
+          <li><strong>Contractor-controlled.</strong> You control pricing, scheduling, job acceptance, and workmanship.</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h3>Eligibility Requirements</h3>
+        <ul>
+          <li>Proper licensing/registration where required for your services.</li>
+          <li>Active insurance appropriate to your work (e.g., general liability; workers comp if applicable).</li>
+          <li>Compliance with all laws (including marketing/telecom rules if you call or text leads).</li>
+        </ul>
+
+        <p class="tiny">
+          If you are not licensed/insured where required, do not enroll.
+        </p>
+      </div>
+
+      <div class="box">
+        <h2 style="margin-top:0;">Quick Summary</h2>
+        <p class="tos">
+          By submitting your information and checking the acceptance box below, you agree to the
+          <strong>Contractor Participation Terms</strong> on this page (binding terms).
+        </p>
+        <div class="divider"></div>
+        <p class="tos">
+          <strong>Important:</strong> Omaha Restoration™ is not responsible for your work, damages, injuries, disputes,
+          collections, permits, code compliance, or customer satisfaction. Those obligations remain solely with you.
+        </p>
+        <p class="tiny">
+          Contact: <strong>murraysempirellc@gmail.com</strong>
+        </p>
+      </div>
     </div>
 
-    <div class="box">
-      <h2>Founder Access – Limited Availability</h2>
-      <p class="price"><strong>Water Damage Routing</strong> — $199 / month</p>
-      <p class="price"><strong>Fire Damage Routing</strong> — $199 / month</p>
-      <p class="price"><strong>Storm / Emergency Routing</strong> — $149 / month</p>
-      <p>Only one company per category. Once a slot is filled, it is closed.</p>
+    <div class="box" style="margin-top:16px;">
+      <h2 style="margin-top:0;">Programs & Pricing</h2>
+      <p class="sub">Founder availability is limited. Categories may be closed at any time.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="pill">Founder Slot</div>
+          <h3>Water Damage Routing</h3>
+          <p class="sub"><span class="price">$199 / month</span> — Category placement + routing</p>
+          <a class="btn" id="payWater" href="PASTE_STRIPE_LINK_WATER" target="_blank" rel="noopener">Pay $199/mo (Water)</a>
+          <div class="tiny">Do not purchase if your category is already filled.</div>
+        </div>
+
+        <div class="card">
+          <div class="pill">Founder Slot</div>
+          <h3>Fire Damage Routing</h3>
+          <p class="sub"><span class="price">$199 / month</span> — Category placement + routing</p>
+          <a class="btn" id="payFire" href="PASTE_STRIPE_LINK_FIRE" target="_blank" rel="noopener">Pay $199/mo (Fire)</a>
+          <div class="tiny">Do not purchase if your category is already filled.</div>
+        </div>
+
+        <div class="card">
+          <div class="pill">Founder Slot</div>
+          <h3>Storm / Emergency Routing</h3>
+          <p class="sub"><span class="price">$149 / month</span> — Category placement + routing</p>
+          <a class="btn" id="payStorm" href="PASTE_STRIPE_LINK_STORM" target="_blank" rel="noopener">Pay $149/mo (Storm)</a>
+          <div class="tiny">Do not purchase if your category is already filled.</div>
+        </div>
+      </div>
+
+      <details>
+        <summary>Cancellation / Refund Policy <span class="badge">Read</span></summary>
+        <div class="tos" style="margin-top:10px;">
+          <ul>
+            <li><strong>Subscription fees are for advertising/routing access</strong>, not for guaranteed jobs or lead volume.</li>
+            <li><strong>No refunds</strong> for prior billing periods once access is granted, due to the nature of advertising services.</li>
+            <li>You may request cancellation before the next billing date to avoid future charges.</li>
+          </ul>
+          <p class="tiny">
+            (This is a standard advertising policy. Adjust if your payment processor requires different language.)
+          </p>
+        </div>
+      </details>
     </div>
 
-    <div class="box">
-      <h2>Step 1: Contractor Info (No Calls)</h2>
-      <p>Fill this out so routing can be activated after payment.</p>
+    <div class="box" style="margin-top:16px;">
+      <h2 style="margin-top:0;">Step 1: Contractor Enrollment (No Calls)</h2>
+      <p class="sub">Provide accurate information. This is used for routing and compliance documentation.</p>
 
-      <!-- This stores info locally and shows it on the success page instructions. No emails required. -->
       <form id="contractorForm" autocomplete="on">
-        <label>Business Name</label>
-        <input required id="bizName" placeholder="Example: ABC Restoration" />
+        <label>Business Legal Name</label>
+        <input required id="bizName" placeholder="Example: ABC Restoration LLC" />
 
         <label>Service Category</label>
         <select required id="category">
@@ -76,75 +253,76 @@
           <option value="storm">Storm / Emergency</option>
         </select>
 
-        <label>Service ZIP Codes (comma separated)</label>
+        <label>Primary Service Area (ZIPs or cities)</label>
         <input required id="zips" placeholder="Example: 68102, 68104, 68114" />
 
         <label>Routing Phone Number</label>
         <input required id="phone" placeholder="Example: (402) 555-1234" />
 
-        <label>Billing Email</label>
+        <label>Billing / Compliance Email</label>
         <input required id="email" type="email" placeholder="you@company.com" />
 
-        <div class="divider"></div>
+        <label>License / Insurance Note (optional)</label>
+        <textarea id="licenseNote" placeholder="Example: Licensed in NE; GL policy active; available 24/7."></textarea>
 
-        <p class="muted">
-          By continuing, you agree this is <strong>advertising/call-routing access only</strong>.
-          No guaranteed leads, volume, or outcomes.
+        <div class="checkline">
+          <input id="acceptTerms" type="checkbox" required />
+          <label for="acceptTerms" style="margin:0;">
+            I have read and agree to the <strong>Contractor Participation Terms</strong> below, including
+            <strong>indemnification</strong>, <strong>limitation of liability</strong>, and <strong>independent contractor</strong> terms.
+          </label>
+        </div>
+
+        <p class="tiny">
+          <span class="ok">Binding acceptance:</span> Checking the box and submitting/using this portal constitutes electronic acceptance.
         </p>
       </form>
     </div>
 
-    <div class="box">
-      <h2>Step 2: Pay to Activate (Choose Your Category)</h2>
-      <p>Click the matching Pay button. After checkout, you’ll land on the activation page.</p>
+    <div class="box" style="margin-top:16px;">
+      <h2 style="margin-top:0;">Contractor Participation Terms (Binding)</h2>
+      <p class="sub">Last updated: January 2026. These terms govern your access and participation.</p>
 
-      <div class="grid">
+      <div class="tos">
+        <p><strong>1) Parties / Purpose.</strong> Omaha Restoration™ (“Platform”) provides advertising and call-routing/referral coordination only. Contractor (“You”) is an independent business seeking inbound homeowner requests. The Platform is not a general contractor and does not perform restoration services.</p>
 
-        <div class="card">
-          <div class="tag">Founder Slot</div>
-          <h3 style="margin:0 0 6px;">Water Damage Routing</h3>
-          <p style="margin:0;">$199 / month — Exclusive category placement</p>
+        <p><strong>2) Independent Contractor; No Agency.</strong> You are not an employee, agent, representative, partner, or joint venturer of the Platform. You have no authority to bind the Platform. You control all work, pricing, staffing, safety, permits, and job performance.</p>
 
-          <!-- PASTE YOUR STRIPE PAYMENT LINK HERE -->
-          <a class="btn" id="payWater" href="PASTE_STRIPE_LINK_WATER" target="_blank" rel="noopener">Pay $199/mo (Water)</a>
+        <p><strong>3) No Guarantee.</strong> The Platform does not guarantee any number of leads, calls, requests, booked jobs, revenue, service area exclusivity, or outcomes. Requests may be intermittent, seasonal, or unavailable.</p>
 
-          <div class="muted">If the slot is already filled, do not purchase.</div>
-        </div>
+        <p><strong>4) Contractor Responsibilities.</strong> You are solely responsible for:
+          (a) licensing/registration where required; (b) insurance; (c) safety and compliance; (d) customer communications;
+          (e) estimates/quotes/contracts; (f) collections and payment disputes; (g) workmanship and warranties; and (h) all subcontractors/employees you use.
+        </p>
 
-        <div class="card">
-          <div class="tag">Founder Slot</div>
-          <h3 style="margin:0 0 6px;">Fire Damage Routing</h3>
-          <p style="margin:0;">$199 / month — Exclusive category placement</p>
+        <p><strong>5) Consumer & Telecom Compliance.</strong> If you call or text any lead, you agree to comply with all applicable laws and carrier policies (including Do-Not-Call rules and consent requirements). You are solely responsible for any claims, complaints, or penalties arising from your outreach or communications.</p>
 
-          <!-- PASTE YOUR STRIPE PAYMENT LINK HERE -->
-          <a class="btn" id="payFire" href="PASTE_STRIPE_LINK_FIRE" target="_blank" rel="noopener">Pay $199/mo (Fire)</a>
+        <p><strong>6) Indemnification (Major Protection).</strong> You agree to defend, indemnify, and hold harmless the Platform, its owners, and affiliates from and against any and all claims, demands, damages, losses, liabilities, fines, penalties, and expenses (including reasonable attorneys’ fees) arising out of or related to:
+          (a) your services/workmanship; (b) injuries, property damage, or losses; (c) licensing/insurance issues; (d) customer disputes; (e) your communications/marketing; or (f) your breach of these terms.
+        </p>
 
-          <div class="muted">If the slot is already filled, do not purchase.</div>
-        </div>
+        <p><strong>7) Limitation of Liability.</strong> To the maximum extent permitted by law, the Platform will not be liable for any indirect, incidental, special, consequential, punitive, or exemplary damages, or for lost profits/revenue, even if advised of the possibility. The Platform’s total liability for any claim is limited to the fees paid by you to the Platform in the prior 30 days (or $100, whichever is less).</p>
 
-        <div class="card">
-          <div class="tag">Founder Slot</div>
-          <h3 style="margin:0 0 6px;">Storm / Emergency Routing</h3>
-          <p style="margin:0;">$149 / month — Exclusive category placement</p>
+        <p><strong>8) Payment Terms (If Subscription Applies).</strong> If you purchase a subscription, you are purchasing advertising/routing access only. Fees are not contingent on leads or jobs. Unless required by law, fees are non-refundable once access is granted. You may cancel future billing prior to renewal.</p>
 
-          <!-- PASTE YOUR STRIPE PAYMENT LINK HERE -->
-          <a class="btn" id="payStorm" href="PASTE_STRIPE_LINK_STORM" target="_blank" rel="noopener">Pay $149/mo (Storm)</a>
+        <p><strong>9) Suspension / Removal.</strong> The Platform may suspend or remove routing to you at any time for suspected fraud, consumer complaints, safety issues, non-compliance, misrepresentation, or conduct that may harm consumers or the Platform.</p>
 
-          <div class="muted">If the slot is already filled, do not purchase.</div>
-        </div>
+        <p><strong>10) Confidentiality.</strong> Leads and routing details may be considered confidential. You agree not to scrape, resell, or misuse lead data. Use lead data only for responding to that consumer’s request.</p>
 
+        <p><strong>11) Dispute Resolution; Governing Law; Venue.</strong> These terms are governed by Nebraska law (without regard to conflict-of-law rules). Any dispute will be brought in the state or federal courts located in Nebraska, and each party consents to personal jurisdiction there.</p>
+
+        <p><strong>12) Entire Agreement; Updates.</strong> These terms constitute the entire agreement regarding this portal. The Platform may update terms periodically by posting updates here with a revised “Last updated” date. Continued use after updates constitutes acceptance.</p>
+
+        <p class="tiny">
+          Note: This page provides general contract language and is not a substitute for a licensed attorney reviewing your specific business.
+        </p>
       </div>
-
-      <p class="muted" style="margin-top:14px;">
-        After payment: return to this page and click your category again if needed.
-        Activation instructions are on the Success page.
-      </p>
     </div>
 
     <footer>
-      Omaha Restoration™ provides advertising and call-routing services only.
-      We do not perform restoration work, guarantee results, or control contractor services.
-      All services are provided by independent businesses.
+      Omaha Restoration™ provides advertising and call-routing services only and does not perform restoration work.
+      All restoration services are provided by independent contractors. Contractor is solely responsible for licensing, insurance,
+      permits, safety, and all job performance.
       <br><br>
       © Omaha Restoration™ — Advertising & Call Routing Platform
     </footer>
@@ -152,11 +330,15 @@
   </div>
 
   <script>
-    // Save contractor info locally so they can reference it after payment without emailing you.
-    const fields = ["bizName","category","zips","phone","email"];
-    function saveForm() {
+    // Save contractor info locally (optional convenience).
+    const fields = ["bizName","category","zips","phone","email","licenseNote","acceptTerms"];
+    function saveForm(){
       const data = {};
-      fields.forEach(id => data[id] = (document.getElementById(id)?.value || "").trim());
+      fields.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        data[id] = (el.type === "checkbox") ? el.checked : (el.value || "").trim();
+      });
       localStorage.setItem("omaha_restoration_contractor", JSON.stringify(data));
     }
     fields.forEach(id => {
@@ -166,13 +348,29 @@
       el.addEventListener("change", saveForm);
     });
 
-    // Warn if they try to pay without filling the form
-    function guardPay(e) {
-      const data = JSON.parse(localStorage.getItem("omaha_restoration_contractor") || "{}");
-      const missing = ["bizName","category","zips","phone","email"].filter(k => !data[k]);
-      if (missing.length) {
+    // Restore if present
+    try{
+      const saved = JSON.parse(localStorage.getItem("omaha_restoration_contractor") || "{}");
+      fields.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el || saved[id] === undefined) return;
+        if (el.type === "checkbox") el.checked = !!saved[id];
+        else el.value = saved[id];
+      });
+    }catch(e){}
+
+    // Block pay clicks unless required enrollment fields are completed AND terms accepted
+    function guardPay(e){
+      const saved = JSON.parse(localStorage.getItem("omaha_restoration_contractor") || "{}");
+      const missing = ["bizName","category","zips","phone","email"].filter(k => !saved[k]);
+      if (!saved.acceptTerms) {
         e.preventDefault();
-        alert("Please complete the contractor info form first (Business, Category, ZIPs, Phone, Email).");
+        alert("Please check the acceptance box to agree to the Contractor Participation Terms.");
+        return false;
+      }
+      if (missing.length){
+        e.preventDefault();
+        alert("Please complete the enrollment form first (Business, Category, Service Area, Phone, Email).");
         return false;
       }
       return true;
