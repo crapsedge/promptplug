@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecting You | Omaha Restoration™</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <style>
+    :root{
+      --black:#000;
+      --dark:#111;
+      --white:#fff;
+      --gold:#c5a059;
+      --muted:#8c8c8c;
+      --border:rgba(255,255,255,0.08);
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:-apple-system,"SF Pro Display",sans-serif;
+      background:var(--black);
+      color:var(--white);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      padding:24px;
+      text-align:center;
+    }
+    .card{
+      max-width:520px;
+      width:100%;
+      background:var(--dark);
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:48px 28px;
+      box-shadow:0 40px 100px rgba(0,0,0,0.8);
+    }
+    h1{
+      font-size:32px;
+      margin:0 0 12px;
+      letter-spacing:-0.03em;
+    }
+    p{
+      font-size:16px;
+      color:var(--muted);
+      line-height:1.5;
+      margin:0 0 26px;
+    }
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--gold);
+      margin-bottom:26px;
+    }
+    .dot{
+      width:8px;
+      height:8px;
+      background:var(--gold);
+      border-radius:50%;
+      animation:pulse 1.5s infinite;
+    }
+    @keyframes pulse{
+      0%{opacity:1}
+      50%{opacity:.4}
+      100%{opacity:1}
+    }
+    .notice{
+      font-size:13px;
+      color:#777;
+      margin-top:18px;
+      line-height:1.4;
+    }
+    .footer{
+      margin-top:28px;
+      font-size:11px;
+      color:#666;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="status">
+      <span class="dot"></span>
+      CONNECTION IN PROGRESS
+    </div>
+
+    <h1>We’re Connecting You</h1>
+
+    <p>
+      Omaha Restoration™ is routing your request to a local restoration partner.
+      If this is an emergency, please contact local emergency services immediately.
+    </p>
+
+    <p class="notice">
+      A restoration professional will reach out shortly once routing is complete.
+    </p>
+
+    <div class="footer">
+      © Omaha Restoration™ · Operated by Murrays Empire LLC
+    </div>
+  </div>
+</body>
+</html>
