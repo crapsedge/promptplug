@@ -50,7 +50,7 @@
       <input type="hidden" name="_subject" value="New Contractor Enrollment: Omaha Restoration">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://omaharestoration.store">
+      <input type="hidden" name="_next" value="https://omaharestoration.store/enrollment-submitted.html">
       <input type="hidden" name="Accepted_At_UTC" id="acceptedAt">
 
       <div class="box">
@@ -103,6 +103,7 @@
   </div>
 
   <script>
+    // Automatically adds the time they signed the form
     document.getElementById("acceptedAt").value = new Date().toISOString();
   </script>
 </body>
