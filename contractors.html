@@ -51,6 +51,7 @@
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="https://omaharestoration.store/enrollment-submitted.html">
+      <input type="hidden" name="_autoresponse" value="Thanks for enrolling with Omaha Restoration™. We received your submission and will review it shortly. You’ll hear back from us once enrollment is confirmed.">
       <input type="hidden" name="Accepted_At_UTC" id="acceptedAt">
 
       <div class="box">
@@ -65,7 +66,7 @@
         <input type="email" name="email" required placeholder="you@company.com">
 
         <label>Phone Number</label>
-        <input type="text" name="Phone" required placeholder="(402) 555-0000">
+        <input type="text" name="Phone" required placeholder="(402) 819-8803">
 
         <label>Service Area (Cities/ZIPs)</label>
         <input type="text" name="Service_Area" required placeholder="Omaha, Bellevue, Papillion">
@@ -103,7 +104,6 @@
   </div>
 
   <script>
-    // Automatically adds the time they signed the form
     document.getElementById("acceptedAt").value = new Date().toISOString();
   </script>
 </body>
