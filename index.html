@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMPN1D7CG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LHMPN1D7CG');
+  </script>
+
   <meta charset="UTF-8">
 
   <meta name="google-site-verification" content="8gzPkK3kFelsW_NmjARyFZ4OM4gfVtsP246G4Fgc5SI" />
@@ -300,12 +308,38 @@
     const check = document.getElementById('legal-check');
     const btn = document.getElementById('referralBtn');
 
+    // Google Tag tracking function
+    function trackEvent(name, params = {}) {
+      if (typeof gtag === "function") {
+        gtag("event", name, params);
+      }
+    }
+
     function sync() {
-      if (check.checked) btn.classList.add('active');
-      else btn.classList.remove('active');
+      if (check.checked) {
+        btn.classList.add('active');
+        // Track disclosure acceptance (checkbox on)
+        trackEvent("disclosure_accepted", {
+          page_location: window.location.href
+        });
+      } else {
+        btn.classList.remove('active');
+      }
     }
 
     check.addEventListener('change', sync);
+
+    // Track button click (routing intent)
+    btn.addEventListener("click", function () {
+      // Only track if it’s active (checkbox checked)
+      if (btn.classList.contains("active")) {
+        trackEvent("get_connected_click", {
+          page_location: window.location.href,
+          link_url: btn.getAttribute("href")
+        });
+      }
+    });
+
     sync();
   </script>
 
