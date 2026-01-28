@@ -10,11 +10,10 @@
   </script>
 
   <meta charset="UTF-8">
-
   <meta name="google-site-verification" content="8gzPkK3kFelsW_NmjARyFZ4OM4gfVtsP246G4Fgc5SI" />
   <meta name="fo-verify" content="7644c88f-0d5e-46da-b90b-378e62aa4736" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
   <title>Omaha Restoration™ | Automated Referral Network</title>
 
   <style>
@@ -22,7 +21,7 @@
       --black: #000000; 
       --dark-grey: #111111;
       --white: #ffffff; 
-      --empire-gold: #c5a059; 
+      --brand-red: #b31919; 
       --safe-green: #28a745;
       --text-grey: #86868b;
       --border: rgba(255,255,255,0.08); 
@@ -37,6 +36,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Streamlined Nav - Text only for a high-end feel */
     .nav { 
       padding: 20px; 
       text-align: center; 
@@ -48,26 +48,6 @@
       z-index: 100; 
     }
 
-    .nav-logo { 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      gap: 12px; 
-    }
-
-    .mini-shield { 
-      width: 22px; 
-      height: 26px; 
-      background: var(--white); 
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      color: var(--black); 
-      font-size: 8px; 
-      font-weight: 900; 
-    }
-
     .brand-name { 
       font-size: 13px; 
       font-weight: 800; 
@@ -76,14 +56,22 @@
     }
 
     .hero { 
-      padding: 80px 24px 40px; 
+      padding: 60px 24px 40px; 
       text-align: center; 
       max-width: 800px; 
       margin: 0 auto; 
     }
 
+    /* High-impact logo placement */
+    .main-logo {
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 20px rgba(255,255,255,0.1));
+    }
+
     .hero h1 { 
-      font-size: clamp(38px, 8vw, 58px); 
+      font-size: clamp(32px, 7vw, 52px); 
       font-weight: 800; 
       letter-spacing: -0.04em; 
       margin-bottom: 16px; 
@@ -153,7 +141,7 @@
       width: 20px;
       height: 20px;
       margin-top: 2px;
-      accent-color: var(--empire-gold);
+      accent-color: var(--brand-red);
       cursor: pointer;
     }
 
@@ -193,7 +181,7 @@
     }
 
     .referral-btn.active:hover {
-      background: var(--empire-gold);
+      background: var(--brand-red);
       color: white;
       transform: scale(1.03);
     }
@@ -234,13 +222,12 @@
 <body>
 
   <div class="nav">
-    <div class="nav-logo">
-      <div class="mini-shield">OR</div>
-      <div class="brand-name">Omaha Restoration</div>
-    </div>
+    <div class="brand-name">Omaha Restoration</div>
   </div>
 
   <section class="hero">
+    <img src="omaha-restoration-logo.png" alt="Omaha Restoration" class="main-logo">
+    
     <h1>Automated Restoration Routing</h1>
     <p>
       This website routes visitors to third-party restoration resources.
@@ -308,20 +295,12 @@
     const check = document.getElementById('legal-check');
     const btn = document.getElementById('referralBtn');
 
-    // Google Tag tracking function
-    function trackEvent(name, params = {}) {
-      if (typeof gtag === "function") {
-        gtag("event", name, params);
-      }
-    }
-
     function sync() {
       if (check.checked) {
         btn.classList.add('active');
-        // Track disclosure acceptance (checkbox on)
-        trackEvent("disclosure_accepted", {
-          page_location: window.location.href
-        });
+        if (typeof gtag === "function") {
+          gtag("event", "disclosure_accepted", { page_location: window.location.href });
+        }
       } else {
         btn.classList.remove('active');
       }
@@ -329,11 +308,9 @@
 
     check.addEventListener('change', sync);
 
-    // Track button click (routing intent)
     btn.addEventListener("click", function () {
-      // Only track if it’s active (checkbox checked)
-      if (btn.classList.contains("active")) {
-        trackEvent("get_connected_click", {
+      if (btn.classList.contains("active") && typeof gtag === "function") {
+        gtag("event", "get_connected_click", {
           page_location: window.location.href,
           link_url: btn.getAttribute("href")
         });
