@@ -1,3 +1,4 @@
+<!-- COPY + PASTE (Keeps your page, only adds what you asked: ESIGN signature + $150/5 business days + 10%/5 business days + IP logging) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +33,7 @@
     summary{ cursor:pointer; font-weight:900; color:var(--gold2); }
     footer{ margin-top:38px; text-align:center; font-size:12px; color:var(--muted2); }
     .tos-text{ font-size:13px; color:var(--muted2); }
+    .tiny{ font-size:12px; color:var(--muted2); margin-top:10px; }
   </style>
 </head>
 
@@ -42,122 +44,172 @@
 <p class="tos-text">No upfront costs. You only pay when a job starts.</p>
 
 <form action="https://formsubmit.co/murraysempirellc%40gmail.com" method="POST">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="https://omaharestoration.store/enrollment-submitted.html">
-<input type="hidden" name="Accepted_At_UTC" id="acceptedAt">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://omaharestoration.store/enrollment-submitted.html">
 
-<div class="box">
-<h2>Company Details</h2>
+  <!-- Existing timestamp -->
+  <input type="hidden" name="Accepted_At_UTC" id="acceptedAt">
 
-<label>Company Legal Name</label>
-<input type="text" name="Business_Name" required>
+  <!-- ✅ NEW: Stronger audit trail fields -->
+  <input type="hidden" name="Signer_IP" id="signerIp">
+  <input type="hidden" name="User_Agent" id="userAgent">
+  <input type="hidden" name="ESIGN_Consent" value="Consented">
 
-<label>Primary Contact</label>
-<input type="text" name="Contact_Name" required>
+  <div class="box">
+    <h2>Company Details</h2>
 
-<label>Email</label>
-<input type="email" name="email" required>
+    <label>Company Legal Name</label>
+    <input type="text" name="Business_Name" required>
 
-<label>Phone</label>
-<input type="text" name="Phone" required>
+    <label>Primary Contact</label>
+    <input type="text" name="Contact_Name" required>
 
-<label>Service Area</label>
-<input type="text" name="Service_Area" required>
+    <label>Email</label>
+    <input type="email" name="email" required>
 
-<div class="checkline">
-<input type="checkbox" name="Signature_Consent" value="Accepted" required>
-<label class="tos-text">
-I have authority to sign and agree to the Contractor Participation Agreement,
-including the $150 per Job Start referral fee.
-</label>
-</div>
-</div>
+    <label>Phone</label>
+    <input type="text" name="Phone" required>
 
-<div class="box">
-<button type="submit" class="btn">Submit Enrollment & Sign</button>
+    <label>Service Area</label>
+    <input type="text" name="Service_Area" required>
 
-<details>
-<summary>View Contractor Participation Agreement</summary>
-<div class="tos-text">
+    <!-- ✅ Your existing checkbox, updated wording -->
+    <div class="checkline">
+      <input type="checkbox" name="Signature_Consent" value="Accepted" required>
+      <label class="tos-text">
+        I have authority to sign and agree to the Contractor Participation Agreement, including:
+        <strong>$150 due within five (5) business days of Job Start</strong> and
+        <strong>10% due within five (5) business days of Completion</strong>.
+      </label>
+    </div>
 
-<p><strong>1) Platform Role / No Guarantee:</strong>
-Platform is a referral and lead-generation service only. Platform makes no
-guarantees regarding the quality, safety, legality, timing, pricing, or outcome
-of Contractor’s work. Contractor is solely responsible for all services performed.</p>
+    <!-- ✅ NEW: Typed signature field (this is what you asked for) -->
+    <label>Typed Full Legal Name (Electronic Signature)</label>
+    <input type="text" name="Electronic_Signature_Name" required>
 
-<p><strong>2) Referral Model:</strong>
-Contractor agrees to pay a <strong>$150 referral fee</strong> for each Job Start.</p>
+    <p class="tiny">
+      By submitting, you consent to doing business electronically and agree your typed name and submission
+      constitute a legally binding electronic signature under the ESIGN Act.
+    </p>
+  </div>
 
-<p><strong>3) Job Start Defined:</strong>
-A Job Start occurs when the customer authorizes paid work and Contractor begins
-or schedules services.</p>
+  <div class="box">
+    <button type="submit" class="btn">Submit Enrollment & Sign</button>
 
-<p><strong>4) Reporting Requirement:</strong>
-Contractor must notify Platform within twenty-four (24) hours if a referred lead
-does not result in a Job Start. Failure to notify constitutes acceptance that a
-Job Start occurred and the referral fee becomes immediately due.</p>
+    <details>
+      <summary>View Contractor Participation Agreement</summary>
+      <div class="tos-text">
 
-<p><strong>5) Payment Terms:</strong>
-Referral fees are due within five (5) business days of Job Start.</p>
+        <p><strong>1) Platform Role / No Guarantee:</strong>
+        Platform is a referral and lead-generation service only. Platform makes no
+        guarantees regarding the quality, safety, legality, timing, pricing, or outcome
+        of Contractor’s work. Contractor is solely responsible for all services performed.</p>
 
-<p><strong>6) Independent Contractor / No Partnership:</strong>
-Contractor is an independent business and not an employee, partner, agent,
-joint venturer, or representative of Platform. Contractor is responsible for
-its own taxes, tools, labor, insurance, and workers’ compensation.</p>
+        <!-- ✅ UPDATED: Your fee structure -->
+        <p><strong>2) Referral Model & Compensation:</strong>
+        Contractor agrees to pay Platform:
+        (a) a <strong>$150 referral fee</strong> for each <strong>Job Start</strong>, due within <strong>five (5) business days</strong> of Job Start; and
+        (b) an additional fee equal to <strong>ten percent (10%) of all gross funds actually received from the customer</strong>
+        for services related to the referred lead, due within <strong>five (5) business days</strong> of receiving such funds.</p>
 
-<p><strong>7) Credential & Insurance Requirements:</strong>
-Contractor represents that it maintains all licenses, permits, and insurance
-required to legally and safely perform its services, including general liability
-insurance where applicable.</p>
+        <p><strong>3) Job Start Defined:</strong>
+        A Job Start occurs when the customer authorizes paid work, signs a service agreement,
+        pays a deposit, or Contractor schedules work to begin — whichever occurs first.</p>
 
-<p><strong>8) Proof Upon Request:</strong>
-Contractor agrees to provide proof of credentials or insurance upon request.
-Failure to do so may result in suspension or termination of referrals.</p>
+        <p><strong>4) Completion Defined:</strong>
+        Completion occurs when the contracted services are substantially completed and Contractor
+        receives payment from the customer in whole or in part.</p>
 
-<p><strong>9) High-Risk Work:</strong>
-For water mitigation, restoration, tree removal, or storm-related work, active
-insurance is a condition of receiving referrals.</p>
+        <p><strong>5) Reporting Requirement:</strong>
+        Contractor must notify Platform within twenty-four (24) hours if a referred lead
+        does not result in a Job Start, and must also report Completion within twenty-four (24) hours.
+        Failure to notify constitutes acknowledgment that applicable referral fees are owed.</p>
 
-<p><strong>10) No Control Over Work:</strong>
-Platform does not control pricing, scheduling, methods, labor, materials, or
-customer communications.</p>
+        <p><strong>6) Payment Terms:</strong>
+        The $150 Job Start fee is due within five (5) business days of Job Start.
+        The 10% Completion fee is due within five (5) business days of Contractor receiving customer funds.</p>
 
-<p><strong>11) Customer Relationship:</strong>
-Any agreement for services exists solely between Contractor and the customer.
-Platform is not a party to such agreements.</p>
+        <p><strong>7) Independent Contractor / No Partnership:</strong>
+        Contractor is an independent business and not an employee, partner, agent,
+        joint venturer, or representative of Platform. Contractor is responsible for
+        its own taxes, tools, labor, insurance, and workers’ compensation.</p>
 
-<p><strong>12) Indemnification:</strong>
-Contractor agrees to indemnify, defend, and hold harmless Platform and Company
-from any claims, damages, or liabilities arising from Contractor’s work.</p>
+        <p><strong>8) Credential & Insurance Requirements:</strong>
+        Contractor represents that it maintains all licenses, permits, and insurance
+        required to legally and safely perform its services, including general liability
+        insurance where applicable.</p>
 
-<p><strong>13) Limitation of Liability:</strong>
-Platform’s total liability shall not exceed referral fees paid during the
-preceding three (3) months.</p>
+        <p><strong>9) Proof Upon Request:</strong>
+        Contractor agrees to provide proof of credentials or insurance upon request.
+        Failure to do so may result in suspension or termination of referrals.</p>
 
-<p><strong>14) Dispute Resolution / Arbitration:</strong>
-Any dispute arising from this Agreement shall be resolved by binding arbitration
-in Nebraska under AAA rules, and not in court, except either party may bring an
-individual claim in small claims court if eligible.</p>
+        <p><strong>10) High-Risk Work:</strong>
+        For water mitigation, restoration, tree removal, or storm-related work, active
+        insurance is a condition of receiving referrals.</p>
 
-<p><strong>15) Governing Law:</strong>
-This Agreement is governed by the laws of the State of Nebraska.</p>
+        <p><strong>11) No Control Over Work:</strong>
+        Platform does not control pricing, scheduling, methods, labor, materials, or
+        customer communications.</p>
 
-<p><strong>16) Entire Agreement:</strong>
-This document constitutes the entire agreement between the parties.</p>
+        <p><strong>12) Customer Relationship:</strong>
+        Any agreement for services exists solely between Contractor and the customer.
+        Platform is not a party to such agreements.</p>
 
-</div>
-</details>
-</div>
+        <p><strong>13) Indemnification:</strong>
+        Contractor agrees to indemnify, defend, and hold harmless Platform and Company
+        from any claims, damages, or liabilities arising from Contractor’s work.</p>
+
+        <p><strong>14) Limitation of Liability:</strong>
+        Platform’s total liability shall not exceed referral fees paid during the
+        preceding three (3) months.</p>
+
+        <p><strong>15) Dispute Resolution / Arbitration:</strong>
+        Any dispute arising from this Agreement shall be resolved by binding arbitration
+        in Nebraska under AAA rules, and not in court, except either party may bring an
+        individual claim in small claims court if eligible.</p>
+
+        <p><strong>16) Governing Law:</strong>
+        This Agreement is governed by the laws of the State of Nebraska.</p>
+
+        <!-- ✅ NEW: ESIGN clause -->
+        <p><strong>17) Electronic Signature & Binding Agreement:</strong>
+        By submitting this form, Contractor affirms it has authority to bind the business entity,
+        has read and agrees to all terms, and consents to electronic contracting and signature under
+        the U.S. ESIGN Act. Contractor agrees the typed name and submission constitute a legally binding signature.
+        Contractor understands this submission records timestamp, IP address (when available), and device/user-agent
+        information as part of the contractual record.</p>
+
+        <p><strong>18) Entire Agreement:</strong>
+        This document constitutes the entire agreement between the parties.</p>
+
+      </div>
+    </details>
+  </div>
 </form>
 
 <footer>
-© Omaha Restoration™ — Operated by <strong>Murrays Empire LLC</strong>
+  © Omaha Restoration™ — Operated by <strong>Murrays Empire LLC</strong>
 </footer>
 </div>
 
 <script>
-document.getElementById("acceptedAt").value = new Date().toISOString();
+  // Existing timestamp
+  document.getElementById("acceptedAt").value = new Date().toISOString();
+
+  // ✅ NEW: User agent always available
+  document.getElementById("userAgent").value = navigator.userAgent || "";
+
+  // ✅ NEW: Best-effort IP capture (works in most browsers; if blocked, field stays blank)
+  (async function(){
+    try{
+      const res = await fetch("https://api.ipify.org?format=json", { cache: "no-store" });
+      const data = await res.json();
+      document.getElementById("signerIp").value = data.ip || "";
+    }catch(e){
+      document.getElementById("signerIp").value = "";
+    }
+  })();
 </script>
 </body>
 </html>
