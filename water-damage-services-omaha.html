@@ -3,163 +3,227 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Emergency Water Damage Services Omaha NE | Omaha Restoration™</title>
-  
-  <meta name="description" content="Emergency water damage services in Omaha, NE. Basement flood cleanup, burst pipe response, and fast routing to licensed local restoration professionals." /> 
+  <meta name="description" content="Omaha's premier water damage routing. Basement floods, burst pipes, and emergency restoration connections." /> 
 
   <style>
     :root {
       --black: #000000;
-      --dark-grey: #111111;
+      --dark-grey: #121212;
       --white: #ffffff;
       --brand-red: #b31919;
-      --text-grey: #86868b;
-      --border: rgba(255,255,255,0.08);
+      --text-grey: #a1a1a6;
+      --border: rgba(255,255,255,0.1);
     }
 
     body {
-      font-family: -apple-system, "SF Pro Display", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       background-color: var(--black);
       color: var(--white);
       line-height: 1.6;
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
+    .header-center {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
     h1 {
-      font-size: 42px;
+      font-size: clamp(32px, 8vw, 56px);
       font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
+      letter-spacing: -0.03em;
+      margin: 0 0 15px 0;
+    }
+
+    .lead-text {
+      color: var(--text-grey);
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     h2 {
-      font-size: 24px;
-      margin-top: 40px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--brand-red);
+      margin-bottom: 30px;
+      text-align: center;
     }
 
-    p {
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 600px) {
+      .service-grid { grid-template-columns: 1fr; }
+    }
+
+    .service-card {
+      background: var(--dark-grey);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: var(--white);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      border-color: var(--brand-red);
+      transform: translateY(-5px);
+      background: #1a1a1a;
+    }
+
+    .service-card h3 {
+      margin: 0 0 10px 0;
+      font-size: 22px;
+    }
+
+    .service-card p {
+      font-size: 14px;
       color: var(--text-grey);
-      font-size: 18px;
+      margin: 0;
     }
 
-    .service-list {
+    .arrow {
+      margin-top: 20px;
+      font-weight: bold;
+      color: var(--brand-red);
+    }
+
+    .area-box {
+      background: #080808;
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .city-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
       list-style: none;
       padding: 0;
     }
 
-    .service-list li {
-      margin-bottom: 15px;
-    }
-
-    .service-list a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 20px;
-      display: block;
-      padding: 15px;
-      background: var(--dark-grey);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: 0.2s;
-    }
-
-    .service-list a:hover {
-      border-color: var(--brand-red);
-      background: #1a1a1a;
-    }
-
-    .area-list {
-      color: var(--text-grey);
-      column-count: 2;
-    }
-
-    .emergency-box {
-      background: rgba(179, 25, 25, 0.1);
-      border: 1px solid var(--brand-red);
-      padding: 20px;
-      border-radius: 16px;
-      margin-top: 40px;
-    }
-
-    .back-home {
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    .back-home a {
-      color: #777;
-      text-decoration: none;
+    .city-tag {
+      background: #222;
+      padding: 10px 20px;
+      border-radius: 50px;
       font-size: 14px;
-      font-weight: 600;
+      color: #ddd;
     }
 
-    .back-home a:hover {
-      color: var(--white);
-      text-decoration: underline;
+    .emergency-footer {
+      margin-top: 60px;
+      padding: 40px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #111, #000);
+      text-align: center;
+      border: 1px solid var(--brand-red);
+    }
+
+    .copy-btn {
+      background: var(--white);
+      color: var(--black);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .copy-btn:active {
+      transform: scale(0.95);
     }
 
     footer {
-      margin-top: 40px;
-      font-size: 11px;
-      color: #555;
+      margin-top: 60px;
       text-align: center;
-      border-top: 1px solid #1a1a1a;
-      padding-top: 20px;
+      font-size: 12px;
+      color: #444;
+    }
+
+    .back-btn {
+      color: var(--text-grey);
+      text-decoration: none;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <h1>Water Damage Services</h1>
-      <p>Dealing with flooding or burst pipes? Fast action saves money. We organize the best local help topics for the Omaha area.</p>
-    </header>
-
-    <section>
-      <h2>Emergency Cleanup Topics</h2>
-      <ul class="service-list">
-        <li><a href="basement-flood-cleanup-omaha.html">Basement Flood Cleanup in Omaha</a></li>
-        <li><a href="burst-pipe-cleanup-omaha.html">Burst Pipe Cleanup in Omaha</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Nearby Service Areas</h2>
-      <p>Quick routing is available in:</p>
-      <ul class="area-list">
-        <li>Bellevue, NE</li>
-        <li>Papillion, NE</li>
-        <li>La Vista, NE</li>
-        <li>Ralston, NE</li>
-        <li>Council Bluffs, IA</li>
-      </ul>
-    </section>
-
-    <section class="emergency-box">
-      <h2>Get Help Now</h2>
-      <p>If this is an active emergency, prioritize safety first. Turn off electricity if water is touching outlets.</p>
-      <p><strong>Omaha Restoration™ is a referral and routing platform. We connect you with independent local professionals. We do not perform restoration services directly.</strong></p>
-    </section>
-
-    <div class="back-home">
-      <a href="index.html">← Return to Home</a>
-    </div>
-
-    <footer>
-      © 2026 Omaha Restoration™. A Murrays Empire LLC Company.
-    </footer>
+<div class="container">
+  <div class="header-center">
+    <a href="index.html" class="back-btn">← Murrays Empire LLC</a>
+    <h1>Water Damage</h1>
+    <p class="lead-text">Strategic emergency routing for residential and commercial property owners in Omaha.</p>
   </div>
+
+  <h2>Select Your Emergency</h2>
+  
+  <div class="service-grid">
+    <a href="basement-flood-cleanup-omaha.html" class="service-card">
+      <div>
+        <h3>Basement Floods</h3>
+        <p>Groundwater, heavy rain, or sewer backup extraction.</p>
+      </div>
+      <div class="arrow">View Protocol →</div>
+    </a>
+
+    <a href="burst-pipe-cleanup-omaha.html" class="service-card">
+      <div>
+        <h3>Burst Pipes</h3>
+        <p>Pressure failures, frozen lines, and plumbing ruptures.</p>
+      </div>
+      <div class="arrow">View Protocol →</div>
+    </a>
+  </div>
+
+  <div class="area-box">
+    <h3>Service Coverage</h3>
+    <p style="color: var(--text-grey); margin-bottom: 20px;">Automated routing available in the following regions:</p>
+    <div class="city-list">
+      <span class="city-tag">Omaha, NE</span>
+      <span class="city-tag">Bellevue, NE</span>
+      <span class="city-tag">Papillion, NE</span>
+      <span class="city-tag">La Vista, NE</span>
+      <span class="city-tag">Ralston, NE</span>
+      <span class="city-tag">Council Bluffs, IA</span>
+    </div>
+  </div>
+
+  <div class="emergency-footer">
+    <h3 style="margin-top: 0;">Legal Notice</h3>
+    <p style="font-size: 14px; color: var(--text-grey);">
+      Omaha Restoration™ is a referral platform owned by <strong>Murrays empire llc</strong>. 
+      We connect you with independent local professionals. We do not perform manual labor.
+    </p>
+    <p style="font-size: 14px; color: var(--white); margin-bottom: 5px;">Contact: murraysempirellc@gmail.com</p>
+    <button class="copy-btn" onclick="navigator.clipboard.writeText('murraysempirellc@gmail.com')">Copy Email Address</button>
+  </div>
+
+  <footer>
+    © 2026 Murrays empire llc. All rights reserved.
+  </footer>
+</div>
 
 </body>
 </html>
