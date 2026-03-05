@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url><loc>https://omaharestoration.store/</loc></url>
-  <url><loc>https://omaharestoration.store/water-damage-omaha.html</loc></url>
-  <url><loc>https://omaharestoration.store/basement-flooding-omaha.html</loc></url>
-  <url><loc>https://omaharestoration.store/emergency-water-removal-omaha.html</loc></url>
-  <url><loc>https://omaharestoration.store/burst-pipe-cleanup-omaha.html</loc></url>
-  <url><loc>https://omaharestoration.store/terms.html</loc></url>
-  <url><loc>https://omaharestoration.store/privacy.html</loc></url>
-  <url><loc>https://omaharestoration.store/disclosures.html</loc></url>
-https://omaharestoration.store/service-coverage.html
-https://omaharestoration.store/omaha-home-water-damage-guide.html
-  
+  <url>
+    <loc>https://omaharestoration.store/</loc>
+  </url>
+
+  <url>
+    <loc>https://omaharestoration.store/water-damage-omaha.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omaharestoration.store/basement-flooding-omaha.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omaharestoration.store/emergency-water-removal-omaha.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omaharestoration.store/burst-pipe-cleanup-omaha.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omaharestoration.store/service-coverage.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omaharestoration.store/omaha-home-water-damage-guide.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omaharestoration.store/basement-flooded-omaha-what-to-do.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omaharestoration.store/terms.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omaharestoration.store/privacy.html</loc>
+  </url>
+
+  <url>
+    <loc>https://omaharestoration.store/disclosures.html</loc>
+  </url>
+
 </urlset>
