@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMPN1D7CG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LHMPN1D7CG');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contractor Payment | Omaha Restoration™</title>
+  <meta name="description" content="Secure contractor payment page for Omaha Restoration™ referral fees." />
+  <meta name="robots" content="index, follow" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      padding: 50px 20px 35px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 700px;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 30px 18px 50px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 26px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: #0f172a;
+      font-size: 1.4rem;
+    }
+
+    p {
+      line-height: 1.7;
+      margin: 0 0 14px;
+    }
+
+    .highlight {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 16px;
+      border-radius: 10px;
+      margin-top: 16px;
+    }
+
+    .warning {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 16px;
+      border-radius: 10px;
+      margin-top: 16px;
+    }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .payment-box {
+      background: #f8fafc;
+      border: 1px solid #dbeafe;
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .payment-box h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #111827;
+      font-size: 1.2rem;
+    }
+
+    .amount {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #16a34a;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    ul, ol {
+      padding-left: 22px;
+      line-height: 1.8;
+      margin: 10px 0 0;
+    }
+
+    .small {
+      color: #64748b;
+      font-size: 0.96rem;
+    }
+
+    footer {
+      text-align: center;
+      color: #64748b;
+      padding: 10px 20px 45px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .payment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .card {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Omaha Restoration™ Contractor Payment</h1>
+    <p>
+      This page is for approved contractor partners submitting referral payments
+      connected to Omaha Restoration™ leads.
+    </p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Before You Pay</h2>
+      <p>
+        Use this page only if you are an approved Omaha Restoration™ contractor partner
+        and are submitting payment under your contractor agreement.
+      </p>
+
+      <div class="highlight">
+        <strong>Current payment structure:</strong><br>
+        $150 referral fee due within 5 business days of Job Start<br>
+        10% of gross funds due within 5 business days of Job Completion
+      </div>
+
+      <div class="warning">
+        <strong>Important:</strong> Please include the customer property address, your company
+        name, and job details during checkout if Stripe allows notes or memo details.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Select Payment Type</h2>
+
+      <div class="payment-grid">
+        <div class="payment-box">
+          <h3>Job Start Fee</h3>
+          <div class="amount">$150</div>
+          <p>
+            Submit this payment once the referred project has officially started.
+          </p>
+          <p class="small">
+            Due within 5 business days of Job Start.
+          </p>
+          <a href="PASTE-YOUR-STRIPE-JOB-START-LINK-HERE" class="btn" target="_blank" rel="noopener">
+            Pay $150 Job Start Fee
+          </a>
+        </div>
+
+        <div class="payment-box">
+          <h3>Completion Fee</h3>
+          <div class="amount">10%</div>
+          <p>
+            Submit this payment after the project is complete and gross funds have been collected.
+          </p>
+          <p class="small">
+            Due within 5 business days of Job Completion.
+          </p>
+          <a href="PASTE-YOUR-STRIPE-COMPLETION-LINK-HERE" class="btn" target="_blank" rel="noopener">
+            Pay Completion Fee
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>What To Include With Payment</h2>
+      <ol>
+        <li>Customer property address</li>
+        <li>Type of job performed</li>
+        <li>Job start date</li>
+        <li>Job completion date if completed</li>
+        <li>Total gross amount collected if paying completion fee</li>
+        <li>Your company name</li>
+        <li>Your contact email</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Agreement Reminder</h2>
+      <p>
+        By submitting payment through this page, the contractor acknowledges the
+        applicable referral fee obligations tied to referred jobs under the
+        Omaha Restoration™ Contractor Participation Agreement.
+      </p>
+      <p class="small">
+        This payment page is provided for convenience and does not replace the signed agreement.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Payment Questions</h2>
+      <p>
+        For payment questions or amount confirmation, contact:
+      </p>
+      <p><strong>murraysempirellc@gmail.com</strong></p>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Omaha Restoration™. All rights reserved.
+  </footer>
+
+</body>
+</html>
