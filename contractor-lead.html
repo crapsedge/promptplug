@@ -1,226 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contractor Lead Assignment | Omaha Restoration</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contractor Lead Assignment | Omaha Restoration</title>
+  <meta name="description" content="Official contractor lead assignment and referral fee payment page for Omaha Restoration, operated by Murrays Empire LLC." />
 
-<style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f4f7fb;
-color:#1f2a37;
-line-height:1.65;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #1f2a37;
+      line-height: 1.65;
+    }
 
-.topbar{
-background:#0b2e4f;
-color:#fff;
-text-align:center;
-padding:18px;
-border-bottom:4px solid #1d5d8f;
-}
+    .topbar {
+      background: #0b2e4f;
+      color: #ffffff;
+      padding: 18px 20px;
+      text-align: center;
+      border-bottom: 4px solid #1d5d8f;
+    }
 
-.topbar h1{
-margin:0;
-font-size:28px;
-}
+    .topbar h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 0.5px;
+    }
 
-.topbar p{
-margin:4px 0 0;
-font-size:14px;
-color:#dbe7f5;
-}
+    .topbar p {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: #d9e7f5;
+    }
 
-.wrap{
-max-width:950px;
-margin:40px auto;
-padding:0 20px;
-}
+    .wrap {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
 
-.card{
-background:white;
-border-radius:12px;
-border:1px solid #d7e1ec;
-box-shadow:0 8px 24px rgba(11,46,79,0.08);
-overflow:hidden;
-}
+    .card {
+      background: #ffffff;
+      border: 1px solid #d7e1ec;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(11, 46, 79, 0.08);
+      overflow: hidden;
+    }
 
-.section{
-padding:28px 32px;
-border-bottom:1px solid #e6edf5;
-}
+    .hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      padding: 36px 32px 28px;
+      border-bottom: 1px solid #dfe8f1;
+    }
 
-.section:last-child{
-border-bottom:none;
-}
+    .hero h2 {
+      margin: 0 0 12px;
+      font-size: 30px;
+      color: #0b2e4f;
+    }
 
-h2{
-margin-top:0;
-color:#0b2e4f;
-}
+    .hero p {
+      margin: 0;
+      font-size: 16px;
+      color: #3d4a57;
+    }
 
-.highlight{
-background:#eef5fb;
-border-left:5px solid #1d5d8f;
-padding:16px;
-border-radius:8px;
-margin-top:18px;
-}
+    .section {
+      padding: 28px 32px;
+      border-bottom: 1px solid #e6edf5;
+    }
 
-.fee-box{
-background:#f8fbfe;
-border:1px solid #cddceb;
-padding:24px;
-border-radius:10px;
-text-align:center;
-margin-top:20px;
-}
+    .section:last-child {
+      border-bottom: none;
+    }
 
-.fee-box h3{
-margin:0;
-font-size:26px;
-color:#0b2e4f;
-}
+    .section h3 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      color: #0b2e4f;
+    }
 
-.legal{
-font-size:14px;
-color:#5b6672;
-}
+    .section p {
+      margin: 0 0 14px;
+    }
 
-.footer{
-text-align:center;
-font-size:14px;
-padding:30px;
-color:#5b6672;
-}
+    .section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
 
-</style>
+    .section li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #eef5fb;
+      border: 1px solid #c9dced;
+      border-left: 5px solid #1d5d8f;
+      border-radius: 10px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .fee-box {
+      background: #f8fbfe;
+      border: 1px solid #cddceb;
+      border-radius: 12px;
+      padding: 22px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .fee-box h4 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #0b2e4f;
+    }
+
+    .fee-box p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .stripe-area {
+      margin-top: 22px;
+      text-align: center;
+    }
+
+    .legal-note {
+      font-size: 14px;
+      color: #5b6672;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 28px 20px 40px;
+      color: #5b6672;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: #0b4f7a;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .assignment-fields {
+      background: #fbfdff;
+      border: 1px solid #dbe6f0;
+      border-radius: 10px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .assignment-fields p {
+      margin: 8px 0;
+    }
+
+    .strong {
+      font-weight: bold;
+      color: #0b2e4f;
+    }
+
+    .placeholder {
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .hero,
+      .section {
+        padding: 24px 20px;
+      }
+
+      .hero h2 {
+        font-size: 26px;
+      }
+
+      .section h3 {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="topbar">
-<h1>Omaha Restoration™</h1>
-<p>Operated by Murrays Empire LLC</p>
-</div>
+  <div class="topbar">
+    <h1>Omaha Restoration™</h1>
+    <p>Operated by Murrays Empire LLC</p>
+  </div>
 
-<div class="wrap">
+  <div class="wrap">
+    <div class="card">
 
-<div class="card">
+      <div class="hero">
+        <h2>Contractor Lead Assignment & Job Start Referral Fee</h2>
+        <p>
+          This page is provided for contractors receiving a referred project opportunity through Omaha Restoration™.
+          Payment on this page applies only to the Job Start Referral Fee for a referred project that has begun.
+        </p>
+      </div>
 
-<div class="section">
-<h2>Contractor Lead Assignment</h2>
+      <div class="section">
+        <h3>Lead Assignment Details</h3>
+        <p>
+          The following project information has been assigned through the Omaha Restoration™ referral network.
+          These details are displayed for lead reference, payment identification, and internal tracking purposes.
+        </p>
 
-<p>
-This page is provided to contractors who have received a project referral through the Omaha Restoration™ network.  
-Omaha Restoration operates as a referral and routing platform connecting property owners with independent restoration service providers in the Omaha, Nebraska region.
-</p>
+        <div class="assignment-fields">
+          <p><span class="strong">Lead Reference ID:</span> <span id="lead" class="placeholder">Not provided</span></p>
+          <p><span class="strong">Customer:</span> <span id="customer" class="placeholder">Not provided</span></p>
+          <p><span class="strong">Property Address:</span> <span id="address" class="placeholder">Not provided</span></p>
+          <p><span class="strong">Service Category:</span> <span id="service" class="placeholder">Not provided</span></p>
+          <p><span class="strong">Date Assigned:</span> <span id="assigned" class="placeholder">Not provided</span></p>
+          <p><span class="strong">Job Status:</span> <span id="status" class="placeholder">Not provided</span></p>
+        </div>
+      </div>
 
-<p>
-The payment on this page applies to the <strong>Job Start Referral Fee</strong> associated with a referred project that has begun.
-</p>
+      <div class="section">
+        <h3>Payment Trigger</h3>
+        <p>
+          Payment is not due solely because a lead was transmitted, reviewed, or discussed.
+          Payment becomes due when the referred project has actually started and the contractor has proceeded with the work.
+        </p>
+        <p>
+          By submitting payment on this page, the contractor confirms that the referred project has begun and that the Job Start Referral Fee is now due under the applicable contractor terms, participation terms, referral terms, or related agreement governing the referral relationship.
+        </p>
 
-<div class="highlight">
-<strong>Payment Trigger:</strong>  
-The Job Start Referral Fee becomes due when the referred project begins and the contractor proceeds with the work.
-</div>
+        <div class="highlight-box">
+          <p><strong>Payment Trigger Standard:</strong> The $150 Job Start Referral Fee is due only after the referred job begins.</p>
+        </div>
+      </div>
 
-</div>
+      <div class="section">
+        <h3>Job Start Referral Fee</h3>
 
-<div class="section">
+        <div class="fee-box">
+          <h4>$150.00</h4>
+          <p><strong>Omaha Restoration Lead Referral Fee (Job Start)</strong></p>
+          <p>One-time fee due for a referred job that has started.</p>
 
-<h2>Job Start Referral Fee</h2>
+          <div class="stripe-area">
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+            <stripe-buy-button
+              buy-button-id="buy_btn_1T90wcGYni3mcXO1gy0dVZIO"
+              publishable-key="pk_live_51T90MAGYni3mcXO1QTI4j550Gwb98wYPy1E9Pz9yDZAHg7k76YEeYj0QiXneSDell2r3YBYAveXOMgh995rfAiPx00VjMQsoMS">
+            </stripe-buy-button>
+          </div>
+        </div>
+      </div>
 
-<p>
-A one-time referral fee applies to referred projects that originate from the Omaha Restoration network and proceed to active work.
-</p>
+      <div class="section">
+        <h3>Completion Referral Fee</h3>
+        <p>
+          In addition to the Job Start Referral Fee collected on this page, a completion-based referral fee equal to ten percent (10%) of the final project value may apply to work originating from an Omaha Restoration referral.
+        </p>
+        <p>
+          Following completion of the referred project, a separate payment request reflecting the applicable completion referral fee will be issued based on the final project value.
+        </p>
+      </div>
 
-<div class="fee-box">
+      <div class="section">
+        <h3>Contractor Acknowledgment</h3>
+        <p>
+          By making payment through this page, the contractor acknowledges and agrees that:
+        </p>
+        <ul>
+          <li>The contractor received a referred opportunity through Omaha Restoration™.</li>
+          <li>The referred project has begun or is actively underway at the time payment is submitted.</li>
+          <li>The $150 Job Start Referral Fee is due for the referred project identified on this page.</li>
+          <li>The contractor operates as an independent service provider and not as an employee, partner, joint venturer, or agent of Omaha Restoration™ or Murrays Empire LLC.</li>
+          <li>Omaha Restoration™ does not perform restoration services and does not supervise, manage, or guarantee contractor work.</li>
+          <li>The contractor remains solely responsible for licensing, insurance, workmanship, customer agreements, project execution, collections, compliance, and all job-related obligations.</li>
+        </ul>
+      </div>
 
-<h3>$150.00</h3>
+      <div class="section legal-note">
+        <h3>Important Notice</h3>
+        <p>
+          Omaha Restoration™ operates solely as a referral and routing platform. All restoration services are performed exclusively by independent contractors.
+        </p>
+        <p>
+          Murrays Empire LLC and Omaha Restoration™ make no representations or guarantees regarding project scope, project value, customer decisions, payment collection, or job outcome.
+        </p>
+        <p>
+          Referral fees collected through this page are administrative charges associated with the routing of project opportunities through the Omaha Restoration™ network.
+        </p>
+      </div>
 
-<p><strong>Omaha Restoration Lead Referral Fee (Job Start)</strong></p>
+    </div>
+  </div>
 
-<p>This payment confirms participation in the Omaha Restoration referral network for the assigned project.</p>
+  <div class="footer">
+    <p><strong>Omaha Restoration™</strong></p>
+    <p>Operated by Murrays Empire LLC</p>
+    <p>Restoration Referral Network — Omaha, Nebraska</p>
+  </div>
 
-<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
 
-<stripe-buy-button
-buy-button-id="buy_btn_1T90wcGYni3mcXO1gy0dVZIO"
-publishable-key="pk_live_51T90MAGYni3mcXO1QTI4j550Gwb98wYPy1E9Pz9yDZAHg7k76YEeYj0QiXneSDell2r3YBYAveXOMgh995rfAiPx00VjMQsoMS">
-</stripe-buy-button>
+    function setField(id, paramName) {
+      const value = params.get(paramName);
+      if (value && value.trim() !== "") {
+        document.getElementById(id).textContent = decodeURIComponent(value);
+        document.getElementById(id).classList.remove("placeholder");
+      }
+    }
 
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>Completion Referral Fee</h2>
-
-<p>
-In addition to the Job Start Referral Fee collected on this page, a completion-based referral fee equal to ten percent (10%) of the final project value may apply to work originating from an Omaha Restoration referral.
-</p>
-
-<p>
-Following completion of the referred project, a separate payment request reflecting the applicable completion referral fee will be issued based on the final project value reported by the contractor.
-</p>
-
-</div>
-
-<div class="section">
-
-<h2>Contractor Acknowledgment</h2>
-
-<p>
-By submitting payment through this page, the contractor acknowledges and agrees to the following:
-</p>
-
-<ul>
-<li>The contractor received a project referral originating from Omaha Restoration.</li>
-<li>The referred project has begun or is actively underway.</li>
-<li>The $150 Job Start Referral Fee is due for the referred project.</li>
-<li>The contractor operates as an independent service provider and is not an employee, partner, or agent of Omaha Restoration or Murrays Empire LLC.</li>
-<li>Omaha Restoration does not perform restoration services and does not supervise, control, or guarantee contractor work.</li>
-<li>The contractor remains solely responsible for licensing, insurance, workmanship, customer agreements, and regulatory compliance.</li>
-</ul>
-
-</div>
-
-<div class="section legal">
-
-<h2>Important Notice</h2>
-
-<p>
-Omaha Restoration operates solely as a referral and project routing platform.  
-All restoration services are performed exclusively by independent contractors.
-</p>
-
-<p>
-Murrays Empire LLC and Omaha Restoration make no representations or guarantees regarding project scope, project value, payment collection, or customer decisions.  
-Contractors assume full responsibility for project execution and all agreements entered into with property owners.
-</p>
-
-<p>
-Referral fees are administrative charges associated with the routing of project opportunities through the Omaha Restoration network.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="footer">
-
-<p><strong>Omaha Restoration™</strong></p>
-<p>Operated by Murrays Empire LLC</p>
-<p>Restoration Referral Network — Omaha, Nebraska</p>
-
-</div>
+    setField("lead", "lead");
+    setField("customer", "customer");
+    setField("address", "address");
+    setField("service", "service");
+    setField("assigned", "assigned");
+    setField("status", "status");
+  </script>
 
 </body>
 </html>
