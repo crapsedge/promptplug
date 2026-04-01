@@ -1,193 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMPN1D7CG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LHMPN1D7CG');
+    gtag('config', 'AW-18034717066');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Privacy Policy | Omaha Restoration™</title>
 
   <style>
-    :root{
-      --black:#000;
-      --dark:#111;
-      --white:#fff;
-      --gold:#c5a059;
-      --text:#d7d7d7;
-      --muted:#9a9a9a;
-      --border:rgba(255,255,255,0.08);
+    :root {
+      --primary: #b31919;
+      --secondary: #001d3d;
+      --black: #050505;
+      --off-white: #fcfcfc;
+      --gold: #c5a059;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.6);
+      --border: rgba(197, 160, 89, 0.2);
     }
-    body{
-      margin:0;
-      font-family:-apple-system, "SF Pro Display", sans-serif;
-      background:var(--black);
-      color:var(--text);
-      line-height:1.7;
-      -webkit-font-smoothing:antialiased;
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(180deg, #001d3d 0%, #000814 100%);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
     }
-    .wrap{
-      max-width:900px;
-      margin:0 auto;
-      padding:56px 18px 80px;
+
+    /* TOP NAVIGATION */
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .topbar{
-      position:sticky;
-      top:0;
-      background:rgba(0,0,0,0.9);
-      backdrop-filter:blur(18px);
-      border-bottom:1px solid var(--border);
-      z-index:10;
+
+    .logo { font-size: 16px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+    .logo span { color: var(--gold); }
+
+    .btn-home {
+      text-decoration: none;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 8px 18px;
+      border-radius: 999px;
+      transition: 0.3s;
     }
-    .topbar-inner{
-      max-width:900px;
-      margin:0 auto;
-      padding:16px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
+
+    /* MAIN CONTENT */
+    .wrap { max-width: 800px; margin: 40px auto; padding: 0 20px 100px; }
+
+    h1 { font-size: clamp(34px, 8vw, 52px); font-weight: 900; letter-spacing: -2px; margin-bottom: 10px; line-height: 0.9; }
+    .date-tag { font-size: 11px; color: var(--gold); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 35px; display: block; }
+
+    .policy-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 20px;
+      margin-bottom: 40px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      text-transform:uppercase;
-      letter-spacing:0.22em;
-      font-weight:800;
-      font-size:12px;
-      color:var(--white);
-      white-space:nowrap;
-    }
-    .shield{
-      width:22px; height:26px;
-      background:var(--white);
-      clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      display:flex; align-items:center; justify-content:center;
-      color:var(--black);
-      font-size:8px;
-      font-weight:900;
-    }
-    .home-link{
-      color:#cfcfcf;
-      text-decoration:none;
-      font-weight:800;
-      font-size:12px;
-      border:1px solid rgba(255,255,255,0.12);
-      padding:10px 14px;
-      border-radius:999px;
-      transition:all .2s ease;
-      white-space:nowrap;
-    }
-    .home-link:hover{
-      border-color:rgba(255,255,255,0.25);
-      transform:translateY(-1px);
-    }
-    h1{
-      margin:0 0 10px;
-      color:var(--white);
-      font-size:clamp(30px, 5vw, 44px);
-      letter-spacing:-0.03em;
-      line-height:1.1;
-    }
-    .sub{
-      color:var(--muted);
-      margin:0 0 26px;
-      font-size:14px;
-    }
-    h2{
-      color:var(--white);
-      margin:26px 0 10px;
-      font-size:18px;
-      letter-spacing:-0.01em;
-    }
-    p, li{
-      color:var(--text);
-      font-size:14px;
-    }
-    ul{ margin:10px 0 0 18px; padding:0; }
-    .box{
-      background:var(--dark);
-      border:1px solid var(--border);
-      border-left:5px solid var(--gold);
-      border-radius:18px;
-      padding:18px 16px;
-      margin:18px 0 22px;
-      color:#e3e3e3;
-    }
-    a{ color:#d8d8d8; text-decoration:underline; font-weight:800; }
-    .foot{
-      margin-top:34px;
-      padding-top:18px;
-      border-top:1px solid var(--border);
-      color:var(--muted);
-      font-size:12px;
-    }
+
+    .policy-card strong { color: var(--gold); text-transform: uppercase; font-size: 13px; letter-spacing: 1px; display: block; margin-bottom: 10px; }
+
+    h2 { font-size: 22px; font-weight: 900; color: var(--gold); margin-top: 45px; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
+    p, li { font-size: 15px; color: var(--muted); margin-bottom: 22px; }
+    strong { color: #fff; }
+
+    .footer { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .brand-tag { font-size: 10px; font-weight: 900; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; }
+
   </style>
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="shield">OR</div>
-        Omaha Restoration™
-      </div>
-      <a class="home-link" href="index.html">Return to Home</a>
-    </div>
-  </div>
+
+  <header>
+    <div class="logo">Omaha<span>Restoration</span>™</div>
+    <a href="index.html" class="btn-home">Return Home</a>
+  </header>
 
   <div class="wrap">
     <h1>Privacy Policy</h1>
-    <p class="sub"><strong>Effective Date:</strong> January 2026</p>
+    <span class="date-tag">Updated: April 2026</span>
 
-    <div class="box">
-      <strong>Short Version:</strong> This website is designed to route you to third-party services and directories. We do not use forms to collect your name, phone number, address, or email on this site.
+    <div class="policy-card">
+      <strong>Data Privacy Standard</strong>
+      Omaha Restoration™ is committed to handling your data with transparency. We collect only what is necessary to connect you with emergency restoration professionals.
     </div>
 
-    <h2>1) Information We Do Not Intentionally Collect</h2>
+    <h2>1. Information We Collect</h2>
     <p>
-      We do not request or store personal information through user-submitted forms on this website (for example: name, email, phone number, address, or photos).
-      You can browse the site without creating an account.
+      When you use our <strong>Emergency Intake</strong> or <strong>Contractor Enrollment</strong> forms, we collect information including your name, phone number, email address, and service location. This data is used solely to facilitate the referral process.
     </p>
 
-    <h2>2) Basic Technical Data</h2>
+    <h2>2. How Data is Shared</h2>
     <p>
-      Like most websites, our hosting provider may automatically log basic technical information for security and performance purposes (for example: IP address, device/browser type, and timestamps).
-      We do not use these logs to identify you personally, and we do not sell personal data.
+      As a referral platform, we transmit your contact details to independent third-party contractors in our network. By submitting a request, you authorize <strong>Murrays Empire LLC</strong> to share this information so a service provider can contact you.
     </p>
 
-    <h2>3) Outbound Links / Third Parties</h2>
+    <h2>3. Technical Logging</h2>
     <p>
-      This website may include links to third-party providers, directories, or matching services. When you click an outbound link, you leave our website.
-      Any information you provide to a third party is governed by that third party’s privacy policy and terms. We do not control, access, or store the information you submit to third parties.
+      We use basic technical logging (IP addresses, browser type, and timestamps) for security, lead verification, and to prevent fraudulent submissions. This helps us maintain a reliable "Lead Log" for business records.
     </p>
 
-    <h2>4) Cookies & Analytics</h2>
+    <h2>4. Analytics & Tracking</h2>
     <p>
-      We aim to keep tracking minimal. If we enable analytics in the future, it will be used to understand general traffic patterns (for example: page views) and not to build personal profiles.
-      Third-party services may use cookies or similar technologies under their own policies.
+      We use <strong>Google Analytics</strong> and <strong>Google Ads</strong> tracking to understand how users find our site. This data is used to optimize our marketing and does not allow us to see your personal private files or off-site activity.
     </p>
 
-    <h2>5) AI Disclosure</h2>
+    <h2>5. Third-Party Links</h2>
     <p>
-      We may use AI-assisted tools to draft site content, organize information, and maintain the website. AI tools do not receive personal information from users through this site because we do not collect it via forms.
+      Our site contains links to independent contractors. Once you leave omaharestoration.store, we are no longer responsible for the privacy practices of those third parties. Please review their individual policies.
     </p>
 
-    <h2>6) Policy Updates</h2>
+    <h2>6. Data Ownership</h2>
     <p>
-      We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised effective date.
+      Omaha Restoration™ is a brand owned and operated by <strong>Murrays Empire LLC</strong>, a Nebraska limited liability company. All data collected is managed under this parent entity.
     </p>
 
-    <h2>7) Who Operates This Site</h2>
-    <p>
-      Omaha Restoration™ is a brand owned by <strong>Murrays Empire LLC</strong>. This Privacy Policy applies to this website only.
-    </p>
-
-    <div class="foot">
-      © <span id="yr"></span> Omaha Restoration™. All rights reserved.
+    <div class="footer">
+      <div class="brand-tag">OMAHA RESTORATION™</div>
+      <p style="font-size: 10px; margin-top: 15px; color: var(--muted);">© <span id="yr"></span> Murrays Empire LLC. All Rights Reserved.</p>
     </div>
   </div>
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
