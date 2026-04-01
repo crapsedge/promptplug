@@ -77,10 +77,7 @@
       border:none;
       cursor:pointer;
       font-size:16px;
-      transition: filter 0.2s;
     }
-    
-    .btn:hover { filter: brightness(1.1); }
 
     label{
       display:block;
@@ -151,8 +148,6 @@
       color:var(--muted2);
       margin-top:10px;
     }
-    
-    .hidden { display: none; }
   </style>
 </head>
 
@@ -162,11 +157,24 @@
     <h1>Contractor Enrollment</h1>
     <p class="tos-text">No upfront costs. You only pay when a job starts.</p>
 
-    <form name="Contractor-Enrollment" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/enrollment-submitted.html">
+    <form action="https://formsubmit.co/murraysempirellc@gmail.com" method="POST">
       
-      <p class="hidden">
-        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-      </p>
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="enrollment-submitted.html">
+      <input type="hidden" name="_subject" value="OFFICIAL RECORD: Omaha Restoration™ Contractor Agreement">
+      <input type="hidden" name="_replyto" value="email">
+
+      <input type="hidden" name="_autoresponse" value="Thank you for enrolling with Omaha Restoration™. Below is a formal record of your signed Contractor Participation Agreement. Please save this email for your business records.
+
+--------------------------------------------------
+OFFICIAL CERTIFICATE OF ENROLLMENT
+--------------------------------------------------
+Entity: Omaha Restoration™
+Parent: Murrays Empire LLC
+Status: ACTIVE / SIGNED
+--------------------------------------------------
+
+This email serves as your digital record of the agreement you signed today. By submitting the enrollment form, you agreed to the Contractor Participation Agreement version OR-CPA-v1.0-2026-03-31, including the $150 Job Start fee, the 10% Completion fee, and the other terms presented on the enrollment page.">
 
       <input type="hidden" name="Accepted_At_UTC" id="acceptedAt">
       <input type="hidden" name="Signer_IP" id="signerIp">
@@ -174,7 +182,7 @@
       <input type="hidden" name="ESIGN_Consent" value="Consented">
       <input type="hidden" name="Agreement_Version" value="OR-CPA-v1.0-2026-03-31">
       <input type="hidden" name="Agreement_Displayed" value="Yes">
-      <input type="hidden" name="Agreement_Full_Record" value="Contractor agreed to version OR-CPA-v1.0-2026-03-31: $150 fee per Job Start, 10% of gross funds upon Completion, authority to bind business, independent contractor status, indemnification, and Nebraska arbitration.">
+      <input type="hidden" name="Agreement_Text" value="Contractor agreed to version OR-CPA-v1.0-2026-03-31: $150 fee per Job Start, 10% of gross funds upon Completion, authority to bind business, independent contractor status, indemnification, and Nebraska arbitration.">
 
       <div class="box">
         <h2>Company Details</h2>
@@ -185,10 +193,10 @@
         <label for="contactName">Primary Contact</label>
         <input id="contactName" type="text" name="Contact_Name" required>
 
-        <label for="email">Email Address</label>
-        <input id="email" type="email" name="Email" required>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
 
-        <label for="phone">Phone Number</label>
+        <label for="phone">Phone</label>
         <input id="phone" type="text" name="Phone" required>
 
         <label for="serviceArea">Service Area</label>
