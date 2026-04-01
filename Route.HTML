@@ -17,8 +17,8 @@
 
   <style>
     :root {
-      --primary: #b31919; 
-      --secondary: #001d3d; 
+      --primary: #b31919;
+      --secondary: #001d3d;
       --black: #050505;
       --off-white: #fcfcfc;
       --gold: #c5a059;
@@ -29,8 +29,8 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
       margin: 0;
-      background-color: var(--black); 
-      color: var(--white);
+      background-color: var(--black);
+      color: #fff;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -41,6 +41,7 @@
     }
 
     .header { text-align: center; margin-bottom: 30px; }
+
     .pill {
       display: inline-flex;
       align-items: center;
@@ -55,10 +56,28 @@
       letter-spacing: 1.5px;
       border: 1px solid rgba(197, 160, 89, 0.3);
     }
-    .dot { width: 8px; height: 8px; background: #28a745; border-radius: 50%; box-shadow: 0 0 10px #28a745; }
 
-    h1 { font-size: 32px; font-weight: 900; letter-spacing: -1.5px; margin: 15px 0 5px; color: #fff; }
-    .sub { font-size: 15px; color: #888; margin-bottom: 0; }
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #28a745;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #28a745;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin: 15px 0 5px;
+      color: #fff;
+    }
+
+    .sub {
+      font-size: 15px;
+      color: #888;
+      margin-bottom: 0;
+    }
 
     .intake-card {
       background: #fff;
@@ -68,8 +87,19 @@
       color: var(--text);
     }
 
-    .form-group { margin-bottom: 18px; }
-    label { display: block; font-size: 12px; font-weight: 800; text-transform: uppercase; color: #999; margin-bottom: 8px; margin-left: 4px; }
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 8px;
+      margin-left: 4px;
+    }
 
     input, select, textarea {
       width: 100%;
@@ -89,7 +119,10 @@
       background: #fff;
     }
 
-    textarea { height: 80px; resize: none; }
+    textarea {
+      height: 80px;
+      resize: none;
+    }
 
     button {
       width: 100%;
@@ -108,7 +141,10 @@
       margin-top: 10px;
     }
 
-    button:hover { transform: translateY(-2px); filter: brightness(1.1); }
+    button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
 
     .check-box {
       display: flex;
@@ -122,13 +158,39 @@
       text-align: left;
     }
 
-    .check-box input { width: 22px; height: 22px; margin: 0; accent-color: var(--primary); cursor: pointer; }
-    .check-box span { font-size: 13px; font-weight: 600; color: #555; line-height: 1.4; }
+    .check-box input {
+      width: 22px;
+      height: 22px;
+      margin: 0;
+      accent-color: var(--primary);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
 
-    .hidden { display: none; }
+    .check-box span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      line-height: 1.4;
+    }
 
-    .micro-note { font-size: 11px; color: #bbb; text-align: center; margin-top: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-    .footer-note { font-size: 11px; color: #555; text-align: center; margin-top: 30px; line-height: 1.6; }
+    .micro-note {
+      font-size: 11px;
+      color: #bbb;
+      text-align: center;
+      margin-top: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-note {
+      font-size: 11px;
+      color: #555;
+      text-align: center;
+      margin-top: 30px;
+      line-height: 1.6;
+    }
 
     @media (max-width: 480px) {
       h1 { font-size: 28px; }
@@ -147,11 +209,11 @@
     </div>
 
     <div class="intake-card">
-      <form name="Emergency-Intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/connection-confirmed.html">
-        
-        <p class="hidden">
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-        </p>
+      <form action="https://formsubmit.co/murraysempirellc@gmail.com" method="POST">
+        <input type="hidden" name="_next" value="https://omaharestoration.store/connection-confirmed.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Omaha Restoration Lead">
+        <input type="hidden" name="_template" value="table">
 
         <div class="form-group">
           <label>Service Location</label>
@@ -192,9 +254,8 @@
         <div class="micro-note">
           No obligation • Verified Network • Fast Connection
         </div>
-
       </form>
-      </div>
+    </div>
 
     <div class="footer-note">
       <strong>Disclosure:</strong> Omaha Restoration™ is a third-party referral platform operated by <strong>Murrays Empire LLC</strong>. We are not a licensed contractor and do not perform restoration services directly.
