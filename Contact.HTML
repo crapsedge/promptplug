@@ -1,139 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMPN1D7CG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LHMPN1D7CG');
+    gtag('config', 'AW-18034717066');
+  </script>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Contact | Omaha Restoration™</title>
-  <meta name="description" content="Contact Omaha Restoration™ for legal and business inquiries.">
+  <meta name="description" content="Official business and legal contact for Omaha Restoration™ and Murrays Empire LLC.">
 
   <style>
-    :root { 
-      --black: #000000; 
-      --dark-grey: #111111;
-      --white: #ffffff; 
-      --empire-gold: #c5a059; 
-      --text-grey: #86868b;
-      --border: rgba(255,255,255,0.08); 
-    }
-    
-    body { 
-      font-family: -apple-system, sans-serif; 
-      margin: 0; 
-      background-color: var(--black); 
-      color: var(--white); 
-      line-height: 1.6;
-      padding: 40px 20px;
+    :root {
+      --primary: #b31919;
+      --secondary: #001d3d;
+      --black: #050505;
+      --off-white: #fcfcfc;
+      --gold: #c5a059;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.6);
+      --border: rgba(197, 160, 89, 0.2);
     }
 
-    .container { max-width: 800px; margin: 0 auto; }
-    
-    .back-link { 
-      text-decoration: none; 
-      color: var(--empire-gold); 
-      font-size: 14px; 
-      font-weight: 700; 
-      display: inline-block;
-      margin-bottom: 40px;
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(180deg, #001d3d 0%, #000814 100%);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
     }
 
-    h1 { font-size: 32px; letter-spacing: -0.02em; margin-bottom: 10px; }
-    h2 { font-size: 20px; color: var(--empire-gold); margin-top: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-    
-    .content { color: var(--text-grey); font-size: 15px; }
-    p { margin-bottom: 20px; }
+    /* PREMIUM TOP BAR */
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .logo span { color: var(--gold); }
+
+    .btn-home {
+      text-decoration: none;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 8px 18px;
+      border-radius: 999px;
+      transition: all 0.3s ease;
+    }
+    .btn-home:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* CONTENT LAYOUT */
+    .wrap {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 0 24px 100px;
+      text-align: center;
+    }
 
     .shield-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--white);
+      width: 50px;
+      height: 50px;
+      background: var(--gold);
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      margin-bottom: 20px;
-    }
-
-    .notice {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px 16px;
-      margin: 18px 0 26px;
-      color: #cfcfcf;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-weight: 900;
       font-size: 14px;
     }
 
-    .contact-card {
-      background: rgba(255,255,255,0.03);
+    h1 {
+      font-size: clamp(38px, 10vw, 56px);
+      font-weight: 900;
+      letter-spacing: -2.5px;
+      margin-bottom: 12px;
+      line-height: 0.9;
+    }
+
+    .sub-head {
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    .notice-card {
+      background: rgba(255,255,255,0.04);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px 18px;
-      margin-top: 18px;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .notice-card p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* CONTACT CHANNEL */
+    .contact-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      color: #000;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+      text-align: center;
     }
 
     .label {
-      font-size: 12px;
-      letter-spacing: 0.12em;
+      font-size: 11px;
+      font-weight: 900;
       text-transform: uppercase;
-      color: #a9a9a9;
-      font-weight: 800;
-      margin-bottom: 8px;
+      letter-spacing: 1.5px;
+      color: var(--gold);
+      margin-bottom: 10px;
     }
 
-    .big-link {
-      display: inline-block;
-      font-weight: 800;
-      color: var(--empire-gold);
+    .email-link {
+      display: block;
+      font-size: clamp(18px, 5vw, 24px);
+      font-weight: 900;
+      color: var(--black);
       text-decoration: none;
-      font-size: 16px;
-      margin-top: 4px;
-      word-break: break-word;
+      margin-bottom: 20px;
+      transition: color 0.2s;
+    }
+    .email-link:hover { color: var(--primary); }
+
+    .instruction {
+      font-size: 13px;
+      color: #666;
+      font-weight: 600;
+      line-height: 1.5;
     }
 
-    .big-link:hover { text-decoration: underline; }
-    a { color: var(--empire-gold); }
+    .footer {
+      margin-top: 80px;
+      border-top: 1px solid var(--border);
+      padding-top: 40px;
+    }
+
+    .brand-tag {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <a href="index.html" class="back-link">← BACK TO HOME</a>
 
-    <div class="shield-icon"></div>
-    <h1>Contact</h1>
-    <p style="color: var(--white); font-weight: 600;">For legal and business inquiries only.</p>
+  <header>
+    <div class="logo">Omaha<span>Restoration</span>™</div>
+    <a href="index.html" class="btn-home">Return Home</a>
+  </header>
 
-    <div class="notice">
-      Omaha Restoration™ is a referral / routing platform operated by <strong>Murrays Empire LLC</strong>.
-      We do not provide emergency response or restoration services.
-      If this is an emergency, contact local emergency services first.
+  <div class="wrap">
+    <div class="shield-icon">OR</div>
+    <h1>Business Inquiries</h1>
+    <span class="sub-head">Murrays Empire LLC Administration</span>
+
+    <div class="notice-card">
+      <p>
+        <strong>IMPORTANT:</strong> Omaha Restoration™ is a high-speed referral platform. 
+        We are not a contractor and do not provide emergency services directly. 
+        If you are experiencing a water emergency, please use our <a href="route.html" style="color:var(--gold); font-weight:800;">Intake System</a> for contractor routing.
+      </p>
     </div>
 
-    <div class="content">
-      <section>
-        <h2>Primary Email</h2>
-        <div class="contact-card">
-          <div class="label">Email</div>
-          <a class="big-link" href="mailto:murraysempirellc@gmail.com">murraysempirellc@gmail.com</a>
-          <p style="margin-top:12px;">
-            Please include: your city, the general type of need (water, fire, mold), and whether you already contacted a provider.
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <h2>Privacy Note</h2>
-        <p>
-          This website does not require you to submit personal information through on-site forms.
-          If you click outbound links to third-party providers, their privacy policies apply.
-          See: <a href="privacy.html">Privacy Policy</a>.
-        </p>
-      </section>
+    <div class="contact-box">
+      <div class="label">Official Email Address</div>
+      <a href="mailto:murraysempirellc@gmail.com" class="email-link">murraysempirellc@gmail.com</a>
+      <p class="instruction">
+        For contractor partnership requests, legal notices, or business verification, please allow 24-48 hours for a response from our administration team.
+      </p>
     </div>
 
-    <footer style="margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; opacity: 0.5;">
-      © <span id="yr"></span> Murrays Empire LLC. All rights reserved.
-    </footer>
+    <div class="footer">
+      <div class="brand-tag">OMAHA RESTORATION™</div>
+      <p style="font-size: 10px; margin-top: 15px; color: var(--muted);">
+        © <span id="yr"></span> Murrays Empire LLC. All Rights Reserved.
+      </p>
+    </div>
   </div>
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
