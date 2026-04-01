@@ -29,7 +29,7 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
       margin: 0;
-      background-color: var(--black); /* Dark background makes the form pop */
+      background-color: var(--black); 
       color: var(--white);
       -webkit-font-smoothing: antialiased;
     }
@@ -40,7 +40,6 @@
       padding: 40px 20px;
     }
 
-    /* Header & Status */
     .header { text-align: center; margin-bottom: 30px; }
     .pill {
       display: inline-flex;
@@ -61,7 +60,6 @@
     h1 { font-size: 32px; font-weight: 900; letter-spacing: -1.5px; margin: 15px 0 5px; color: #fff; }
     .sub { font-size: 15px; color: #888; margin-bottom: 0; }
 
-    /* The Intake Card */
     .intake-card {
       background: #fff;
       border-radius: 20px;
@@ -93,7 +91,6 @@
 
     textarea { height: 80px; resize: none; }
 
-    /* The Action Button */
     button {
       width: 100%;
       background: var(--primary);
@@ -113,7 +110,6 @@
 
     button:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
-    /* Checkbox Area */
     .check-box {
       display: flex;
       align-items: flex-start;
@@ -129,7 +125,8 @@
     .check-box input { width: 22px; height: 22px; margin: 0; accent-color: var(--primary); cursor: pointer; }
     .check-box span { font-size: 13px; font-weight: 600; color: #555; line-height: 1.4; }
 
-    /* Trust Elements */
+    .hidden { display: none; }
+
     .micro-note { font-size: 11px; color: #bbb; text-align: center; margin-top: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
     .footer-note { font-size: 11px; color: #555; text-align: center; margin-top: 30px; line-height: 1.6; }
 
@@ -150,12 +147,11 @@
     </div>
 
     <div class="intake-card">
-      <form action="https://formsubmit.co/murraysempirellc@gmail.com" method="POST">
+      <form name="Emergency-Intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/connection-confirmed.html">
         
-        <input type="hidden" name="_subject" value="URGENT: New Omaha Lead Captured">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://omaharestoration.store/connection-confirmed.html">
-        <input type="hidden" name="_template" value="table">
+        <p class="hidden">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
 
         <div class="form-group">
           <label>Service Location</label>
@@ -178,7 +174,7 @@
           <label>Contact Information</label>
           <input type="text" name="Name" placeholder="Full Name" required style="margin-bottom: 10px;">
           <input type="tel" name="Phone" placeholder="Direct Phone Number" required style="margin-bottom: 10px;">
-          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="email" name="Email" placeholder="Email Address" required>
         </div>
 
         <div class="form-group">
@@ -198,7 +194,7 @@
         </div>
 
       </form>
-    </div>
+      </div>
 
     <div class="footer-note">
       <strong>Disclosure:</strong> Omaha Restoration™ is a third-party referral platform operated by <strong>Murrays Empire LLC</strong>. We are not a licensed contractor and do not perform restoration services directly.
