@@ -1,272 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMPN1D7CG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LHMPN1D7CG');
+    gtag('config', 'AW-18034717066');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Contractor Enrollment | Omaha Restoration™</title>
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="noindex, nofollow">
 
   <style>
-    :root{
-      --bg:#0b0b0b;
-      --panel:#101010;
-      --panel2:#0f0f0f;
-      --text:#ffffff;
-      --muted:#cfcfcf;
-      --muted2:#9a9a9a;
-      --border:rgba(255,255,255,0.12);
-      --gold:#c5a059;
-      --gold2:#dab777;
+    :root {
+      --primary: #b31919;
+      --secondary: #001d3d;
+      --black: #050505;
+      --off-white: #fcfcfc;
+      --gold: #c5a059;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.6);
+      --border: rgba(197, 160, 89, 0.2);
     }
 
-    *{ box-sizing:border-box; }
-
-    body{
-      margin:0;
-      padding:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(180deg, #001d3d 0%, #000814 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
     }
 
-    .container{
-      max-width:760px;
-      margin:auto;
-      padding:52px 20px;
+    /* HEADER NAVIGATION */
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--gold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    h1{
-      font-size:32px;
-      margin:0 0 8px;
+    .logo { font-size: 16px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+    .logo span { color: var(--gold); }
+
+    .btn-home {
+      text-decoration: none;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      padding: 8px 18px;
+      border-radius: 999px;
+      transition: 0.3s;
     }
 
-    h2{
-      font-size:18px;
-      margin:24px 0 10px;
-      border-bottom:1px solid var(--border);
-      padding-bottom:8px;
+    /* ENROLLMENT CONTAINER */
+    .container { max-width: 700px; margin: 40px auto; padding: 0 20px 100px; }
+    
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      background: rgba(197,160,89,0.1);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
     }
 
-    .box{
-      border:1px solid var(--border);
-      background:var(--panel);
-      padding:24px;
-      border-radius:12px;
-      margin-bottom:20px;
+    h1 { font-size: clamp(32px, 8vw, 48px); font-weight: 900; letter-spacing: -2px; margin: 0 0 10px; line-height: 0.95; }
+    .sub-text { font-size: 15px; color: var(--muted); margin-bottom: 40px; }
+
+    /* FORM CARD */
+    .enrollment-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px 30px;
+      color: #000;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
     }
 
-    .pill{
-      font-size:12px;
-      padding:5px 12px;
-      border-radius:999px;
-      background:rgba(197,160,89,0.1);
-      color:var(--gold2);
-      border:1px solid rgba(197,160,89,0.3);
-      display:inline-block;
+    h2 { font-size: 20px; font-weight: 900; margin: 30px 0 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    h2:first-of-type { margin-top: 0; }
+
+    label { display: block; font-size: 11px; font-weight: 900; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; letter-spacing: 0.5px; }
+
+    input {
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      background: #f9f9f9;
+      font-size: 16px;
+      font-family: inherit;
+      margin-bottom: 20px;
+      box-sizing: border-box;
     }
 
-    .btn{
-      display:block;
-      width:100%;
-      padding:16px;
-      background:var(--gold);
-      color:#000;
-      font-weight:900;
-      border-radius:12px;
-      border:none;
-      cursor:pointer;
-      font-size:16px;
+    input:focus { outline: none; border-color: var(--gold); background: #fff; }
+
+    .check-box {
+      display: flex;
+      gap: 14px;
+      padding: 20px;
+      background: #fff9f9;
+      border: 1px solid #fee2e2;
+      border-radius: 16px;
+      margin: 24px 0;
     }
 
-    label{
-      display:block;
-      margin-top:16px;
-      font-size:14px;
-      color:var(--muted);
+    .check-box input { width: 24px; height: 24px; margin: 0; accent-color: var(--primary); cursor: pointer; flex-shrink: 0; }
+    .check-box span { font-size: 13px; font-weight: 700; color: #333; line-height: 1.4; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--black);
+      color: var(--gold);
+      padding: 22px;
+      border-radius: 14px;
+      border: 2px solid var(--gold);
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    input{
-      width:100%;
-      padding:14px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,0.15);
-      background:#0b0b0b;
-      color:#fff;
-      margin-top:8px;
-    }
+    .btn-submit:hover { background: var(--gold); color: #000; transform: translateY(-2px); }
 
-    .checkline{
-      display:flex;
-      align-items:flex-start;
-      gap:12px;
-      margin-top:18px;
-      padding:14px;
-      border-radius:12px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.10);
-    }
+    /* AGREEMENT TEXT */
+    details { margin-top: 25px; border: 1px solid #eee; border-radius: 14px; padding: 15px; background: #fafafa; }
+    summary { cursor: pointer; font-weight: 900; color: #666; font-size: 13px; text-transform: uppercase; }
+    .tos-text { font-size: 12px; color: #777; padding-top: 15px; max-height: 300px; overflow-y: auto; }
 
-    .checkline input{
-      width:auto;
-      margin-top:2px;
-      flex-shrink:0;
-    }
+    footer { text-align: center; margin-top: 60px; padding-bottom: 40px; }
+    .brand-tag { font-size: 10px; font-weight: 900; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; }
 
-    .checkline label{
-      margin-top:0;
-    }
-
-    details{
-      margin-top:18px;
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:12px;
-      background:var(--panel2);
-    }
-
-    summary{
-      cursor:pointer;
-      font-weight:900;
-      color:var(--gold2);
-    }
-
-    footer{
-      margin-top:38px;
-      text-align:center;
-      font-size:12px;
-      color:var(--muted2);
-    }
-
-    .tos-text{
-      font-size:13px;
-      color:var(--muted2);
-    }
-
-    .tiny{
-      font-size:12px;
-      color:var(--muted2);
-      margin-top:10px;
-    }
   </style>
 </head>
 
 <body>
+
+  <header>
+    <div class="logo">Omaha<span>Restoration</span>™</div>
+    <a href="index.html" class="btn-home">Portal Home</a>
+  </header>
+
   <div class="container">
-    <span class="pill">Pay Per Job Start • Contractor Enrollment</span>
-    <h1>Contractor Enrollment</h1>
-    <p class="tos-text">No upfront costs. You only pay when a job starts.</p>
+    <div class="status-pill">Active Enrollment Version 1.0</div>
+    <h1>Contractor Network</h1>
+    <p class="sub-text">Join the premium Omaha referral network. Automated routing, high-intent leads, and pay-on-performance terms.</p>
 
-    <form action="https://formsubmit.co/murraysempirellc@gmail.com" method="POST">
-      
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="enrollment-submitted.html">
-      <input type="hidden" name="_subject" value="OFFICIAL RECORD: Omaha Restoration™ Contractor Agreement">
-      <input type="hidden" name="_replyto" value="email">
+    <div class="enrollment-card">
+      <form action="https://formsubmit.co/murraysempirellc@gmail.com" method="POST">
+        
+        <input type="hidden" name="_next" value="https://omaharestoration.store/enrollment-submitted.html">
+        <input type="hidden" name="_subject" value="EXECUTED AGREEMENT: Omaha Restoration Network">
+        <input type="hidden" name="Accepted_At_UTC" id="acceptedAt">
+        <input type="hidden" name="Signer_IP" id="signerIp">
+        <input type="hidden" name="Agreement_Version" value="OR-CPA-2026-04-01">
 
-      <input type="hidden" name="_autoresponse" value="Thank you for enrolling with Omaha Restoration™. Below is a formal record of your signed Contractor Participation Agreement. Please save this email for your business records.
+        <h2>Company Information</h2>
+        
+        <label>Legal Business Name</label>
+        <input type="text" name="Business_Name" placeholder="e.g. True North Restoration LLC" required>
 
---------------------------------------------------
-OFFICIAL CERTIFICATE OF ENROLLMENT
---------------------------------------------------
-Entity: Omaha Restoration™
-Parent: Murrays Empire LLC
-Status: ACTIVE / SIGNED
---------------------------------------------------
+        <label>Primary Contact Name</label>
+        <input type="text" name="Contact_Name" placeholder="Full Legal Name" required>
 
-This email serves as your digital record of the agreement you signed today. By submitting the enrollment form, you agreed to the Contractor Participation Agreement version OR-CPA-v1.0-2026-03-31, including the $150 Job Start fee, the 10% Completion fee, and the other terms presented on the enrollment page.">
+        <label>Business Email</label>
+        <input type="email" name="email" placeholder="email@company.com" required>
 
-      <input type="hidden" name="Accepted_At_UTC" id="acceptedAt">
-      <input type="hidden" name="Signer_IP" id="signerIp">
-      <input type="hidden" name="User_Agent" id="userAgent">
-      <input type="hidden" name="ESIGN_Consent" value="Consented">
-      <input type="hidden" name="Agreement_Version" value="OR-CPA-v1.0-2026-03-31">
-      <input type="hidden" name="Agreement_Displayed" value="Yes">
-      <input type="hidden" name="Agreement_Text" value="Contractor agreed to version OR-CPA-v1.0-2026-03-31: $150 fee per Job Start, 10% of gross funds upon Completion, authority to bind business, independent contractor status, indemnification, and Nebraska arbitration.">
+        <label>Direct Phone</label>
+        <input type="tel" name="Phone" placeholder="(402) 000-0000" required>
 
-      <div class="box">
-        <h2>Company Details</h2>
+        <label>Primary Service Area</label>
+        <input type="text" name="Service_Area" placeholder="e.g. Omaha Metro, Council Bluffs" required>
 
-        <label for="businessName">Company Legal Name</label>
-        <input id="businessName" type="text" name="Business_Name" required>
-
-        <label for="contactName">Primary Contact</label>
-        <input id="contactName" type="text" name="Contact_Name" required>
-
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required>
-
-        <label for="phone">Phone</label>
-        <input id="phone" type="text" name="Phone" required>
-
-        <label for="serviceArea">Service Area</label>
-        <input id="serviceArea" type="text" name="Service_Area" required>
-
-        <div class="checkline">
-          <input id="signatureConsent" type="checkbox" name="Signature_Consent" value="Accepted" required>
-          <label for="signatureConsent" class="tos-text">
-            I affirm that I have authority to bind this business and that I have read and agree to the full Omaha Restoration™ Contractor Participation Agreement shown below, including the $150 Job Start fee, the 10% Completion fee, electronic signature consent, and all other terms.
-          </label>
+        <h2>Legal Acceptance</h2>
+        
+        <div class="check-box">
+          <input type="checkbox" required>
+          <span>I verify I have authority to bind this entity. I agree to the $150 Job Start fee and 10% Completion fee as outlined in the Participation Agreement below.</span>
         </div>
 
-        <label for="signatureName">Typed Full Legal Name (Electronic Signature)</label>
-        <input id="signatureName" type="text" name="Electronic_Signature_Name" required>
+        <label>Electronic Signature (Type Full Legal Name)</label>
+        <input type="text" name="Electronic_Signature" placeholder="Type name to sign digitally" required>
 
-        <p class="tiny">
-          By submitting, you consent to doing business electronically and agree that your typed name and submission
-          constitute a legally binding electronic signature under the ESIGN Act.
-        </p>
-      </div>
-
-      <div class="box">
-        <button type="submit" class="btn">Submit Enrollment & Sign</button>
+        <button type="submit" class="btn-submit">Sign & Submit Enrollment</button>
 
         <details>
-          <summary>View Contractor Participation Agreement</summary>
+          <summary>View Participation Agreement Terms</summary>
           <div class="tos-text">
-            <p><strong>1) Platform Role / No Guarantee:</strong> Platform is a referral and lead-generation service only. Platform makes no guarantees regarding the quality, safety, legality, timing, pricing, or outcome of Contractor’s work.</p>
-            <p><strong>2) Referral Model & Compensation:</strong> Contractor agrees to pay Platform: (a) a $150 referral fee for each Job Start, due within five (5) business days; and (b) ten percent (10%) of all gross funds actually received, due within five (5) business days.</p>
-            <p><strong>3) Referred Lead Defined:</strong> A “Referred Lead” means any contact through Platform-controlled web forms, email, text, or other communication.</p>
-            <p><strong>4) Job Start Defined:</strong> A Job Start occurs when the customer authorizes paid work, signs an agreement, pays a deposit, or work is scheduled.</p>
-            <p><strong>5) Completion Defined:</strong> Completion occurs when services are substantially completed and Contractor receives payment.</p>
-            <p><strong>6) Reporting Requirement:</strong> Contractor must notify Platform within 24 hours of Job Start or Completion. Failure to notify constitutes acknowledgment that fees are owed.</p>
-            <p><strong>7) Payment Terms:</strong> $150 due within 5 business days of Start. 10% due within 5 business days of receiving customer funds.</p>
-            <p><strong>8) Payment Method:</strong> Paid electronically via Stripe invoice or designated link.</p>
-            <p><strong>9) Late Payments:</strong> Accrue interest at 1.5% per month.</p>
-            <p><strong>10) Audit & Recordkeeping:</strong> Contractor must maintain records for 12 months and provide them upon request.</p>
-            <p><strong>11) Non-Circumvention:</strong> Contractor shall not restructure services to avoid payment.</p>
-            <p><strong>12) Independent Contractor:</strong> Contractor is not an employee, partner, or agent of Platform.</p>
-            <p><strong>13) Credential & Insurance:</strong> Contractor must maintain all required licenses and insurance.</p>
-            <p><strong>14) Proof Upon Request:</strong> Contractor must provide proof of insurance/license upon request.</p>
-            <p><strong>15) High-Risk Work:</strong> Active insurance is a mandatory condition for receiving leads.</p>
-            <p><strong>16) No Control Over Work:</strong> Platform does not control pricing, scheduling, or labor.</p>
-            <p><strong>17) Customer Relationship:</strong> Agreement exists solely between Contractor and customer.</p>
-            <p><strong>18) Indemnification:</strong> Contractor agrees to indemnify and hold harmless Platform and Murrays Empire LLC from any claims arising from Contractor’s work.</p>
-            <p><strong>19) Limitation of Liability:</strong> Platform’s liability is limited to referral fees paid in the last 3 months.</p>
-            <p><strong>20) Dispute Resolution:</strong> Resolved by binding arbitration in Nebraska.</p>
-            <p><strong>21) Governing Law:</strong> State of Nebraska.</p>
-            <p><strong>22) Electronic Signature:</strong> Submission constitutes a legally binding signature under the ESIGN Act.</p>
-            <p><strong>23) Entire Agreement:</strong> This constitutes the whole agreement between the parties.</p>
+            <p><strong>1) Fees:</strong> Contractor agrees to pay Platform a $150 referral fee within 5 days of a "Job Start" and 10% of gross funds within 5 days of Job Completion.</p>
+            <p><strong>2) Notification:</strong> Contractor MUST notify Platform within 24 hours of Job Start. Failure to notify constitutes acknowledgment that fees are owed based on Lead Log.</p>
+            <p><strong>3) Compliance:</strong> Contractor must maintain all required licenses and insurance in the state of Nebraska/Iowa.</p>
+            <p><strong>4) Liability:</strong> Contractor indemnifies Omaha Restoration™ and Murrays Empire LLC from all work-related claims.</p>
+            <p><strong>5) Arbitration:</strong> All disputes shall be resolved via binding arbitration in Omaha, Nebraska.</p>
           </div>
         </details>
-      </div>
-    </form>
+      </form>
+    </div>
+
     <footer>
-      © Omaha Restoration™ — Operated by <strong>Murrays Empire LLC</strong>
+      <div class="brand-tag">OMAHA RESTORATION™</div>
+      <p style="font-size: 10px; color: var(--muted); margin-top: 15px;">© <span id="yr"></span> Murrays Empire LLC. All Rights Reserved.</p>
     </footer>
   </div>
 
   <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
     document.getElementById("acceptedAt").value = new Date().toISOString();
-    document.getElementById("userAgent").value = navigator.userAgent || "";
 
     (async function () {
       try {
-        const res = await fetch("https://api.ipify.org?format=json", { cache: "no-store" });
+        const res = await fetch("https://api.ipify.org?format=json");
         const data = await res.json();
-        document.getElementById("signerIp").value = data.ip || "Not Found";
+        document.getElementById("signerIp").value = data.ip;
       } catch (e) {
-        document.getElementById("signerIp").value = "Not Found";
+        document.getElementById("signerIp").value = "IP_NOT_FOUND";
       }
     })();
   </script>
