@@ -12,26 +12,29 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Emergency Connection | Omaha Restoration™</title>
+  <title>Emergency Intake | Omaha Restoration™</title>
   <meta name="robots" content="noindex, nofollow">
 
   <style>
     :root {
-      --primary: #b31919;
+      --primary: #b31919; /* Emergency Red */
       --secondary: #001d3d;
       --black: #050505;
       --off-white: #fcfcfc;
       --gold: #c5a059;
       --text: #1a1a1a;
       --border: rgba(0,0,0,0.08);
+      --card-shadow: 0 30px 70px rgba(0,0,0,0.4);
     }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
       margin: 0;
-      background-color: var(--black);
+      background-color: var(--black); /* Matches the Hero theme */
+      background: linear-gradient(180deg, #001d3d 0%, #000814 100%);
       color: #fff;
       -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
     }
 
     .container {
@@ -42,159 +45,162 @@
 
     .header { text-align: center; margin-bottom: 30px; }
 
-    .pill {
+    /* Match the Home Screen Pill */
+    .status-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 8px 16px;
-      background: rgba(197, 160, 89, 0.1);
-      color: var(--gold);
+      background: #f0fdf4;
+      color: #166534;
       font-size: 11px;
       font-weight: 900;
-      border-radius: 99px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      border: 1px solid #dcfce7;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      border: 1px solid rgba(197, 160, 89, 0.3);
     }
 
     .dot {
-      width: 8px;
-      height: 8px;
-      background: #28a745;
+      width: 10px;
+      height: 10px;
+      background: #22c55e;
       border-radius: 50%;
-      box-shadow: 0 0 10px #28a745;
+      box-shadow: 0 0 12px #22c55e;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.5; }
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 900;
-      letter-spacing: -1.5px;
-      margin: 15px 0 5px;
+      letter-spacing: -2px;
+      margin: 10px 0;
       color: #fff;
+      line-height: 0.9;
     }
 
     .sub {
-      font-size: 15px;
-      color: #888;
+      font-size: 16px;
+      color: rgba(255,255,255,0.7);
       margin-bottom: 0;
     }
 
     .intake-card {
       background: #fff;
-      border-radius: 20px;
-      padding: 35px 25px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+      border-radius: 24px;
+      padding: 40px 28px;
+      box-shadow: var(--card-shadow);
       color: var(--text);
+      border: 1px solid rgba(197, 160, 89, 0.3);
     }
 
     .form-group {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     label {
       display: block;
-      font-size: 12px;
-      font-weight: 800;
+      font-size: 11px;
+      font-weight: 900;
       text-transform: uppercase;
-      color: #999;
-      margin-bottom: 8px;
-      margin-left: 4px;
+      color: var(--gold);
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
     input, select, textarea {
       width: 100%;
-      padding: 16px;
-      border-radius: 12px;
+      padding: 18px;
+      border-radius: 14px;
       border: 1px solid #eee;
       background: #f9f9f9;
       font-size: 16px;
       font-family: inherit;
       box-sizing: border-box;
-      transition: border-color 0.3s;
+      transition: all 0.3s ease;
     }
 
     input:focus, select:focus, textarea:focus {
       outline: none;
       border-color: var(--gold);
       background: #fff;
-    }
-
-    textarea {
-      height: 80px;
-      resize: none;
+      box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1);
     }
 
     button {
       width: 100%;
       background: var(--primary);
       color: white;
-      padding: 22px;
-      border-radius: 12px;
+      padding: 24px;
+      border-radius: 14px;
       border: none;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(179, 25, 25, 0.25);
-      transition: transform 0.2s, filter 0.2s;
+      box-shadow: 0 15px 35px rgba(179, 25, 25, 0.3);
+      transition: all 0.3s ease;
       margin-top: 10px;
     }
 
     button:hover {
       transform: translateY(-2px);
       filter: brightness(1.1);
+      box-shadow: 0 20px 40px rgba(179, 25, 25, 0.4);
     }
 
     .check-box {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      margin: 20px 0;
-      padding: 15px;
-      background: #fdfdfd;
-      border: 1px solid #eee;
-      border-radius: 10px;
+      margin: 24px 0;
+      padding: 18px;
+      background: #fff9f9;
+      border: 1px solid #fee2e2;
+      border-radius: 14px;
       text-align: left;
     }
 
     .check-box input {
-      width: 22px;
-      height: 22px;
-      margin: 0;
+      width: 24px;
+      height: 24px;
       accent-color: var(--primary);
-      cursor: pointer;
       flex-shrink: 0;
     }
 
     .check-box span {
-      font-size: 13px;
-      font-weight: 600;
-      color: #555;
-      line-height: 1.4;
-    }
-
-    .micro-note {
-      font-size: 11px;
-      color: #bbb;
-      text-align: center;
-      margin-top: 15px;
+      font-size: 14px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      color: #333;
+      line-height: 1.4;
     }
 
     .footer-note {
       font-size: 11px;
-      color: #555;
+      color: rgba(255,255,255,0.4);
       text-align: center;
-      margin-top: 30px;
-      line-height: 1.6;
+      margin-top: 40px;
+      line-height: 1.8;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    @media (max-width: 480px) {
-      h1 { font-size: 28px; }
-      .container { padding: 20px 15px; }
+    footer {
+      text-align: center;
+      margin-top: 25px;
+      padding-bottom: 40px;
+      font-size: 10px;
+      color: var(--gold);
+      font-weight: 900;
+      letter-spacing: 2px;
     }
   </style>
 </head>
@@ -203,66 +209,61 @@
 
   <div class="container">
     <div class="header">
-      <div class="pill"><span class="dot"></span> Network Request Live</div>
-      <h1>Emergency Intake</h1>
-      <p class="sub">Complete this form to find an available local pro.</p>
+      <div class="status-pill"><span class="dot"></span> Intake Line Active</div>
+      <h1>Request Help</h1>
+      <p class="sub">Verify your location and damage type below.</p>
     </div>
 
     <div class="intake-card">
       <form action="https://formsubmit.co/murraysempirellc@gmail.com" method="POST">
         <input type="hidden" name="_next" value="https://omaharestoration.store/connection-confirmed.html">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Omaha Restoration Lead">
+        <input type="hidden" name="_subject" value="URGENT: Omaha Restoration Lead">
         <input type="hidden" name="_template" value="table">
 
         <div class="form-group">
-          <label>Service Location</label>
-          <input type="text" name="ZIP" placeholder="ZIP Code" required>
+          <label>Where is the damage?</label>
+          <input type="text" name="ZIP" placeholder="Enter ZIP Code" required>
         </div>
 
         <div class="form-group">
-          <label>Issue Type</label>
+          <label>What is the issue?</label>
           <select name="Issue_Type" required>
             <option value="">Select Category...</option>
             <option>Water Damage / Flood</option>
             <option>Pipe Burst / Leak</option>
             <option>Sewer Backup</option>
-            <option>Mold Discovery</option>
+            <option>Mold Remediation</option>
             <option>Other Emergency</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label>Contact Information</label>
-          <input type="text" name="Name" placeholder="Full Name" required style="margin-bottom: 10px;">
-          <input type="tel" name="Phone" placeholder="Direct Phone Number" required style="margin-bottom: 10px;">
-          <input type="email" name="Email" placeholder="Email Address" required>
-        </div>
-
-        <div class="form-group">
-          <label>Additional Notes (Optional)</label>
-          <textarea name="Description" placeholder="Briefly describe the emergency..."></textarea>
+          <label>Your Contact Details</label>
+          <input type="text" name="Name" placeholder="Full Name" required style="margin-bottom: 12px;">
+          <input type="tel" name="Phone" placeholder="Direct Phone Number" required style="margin-bottom: 12px;">
+          <input type="email" name="Email" placeholder="Email Address (Optional)">
         </div>
 
         <div class="check-box">
           <input type="checkbox" required>
-          <span>I agree to be connected with an independent local contractor if a match is found.</span>
+          <span>I am requesting an emergency connection to an available independent contractor.</span>
         </div>
 
         <button type="submit">Submit Request</button>
 
-        <div class="micro-note">
-          No obligation • Verified Network • Fast Connection
-        </div>
+        <p style="text-align:center; font-size:12px; color:#999; margin-top:20px; font-weight:700;">
+          Secure Dispatch Powered by Murrays Empire LLC
+        </p>
       </form>
     </div>
 
     <div class="footer-note">
-      <strong>Disclosure:</strong> Omaha Restoration™ is a third-party referral platform operated by <strong>Murrays Empire LLC</strong>. We are not a licensed contractor and do not perform restoration services directly.
+      <strong>OFFICIAL DISCLOSURE:</strong> Omaha Restoration™ is a high-speed referral platform. We are not a contractor and do not perform physical restoration work. All services are performed by independent local pros.
     </div>
 
-    <footer style="text-align: center; margin-top: 20px; font-size: 10px; color: #333; font-weight: 800;">
-      © <span id="yr"></span> OMAHA RESTORATION™
+    <footer>
+      © <span id="yr"></span> MURRAYS EMPIRE LLC
     </footer>
   </div>
 
