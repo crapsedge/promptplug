@@ -6,285 +6,204 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-LHMPN1D7CG');
     gtag('config', 'AW-18034717066');
   </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Omaha Restoration™ | Premium Emergency Water Mitigation</title>
-  <meta name="description" content="Omaha's premium referral network for emergency water damage. We connect you instantly with vetted local restoration experts. Fast, local, and professional.">
-
+  <title>Omaha Restoration™ | Urgent Water Damage Response</title>
+  
   <style>
     :root {
-      --primary: #b31919; /* Deep Emergency Red */
-      --secondary: #001d3d;
-      --black: #050505;
+      --gold: #D4AF37;
+      --deep-gold: #b38f2d;
+      --black: #000000;
       --off-white: #fcfcfc;
-      --gold: #c5a059;
       --text: #1a1a1a;
-      --muted: #6b7280;
-      --border: rgba(0,0,0,0.08);
-      --card-shadow: 0 30px 70px rgba(0,0,0,0.18);
     }
 
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html { scroll-behavior: smooth; }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-      margin: 0;
-      background: var(--off-white);
-      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      margin: 0; background: var(--off-white); color: var(--text);
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
 
-    /* TOP ANNOUNCEMENT */
     .top-bar {
-      background: var(--black);
-      color: var(--gold);
-      padding: 10px;
-      font-size: 10px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-align: center;
+      background: var(--black); color: var(--gold);
+      padding: 12px; font-size: 11px; font-weight: 900;
+      text-transform: uppercase; letter-spacing: 2px; text-align: center;
       border-bottom: 2px solid var(--gold);
     }
 
-    header {
-      background: #fff;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      color: var(--black);
-      text-transform: uppercase;
-    }
+    header { padding: 25px; text-align: center; background: #fff; }
+    .logo { font-size: 26px; font-weight: 900; color: var(--black); text-transform: uppercase; }
     .logo span { color: var(--gold); }
 
-    /* HERO SECTION */
+    /* HERO: URGENCY FIRST */
     .hero {
-      background: linear-gradient(180deg, #001d3d 0%, #000814 100%);
-      color: #fff;
-      padding: 60px 24px 140px;
-      text-align: center;
+      background: var(--black); color: #fff;
+      padding: 60px 24px 140px; text-align: center;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 11vw, 82px);
-      margin: 0 0 16px;
-      font-weight: 900;
-      letter-spacing: -3px;
-      line-height: 0.88;
+      font-size: clamp(44px, 12vw, 84px); margin: 0 0 15px;
+      font-weight: 900; letter-spacing: -3px; line-height: 0.9;
     }
 
     .hero p {
-      font-size: 19px;
-      max-width: 600px;
-      margin: 0 auto 20px;
-      color: rgba(255,255,255,0.9);
-      line-height: 1.4;
+      font-size: 18px; color: var(--gold); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
     }
 
-    /* THE COMMAND CARD */
+    /* COMMAND CARD */
     .command-card {
-      background: #fff;
-      max-width: 550px;
-      margin: -100px auto 40px;
-      padding: 40px 28px;
-      border-radius: 24px;
-      box-shadow: var(--card-shadow);
+      background: #fff; max-width: 550px; margin: -100px auto 40px;
+      padding: 40px 25px; border-radius: 24px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+      position: relative; z-index: 10; border: 1px solid rgba(212, 175, 55, 0.4);
       text-align: center;
-      position: relative;
-      z-index: 10;
-      border: 1px solid var(--border);
     }
 
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      background: #f0fdf4;
-      color: #166534;
-      font-size: 12px;
-      font-weight: 900;
-      border-radius: 999px;
-      margin-bottom: 24px;
-      border: 1px solid #dcfce7;
+    .live-status {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px; background: #000; color: #fff;
+      font-size: 11px; font-weight: 900; border-radius: 50px;
+      margin-bottom: 25px; border: 1px solid var(--gold);
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 12px #22c55e;
+      width: 8px; height: 8px; background: #22c55e;
+      border-radius: 50%; box-shadow: 0 0 10px #22c55e;
       animation: pulse 2s infinite;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(0.95); opacity: 0.5; }
-      50% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(0.95); opacity: 0.5; }
-    }
-
-    .card-title {
-      font-size: 34px;
-      font-weight: 900;
-      margin: 0 0 12px;
-      letter-spacing: -1.5px;
-      line-height: 1;
-    }
+    @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
 
     /* TRUST GRID */
     .trust-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 24px 0;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 25px;
     }
 
     .trust-item {
-      background: #f8f9fa;
-      border: 1px solid #eee;
-      border-radius: 14px;
-      padding: 15px;
-      font-size: 13px;
-      font-weight: 800;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      background: #f8f8f8; padding: 15px; border-radius: 12px;
+      border: 1px solid #eee; font-weight: 800; font-size: 14px;
     }
-    .trust-item span { color: var(--gold); font-size: 11px; text-transform: uppercase; }
 
-    /* ACTION BUTTON */
+    .trust-item span { color: var(--gold); font-size: 10px; display: block; margin-bottom: 4px; text-transform: uppercase; }
+
+    /* CHECKBOX */
+    .checkbox-container {
+      background: #fff9f0; padding: 20px; border-radius: 16px;
+      margin-bottom: 25px; border: 1px solid #f3e8d2; text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .checkbox-container.error { border-color: #b31919; background: #fff5f5; }
+
     .btn-action {
-      display: block;
-      background: #e5e7eb;
-      color: #9ca3af;
-      padding: 24px 20px;
-      text-decoration: none;
-      font-weight: 900;
-      font-size: 20px;
-      border-radius: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      pointer-events: none;
-      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: block; background: var(--gold); color: #fff;
+      padding: 25px; text-decoration: none; font-weight: 900;
+      font-size: 22px; border-radius: 16px; text-transform: uppercase;
+      box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
     }
 
-    .btn-action.active {
-      background: var(--primary);
-      color: #fff;
-      pointer-events: auto;
-      box-shadow: 0 20px 40px rgba(179, 25, 25, 0.3);
-      transform: translateY(-2px);
-    }
+    /* PROCESS SECTION */
+    .process-section { padding: 40px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+    .process-step { background: #fff; padding: 30px; border-radius: 20px; border: 1px solid #eee; }
+    .process-step div { font-size: 40px; margin-bottom: 10px; }
+    .process-step h3 { font-weight: 900; margin-bottom: 10px; }
 
-    /* CONTENT PANELS */
-    .section { max-width: 1100px; margin: 0 auto; padding: 20px; }
-    .panel { background: #fff; border-radius: 24px; padding: 32px; margin-bottom: 24px; border: 1px solid var(--border); }
-    .panel h2 { font-size: 28px; font-weight: 900; margin: 0 0 16px; letter-spacing: -1px; }
-
-    .benefit-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
-    .benefit-box { padding: 20px; background: #fcfcfc; border: 1px solid #f0f0f0; border-radius: 18px; }
-    .benefit-box strong { display: block; color: var(--gold); margin-bottom: 8px; font-size: 16px; }
-
-    footer { background: var(--black); color: #666; padding: 60px 20px; text-align: center; }
-    .footer-links a { color: #fff; text-decoration: none; margin: 0 10px; font-size: 13px; font-weight: 700; }
-    .disclosure-box { max-width: 800px; margin: 30px auto; font-size: 12px; line-height: 1.6; border-top: 1px solid #222; padding-top: 20px; }
-
+    footer { background: #000; color: #777; padding: 60px 20px; text-align: center; }
+    .disclosure { font-size: 11px; line-height: 1.6; max-width: 800px; margin: 20px auto; border-top: 1px solid #222; padding-top: 20px; }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">Omaha Metro Emergency Response • Fully Automated Dispatch</div>
+  <div class="top-bar">OMAHA EMERGENCY DISPATCH • 24/7 PRIORITY SERVICE</div>
 
   <header>
     <div class="logo">Omaha<span>Restoration</span>™</div>
   </header>
 
   <section class="hero">
-    <h1>Water Damage? <br>Get Help Now.</h1>
-    <p>The premium connection point for Omaha property owners. We route your emergency to the highest-rated available contractors in seconds.</p>
+    <h1>URGENT WATER DAMAGE?</h1>
+    <p>Connecting You to Pros in 60 Minutes or Less.</p>
   </section>
 
   <div class="command-card">
-    <div class="status-pill"><span class="dot"></span> Contractors Online: Omaha Metro</div>
-    
-    <h2 class="card-title">Check Local Availability</h2>
+    <div class="live-status"><span class="dot"></span> ACTIVE DISPATCH: DOUGLAS & SARPY COUNTY</div>
     
     <div class="trust-grid">
-      <div class="trust-item"><span>Status</span>Vetted Experts</div>
-      <div class="trust-item"><span>Cost</span>$0 Intake Fee</div>
-      <div class="trust-item"><span>Speed</span>Direct Routing</div>
-      <div class="trust-item"><span>Area</span>Omaha & Surrounds</div>
+      <div class="trust-item"><span>Response Time</span>60 Mins or Less</div>
+      <div class="trust-item"><span>Vetting</span>IICRC Certified</div>
+      <div class="trust-item"><span>Homeowner Cost</span>$0 Connection</div>
+      <div class="trust-item"><span>Reliability</span>Licensed & Insured</div>
     </div>
 
-    <div style="background:#fff9f9; padding:20px; border-radius:16px; margin-bottom:24px; text-align:left; border:1px solid #fee2e2;">
+    <div id="check-box-area" class="checkbox-container">
       <div style="display:flex; gap:12px; align-items:flex-start;">
-        <input type="checkbox" id="legal-check" style="width:24px; height:24px; accent-color:var(--primary); cursor:pointer;">
-        <label for="legal-check" style="font-size:14px; font-weight:700; line-height:1.4; cursor:pointer;">
-          I acknowledge that Omaha Restoration™ is a referral service. I agree to the <a href="disclosures.html" style="color:var(--primary);">required disclosures</a> and wish to check for independent contractor availability.
+        <input type="checkbox" id="legal-check" style="width:28px; height:28px; cursor:pointer;">
+        <label for="legal-check" style="font-size:14px; font-weight:700; cursor:pointer;">
+          I acknowledge Omaha Restoration™ is a <span style="color:var(--gold)">Referral Service</span>. I wish to route my request to a local contractor now.
         </label>
       </div>
     </div>
 
-    <a id="referralBtn" class="btn-action" href="route.html">Search For Contractors</a>
-    <p style="font-size:12px; color:#999; margin-top:15px; font-weight:600;">Secure Intake Protected by Murrays Empire LLC</p>
+    <a href="#" id="main-cta" class="btn-action">FIND LOCAL PRO NOW</a>
+    <p style="font-size:11px; color:#999; margin-top:15px; font-weight:700;">PRO-FUNDED DISPATCH • NO UPFRONT HOMEOWNER FEES</p>
   </div>
 
-  <section class="section">
-    <div class="panel">
-      <h2>Why Property Owners Choose Us</h2>
-      <div class="benefit-row">
-        <div class="benefit-box">
-          <strong>Elite Network</strong>
-          <p>We only route to contractors who meet strict reliability standards. No more guessing who to call.</p>
-        </div>
-        <div class="benefit-box">
-          <strong>Immediate Action</strong>
-          <p>Water damage doesn't wait for business hours. Our intake system is live 24/7/365.</p>
-        </div>
+  <section class="process-section">
+    <h2 style="font-weight: 900; font-size: 32px;">HOW IT WORKS</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <div>📱</div>
+        <h3>1. Request Help</h3>
+        <p>Complete the intake. It costs the homeowner $0 to use our routing system.</p>
       </div>
-    </div>
-
-    <div class="panel" style="text-align:center; background: linear-gradient(to bottom right, #fff, #fff9f0);">
-      <h2>Service Coverage</h2>
-      <p>Providing high-end referral services to: Omaha, Bellevue, Papillion, La Vista, Elkhorn, Gretna, and Council Bluffs.</p>
+      <div class="process-step">
+        <div>⚡</div>
+        <h3>2. Instant Match</h3>
+        <p>Our system pings the highest-rated available contractor in your Omaha neighborhood.</p>
+      </div>
+      <div class="process-step">
+        <div>🚒</div>
+        <h3>3. Pros Arrive</h3>
+        <p>A certified mitigation team arrives to stop the damage and save your property.</p>
+      </div>
     </div>
   </section>
 
   <footer>
-    <div class="footer-links">
-      <a href="disclosures.html">Disclosures</a> | 
-      <a href="terms.html">Terms of Service</a> | 
-      <a href="privacy.html">Privacy Policy</a>
+    <div style="margin-bottom: 20px;">
+      <a href="disclosures.html" style="color:#fff; text-decoration:none; margin: 0 10px; font-size: 13px;">Disclosures</a>
+      <a href="terms.html" style="color:#fff; text-decoration:none; margin: 0 10px; font-size: 13px;">Terms</a>
     </div>
-    <div class="disclosure-box">
-      <strong>OFFICIAL NOTICE:</strong> Omaha Restoration™ is a high-speed referral platform owned and operated by <strong>Murrays Empire LLC</strong>. We are a routing service, not a restoration contractor. We do not perform physical labor or emergency mitigation. All work is performed by independent third-party contractors. 
+    <div class="disclosure">
+      <strong>NOTICE:</strong> Omaha Restoration™ is a high-speed lead routing platform operated by <strong>Murrays Empire LLC</strong>. We are a referral service, not a restoration contractor. We do not perform physical labor. All work is done by independent third-party contractors who pay a referral fee to our network.
     </div>
-    <div style="font-size:10px; letter-spacing:2px; font-weight:900; color:#444;">© <span id="yr"></span> MURRAYS EMPIRE LLC</div>
+    <div style="font-size: 10px; font-weight: 900; letter-spacing: 2px;">© <span id="yr"></span> MURRAYS EMPIRE LLC</div>
   </footer>
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
+    const cta = document.getElementById('main-cta');
     const check = document.getElementById('legal-check');
-    const btn = document.getElementById('referralBtn');
-    check.addEventListener('change', () => {
-      if (check.checked) { btn.classList.add('active'); } 
-      else { btn.classList.remove('active'); }
+    const box = document.getElementById('check-box-area');
+
+    cta.addEventListener('click', (e) => {
+      if(!check.checked) {
+        e.preventDefault();
+        box.classList.add('error');
+        setTimeout(() => box.classList.remove('error'), 500);
+        alert("Please acknowledge the referral disclosure to proceed.");
+      } else {
+        window.location.href = "route.html";
+      }
     });
   </script>
-
 </body>
 </html>
