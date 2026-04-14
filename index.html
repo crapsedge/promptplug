@@ -16,11 +16,14 @@
   
   <style>
     :root {
-      --gold: #D4AF37;
-      --deep-gold: #b38f2d;
-      --black: #000000;
+      --primary: #b31919; /* Your preferred Red */
+      --secondary: #001d3d; /* Your preferred Blue */
+      --black: #050505;
       --off-white: #fcfcfc;
+      --gold: #c5a059;
       --text: #1a1a1a;
+      --border: rgba(0,0,0,0.08);
+      --card-shadow: 0 30px 70px rgba(0,0,0,0.18);
     }
 
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -37,92 +40,99 @@
       border-bottom: 2px solid var(--gold);
     }
 
-    header { padding: 25px; text-align: center; background: #fff; }
-    .logo { font-size: 26px; font-weight: 900; color: var(--black); text-transform: uppercase; }
+    header { padding: 25px; text-align: center; background: #fff; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 26px; font-weight: 900; color: var(--black); text-transform: uppercase; letter-spacing: -1px; }
     .logo span { color: var(--gold); }
 
-    /* HERO: URGENCY FIRST */
+    /* HERO: Using your original Deep Blue */
     .hero {
-      background: var(--black); color: #fff;
-      padding: 60px 24px 140px; text-align: center;
+      background: linear-gradient(180deg, var(--secondary) 0%, #000814 100%);
+      color: #fff; padding: 70px 24px 140px; text-align: center;
     }
 
     .hero h1 {
-      font-size: clamp(44px, 12vw, 84px); margin: 0 0 15px;
-      font-weight: 900; letter-spacing: -3px; line-height: 0.9;
+      font-size: clamp(46px, 12vw, 84px); margin: 0 0 15px;
+      font-weight: 900; letter-spacing: -3px; line-height: 0.85;
     }
 
     .hero p {
-      font-size: 18px; color: var(--gold); font-weight: 700;
-      text-transform: uppercase; letter-spacing: 1px;
+      font-size: 20px; color: rgba(255,255,255,0.9); font-weight: 600;
     }
 
     /* COMMAND CARD */
     .command-card {
       background: #fff; max-width: 550px; margin: -100px auto 40px;
-      padding: 40px 25px; border-radius: 24px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.25);
-      position: relative; z-index: 10; border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 45px 28px; border-radius: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative; z-index: 10; border: 1px solid var(--border);
       text-align: center;
     }
 
-    .live-status {
+    .status-pill {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 8px 16px; background: #000; color: #fff;
-      font-size: 11px; font-weight: 900; border-radius: 50px;
+      padding: 10px 18px; background: #000; color: #fff;
+      font-size: 12px; font-weight: 900; border-radius: 50px;
       margin-bottom: 25px; border: 1px solid var(--gold);
     }
 
     .dot {
-      width: 8px; height: 8px; background: #22c55e;
-      border-radius: 50%; box-shadow: 0 0 10px #22c55e;
+      width: 10px; height: 10px; background: #22c55e;
+      border-radius: 50%; box-shadow: 0 0 12px #22c55e;
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
 
-    /* TRUST GRID */
     .trust-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 25px;
     }
 
     .trust-item {
-      background: #f8f8f8; padding: 15px; border-radius: 12px;
-      border: 1px solid #eee; font-weight: 800; font-size: 14px;
+      background: #f8f9fa; padding: 15px; border-radius: 14px;
+      border: 1px solid #eee; font-weight: 800; font-size: 13px;
     }
 
     .trust-item span { color: var(--gold); font-size: 10px; display: block; margin-bottom: 4px; text-transform: uppercase; }
 
-    /* CHECKBOX */
+    /* CHECKBOX AREA: Your requested Red as an accent when needed */
     .checkbox-container {
-      background: #fff9f0; padding: 20px; border-radius: 16px;
-      margin-bottom: 25px; border: 1px solid #f3e8d2; text-align: left;
+      background: #fffafa; padding: 22px; border-radius: 18px;
+      margin-bottom: 25px; border: 1px solid #fee2e2; text-align: left;
       transition: all 0.3s ease;
     }
 
-    .checkbox-container.error { border-color: #b31919; background: #fff5f5; }
+    .checkbox-container.error { border-color: var(--primary); background: #fff5f5; animation: shake 0.4s ease; }
 
-    .btn-action {
-      display: block; background: var(--gold); color: #fff;
-      padding: 25px; text-decoration: none; font-weight: 900;
-      font-size: 22px; border-radius: 16px; text-transform: uppercase;
-      box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
     }
 
-    /* PROCESS SECTION */
-    .process-section { padding: 40px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
-    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
-    .process-step { background: #fff; padding: 30px; border-radius: 20px; border: 1px solid #eee; }
-    .process-step div { font-size: 40px; margin-bottom: 10px; }
+    /* BUTTON: Using your preferred Deep Red */
+    .btn-action {
+      display: block; background: var(--primary); color: #fff;
+      padding: 25px; text-decoration: none; font-weight: 900;
+      font-size: 22px; border-radius: 16px; text-transform: uppercase;
+      letter-spacing: 1px; transition: all 0.3s ease;
+      box-shadow: 0 20px 40px rgba(179, 25, 25, 0.3);
+    }
+
+    .btn-action:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+    .process-section { padding: 50px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 35px; }
+    .process-step { background: #fff; padding: 35px; border-radius: 20px; border: 1px solid var(--border); }
+    .process-step div { font-size: 45px; margin-bottom: 12px; }
     .process-step h3 { font-weight: 900; margin-bottom: 10px; }
 
-    footer { background: #000; color: #777; padding: 60px 20px; text-align: center; }
-    .disclosure { font-size: 11px; line-height: 1.6; max-width: 800px; margin: 20px auto; border-top: 1px solid #222; padding-top: 20px; }
+    footer { background: var(--black); color: #666; padding: 60px 20px; text-align: center; }
+    .disclosure { font-size: 11px; line-height: 1.7; max-width: 850px; margin: 25px auto; border-top: 1px solid #222; padding-top: 25px; }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">OMAHA EMERGENCY DISPATCH • 24/7 PRIORITY SERVICE</div>
+  <div class="top-bar">OMAHA EMERGENCY DISPATCH • 24/7 PRIORITY ROUTING</div>
 
   <header>
     <div class="logo">Omaha<span>Restoration</span>™</div>
@@ -130,39 +140,39 @@
 
   <section class="hero">
     <h1>URGENT WATER DAMAGE?</h1>
-    <p>Connecting You to Pros in 60 Minutes or Less.</p>
+    <p>Omaha's Priority Connection for Emergency Mitigation.</p>
   </section>
 
   <div class="command-card">
-    <div class="live-status"><span class="dot"></span> ACTIVE DISPATCH: DOUGLAS & SARPY COUNTY</div>
+    <div class="status-pill"><span class="dot"></span> ACTIVE DISPATCH: OMAHA METRO</div>
     
     <div class="trust-grid">
-      <div class="trust-item"><span>Response Time</span>60 Mins or Less</div>
-      <div class="trust-item"><span>Vetting</span>IICRC Certified</div>
+      <div class="trust-item"><span>Dispatch</span>Express Routing</div>
+      <div class="trust-item"><span>Standard</span>IICRC Vetted</div>
       <div class="trust-item"><span>Homeowner Cost</span>$0 Connection</div>
-      <div class="trust-item"><span>Reliability</span>Licensed & Insured</div>
+      <div class="trust-item"><span>Status</span>Licensed & Insured</div>
     </div>
 
     <div id="check-box-area" class="checkbox-container">
-      <div style="display:flex; gap:12px; align-items:flex-start;">
-        <input type="checkbox" id="legal-check" style="width:28px; height:28px; cursor:pointer;">
-        <label for="legal-check" style="font-size:14px; font-weight:700; cursor:pointer;">
-          I acknowledge Omaha Restoration™ is a <span style="color:var(--gold)">Referral Service</span>. I wish to route my request to a local contractor now.
+      <div style="display:flex; gap:14px; align-items:flex-start;">
+        <input type="checkbox" id="legal-check" style="width:28px; height:28px; cursor:pointer; accent-color:var(--primary);">
+        <label for="legal-check" style="font-size:14px; font-weight:700; cursor:pointer; line-height:1.4; color:#444;">
+          I acknowledge Omaha Restoration™ is a <span style="color:var(--primary)">Referral Service</span>. I wish to check availability and route my request now.
         </label>
       </div>
     </div>
 
     <a href="#" id="main-cta" class="btn-action">FIND LOCAL PRO NOW</a>
-    <p style="font-size:11px; color:#999; margin-top:15px; font-weight:700;">PRO-FUNDED DISPATCH • NO UPFRONT HOMEOWNER FEES</p>
+    <p style="font-size:11px; color:#aaa; margin-top:20px; font-weight:800; text-transform:uppercase; letter-spacing:1px;">PRO-FUNDED DISPATCH • NO UPFRONT HOMEOWNER FEES</p>
   </div>
 
   <section class="process-section">
-    <h2 style="font-weight: 900; font-size: 32px;">HOW IT WORKS</h2>
+    <h2 style="font-weight: 900; font-size: 32px; letter-spacing: -1.5px;">OUR PREMIUM ROUTING SYSTEM</h2>
     <div class="process-grid">
       <div class="process-step">
         <div>📱</div>
         <h3>1. Request Help</h3>
-        <p>Complete the intake. It costs the homeowner $0 to use our routing system.</p>
+        <p>Complete the intake. It costs the homeowner $0 to use our priority routing service.</p>
       </div>
       <div class="process-step">
         <div>⚡</div>
@@ -170,22 +180,22 @@
         <p>Our system pings the highest-rated available contractor in your Omaha neighborhood.</p>
       </div>
       <div class="process-step">
-        <div>🚒</div>
+        <div>🏠</div>
         <h3>3. Pros Arrive</h3>
-        <p>A certified mitigation team arrives to stop the damage and save your property.</p>
+        <p>A certified mitigation team arrives to assess the damage and begin recovery efforts.</p>
       </div>
     </div>
   </section>
 
   <footer>
-    <div style="margin-bottom: 20px;">
-      <a href="disclosures.html" style="color:#fff; text-decoration:none; margin: 0 10px; font-size: 13px;">Disclosures</a>
-      <a href="terms.html" style="color:#fff; text-decoration:none; margin: 0 10px; font-size: 13px;">Terms</a>
+    <div style="margin-bottom: 25px;">
+      <a href="disclosures.html" style="color:#fff; text-decoration:none; margin: 0 15px; font-size: 13px; font-weight: 700;">Disclosures</a>
+      <a href="terms.html" style="color:#fff; text-decoration:none; margin: 0 15px; font-size: 13px; font-weight: 700;">Terms</a>
     </div>
     <div class="disclosure">
-      <strong>NOTICE:</strong> Omaha Restoration™ is a high-speed lead routing platform operated by <strong>Murrays Empire LLC</strong>. We are a referral service, not a restoration contractor. We do not perform physical labor. All work is done by independent third-party contractors who pay a referral fee to our network.
+      <strong>OFFICIAL NOTICE:</strong> Omaha Restoration™ is a high-speed lead routing platform operated by <strong>Murrays Empire LLC</strong>. We are a referral service, not a restoration contractor. We do not perform physical labor or construction. All work is done by independent third-party contractors who pay a referral fee to our network.
     </div>
-    <div style="font-size: 10px; font-weight: 900; letter-spacing: 2px;">© <span id="yr"></span> MURRAYS EMPIRE LLC</div>
+    <div style="font-size: 10px; font-weight: 900; letter-spacing: 2px; color:#444; margin-top:20px;">© <span id="yr"></span> MURRAYS EMPIRE LLC</div>
   </footer>
 
   <script>
@@ -195,11 +205,10 @@
     const box = document.getElementById('check-box-area');
 
     cta.addEventListener('click', (e) => {
+      e.preventDefault();
       if(!check.checked) {
-        e.preventDefault();
         box.classList.add('error');
-        setTimeout(() => box.classList.remove('error'), 500);
-        alert("Please acknowledge the referral disclosure to proceed.");
+        setTimeout(() => box.classList.remove('error'), 400);
       } else {
         window.location.href = "route.html";
       }
