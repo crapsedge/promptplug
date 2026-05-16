@@ -17,7 +17,7 @@
 
   <style>
     :root {
-      --primary: #b31919; /* Emergency Red */
+      --primary: #b31919;
       --secondary: #001d3d;
       --black: #050505;
       --off-white: #fcfcfc;
@@ -30,7 +30,7 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
       margin: 0;
-      background-color: var(--black); /* Matches the Hero theme */
+      background-color: var(--black);
       background: linear-gradient(180deg, #001d3d 0%, #000814 100%);
       color: #fff;
       -webkit-font-smoothing: antialiased;
@@ -45,7 +45,6 @@
 
     .header { text-align: center; margin-bottom: 30px; }
 
-    /* Match the Home Screen Pill */
     .status-pill {
       display: inline-flex;
       align-items: center;
@@ -215,11 +214,8 @@
     </div>
 
     <div class="intake-card">
-      <form action="https://formsubmit.co/murraysempirellc@gmail.com" method="POST">
-        <input type="hidden" name="_next" value="https://omaharestoration.store/connection-confirmed.html">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="URGENT: Omaha Restoration Lead">
-        <input type="hidden" name="_template" value="table">
+      <form name="emergency-intake" method="POST" data-netlify="true" netlify action="/connection-confirmed.html">
+        <input type="hidden" name="form-name" value="emergency-intake">
 
         <div class="form-group">
           <label>Where is the damage?</label>
@@ -246,7 +242,7 @@
         </div>
 
         <div class="check-box">
-          <input type="checkbox" required>
+          <input type="checkbox" name="Emergency_Connection_Acknowledged" value="Yes" required>
           <span>I am requesting an emergency connection to an available independent contractor.</span>
         </div>
 
