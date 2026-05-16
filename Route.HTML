@@ -6,13 +6,16 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-LHMPN1D7CG');
     gtag('config', 'AW-18034717066');
   </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>Emergency Intake | Omaha Restoration™</title>
+
   <meta name="robots" content="noindex, nofollow">
 
   <style>
@@ -25,6 +28,10 @@
       --text: #1a1a1a;
       --border: rgba(0,0,0,0.08);
       --card-shadow: 0 30px 70px rgba(0,0,0,0.4);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -43,7 +50,10 @@
       padding: 40px 20px;
     }
 
-    .header { text-align: center; margin-bottom: 30px; }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
     .status-pill {
       display: inline-flex;
@@ -70,9 +80,20 @@
     }
 
     @keyframes pulse {
-      0% { transform: scale(0.95); opacity: 0.5; }
-      50% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(0.95); opacity: 0.5; }
+      0% {
+        transform: scale(0.95);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.95);
+        opacity: 0.5;
+      }
     }
 
     h1 {
@@ -113,7 +134,9 @@
       letter-spacing: 1px;
     }
 
-    input, select, textarea {
+    input,
+    select,
+    textarea {
       width: 100%;
       padding: 18px;
       border-radius: 14px;
@@ -121,11 +144,12 @@
       background: #f9f9f9;
       font-size: 16px;
       font-family: inherit;
-      box-sizing: border-box;
       transition: all 0.3s ease;
     }
 
-    input:focus, select:focus, textarea:focus {
+    input:focus,
+    select:focus,
+    textarea:focus {
       outline: none;
       border-color: var(--gold);
       background: #fff;
@@ -172,6 +196,7 @@
       height: 24px;
       accent-color: var(--primary);
       flex-shrink: 0;
+      margin-top: 2px;
     }
 
     .check-box span {
@@ -207,23 +232,42 @@
 <body>
 
   <div class="container">
+
     <div class="header">
-      <div class="status-pill"><span class="dot"></span> Intake Line Active</div>
+      <div class="status-pill">
+        <span class="dot"></span>
+        Intake Line Active
+      </div>
+
       <h1>Request Help</h1>
-      <p class="sub">Verify your location and damage type below.</p>
+
+      <p class="sub">
+        Verify your location and damage type below.
+      </p>
     </div>
 
     <div class="intake-card">
-      <form name="emergency-intake" method="POST" data-netlify="true" netlify action="/connection-confirmed.html">
+
+      <form name="emergency-intake"
+            method="POST"
+            data-netlify="true"
+            action="/connection-confirmed.html">
+
         <input type="hidden" name="form-name" value="emergency-intake">
 
         <div class="form-group">
           <label>Where is the damage?</label>
-          <input type="text" name="ZIP" placeholder="Enter ZIP Code" required>
+
+          <input
+            type="text"
+            name="ZIP"
+            placeholder="Enter ZIP Code"
+            required>
         </div>
 
         <div class="form-group">
           <label>What is the issue?</label>
+
           <select name="Issue_Type" required>
             <option value="">Select Category...</option>
             <option>Water Damage / Flood</option>
@@ -236,31 +280,62 @@
 
         <div class="form-group">
           <label>Your Contact Details</label>
-          <input type="text" name="Name" placeholder="Full Name" required style="margin-bottom: 12px;">
-          <input type="tel" name="Phone" placeholder="Direct Phone Number" required style="margin-bottom: 12px;">
-          <input type="email" name="Email" placeholder="Email Address (Optional)">
+
+          <input
+            type="text"
+            name="Name"
+            placeholder="Full Name"
+            required
+            style="margin-bottom:12px;">
+
+          <input
+            type="tel"
+            name="Phone"
+            placeholder="Direct Phone Number"
+            required
+            style="margin-bottom:12px;">
+
+          <input
+            type="email"
+            name="Email"
+            placeholder="Email Address (Optional)">
         </div>
 
         <div class="check-box">
-          <input type="checkbox" name="Emergency_Connection_Acknowledged" value="Yes" required>
-          <span>I am requesting an emergency connection to an available independent contractor.</span>
+          <input
+            type="checkbox"
+            name="Emergency_Connection_Acknowledged"
+            value="Yes"
+            required>
+
+          <span>
+            I am requesting an emergency connection to an available independent contractor.
+          </span>
         </div>
 
-        <button type="submit">Submit Request</button>
+        <button type="submit">
+          Submit Request
+        </button>
 
         <p style="text-align:center; font-size:12px; color:#999; margin-top:20px; font-weight:700;">
-          Secure Dispatch Powered by Murrays Empire LLC
+          Secure Intake Powered by Murrays Empire LLC
         </p>
+
       </form>
+
     </div>
 
     <div class="footer-note">
-      <strong>OFFICIAL DISCLOSURE:</strong> Omaha Restoration™ is a high-speed referral platform. We are not a contractor and do not perform physical restoration work. All services are performed by independent local pros.
+      <strong>OFFICIAL DISCLOSURE:</strong>
+      Omaha Restoration™ is a high-speed referral platform.
+      We are not a contractor and do not perform physical restoration work.
+      All services are performed by independent local pros.
     </div>
 
     <footer>
       © <span id="yr"></span> MURRAYS EMPIRE LLC
     </footer>
+
   </div>
 
   <script>
