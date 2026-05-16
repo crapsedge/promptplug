@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMPN1D7CG"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'G-LHMPN1D7CG');
@@ -12,9 +17,12 @@
   </script>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>Emergency Intake | Omaha Restoration™</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Emergency Intake Request | Omaha Restoration™</title>
 
   <meta name="robots" content="noindex, nofollow">
 
@@ -248,9 +256,22 @@
 
     <div class="intake-card">
 
-      <form name="emergency-intake" id="emergency-intake-form" method="POST" data-netlify="true">
+      <form
+        name="emergency-intake"
+        id="emergency-intake-form"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/connection-confirmed.html">
 
         <input type="hidden" name="form-name" value="emergency-intake">
+
+        <p style="display:none;">
+          <label>
+            Don’t fill this out:
+            <input name="bot-field">
+          </label>
+        </p>
 
         <div class="form-group">
           <label>Where is the damage?</label>
@@ -337,26 +358,6 @@
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
-
-    const form = document.getElementById("emergency-intake-form");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      })
-      .then(() => {
-        window.location.href = "/connection-confirmed.html";
-      })
-      .catch(() => {
-        alert("There was an issue submitting the form. Please try again.");
-      });
-    });
   </script>
 
 </body>
