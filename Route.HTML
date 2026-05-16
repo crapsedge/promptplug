@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMPN1D7CG"></script>
 
   <script>
@@ -29,7 +28,6 @@
   <meta name="robots" content="noindex, nofollow">
 
   <style>
-
     :root {
       --primary: #b31919;
       --secondary: #001d3d;
@@ -88,21 +86,9 @@
     }
 
     @keyframes pulse {
-
-      0% {
-        transform: scale(0.95);
-        opacity: 0.5;
-      }
-
-      50% {
-        transform: scale(1.1);
-        opacity: 1;
-      }
-
-      100% {
-        transform: scale(0.95);
-        opacity: 0.5;
-      }
+      0% { transform: scale(0.95); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.5; }
     }
 
     h1 {
@@ -247,7 +233,6 @@
       font-weight: 900;
       letter-spacing: 2px;
     }
-
   </style>
 
 </head>
@@ -274,26 +259,20 @@
     <div class="intake-card">
 
       <form
-        action="https://formsubmit.co/murraysempirellc@gmail.com"
-        method="POST">
+        name="emergency-intake"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/connection-confirmed.html">
 
-        <!-- Redirect After Submit -->
-        <input
-          type="hidden"
-          name="_next"
-          value="https://omaharestoration.store/connection-confirmed.html">
+        <input type="hidden" name="form-name" value="emergency-intake">
 
-        <!-- Disable Captcha -->
-        <input
-          type="hidden"
-          name="_captcha"
-          value="false">
-
-        <!-- Email Subject -->
-        <input
-          type="hidden"
-          name="_subject"
-          value="New Omaha Restoration Emergency Intake">
+        <p style="display:none;">
+          <label>
+            Do not fill this out:
+            <input name="bot-field">
+          </label>
+        </p>
 
         <div class="form-group">
 
