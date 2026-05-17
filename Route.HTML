@@ -1,219 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Google Analytics + Google Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMPN1D7CG"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
+
+    function gtag(){
       dataLayer.push(arguments);
     }
+
     gtag('js', new Date());
+
     gtag('config', 'G-LHMPN1D7CG');
     gtag('config', 'AW-18034717066');
   </script>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <meta name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0,
+                 maximum-scale=1.0,
+                 user-scalable=no">
+
   <title>Emergency Intake Request | Omaha Restoration™</title>
+
   <meta name="robots" content="noindex, nofollow">
 
   <style>
-    /* Premium High-End Clean Black & Gold Theme Configuration */
-    :root {
-      --primary: #b31919;
-      --secondary: #001d3d;
-      --black: #050505;
-      --gold: #c5a059;
-      --text: #1a1a1a;
-      --shadow: 0 30px 70px rgba(0,0,0,0.4);
+
+    :root{
+      --primary:#b31919;
+      --secondary:#001d3d;
+      --black:#050505;
+      --gold:#c5a059;
+      --text:#1a1a1a;
+      --shadow:0 30px 70px rgba(0,0,0,0.4);
     }
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(180deg, #001d3d 0%, #000814 100%);
-      color: #fff;
+    *{
+      box-sizing:border-box;
     }
 
-    .container {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 38px 20px;
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:-apple-system,
+                  BlinkMacSystemFont,
+                  "Segoe UI",
+                  Roboto,
+                  sans-serif;
+
+      background:linear-gradient(
+        180deg,
+        #001d3d 0%,
+        #000814 100%
+      );
+
+      color:#fff;
     }
 
-    .header {
-      text-align: center;
-      margin-bottom: 28px;
+    .container{
+      max-width:500px;
+      margin:0 auto;
+      padding:38px 20px;
     }
 
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      background: #f0fdf4;
-      color: #166534;
-      font-size: 11px;
-      font-weight: 900;
-      border-radius: 999px;
-      margin-bottom: 18px;
-      text-transform: uppercase;
+    .header{
+      text-align:center;
+      margin-bottom:28px;
     }
 
-    .dot {
-      width: 10px;
-      height: 10px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 12px #22c55e;
+    .status-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 16px;
+      background:#f0fdf4;
+      color:#166534;
+      font-size:11px;
+      font-weight:900;
+      border-radius:999px;
+      margin-bottom:18px;
+      text-transform:uppercase;
     }
 
-    /* Large Readable Text Optimization for Conversions */
-    h1 {
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: -2px;
-      margin: 8px 0;
-      line-height: 1;
+    .dot{
+      width:10px;
+      height:10px;
+      background:#22c55e;
+      border-radius:50%;
+      box-shadow:0 0 12px #22c55e;
     }
 
-    .sub {
-      font-size: 16px;
-      color: rgba(255,255,255,0.76);
-      line-height: 1.5;
-      margin: 0;
+    h1{
+      font-size:38px;
+      font-weight:900;
+      letter-spacing:-2px;
+      margin:8px 0;
+      line-height:1;
     }
 
-    .intake-card {
-      background: #fff;
-      color: var(--text);
-      border-radius: 24px;
-      padding: 32px 24px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(197,160,89,0.35);
+    .sub{
+      font-size:16px;
+      color:rgba(255,255,255,0.76);
+      line-height:1.5;
+      margin:0;
     }
 
-    .form-group {
-      margin-bottom: 19px;
+    .intake-card{
+      background:#fff;
+      color:var(--text);
+      border-radius:24px;
+      padding:32px 24px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(197,160,89,0.35);
     }
 
-    label {
-      display: block;
-      font-size: 11px;
-      font-weight: 900;
-      text-transform: uppercase;
-      color: #8a6d3b;
-      margin-bottom: 9px;
-      letter-spacing: 1px;
+    .form-group{
+      margin-bottom:19px;
+    }
+
+    label{
+      display:block;
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      color:#8a6d3b;
+      margin-bottom:9px;
+      letter-spacing:1px;
     }
 
     input,
     select,
-    textarea {
-      width: 100%;
-      padding: 17px;
-      border-radius: 14px;
-      border: 1px solid #e7e7e7;
-      background: #f9f9f9;
-      color: #111;
-      font-size: 16px;
-      font-family: inherit;
+    textarea{
+      width:100%;
+      padding:17px;
+      border-radius:14px;
+      border:1px solid #e7e7e7;
+      background:#f9f9f9;
+      color:#111;
+      font-size:16px;
+      font-family:inherit;
     }
 
-    textarea {
-      min-height: 105px;
-      resize: vertical;
+    textarea{
+      min-height:105px;
+      resize:vertical;
     }
 
     input:focus,
     select:focus,
-    textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-      background: #fff;
-      box-shadow: 0 0 0 4px rgba(197,160,89,0.12);
+    textarea:focus{
+      outline:none;
+      border-color:var(--gold);
+      background:#fff;
+      box-shadow:0 0 0 4px rgba(197,160,89,0.12);
     }
 
-    .check-box {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin: 24px 0;
-      padding: 17px;
-      background: #fff9f9;
-      border: 1px solid #fee2e2;
-      border-radius: 14px;
+    .check-box{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      margin:24px 0;
+      padding:17px;
+      background:#fff9f9;
+      border:1px solid #fee2e2;
+      border-radius:14px;
     }
 
-    .check-box input {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
-      margin-top: 2px;
-      accent-color: var(--primary);
+    .check-box input{
+      width:24px;
+      height:24px;
+      flex-shrink:0;
+      margin-top:2px;
+      accent-color:var(--primary);
     }
 
-    .check-box span {
-      font-size: 14px;
-      font-weight: 700;
-      color: #333;
-      line-height: 1.45;
+    .check-box span{
+      font-size:14px;
+      font-weight:700;
+      color:#333;
+      line-height:1.45;
     }
 
-    button {
-      width: 100%;
-      background: var(--primary);
-      color: white;
-      padding: 22px;
-      border-radius: 14px;
-      border: none;
-      font-size: 19px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      cursor: pointer;
-      box-shadow: 0 15px 35px rgba(179,25,25,0.3);
+    button{
+      width:100%;
+      background:var(--primary);
+      color:white;
+      padding:22px;
+      border-radius:14px;
+      border:none;
+      font-size:19px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1.2px;
+      cursor:pointer;
+      box-shadow:0 15px 35px rgba(179,25,25,0.3);
     }
 
-    .small-note {
-      text-align: center;
-      font-size: 12px;
-      color: #999;
-      margin-top: 18px;
-      font-weight: 700;
-      line-height: 1.5;
+    .small-note{
+      text-align:center;
+      font-size:12px;
+      color:#999;
+      margin-top:18px;
+      font-weight:700;
+      line-height:1.5;
     }
 
-    .footer-note {
-      font-size: 11px;
-      color: rgba(255,255,255,0.5);
-      text-align: center;
-      margin-top: 36px;
-      line-height: 1.8;
-      max-width: 420px;
-      margin-left: auto;
-      margin-right: auto;
+    .footer-note{
+      font-size:11px;
+      color:rgba(255,255,255,0.5);
+      text-align:center;
+      margin-top:36px;
+      line-height:1.8;
+      max-width:420px;
+      margin-left:auto;
+      margin-right:auto;
     }
 
-    footer {
-      text-align: center;
-      margin-top: 24px;
-      padding-bottom: 36px;
-      font-size: 10px;
-      color: var(--gold);
-      font-weight: 900;
-      letter-spacing: 2px;
+    footer{
+      text-align:center;
+      margin-top:24px;
+      padding-bottom:36px;
+      font-size:10px;
+      color:var(--gold);
+      font-weight:900;
+      letter-spacing:2px;
     }
+
   </style>
+
 </head>
 
 <body>
+
   <div class="container">
 
     <div class="header">
+
       <div class="status-pill">
         <span class="dot"></span>
         Intake Line Active
@@ -224,81 +252,146 @@
       <p class="sub">
         Submit the details below so your request can be reviewed and routed.
       </p>
+
     </div>
 
     <div class="intake-card">
 
-      <form
-        name="emergency-intake"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        action="/connection-confirmed.html">
+      <form action="https://api.web3forms.com/submit" method="POST">
 
-        <input type="hidden" name="form-name" value="emergency-intake">
+        <input type="hidden"
+               name="access_key"
+               value="23f73fab-b53f-4ce0-bdfa-0770dd1e7509">
 
-        <p style="display:none;">
-          <label>Do not fill this out: <input name="bot-field"></label>
-        </p>
+        <input type="hidden"
+               name="subject"
+               value="New Omaha Restoration Intake Lead">
+
+        <input type="hidden"
+               name="from_name"
+               value="Omaha Restoration™ Intake Form">
+
+        <input type="hidden"
+               name="redirect"
+               value="https://omaharestoration.store/connection-confirmed.html">
 
         <div class="form-group">
           <label>ZIP Code</label>
-          <input type="text" name="ZIP_Code" placeholder="Enter ZIP Code" required>
+
+          <input type="text"
+                 name="ZIP_Code"
+                 placeholder="Enter ZIP Code"
+                 required>
         </div>
 
         <div class="form-group">
+
           <label>Damage Type</label>
+
           <select name="Issue_Type" required>
+
             <option value="">Select Category...</option>
-            <option value="Water Damage / Flood">Water Damage / Flood</option>
-            <option value="Pipe Burst / Leak">Pipe Burst / Leak</option>
-            <option value="Sewer Backup">Sewer Backup</option>
-            <option value="Mold Remediation">Mold Remediation</option>
-            <option value="Other Emergency">Other Emergency</option>
+
+            <option value="Water Damage / Flood">
+              Water Damage / Flood
+            </option>
+
+            <option value="Pipe Burst / Leak">
+              Pipe Burst / Leak
+            </option>
+
+            <option value="Sewer Backup">
+              Sewer Backup
+            </option>
+
+            <option value="Mold Remediation">
+              Mold Remediation
+            </option>
+
+            <option value="Other Emergency">
+              Other Emergency
+            </option>
+
           </select>
+
         </div>
 
         <div class="form-group">
+
           <label>Full Name</label>
-          <input type="text" name="Full_Name" placeholder="Full Name" required>
+
+          <input type="text"
+                 name="Full_Name"
+                 placeholder="Full Name"
+                 required>
+
         </div>
 
         <div class="form-group">
+
           <label>Phone Number</label>
-          <input type="tel" name="Phone_Number" placeholder="Direct Phone Number" required>
+
+          <input type="tel"
+                 name="Phone_Number"
+                 placeholder="Direct Phone Number"
+                 required>
+
         </div>
 
         <div class="form-group">
+
           <label>Email Address</label>
-          <input type="email" name="Email_Address" placeholder="Email Address">
+
+          <input type="email"
+                 name="Email_Address"
+                 placeholder="Email Address">
+
         </div>
 
         <div class="form-group">
+
           <label>Brief Description</label>
-          <textarea name="Damage_Description" placeholder="Briefly describe the issue and urgency."></textarea>
+
+          <textarea name="Damage_Description"
+                    placeholder="Briefly describe the issue and urgency."></textarea>
+
         </div>
 
         <div class="check-box">
-          <input type="checkbox" name="Emergency_Connection_Acknowledged" value="Yes" required>
+
+          <input type="checkbox"
+                 name="Emergency_Connection_Acknowledged"
+                 value="Yes"
+                 required>
+
           <span>
-            I understand Omaha Restoration™ is a referral platform, not a contractor, and I am requesting connection to an available independent local pro.
+            I understand Omaha Restoration™ is a referral platform,
+            not a contractor, and I am requesting connection to an
+            available independent local pro.
           </span>
+
         </div>
 
-        <button type="submit">Submit Request</button>
+        <button type="submit">
+          Submit Request
+        </button>
 
         <p class="small-note">
           Secure intake powered by Murrays Empire LLC.
         </p>
+
       </form>
 
     </div>
 
     <div class="footer-note">
+
       <strong>OFFICIAL DISCLOSURE:</strong>
+
       Omaha Restoration™ is a high-speed referral platform.
       We are not a contractor and do not perform physical restoration work.
       All services are performed by independent local pros.
+
     </div>
 
     <footer>
@@ -308,7 +401,9 @@
   </div>
 
   <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('yr').textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
