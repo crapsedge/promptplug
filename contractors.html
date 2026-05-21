@@ -12,231 +12,923 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Contractor Enrollment | Omaha Restoration™</title>
+  <title>Contractor Enrollment Portal | Omaha Restoration™</title>
   <meta name="robots" content="noindex, nofollow">
 
   <style>
-    :root {
-      --primary: #b31919;
-      --secondary: #001d3d;
-      --black: #050505;
-      --off-white: #fcfcfc;
-      --gold: #c5a059;
-      --text: #ffffff;
-      --muted: rgba(255,255,255,0.6);
-      --border: rgba(197, 160, 89, 0.2);
+    :root{
+      --primary:#b31919;
+      --secondary:#001d3d;
+      --black:#050505;
+      --gold:#c5a059;
+      --muted:rgba(255,255,255,.68);
+      --card:#fff;
+      --text:#111;
+      --line:#e8e8e8;
+      --soft:#f8f9fa;
     }
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(180deg, #001d3d 0%, #000814 100%);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      background:linear-gradient(180deg,#001d3d 0%,#000814 100%);
+      color:#fff;
+      line-height:1.55;
+      min-height:100vh;
     }
 
-    /* HEADER NAVIGATION */
-    header {
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(12px);
-      padding: 15px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid var(--gold);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(0,0,0,.9);
+      border-bottom:2px solid var(--gold);
+      padding:16px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
-    .logo { font-size: 16px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
-    .logo span { color: var(--gold); }
-
-    .btn-home {
-      text-decoration: none;
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 900;
-      text-transform: uppercase;
-      border: 1px solid var(--gold);
-      padding: 8px 18px;
-      border-radius: 999px;
-      transition: 0.3s;
+    .logo{
+      font-size:17px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
     }
 
-    /* ENROLLMENT CONTAINER */
-    .container { max-width: 700px; margin: 40px auto; padding: 0 20px 100px; }
-    
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 14px;
-      background: rgba(197,160,89,0.1);
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
+    .logo span{color:var(--gold)}
+
+    .btn-home{
+      color:var(--gold);
+      border:1px solid var(--gold);
+      text-decoration:none;
+      font-size:11px;
+      font-weight:900;
+      padding:9px 18px;
+      border-radius:999px;
+      text-transform:uppercase;
     }
 
-    h1 { font-size: clamp(32px, 8vw, 48px); font-weight: 900; letter-spacing: -2px; margin: 0 0 10px; line-height: 0.95; }
-    .sub-text { font-size: 15px; color: var(--muted); margin-bottom: 40px; }
-
-    /* FORM CARD */
-    .enrollment-card {
-      background: #fff;
-      border-radius: 24px;
-      padding: 40px 30px;
-      color: #000;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    .container{
+      max-width:900px;
+      margin:45px auto;
+      padding:0 22px 90px;
     }
 
-    h2 { font-size: 20px; font-weight: 900; margin: 30px 0 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-    h2:first-of-type { margin-top: 0; }
-
-    label { display: block; font-size: 11px; font-weight: 900; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; letter-spacing: 0.5px; }
-
-    input {
-      width: 100%;
-      padding: 16px;
-      border-radius: 12px;
-      border: 1px solid #eee;
-      background: #f9f9f9;
-      font-size: 16px;
-      font-family: inherit;
-      margin-bottom: 20px;
-      box-sizing: border-box;
+    .status-pill{
+      display:inline-flex;
+      padding:7px 16px;
+      border:1px solid var(--gold);
+      color:var(--gold);
+      border-radius:999px;
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      margin-bottom:22px;
+      background:rgba(197,160,89,.14);
     }
 
-    input:focus { outline: none; border-color: var(--gold); background: #fff; }
-
-    .check-box {
-      display: flex;
-      gap: 14px;
-      padding: 20px;
-      background: #fff9f9;
-      border: 1px solid #fee2e2;
-      border-radius: 16px;
-      margin: 24px 0;
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(34px,7vw,54px);
+      line-height:1;
+      letter-spacing:-1.5px;
+      text-transform:uppercase;
+      font-weight:900;
     }
 
-    .check-box input { width: 24px; height: 24px; margin: 0; accent-color: var(--primary); cursor: pointer; flex-shrink: 0; }
-    .check-box span { font-size: 13px; font-weight: 700; color: #333; line-height: 1.4; }
-
-    .btn-submit {
-      width: 100%;
-      background: var(--black);
-      color: var(--gold);
-      padding: 22px;
-      border-radius: 14px;
-      border: 2px solid var(--gold);
-      font-size: 18px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      cursor: pointer;
-      transition: 0.3s;
+    .sub-text{
+      color:var(--muted);
+      font-size:16px;
+      max-width:700px;
+      margin:0 0 38px;
     }
 
-    .btn-submit:hover { background: var(--gold); color: #000; transform: translateY(-2px); }
+    .card{
+      background:var(--card);
+      color:var(--text);
+      border-radius:28px;
+      padding:42px 34px;
+      box-shadow:0 45px 95px rgba(0,0,0,.55);
+    }
 
-    /* AGREEMENT TEXT */
-    details { margin-top: 25px; border: 1px solid #eee; border-radius: 14px; padding: 15px; background: #fafafa; }
-    summary { cursor: pointer; font-weight: 900; color: #666; font-size: 13px; text-transform: uppercase; }
-    .tos-text { font-size: 12px; color: #777; padding-top: 15px; max-height: 300px; overflow-y: auto; }
+    .section{
+      margin:42px 0 24px;
+      padding-bottom:12px;
+      border-bottom:2px solid var(--line);
+    }
 
-    footer { text-align: center; margin-top: 60px; padding-bottom: 40px; }
-    .brand-tag { font-size: 10px; font-weight: 900; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; }
+    .section:first-of-type{margin-top:0}
 
+    h2{
+      margin:0;
+      color:var(--secondary);
+      font-size:21px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .section p{
+      margin:5px 0 0;
+      color:#666;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-bottom:18px;
+    }
+
+    .full{grid-column:span 2}
+
+    label{
+      display:block;
+      color:var(--gold);
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.7px;
+      margin-bottom:8px;
+    }
+
+    input,select,textarea{
+      width:100%;
+      min-height:54px;
+      padding:16px;
+      border:1px solid #e4e4e4;
+      border-radius:13px;
+      background:#f8f9fa;
+      color:#111;
+      font-size:16px;
+      font-family:inherit;
+    }
+
+    textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+
+    input:focus,select:focus,textarea:focus{
+      outline:none;
+      border-color:var(--gold);
+      background:#fff;
+      box-shadow:0 0 0 4px rgba(197,160,89,.12);
+    }
+
+    .options{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+      gap:12px;
+      margin:10px 0 18px;
+    }
+
+    .check-label{
+      display:flex;
+      gap:11px;
+      align-items:center;
+      background:#f8f9fa;
+      border:1px solid #e4e4e4;
+      padding:14px;
+      border-radius:12px;
+      color:#222;
+      font-size:14px;
+      font-weight:700;
+      text-transform:none;
+      letter-spacing:0;
+      margin:0;
+    }
+
+    .check-label input{
+      width:20px;
+      height:20px;
+      min-height:20px;
+      margin:0;
+      accent-color:var(--secondary);
+      flex-shrink:0;
+    }
+
+    .ack{
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      padding:18px;
+      border-radius:15px;
+      background:#fdfaf4;
+      border:1px solid #f1dfbd;
+      margin:15px 0;
+    }
+
+    .ack.red{
+      background:#fff7f7;
+      border-color:#ffd6d6;
+    }
+
+    .ack input{
+      width:24px;
+      height:24px;
+      min-height:24px;
+      margin:1px 0 0;
+      accent-color:var(--primary);
+      flex-shrink:0;
+    }
+
+    .ack span{
+      color:#2b2b2b;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .upload{
+      position:relative;
+      padding:20px;
+      border:2px dashed #cfcfcf;
+      border-radius:14px;
+      background:#f8f9fa;
+      text-align:center;
+      min-height:92px;
+    }
+
+    .upload strong{
+      display:block;
+      color:#333;
+      font-size:14px;
+    }
+
+    .upload small{
+      display:block;
+      color:#777;
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      margin-top:5px;
+    }
+
+    .upload input{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      cursor:pointer;
+    }
+
+    .legal{
+      max-height:420px;
+      overflow-y:auto;
+      padding:22px;
+      background:#f8f9fa;
+      border:1px solid #e5e5e5;
+      border-radius:16px;
+      color:#444;
+      font-size:13px;
+    }
+
+    .legal h3{
+      color:var(--secondary);
+      font-size:14px;
+      margin:20px 0 8px;
+      text-transform:uppercase;
+    }
+
+    .legal h3:first-child{margin-top:0}
+
+    .legal p{margin:0 0 14px}
+
+    button{
+      width:100%;
+      margin-top:28px;
+      background:var(--black);
+      color:var(--gold);
+      border:2px solid var(--gold);
+      border-radius:16px;
+      padding:23px;
+      font-size:18px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:var(--gold);
+      color:#000;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:11px;
+      margin-top:55px;
+      line-height:1.7;
+    }
+
+    .brand-tag{
+      color:var(--gold);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:4px;
+      text-transform:uppercase;
+      margin-bottom:15px;
+    }
+
+    @media(max-width:760px){
+      header{padding:14px 16px}
+      .logo{font-size:14px}
+      .btn-home{font-size:10px;padding:8px 13px}
+      .card{padding:30px 20px;border-radius:22px}
+      .grid{grid-template-columns:1fr}
+      .full{grid-column:span 1}
+      .options{grid-template-columns:1fr}
+    }
   </style>
 </head>
 
 <body>
-
   <header>
     <div class="logo">Omaha<span>Restoration</span>™</div>
     <a href="index.html" class="btn-home">Portal Home</a>
   </header>
 
-  <div class="container">
-    <div class="status-pill">Active Enrollment Version 1.0</div>
-    <h1>Contractor Network</h1>
-    <p class="sub-text">Join the premium Omaha referral network. Automated routing, high-intent leads, and pay-on-performance terms.</p>
+  <main class="container">
+    <div class="status-pill">Contractor Enrollment Version OR-CPA-2026-V3</div>
+    <h1>Contractor Onboarding Portal</h1>
+    <p class="sub-text">
+      Complete this form to be reviewed for possible referral opportunities through Omaha Restoration™.
+      Submission does not guarantee approval. Contractors must be verified before receiving leads.
+    </p>
 
-    <div class="enrollment-card">
-      <form action="https://formsubmit.co/murraysempirellc@gmail.com" method="POST">
-        
-        <input type="hidden" name="_next" value="https://omaharestoration.store/enrollment-submitted.html">
-        <input type="hidden" name="_subject" value="EXECUTED AGREEMENT: Omaha Restoration Network">
-        <input type="hidden" name="Accepted_At_UTC" id="acceptedAt">
+    <div class="card">
+      <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" id="contractorForm">
+
+        <input type="hidden" name="access_key" value="23f73fab-b53f-4ce0-bdfa-0770dd1e7509">
+        <input type="hidden" name="subject" value="Omaha Restoration Contractor Enrollment Application">
+        <input type="hidden" name="from_name" value="Omaha Restoration Contractor Portal">
+        <input type="hidden" name="redirect" value="https://omaharestoration.store/enrollment-submitted.html">
+        <input type="hidden" name="Agreement_Version" value="OR-CPA-2026-V3">
+        <input type="hidden" name="Contractor_Status" value="Pending Credential Verification">
+        <input type="hidden" name="Submission_Timestamp_UTC" id="timestamp">
+        <input type="hidden" name="Browser_User_Agent" id="userAgent">
         <input type="hidden" name="Signer_IP" id="signerIp">
-        <input type="hidden" name="Agreement_Version" value="OR-CPA-2026-04-01">
 
-        <h2>Company Information</h2>
-        
-        <label>Legal Business Name</label>
-        <input type="text" name="Business_Name" placeholder="e.g. True North Restoration LLC" required>
-
-        <label>Primary Contact Name</label>
-        <input type="text" name="Contact_Name" placeholder="Full Legal Name" required>
-
-        <label>Business Email</label>
-        <input type="email" name="email" placeholder="email@company.com" required>
-
-        <label>Direct Phone</label>
-        <input type="tel" name="Phone" placeholder="(402) 000-0000" required>
-
-        <label>Primary Service Area</label>
-        <input type="text" name="Service_Area" placeholder="e.g. Omaha Metro, Council Bluffs" required>
-
-        <h2>Legal Acceptance</h2>
-        
-        <div class="check-box">
-          <input type="checkbox" required>
-          <span>I verify I have authority to bind this entity. I agree to the $150 Job Start fee and 10% Completion fee as outlined in the Participation Agreement below.</span>
+        <div class="section">
+          <h2>1. Company Information</h2>
+          <p>Legal business identity and public business information.</p>
         </div>
 
-        <label>Electronic Signature (Type Full Legal Name)</label>
-        <input type="text" name="Electronic_Signature" placeholder="Type name to sign digitally" required>
-
-        <button type="submit" class="btn-submit">Sign & Submit Enrollment</button>
-
-        <details>
-          <summary>View Participation Agreement Terms</summary>
-          <div class="tos-text">
-            <p><strong>1) Fees:</strong> Contractor agrees to pay Platform a $150 referral fee within 5 days of a "Job Start" and 10% of gross funds within 5 days of Job Completion.</p>
-            <p><strong>2) Notification:</strong> Contractor MUST notify Platform within 24 hours of Job Start. Failure to notify constitutes acknowledgment that fees are owed based on Lead Log.</p>
-            <p><strong>3) Compliance:</strong> Contractor must maintain all required licenses and insurance in the state of Nebraska/Iowa.</p>
-            <p><strong>4) Liability:</strong> Contractor indemnifies Omaha Restoration™ and Murrays Empire LLC from all work-related claims.</p>
-            <p><strong>5) Arbitration:</strong> All disputes shall be resolved via binding arbitration in Omaha, Nebraska.</p>
+        <div class="grid">
+          <div>
+            <label>Legal Business Name</label>
+            <input type="text" name="Legal_Business_Name" required>
           </div>
-        </details>
+          <div>
+            <label>DBA Name, If Any</label>
+            <input type="text" name="DBA_Name">
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Entity Type</label>
+            <select name="Entity_Type" required>
+              <option value="">Select One</option>
+              <option>LLC</option>
+              <option>Corporation</option>
+              <option>Sole Proprietor</option>
+              <option>Partnership</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label>State of Formation</label>
+            <input type="text" name="State_of_Formation" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Years in Business</label>
+            <input type="number" name="Years_in_Business" min="0" required>
+          </div>
+          <div>
+            <label>Business Website</label>
+            <input type="url" name="Business_Website">
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="full">
+            <label>Physical Business Address</label>
+            <input type="text" name="Physical_Business_Address" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="full">
+            <label>Mailing Address, If Different</label>
+            <input type="text" name="Mailing_Address">
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Google Business Profile URL</label>
+            <input type="url" name="Google_Business_Profile_URL">
+          </div>
+          <div>
+            <label>Facebook Business Page URL</label>
+            <input type="url" name="Facebook_Business_Page_URL">
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>2. Contact Information</h2>
+          <p>Authorized contact and emergency routing information.</p>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Owner Name</label>
+            <input type="text" name="Owner_Name" required>
+          </div>
+          <div>
+            <label>Primary Contact Name</label>
+            <input type="text" name="Primary_Contact_Name" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Title / Position</label>
+            <input type="text" name="Title_Position" required>
+          </div>
+          <div>
+            <label>Business Email</label>
+            <input type="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Direct Phone</label>
+            <input type="tel" name="Direct_Phone" required>
+          </div>
+          <div>
+            <label>Emergency / After-Hours Phone</label>
+            <input type="tel" name="Emergency_Phone" required>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>3. Service Areas</h2>
+          <p>Select all areas where the contractor can actually accept work.</p>
+        </div>
+
+        <div class="options">
+          <label class="check-label"><input type="checkbox" name="Service_Area_Omaha" value="Yes"> Omaha</label>
+          <label class="check-label"><input type="checkbox" name="Service_Area_Bellevue" value="Yes"> Bellevue</label>
+          <label class="check-label"><input type="checkbox" name="Service_Area_Papillion" value="Yes"> Papillion</label>
+          <label class="check-label"><input type="checkbox" name="Service_Area_La_Vista" value="Yes"> La Vista</label>
+          <label class="check-label"><input type="checkbox" name="Service_Area_Ralston" value="Yes"> Ralston</label>
+          <label class="check-label"><input type="checkbox" name="Service_Area_Bennington" value="Yes"> Bennington</label>
+          <label class="check-label"><input type="checkbox" name="Service_Area_Gretna" value="Yes"> Gretna</label>
+          <label class="check-label"><input type="checkbox" name="Service_Area_Elkhorn" value="Yes"> Elkhorn</label>
+          <label class="check-label"><input type="checkbox" name="Service_Area_Fremont" value="Yes"> Fremont</label>
+          <label class="check-label"><input type="checkbox" name="Service_Area_Council_Bluffs" value="Yes"> Council Bluffs</label>
+          <label class="check-label"><input type="checkbox" name="Service_Area_Other" value="Yes"> Other</label>
+        </div>
+
+        <div class="grid">
+          <div class="full">
+            <label>Maximum Travel Distance</label>
+            <select name="Maximum_Travel_Distance" required>
+              <option value="">Select One</option>
+              <option>Up to 15 miles</option>
+              <option>Up to 30 miles</option>
+              <option>Up to 50 miles</option>
+              <option>More than 50 miles</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>4. Services Offered</h2>
+          <p>Select every service the contractor is qualified and insured to perform.</p>
+        </div>
+
+        <div class="options">
+          <label class="check-label"><input type="checkbox" name="Service_Water_Damage" value="Yes"> Water Damage</label>
+          <label class="check-label"><input type="checkbox" name="Service_Flood_Cleanup" value="Yes"> Flood Cleanup</label>
+          <label class="check-label"><input type="checkbox" name="Service_Basement_Flooding" value="Yes"> Basement Flooding</label>
+          <label class="check-label"><input type="checkbox" name="Service_Burst_Pipe" value="Yes"> Burst Pipe Damage</label>
+          <label class="check-label"><input type="checkbox" name="Service_Sewer_Backup" value="Yes"> Sewer Backup</label>
+          <label class="check-label"><input type="checkbox" name="Service_Mold_Remediation" value="Yes"> Mold Remediation</label>
+          <label class="check-label"><input type="checkbox" name="Service_Fire_Damage" value="Yes"> Fire Damage</label>
+          <label class="check-label"><input type="checkbox" name="Service_Storm_Damage" value="Yes"> Storm Damage</label>
+          <label class="check-label"><input type="checkbox" name="Service_Roofing" value="Yes"> Roofing</label>
+          <label class="check-label"><input type="checkbox" name="Service_HVAC" value="Yes"> HVAC</label>
+          <label class="check-label"><input type="checkbox" name="Service_Plumbing" value="Yes"> Plumbing</label>
+          <label class="check-label"><input type="checkbox" name="Service_Electrical" value="Yes"> Electrical</label>
+          <label class="check-label"><input type="checkbox" name="Service_Board_Up" value="Yes"> Board-Up</label>
+          <label class="check-label"><input type="checkbox" name="Service_Demolition" value="Yes"> Demolition</label>
+          <label class="check-label"><input type="checkbox" name="Service_Remodeling" value="Yes"> Remodeling</label>
+          <label class="check-label"><input type="checkbox" name="Service_General_Contracting" value="Yes"> General Contracting</label>
+          <label class="check-label"><input type="checkbox" name="Service_Contents_Cleaning" value="Yes"> Contents Cleaning</label>
+          <label class="check-label"><input type="checkbox" name="Service_Other" value="Yes"> Other</label>
+        </div>
+
+        <div class="section">
+          <h2>5. Licensing & Registration</h2>
+          <p>License and contractor registration information for verification.</p>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>License Number</label>
+            <input type="text" name="License_Number" required>
+          </div>
+          <div>
+            <label>License Type</label>
+            <input type="text" name="License_Type" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Issuing State / Authority</label>
+            <input type="text" name="License_Issuing_Authority" required>
+          </div>
+          <div>
+            <label>License Expiration Date</label>
+            <input type="date" name="License_Expiration_Date" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="full">
+            <label>Nebraska Department of Labor Contractor Registration Number</label>
+            <input type="text" name="Nebraska_Contractor_Registration_Number" placeholder="Enter registration number, or explain if not applicable" required>
+          </div>
+        </div>
+
+        <div class="ack">
+          <input type="checkbox" name="Licensing_Accuracy_Acknowledged" value="Yes" required>
+          <span>I certify that all licensing and registration information provided is accurate, current, and complete to the best of my knowledge.</span>
+        </div>
+
+        <div class="section">
+          <h2>6. Insurance</h2>
+          <p>Proof of insurance is required before referral activation.</p>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Insurance Carrier</label>
+            <input type="text" name="Insurance_Carrier" required>
+          </div>
+          <div>
+            <label>Policy Number</label>
+            <input type="text" name="Insurance_Policy_Number" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Coverage Amount</label>
+            <input type="text" name="Coverage_Amount" placeholder="$1,000,000 / $2,000,000" required>
+          </div>
+          <div>
+            <label>Policy Expiration Date</label>
+            <input type="date" name="Insurance_Expiration_Date" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Insurance Agent / Agency</label>
+            <input type="text" name="Insurance_Agent_Name" required>
+          </div>
+          <div>
+            <label>Insurance Agent Phone</label>
+            <input type="tel" name="Insurance_Agent_Phone" required>
+          </div>
+        </div>
+
+        <div class="ack">
+          <input type="checkbox" name="Insurance_Maintenance_Acknowledged" value="Yes" required>
+          <span>I agree to maintain active commercial liability insurance while participating in the Omaha Restoration™ contractor referral network.</span>
+        </div>
+
+        <div class="section">
+          <h2>7. Certifications</h2>
+          <p>Select applicable certifications. Do not select certifications that cannot be proven.</p>
+        </div>
+
+        <div class="options">
+          <label class="check-label"><input type="checkbox" name="Cert_IICRC" value="Yes"> IICRC</label>
+          <label class="check-label"><input type="checkbox" name="Cert_Mold" value="Yes"> Mold Certification</label>
+          <label class="check-label"><input type="checkbox" name="Cert_Lead_Abatement" value="Yes"> Lead Abatement</label>
+          <label class="check-label"><input type="checkbox" name="Cert_OSHA" value="Yes"> OSHA</label>
+          <label class="check-label"><input type="checkbox" name="Cert_EPA_RRP" value="Yes"> EPA RRP / Lead-Safe</label>
+          <label class="check-label"><input type="checkbox" name="Cert_Water_Restoration" value="Yes"> Water Restoration</label>
+          <label class="check-label"><input type="checkbox" name="Cert_Fire_Restoration" value="Yes"> Fire Restoration</label>
+          <label class="check-label"><input type="checkbox" name="Cert_Asbestos" value="Yes"> Asbestos Certification</label>
+          <label class="check-label"><input type="checkbox" name="Cert_Other" value="Yes"> Other</label>
+        </div>
+
+        <div class="ack">
+          <input type="checkbox" name="Lead_Work_Certification_Acknowledged" value="Yes" required>
+          <span>I will not accept or perform lead-related work unless properly certified under applicable EPA, state, and local requirements.</span>
+        </div>
+
+        <div class="section">
+          <h2>8. Operations</h2>
+          <p>Operational capacity helps determine whether referrals can be routed appropriately.</p>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Total Employees</label>
+            <input type="number" name="Total_Employees" min="1" required>
+          </div>
+          <div>
+            <label>Field Technicians</label>
+            <input type="number" name="Field_Technicians" min="1" required>
+          </div>
+        </div>
+
+        <div class="options">
+          <label class="check-label"><input type="checkbox" name="Available_24_7" value="Yes"> 24/7 Emergency Response</label>
+          <label class="check-label"><input type="checkbox" name="Same_Day_Available" value="Yes"> Same-Day Leads</label>
+          <label class="check-label"><input type="checkbox" name="Weekend_Available" value="Yes"> Weekend Work</label>
+          <label class="check-label"><input type="checkbox" name="After_Hours_Available" value="Yes"> After-Hours Calls</label>
+        </div>
+
+        <div class="grid">
+          <div class="full">
+            <label>Typical Emergency Response Time</label>
+            <select name="Typical_Response_Time" required>
+              <option value="">Select One</option>
+              <option>Under 60 minutes</option>
+              <option>1 to 2 hours</option>
+              <option>2 to 4 hours</option>
+              <option>Next day / appointment only</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>9. References</h2>
+          <p>References may be contacted before approval.</p>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Reference #1 Name / Company</label>
+            <input type="text" name="Reference_1_Name" required>
+          </div>
+          <div>
+            <label>Reference #1 Phone</label>
+            <input type="tel" name="Reference_1_Phone" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Reference #2 Name / Company</label>
+            <input type="text" name="Reference_2_Name" required>
+          </div>
+          <div>
+            <label>Reference #2 Phone</label>
+            <input type="tel" name="Reference_2_Phone" required>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>10. Online Presence</h2>
+          <p>Public reputation information for review.</p>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Google Review Count</label>
+            <input type="number" name="Google_Review_Count" min="0">
+          </div>
+          <div>
+            <label>Google Rating</label>
+            <input type="text" name="Google_Rating" placeholder="Example: 4.8">
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="full">
+            <label>BBB Profile URL</label>
+            <input type="url" name="BBB_Profile_URL">
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Instagram URL</label>
+            <input type="url" name="Instagram_URL">
+          </div>
+          <div>
+            <label>LinkedIn URL</label>
+            <input type="url" name="LinkedIn_URL">
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>11. Document Uploads</h2>
+          <p>Upload files under 5MB each unless your Web3Forms plan supports larger uploads.</p>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Certificate of Insurance</label>
+            <div class="upload">
+              <strong>Select COI File</strong>
+              <small>PDF, JPG, PNG — Max 5MB</small>
+              <input type="file" name="Certificate_Of_Insurance" accept=".pdf,.jpg,.jpeg,.png" required>
+            </div>
+          </div>
+
+          <div>
+            <label>License Document</label>
+            <div class="upload">
+              <strong>Select License File</strong>
+              <small>PDF, JPG, PNG — Max 5MB</small>
+              <input type="file" name="Contractor_License_Document" accept=".pdf,.jpg,.jpeg,.png" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Business Registration</label>
+            <div class="upload">
+              <strong>Select Registration File</strong>
+              <small>PDF, JPG, PNG — Max 5MB</small>
+              <input type="file" name="Business_Registration_Document" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+          </div>
+
+          <div>
+            <label>Certification Documents</label>
+            <div class="upload">
+              <strong>Select Certification File</strong>
+              <small>PDF, JPG, PNG — Max 5MB</small>
+              <input type="file" name="Certification_Documents" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>12. Compliance Acknowledgements</h2>
+          <p>Required contractor confirmations.</p>
+        </div>
+
+        <div class="ack"><input type="checkbox" name="Maintain_Licenses" value="Yes" required><span>I maintain all required licenses, registrations, permits, and credentials necessary for the services I perform.</span></div>
+        <div class="ack"><input type="checkbox" name="Maintain_Insurance" value="Yes" required><span>I maintain active insurance coverage appropriate for the work I perform.</span></div>
+        <div class="ack"><input type="checkbox" name="Comply_With_Laws" value="Yes" required><span>I will comply with all applicable federal, state, and local laws.</span></div>
+        <div class="ack"><input type="checkbox" name="Notify_Credential_Changes" value="Yes" required><span>I will notify Omaha Restoration™ if my license, registration, insurance, or certification status changes, expires, is suspended, or is revoked.</span></div>
+        <div class="ack"><input type="checkbox" name="Credential_Verification_Consent" value="Yes" required><span>I understand Omaha Restoration™ and Murrays Empire LLC may independently verify my business information, insurance, registrations, licenses, certifications, and public reputation before sending any referrals.</span></div>
+
+        <div class="section">
+          <h2>13. Network Participation Agreement</h2>
+          <p>Referral terms, payment obligations, disclosures, and liability limits.</p>
+        </div>
+
+        <div class="legal">
+          <h3>1. Parties</h3>
+          <p>This Contractor Network Participation Agreement is between Murrays Empire LLC, operating Omaha Restoration™, and the contractor business submitting this form.</p>
+
+          <h3>2. Referral Platform Disclosure</h3>
+          <p>Omaha Restoration™ is a referral and routing platform. Omaha Restoration™ does not perform restoration, mitigation, construction, mold, roofing, plumbing, HVAC, electrical, or repair work. All physical services are performed by independent third-party contractors.</p>
+
+          <h3>3. Lead Definition</h3>
+          <p>A “Lead” means any customer inquiry, contact record, form submission, phone request, email request, referral notice, project information, or other customer opportunity provided or routed by Omaha Restoration™ or Murrays Empire LLC to the Contractor.</p>
+
+          <h3>4. Job Start Definition</h3>
+          <p>“Job Start” means the first occurrence of any of the following: Contractor performs an on-site paid visit, Contractor obtains a signed work authorization, Contractor obtains a signed estimate approval, Contractor places equipment at the property, Contractor begins labor, Contractor receives a deposit, or Contractor otherwise begins compensated work connected to a Lead.</p>
+
+          <h3>5. Job Completion Definition</h3>
+          <p>“Job Completion” means the project is finished, invoiced, paid in full or in part, closed by the Contractor, submitted to insurance, or otherwise completed enough for Contractor to claim or collect compensation related to the Lead.</p>
+
+          <h3>6. Gross Revenue Definition</h3>
+          <p>“Gross Revenue” means all money invoiced, charged, claimed, collected, or received by Contractor from a customer, insurance company, property owner, tenant, adjuster, financing provider, or other party for work connected to a Lead before deductions for labor, materials, subcontractors, equipment, taxes, fees, discounts, overhead, or other expenses.</p>
+
+          <h3>7. Required Referral Fees</h3>
+          <p>The Referral Fee consists of two required components: (a) One Hundred Fifty Dollars ($150.00) due within five (5) business days of Job Start, and (b) ten percent (10%) of Gross Revenue due within five (5) business days of Job Completion.</p>
+
+          <h3>8. Reporting Requirement</h3>
+          <p>Contractor must notify Omaha Restoration™ within twenty-four (24) hours after receiving a Lead status update, including whether the customer was contacted, inspected, scheduled, declined, converted, started, completed, invoiced, or paid.</p>
+
+          <h3>9. Records and Verification</h3>
+          <p>Contractor agrees to keep accurate records for all Leads, Job Starts, invoices, payments, and Job Completions. Upon reasonable request, Contractor agrees to provide documentation needed to verify whether referral fees are owed and the amount due.</p>
+
+          <h3>10. Late Payment</h3>
+          <p>Any unpaid referral fee not paid within five (5) business days of the required due date may result in immediate suspension from future referrals. Late balances may also be subject to lawful collection efforts, reasonable collection costs, and any interest allowed by applicable law.</p>
+
+          <h3>11. Independent Contractor Relationship</h3>
+          <p>Contractor is an independent business. Nothing in this agreement creates an employment relationship, partnership, agency relationship, joint venture, franchise, or employer-employee relationship between Contractor, Omaha Restoration™, or Murrays Empire LLC.</p>
+
+          <h3>12. Contractor Responsibility</h3>
+          <p>Contractor is solely responsible for all work performed, jobsite safety, customer communications, pricing, permits, licenses, insurance, warranties, workers, subcontractors, taxes, tools, vehicles, equipment, compliance, and customer satisfaction.</p>
+
+          <h3>13. No Guarantee of Leads</h3>
+          <p>Omaha Restoration™ does not guarantee lead volume, job volume, revenue, customer conversion, project size, or payment by any customer or third party.</p>
+
+          <h3>14. Indemnification</h3>
+          <p>Contractor agrees to defend, indemnify, and hold harmless Omaha Restoration™, Murrays Empire LLC, and their owners, members, agents, and representatives from claims, damages, disputes, losses, costs, liabilities, and expenses arising from Contractor’s work, conduct, omissions, employees, subcontractors, customer disputes, regulatory violations, jobsite incidents, warranties, or services performed.</p>
+
+          <h3>15. Termination</h3>
+          <p>Either party may terminate participation in the contractor network by written notice. Any referral fees owed for Leads delivered before termination remain due and collectible after termination.</p>
+
+          <h3>16. Governing Law and Arbitration</h3>
+          <p>This agreement is governed by Nebraska law. Any dispute that cannot be resolved informally shall be resolved through binding arbitration in Douglas County, Nebraska, unless applicable law requires otherwise.</p>
+
+          <h3>17. Attorney Fees and Collection Costs</h3>
+          <p>To the extent allowed by law, the prevailing party in a dispute or collection action related to this agreement may recover reasonable attorney fees, arbitration fees, court costs, and collection costs.</p>
+
+          <h3>18. Electronic Signature</h3>
+          <p>By typing a name and submitting this form, the signer agrees that the electronic signature has the same legal effect as a handwritten signature.</p>
+        </div>
+
+        <div class="ack red">
+          <input type="checkbox" name="Agreement_Accepted" value="Yes" required>
+          <span>I confirm I am authorized to submit this application and bind the business named above to these terms. I accept the $150 Job Start referral fee, the required 10% Gross Revenue completion referral fee, and the agreement terms listed above.</span>
+        </div>
+
+        <div class="section">
+          <h2>14. Electronic Signature</h2>
+          <p>Typed signature and execution record.</p>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Printed Name</label>
+            <input type="text" name="Signature_Printed_Name" required>
+          </div>
+          <div>
+            <label>Title / Position</label>
+            <input type="text" name="Signature_Title" required>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label>Date</label>
+            <input type="text" name="Signature_Date" id="signatureDate" readonly>
+          </div>
+          <div>
+            <label>Typed Electronic Signature</label>
+            <input type="text" name="Electronic_Signature" required>
+          </div>
+        </div>
+
+        <div class="ack">
+          <input type="checkbox" name="Electronic_Signature_Acknowledged" value="Yes" required>
+          <span>I understand that my typed electronic signature has the same legal effect as a handwritten signature.</span>
+        </div>
+
+        <button type="submit">Submit Contractor Enrollment</button>
       </form>
     </div>
 
     <footer>
-      <div class="brand-tag">OMAHA RESTORATION™</div>
-      <p style="font-size: 10px; color: var(--muted); margin-top: 15px;">© <span id="yr"></span> Murrays Empire LLC. All Rights Reserved.</p>
+      <div class="brand-tag">Omaha Restoration™</div>
+      Omaha Restoration™ is operated by Murrays Empire LLC. Omaha Restoration™ is a referral platform only and does not perform physical restoration services. Independent contractors are responsible for all services, licensing, insurance, permits, safety, warranties, and customer outcomes.
+      <br><br>
+      © <span id="year"></span> Murrays Empire LLC. All Rights Reserved.
     </footer>
-  </div>
+  </main>
 
   <script>
-    document.getElementById("yr").textContent = new Date().getFullYear();
-    document.getElementById("acceptedAt").value = new Date().toISOString();
+    (function(){
+      const now = new Date();
 
-    (async function () {
-      try {
-        const res = await fetch("https://api.ipify.org?format=json");
-        const data = await res.json();
-        document.getElementById("signerIp").value = data.ip;
-      } catch (e) {
-        document.getElementById("signerIp").value = "IP_NOT_FOUND";
-      }
+      document.getElementById("year").textContent = now.getFullYear();
+      document.getElementById("timestamp").value = now.toISOString();
+      document.getElementById("userAgent").value = navigator.userAgent;
+
+      document.getElementById("signatureDate").value = now.toLocaleDateString("en-US", {
+        weekday:"long",
+        year:"numeric",
+        month:"long",
+        day:"numeric"
+      });
+
+      fetch("https://api.ipify.org?format=json")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("signerIp").value = data.ip || "Unavailable";
+        })
+        .catch(() => {
+          document.getElementById("signerIp").value = "Unavailable";
+        });
     })();
   </script>
 </body>
