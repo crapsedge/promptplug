@@ -237,38 +237,6 @@
       font-weight:700;
     }
 
-    .upload{
-      position:relative;
-      background:#f8f8f8;
-      border:2px dashed #cfcfcf;
-      border-radius:14px;
-      padding:20px;
-      text-align:center;
-      min-height:92px;
-    }
-
-    .upload strong{
-      display:block;
-      color:#333;
-      font-size:14px;
-    }
-
-    .upload small{
-      display:block;
-      color:#777;
-      font-size:11px;
-      font-weight:800;
-      margin-top:5px;
-      text-transform:uppercase;
-    }
-
-    .upload input{
-      position:absolute;
-      inset:0;
-      opacity:0;
-      cursor:pointer;
-    }
-
     .legal{
       background:#f8f8f8;
       border:1px solid #ddd;
@@ -357,14 +325,14 @@
   </p>
 
   <div class="card">
-    <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+    <form action="https://api.web3forms.com/submit" method="POST">
 
       <!-- Config & Tracking Inputs -->
       <input type="hidden" name="access_key" value="23f73fab-b53f-4ce0-bdfa-0770dd1e7509">
       <input type="hidden" name="subject" value="Omaha Restoration Contractor Enrollment">
       <input type="hidden" name="from_name" value="Omaha Restoration Contractor Portal">
       <input type="hidden" name="redirect" value="https://omaharestoration.store/enrollment-submitted.html">
-      <input type="hidden" name="Agreement_Version" value="OR-CPA-2026-V5">
+      <input type="hidden" name="Agreement_Version" value="OR-CPA-2026-V6">
       <input type="hidden" name="Contractor_Status" value="Submitted for Review">
       <input type="hidden" name="Submission_Timestamp_UTC" id="timestamp">
       <input type="hidden" name="Browser_User_Agent" id="userAgent">
@@ -416,32 +384,7 @@
       </div>
 
       <div class="section">
-        <h2>3. Verification Uploads</h2>
-        <p>Upload files to complete automated compliance check. Keep files under 5MB.</p>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Certificate of Insurance (COI)</label>
-          <div class="upload">
-            <strong>Select Liability COI File</strong>
-            <small>PDF, JPG, PNG — Max 5MB</small>
-            <input type="file" name="Certificate_Of_Insurance" accept=".pdf,.jpg,.jpeg,.png" required>
-          </div>
-        </div>
-
-        <div>
-          <label>State License / Trade Registration</label>
-          <div class="upload">
-            <strong>Select License File</strong>
-            <small>PDF, JPG, PNG — Max 5MB</small>
-            <input type="file" name="License_Document" accept=".pdf,.jpg,.jpeg,.png" required>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>4. Referral Terms Agreement</h2>
+        <h2>3. Referral Terms Agreement</h2>
         <p>Review the automated referral routing rules below.</p>
       </div>
 
@@ -461,26 +404,40 @@
         <h3>5. Lead Reporting & Records</h3>
         <p>Contractor must notify Omaha Restoration™ within twenty-four (24) hours after a Lead is contacted, started, or completed. Contractor agrees to keep accurate records for verification of referral fees.</p>
 
-        <h3>6. Independent Contractor Status</h3>
+        <h3>6. Accuracy of Information</h3>
+        <p>Contractor represents that all information submitted through this form is accurate, complete, and current. Contractor agrees that any false, misleading, incomplete, or materially inaccurate information may result in denial, suspension, removal from the referral network, or withholding of future lead opportunities.</p>
+
+        <h3>7. Independent Contractor Status</h3>
         <p>Contractor is a completely independent business entity. Nothing in this agreement creates an employment, partnership, agency, or joint venture relationship.</p>
 
-        <h3>7. Absolute Indemnification</h3>
+        <h3>8. Indemnification</h3>
         <p>Contractor agrees to defend, indemnify, and hold harmless Omaha Restoration™, Murrays Empire LLC, and their owners, members, and representatives from any claims, damages, disputes, losses, liabilities, costs, or expenses arising from Contractor’s physical work, jobsite operations, crew conduct, structural damages, or customer service outcomes.</p>
 
-        <h3>8. Nebraska Law & Venue</h3>
+        <h3>9. Nebraska Law & Venue</h3>
         <p>This agreement is governed by Nebraska law. Any dispute that cannot be resolved informally shall be resolved through binding arbitration in Douglas County, Nebraska.</p>
 
-        <h3>9. Electronic Signature</h3>
+        <h3>10. Electronic Signature</h3>
         <p>By typing your name and submitting this form, you agree that your electronic signature has the same legal effect as a handwritten paper signature.</p>
+
+        <h3>11. No Guarantee of Approval or Leads</h3>
+        <p>Submission of this form does not guarantee approval, acceptance into the Omaha Restoration™ referral network, lead volume, exclusive territory, future work, customer contact, or any specific revenue. Omaha Restoration™ may approve, deny, suspend, or remove any contractor from the referral network at its sole discretion.</p>
+
+        <h3>12. Right to Verify Credentials</h3>
+        <p>Omaha Restoration™ may request proof of licensing, registration, insurance, qualifications, or business authority at any time before or after a referral is sent. Failure to provide requested proof may result in denial, suspension, or removal from the referral network.</p>
+      </div>
+
+      <div class="ack danger">
+        <input type="checkbox" name="Compliance_Mandate_Accepted" value="Yes" required>
+        <span>I certify that this business maintains all licenses, registrations, insurance, qualifications, and business authority required by law for the services it accepts. I agree to provide proof of licensing, registration, insurance, qualifications, or business authority upon request by Omaha Restoration™.</span>
       </div>
 
       <div class="ack danger">
         <input type="checkbox" name="Agreement_Accepted" value="Yes" required>
-        <span>I confirm I am authorized to bind this business. I accept the $150 Job Start fee, the required 10% Gross Revenue completion fee, and all terms above.</span>
+        <span>I confirm I am authorized to bind this business. I accept the $150 Job Start fee, the required 10% Gross Project Revenue completion fee, the referral terms, credential-verification requirements, electronic signature terms, and all terms listed above.</span>
       </div>
 
       <div class="section">
-        <h2>5. Electronic Signature</h2>
+        <h2>4. Electronic Signature</h2>
         <p>Type your name below to sign and finalize enrollment.</p>
       </div>
 
