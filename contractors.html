@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Contractor Enrollment | Omaha Restoration™</title>
+  <title>Contractor Registration | Omaha Restoration™</title>
   <meta name="robots" content="noindex, nofollow">
 
   <style>
@@ -165,11 +165,6 @@
       color:#111;
       font-size:16px;
       font-family:inherit;
-    }
-
-    textarea{
-      min-height:105px;
-      resize:vertical;
     }
 
     input:focus,select:focus,textarea:focus{
@@ -353,13 +348,12 @@
 </header>
 
 <main class="wrap">
-  <div class="pill">Contractor Enrollment</div>
+  <div class="pill">Contractor Network</div>
 
-  <h1>Join the Contractor Network</h1>
+  <h1>Partner With Us</h1>
 
   <p class="intro">
-    Complete this application to be reviewed for possible referral opportunities through Omaha Restoration™.
-    Contractors must be verified before being approved to receive homeowner or property leads.
+    Join our automated referral routing network. Complete this short setup form to begin receiving immediate water damage and restoration project leads in your service area.
   </p>
 
   <div class="card">
@@ -369,116 +363,38 @@
       <input type="hidden" name="subject" value="Omaha Restoration Contractor Enrollment">
       <input type="hidden" name="from_name" value="Omaha Restoration Contractor Portal">
       <input type="hidden" name="redirect" value="https://omaharestoration.store/enrollment-submitted.html">
-      <input type="hidden" name="Agreement_Version" value="OR-CPA-2026-V4">
+      <input type="hidden" name="Agreement_Version" value="OR-CPA-2026-V5">
       <input type="hidden" name="Contractor_Status" value="Pending Verification">
       <input type="hidden" name="Submission_Timestamp_UTC" id="timestamp">
       <input type="hidden" name="Browser_User_Agent" id="userAgent">
       <input type="hidden" name="Signer_IP" id="signerIp">
 
       <div class="section">
-        <h2>1. Business Information</h2>
-        <p>Basic company details used for contractor review.</p>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Legal Business Name</label>
-          <input type="text" name="Legal_Business_Name" required>
-        </div>
-        <div>
-          <label>DBA Name, If Any</label>
-          <input type="text" name="DBA_Name">
-        </div>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Business Type</label>
-          <select name="Business_Type" required>
-            <option value="">Select One</option>
-            <option>LLC</option>
-            <option>Corporation</option>
-            <option>Sole Proprietor</option>
-            <option>Partnership</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label>State of Formation</label>
-          <input type="text" name="State_of_Formation" required>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Years in Business</label>
-          <input type="number" name="Years_in_Business" min="0" required>
-        </div>
-        <div>
-          <label>Business Website</label>
-          <input type="url" name="Business_Website">
-        </div>
+        <h2>1. Company Profile</h2>
+        <p>Basic information used for routing and lead connection details.</p>
       </div>
 
       <div class="grid">
         <div class="full">
-          <label>Business Address</label>
-          <input type="text" name="Business_Address" required>
+          <label>Legal Company Name</label>
+          <input type="text" name="Legal_Business_Name" required>
         </div>
       </div>
 
       <div class="grid">
         <div>
-          <label>Google Business Profile</label>
-          <input type="url" name="Google_Business_Profile_URL">
-        </div>
-        <div>
-          <label>Facebook Business Page</label>
-          <input type="url" name="Facebook_Business_Page_URL">
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>2. Contact Information</h2>
-        <p>Main contact information for lead routing and contractor communication.</p>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Owner Name</label>
-          <input type="text" name="Owner_Name" required>
-        </div>
-        <div>
-          <label>Primary Contact Name</label>
-          <input type="text" name="Primary_Contact_Name" required>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Title / Position</label>
-          <input type="text" name="Title_Position" required>
-        </div>
-        <div>
-          <label>Business Email</label>
+          <label>Primary Contact Email</label>
           <input type="email" name="email" required>
         </div>
-      </div>
-
-      <div class="grid">
         <div>
-          <label>Direct Phone</label>
-          <input type="tel" name="Direct_Phone" required>
-        </div>
-        <div>
-          <label>Emergency / After-Hours Phone</label>
-          <input type="tel" name="Emergency_Phone" required>
+          <label>Lead Dispatch Phone (SMS/Voice)</label>
+          <input type="tel" name="Direct_Phone" placeholder="Where leads will be sent" required>
         </div>
       </div>
 
       <div class="section">
-        <h2>3. Service Area</h2>
-        <p>Select every area where your company can realistically accept work.</p>
+        <h2>2. Service Area & Types</h2>
+        <p>Select the cities and work orders your business accepts.</p>
       </div>
 
       <div class="options">
@@ -486,237 +402,35 @@
         <label class="check"><input type="checkbox" name="Area_Bellevue" value="Yes"> Bellevue</label>
         <label class="check"><input type="checkbox" name="Area_Papillion" value="Yes"> Papillion</label>
         <label class="check"><input type="checkbox" name="Area_La_Vista" value="Yes"> La Vista</label>
-        <label class="check"><input type="checkbox" name="Area_Ralston" value="Yes"> Ralston</label>
-        <label class="check"><input type="checkbox" name="Area_Bennington" value="Yes"> Bennington</label>
         <label class="check"><input type="checkbox" name="Area_Gretna" value="Yes"> Gretna</label>
         <label class="check"><input type="checkbox" name="Area_Elkhorn" value="Yes"> Elkhorn</label>
-        <label class="check"><input type="checkbox" name="Area_Fremont" value="Yes"> Fremont</label>
         <label class="check"><input type="checkbox" name="Area_Council_Bluffs" value="Yes"> Council Bluffs</label>
-        <label class="check"><input type="checkbox" name="Area_Other" value="Yes"> Other</label>
-      </div>
-
-      <div class="grid">
-        <div class="full">
-          <label>Maximum Travel Distance</label>
-          <select name="Maximum_Travel_Distance" required>
-            <option value="">Select One</option>
-            <option>Up to 15 miles</option>
-            <option>Up to 30 miles</option>
-            <option>Up to 50 miles</option>
-            <option>More than 50 miles</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>4. Services Offered</h2>
-        <p>Select only services your company is qualified and insured to perform.</p>
       </div>
 
       <div class="options">
-        <label class="check"><input type="checkbox" name="Service_Water_Damage" value="Yes"> Water Damage</label>
-        <label class="check"><input type="checkbox" name="Service_Flood_Cleanup" value="Yes"> Flood Cleanup</label>
-        <label class="check"><input type="checkbox" name="Service_Basement_Flooding" value="Yes"> Basement Flooding</label>
-        <label class="check"><input type="checkbox" name="Service_Burst_Pipe" value="Yes"> Burst Pipe Damage</label>
-        <label class="check"><input type="checkbox" name="Service_Sewer_Backup" value="Yes"> Sewer Backup</label>
+        <label class="check"><input type="checkbox" name="Service_Water_Damage" value="Yes"> Water Damage Mitigation</label>
+        <label class="check"><input type="checkbox" name="Service_Flood_Cleanup" value="Yes"> Flood & Basement Extraction</label>
         <label class="check"><input type="checkbox" name="Service_Mold" value="Yes"> Mold Remediation</label>
-        <label class="check"><input type="checkbox" name="Service_Fire" value="Yes"> Fire Damage</label>
-        <label class="check"><input type="checkbox" name="Service_Storm" value="Yes"> Storm Damage</label>
-        <label class="check"><input type="checkbox" name="Service_Roofing" value="Yes"> Roofing</label>
-        <label class="check"><input type="checkbox" name="Service_HVAC" value="Yes"> HVAC</label>
-        <label class="check"><input type="checkbox" name="Service_Plumbing" value="Yes"> Plumbing</label>
-        <label class="check"><input type="checkbox" name="Service_Electrical" value="Yes"> Electrical</label>
-        <label class="check"><input type="checkbox" name="Service_Board_Up" value="Yes"> Board-Up</label>
-        <label class="check"><input type="checkbox" name="Service_Demolition" value="Yes"> Demolition</label>
-        <label class="check"><input type="checkbox" name="Service_Remodeling" value="Yes"> Remodeling</label>
-        <label class="check"><input type="checkbox" name="Service_General_Contracting" value="Yes"> General Contracting</label>
-        <label class="check"><input type="checkbox" name="Service_Other" value="Yes"> Other</label>
+        <label class="check"><input type="checkbox" name="Service_Plumbing" value="Yes"> Plumbing / Source Repairs</label>
       </div>
 
       <div class="section">
-        <h2>5. Licensing & Registration</h2>
-        <p>Provide license and registration details for review.</p>
+        <h2>3. Verification Uploads</h2>
+        <p>Upload files to complete automated compliance check. Keep files under 5MB.</p>
       </div>
 
       <div class="grid">
         <div>
-          <label>License Number</label>
-          <input type="text" name="License_Number" required>
-        </div>
-        <div>
-          <label>License Type</label>
-          <input type="text" name="License_Type" required>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Issuing State / Authority</label>
-          <input type="text" name="License_Issuing_Authority" required>
-        </div>
-        <div>
-          <label>License Expiration Date</label>
-          <input type="date" name="License_Expiration_Date" required>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="full">
-          <label>Nebraska Contractor Registration Number</label>
-          <input type="text" name="Nebraska_Contractor_Registration_Number" placeholder="Enter number or explain if not applicable" required>
-        </div>
-      </div>
-
-      <div class="ack">
-        <input type="checkbox" name="License_Info_Accurate" value="Yes" required>
-        <span>I certify that the licensing and registration information provided is accurate, current, and complete to the best of my knowledge.</span>
-      </div>
-
-      <div class="section">
-        <h2>6. Insurance</h2>
-        <p>Insurance must be active before any referral approval.</p>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Insurance Carrier</label>
-          <input type="text" name="Insurance_Carrier" required>
-        </div>
-        <div>
-          <label>Policy Number</label>
-          <input type="text" name="Insurance_Policy_Number" required>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Coverage Amount</label>
-          <input type="text" name="Coverage_Amount" placeholder="$1,000,000 / $2,000,000" required>
-        </div>
-        <div>
-          <label>Expiration Date</label>
-          <input type="date" name="Insurance_Expiration_Date" required>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Insurance Agent / Agency</label>
-          <input type="text" name="Insurance_Agent_Name" required>
-        </div>
-        <div>
-          <label>Insurance Agent Phone</label>
-          <input type="tel" name="Insurance_Agent_Phone" required>
-        </div>
-      </div>
-
-      <div class="ack">
-        <input type="checkbox" name="Insurance_Maintained" value="Yes" required>
-        <span>I agree to maintain active insurance coverage for the work my company performs while participating in the Omaha Restoration™ referral network.</span>
-      </div>
-
-      <div class="section">
-        <h2>7. Certifications</h2>
-        <p>Select only certifications that can be verified.</p>
-      </div>
-
-      <div class="options">
-        <label class="check"><input type="checkbox" name="Cert_IICRC" value="Yes"> IICRC</label>
-        <label class="check"><input type="checkbox" name="Cert_Mold" value="Yes"> Mold Certification</label>
-        <label class="check"><input type="checkbox" name="Cert_Lead" value="Yes"> Lead Abatement</label>
-        <label class="check"><input type="checkbox" name="Cert_OSHA" value="Yes"> OSHA</label>
-        <label class="check"><input type="checkbox" name="Cert_EPA_RRP" value="Yes"> EPA RRP / Lead-Safe</label>
-        <label class="check"><input type="checkbox" name="Cert_Water" value="Yes"> Water Restoration</label>
-        <label class="check"><input type="checkbox" name="Cert_Fire" value="Yes"> Fire Restoration</label>
-        <label class="check"><input type="checkbox" name="Cert_Asbestos" value="Yes"> Asbestos</label>
-        <label class="check"><input type="checkbox" name="Cert_Other" value="Yes"> Other</label>
-      </div>
-
-      <div class="ack">
-        <input type="checkbox" name="Lead_Work_Rule" value="Yes" required>
-        <span>I will not accept or perform lead-related work unless properly certified under applicable EPA, state, and local requirements.</span>
-      </div>
-
-      <div class="section">
-        <h2>8. Operations</h2>
-        <p>Capacity and availability information for routing decisions.</p>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Total Employees</label>
-          <input type="number" name="Total_Employees" min="1" required>
-        </div>
-        <div>
-          <label>Field Technicians</label>
-          <input type="number" name="Field_Technicians" min="1" required>
-        </div>
-      </div>
-
-      <div class="options">
-        <label class="check"><input type="checkbox" name="Available_24_7" value="Yes"> 24/7 Emergency Response</label>
-        <label class="check"><input type="checkbox" name="Same_Day" value="Yes"> Same-Day Leads</label>
-        <label class="check"><input type="checkbox" name="Weekend" value="Yes"> Weekend Work</label>
-        <label class="check"><input type="checkbox" name="After_Hours" value="Yes"> After-Hours Calls</label>
-      </div>
-
-      <div class="grid">
-        <div class="full">
-          <label>Typical Response Time</label>
-          <select name="Typical_Response_Time" required>
-            <option value="">Select One</option>
-            <option>Under 60 minutes</option>
-            <option>1 to 2 hours</option>
-            <option>2 to 4 hours</option>
-            <option>Next day / appointment only</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>9. References</h2>
-        <p>References may be contacted before approval.</p>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Reference #1 Name / Company</label>
-          <input type="text" name="Reference_1_Name" required>
-        </div>
-        <div>
-          <label>Reference #1 Phone</label>
-          <input type="tel" name="Reference_1_Phone" required>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Reference #2 Name / Company</label>
-          <input type="text" name="Reference_2_Name" required>
-        </div>
-        <div>
-          <label>Reference #2 Phone</label>
-          <input type="tel" name="Reference_2_Phone" required>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>10. Document Uploads</h2>
-        <p>Upload files under 5MB each unless your Web3Forms plan supports larger attachments.</p>
-      </div>
-
-      <div class="grid">
-        <div>
-          <label>Certificate of Insurance</label>
+          <label>Certificate of Insurance (COI)</label>
           <div class="upload">
-            <strong>Select COI File</strong>
+            <strong>Select Liability COI File</strong>
             <small>PDF, JPG, PNG — Max 5MB</small>
             <input type="file" name="Certificate_Of_Insurance" accept=".pdf,.jpg,.jpeg,.png" required>
           </div>
         </div>
 
         <div>
-          <label>License Document</label>
+          <label>State License / Trade Registration</label>
           <div class="upload">
             <strong>Select License File</strong>
             <small>PDF, JPG, PNG — Max 5MB</small>
@@ -725,40 +439,9 @@
         </div>
       </div>
 
-      <div class="grid">
-        <div>
-          <label>Business Registration</label>
-          <div class="upload">
-            <strong>Select Registration File</strong>
-            <small>PDF, JPG, PNG — Max 5MB</small>
-            <input type="file" name="Business_Registration" accept=".pdf,.jpg,.jpeg,.png">
-          </div>
-        </div>
-
-        <div>
-          <label>Certification Documents</label>
-          <div class="upload">
-            <strong>Select Certification File</strong>
-            <small>PDF, JPG, PNG — Max 5MB</small>
-            <input type="file" name="Certification_Documents" accept=".pdf,.jpg,.jpeg,.png">
-          </div>
-        </div>
-      </div>
-
       <div class="section">
-        <h2>11. Required Acknowledgements</h2>
-        <p>These acknowledgements help protect the referral platform and customers.</p>
-      </div>
-
-      <div class="ack"><input type="checkbox" name="Acknowledge_Licenses" value="Yes" required><span>I maintain all required licenses, registrations, permits, and credentials for the services I perform.</span></div>
-      <div class="ack"><input type="checkbox" name="Acknowledge_Insurance" value="Yes" required><span>I maintain active insurance coverage appropriate for the work I perform.</span></div>
-      <div class="ack"><input type="checkbox" name="Acknowledge_Laws" value="Yes" required><span>I will comply with all applicable federal, state, and local laws.</span></div>
-      <div class="ack"><input type="checkbox" name="Acknowledge_Changes" value="Yes" required><span>I will notify Omaha Restoration™ if my license, registration, insurance, or certification status changes, expires, is suspended, or is revoked.</span></div>
-      <div class="ack"><input type="checkbox" name="Acknowledge_Verification" value="Yes" required><span>I understand Omaha Restoration™ and Murrays Empire LLC may verify my submitted business information before sending any referrals.</span></div>
-
-      <div class="section">
-        <h2>12. Contractor Agreement</h2>
-        <p>Review the referral terms before signing.</p>
+        <h2>4. Referral Terms Agreement</h2>
+        <p>Review the automated referral routing rules below.</p>
       </div>
 
       <div class="legal">
@@ -768,106 +451,74 @@
         <h3>2. Referral Platform Disclosure</h3>
         <p>Omaha Restoration™ is a referral and routing platform. Omaha Restoration™ does not perform restoration, mitigation, construction, mold, roofing, plumbing, HVAC, electrical, or repair work. All physical services are performed by independent third-party contractors.</p>
 
-        <h3>3. Lead</h3>
-        <p>A Lead means any customer inquiry, contact record, form submission, phone request, email request, referral notice, project information, or customer opportunity provided by Omaha Restoration™ or Murrays Empire LLC to the Contractor.</p>
+        <h3>3. Lead & Job Definitions</h3>
+        <p>A "Lead" means any customer inquiry or contact opportunity forwarded by Omaha Restoration™. "Job Start" means the first occurrence of an on-site visit, signed work authorization, estimate approval, labor start, or placement of equipment related to a Lead.</p>
 
-        <h3>4. Job Start</h3>
-        <p>Job Start means the first occurrence of any of the following: Contractor performs an on-site paid visit, obtains a signed work authorization, obtains estimate approval, places equipment, begins labor, receives a deposit, or otherwise begins compensated work connected to a Lead.</p>
+        <h3>4. Required Referral Fees</h3>
+        <p>The Referral Fee consists of two required components: (a) One Hundred Fifty Dollars ($150.00) flat fee due within five (5) business days of Job Start, and (b) ten percent (10%) of Gross Project Revenue due within five (5) business days of Job Completion.</p>
 
-        <h3>5. Job Completion</h3>
-        <p>Job Completion means the project is finished, invoiced, paid in full or in part, closed by Contractor, submitted to insurance, or otherwise completed enough for Contractor to claim or collect compensation related to the Lead.</p>
+        <h3>5. Lead Reporting & Records</h3>
+        <p>Contractor must notify Omaha Restoration™ within twenty-four (24) hours after a Lead is contacted, started, or completed. Contractor agrees to keep accurate records for verification of referral fees.</p>
 
-        <h3>6. Gross Revenue</h3>
-        <p>Gross Revenue means all money invoiced, charged, claimed, collected, or received by Contractor for work connected to a Lead before deductions for labor, materials, subcontractors, equipment, taxes, fees, discounts, overhead, or other expenses.</p>
+        <h3>6. Independent Contractor Status</h3>
+        <p>Contractor is a completely independent business entity. Nothing in this agreement creates an employment, partnership, agency, or joint venture relationship.</p>
 
-        <h3>7. Required Referral Fees</h3>
-        <p>The Referral Fee consists of two required parts: (a) One Hundred Fifty Dollars ($150.00) due within five (5) business days of Job Start, and (b) ten percent (10%) of Gross Revenue due within five (5) business days of Job Completion.</p>
+        <h3>7. Absolute Indemnification</h3>
+        <p>Contractor agrees to defend, indemnify, and hold harmless Omaha Restoration™, Murrays Empire LLC, and their owners, members, and representatives from any claims, damages, disputes, losses, liabilities, costs, or expenses arising from Contractor’s physical work, jobsite operations, crew conduct, structural damages, or customer service outcomes.</p>
 
-        <h3>8. Lead Reporting</h3>
-        <p>Contractor must notify Omaha Restoration™ within twenty-four (24) hours after a Lead is contacted, inspected, scheduled, declined, converted, started, completed, invoiced, or paid.</p>
+        <h3>8. Nebraska Law & Venue</h3>
+        <p>This agreement is completely governed by Nebraska law. Any dispute that cannot be resolved informally shall be resolved through binding arbitration in Douglas County, Nebraska.</p>
 
-        <h3>9. Records</h3>
-        <p>Contractor agrees to keep accurate records for all Leads, Job Starts, invoices, payments, and Job Completions. Upon reasonable request, Contractor agrees to provide documentation needed to verify referral fees owed.</p>
-
-        <h3>10. Late Payment</h3>
-        <p>Any unpaid referral fee not paid within five (5) business days of the due date may result in suspension from future referrals and lawful collection efforts.</p>
-
-        <h3>11. Independent Contractor</h3>
-        <p>Contractor is an independent business. Nothing in this agreement creates employment, partnership, agency, joint venture, franchise, or employer-employee relationship.</p>
-
-        <h3>12. Contractor Responsibility</h3>
-        <p>Contractor is solely responsible for all work performed, jobsite safety, customer communications, pricing, permits, licenses, insurance, warranties, workers, subcontractors, taxes, tools, vehicles, equipment, compliance, and customer satisfaction.</p>
-
-        <h3>13. No Guarantee</h3>
-        <p>Omaha Restoration™ does not guarantee lead volume, job volume, revenue, project size, customer conversion, or customer payment.</p>
-
-        <h3>14. Indemnification</h3>
-        <p>Contractor agrees to defend, indemnify, and hold harmless Omaha Restoration™, Murrays Empire LLC, and their owners, members, agents, and representatives from claims, damages, disputes, losses, costs, liabilities, and expenses arising from Contractor’s work, conduct, employees, subcontractors, customer disputes, regulatory violations, jobsite incidents, warranties, or services performed.</p>
-
-        <h3>15. Termination</h3>
-        <p>Either party may terminate participation by written notice. Referral fees owed for Leads delivered before termination remain due after termination.</p>
-
-        <h3>16. Nebraska Law and Arbitration</h3>
-        <p>This agreement is governed by Nebraska law. Any dispute that cannot be resolved informally shall be resolved through binding arbitration in Douglas County, Nebraska, unless applicable law requires otherwise.</p>
-
-        <h3>17. Collection Costs</h3>
-        <p>To the extent allowed by law, the prevailing party in a dispute or collection action may recover reasonable attorney fees, arbitration fees, court costs, and collection costs.</p>
-
-        <h3>18. Electronic Signature</h3>
-        <p>By typing a name and submitting this form, the signer agrees that the electronic signature has the same legal effect as a handwritten signature.</p>
+        <h3>9. Electronic Signature</h3>
+        <p>By typing your name and submitting this form, you agree that your electronic signature has the same legal effect as a handwritten paper signature.</p>
       </div>
 
       <div class="ack danger">
         <input type="checkbox" name="Agreement_Accepted" value="Yes" required>
-        <span>I confirm I am authorized to submit this application and bind the business named above to these terms. I accept the $150 Job Start referral fee, the required 10% Gross Revenue completion referral fee, and the agreement terms listed above.</span>
+        <span>I confirm I am authorized to bind this business. I accept the $150 Job Start fee, the required 10% Gross Revenue completion fee, and all terms above.</span>
       </div>
 
       <div class="section">
-        <h2>13. Electronic Signature</h2>
-        <p>Type your name to sign and submit the application.</p>
+        <h2>5. Electronic Signature</h2>
+        <p>Type your name below to sign and finalize enrollment.</p>
       </div>
 
       <div class="grid">
         <div>
-          <label>Printed Name</label>
+          <label>Authorized Signer Name</label>
           <input type="text" name="Signature_Printed_Name" required>
         </div>
         <div>
           <label>Title / Position</label>
-          <input type="text" name="Signature_Title" required>
+          <input type="text" name="Signature_Title" placeholder="e.g. Owner, Member, President" required>
         </div>
       </div>
 
       <div class="grid">
         <div>
-          <label>Date</label>
+          <label>Date Signed</label>
           <input type="text" name="Signature_Date" id="signatureDate" readonly>
         </div>
         <div>
-          <label>Typed Electronic Signature</label>
-          <input type="text" name="Electronic_Signature" required>
+          <label>Type Electronic Signature</label>
+          <input type="text" name="Electronic_Signature" placeholder="Type name exactly as signature" required>
         </div>
       </div>
 
-      <div class="ack">
-        <input type="checkbox" name="Electronic_Signature_Acknowledged" value="Yes" required>
-        <span>I understand that my typed electronic signature has the same legal effect as a handwritten signature.</span>
-      </div>
-
-      <button type="submit">Submit Contractor Enrollment</button>
+      <button type="submit">Submit Contractor Registration</button>
     </form>
   </div>
 
   <footer>
     <div class="brand">Omaha Restoration™</div>
     Omaha Restoration™ is operated by Murrays Empire LLC. Omaha Restoration™ is a referral platform only and does not perform physical restoration services.
-    Independent contractors are responsible for all services, licensing, insurance, permits, safety, warranties, and customer outcomes.
+    Independent contractors are completely responsible for all services, licensing, insurance, permits, safety, and customer outcomes.
     <br><br>
     © <span id="year"></span> Murrays Empire LLC. All Rights Reserved.
   </footer>
 </main>
 
-<script>
+<script id="copy-button-script">
   (function(){
     const now = new Date();
 
