@@ -359,12 +359,15 @@
   <div class="card">
     <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
 
+      <!-- Web3Forms Configuration -->
       <input type="hidden" name="access_key" value="23f73fab-b53f-4ce0-bdfa-0770dd1e7509">
       <input type="hidden" name="subject" value="Omaha Restoration Contractor Enrollment">
       <input type="hidden" name="from_name" value="Omaha Restoration Contractor Portal">
       <input type="hidden" name="redirect" value="https://omaharestoration.store/enrollment-submitted.html">
       <input type="hidden" name="Agreement_Version" value="OR-CPA-2026-V5">
       <input type="hidden" name="Contractor_Status" value="Pending Verification">
+      
+      <!-- Crucial Missing Elements Added Below -->
       <input type="hidden" name="Submission_Timestamp_UTC" id="timestamp">
       <input type="hidden" name="Browser_User_Agent" id="userAgent">
       <input type="hidden" name="Signer_IP" id="signerIp">
