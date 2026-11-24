@@ -469,6 +469,13 @@ Complete your application for network review.
 
 <div class="card">
 
+<div class="note">
+<strong>Temporary System Test:</strong>
+This registration page is undergoing an email delivery
+test. Do not submit an actual contractor application
+until normal enrollment resumes.
+</div>
+
 <noscript>
 <div class="note">
 JavaScript must be enabled to complete and
@@ -479,8 +486,6 @@ electronically sign this application.
 <form id="contractorForm"
 action="https://api.web3forms.com/submit"
 method="POST">
-
-<!-- WEB3FORMS CONFIGURATION -->
 
 <input type="hidden"
 name="access_key"
@@ -2631,6 +2636,19 @@ throw new Error(
 
 }
 
+/* TEMPORARY EMAIL DELIVERY DIAGNOSTIC */
+
+/*
+The complete agreement remains visible and
+is captured locally by the page.
+
+For this controlled test only, exclude the
+full agreement text from the outgoing request.
+Restore this field before actual enrollment.
+*/
+
+delete payload.Agreement_Text;
+
 /* PREPARE JSON REQUEST */
 
 const requestBody =
@@ -2655,7 +2673,7 @@ controller.abort();
 
 },45000);
 
-/* SEND COMPLETE APPLICATION */
+/* SEND APPLICATION */
 
 requestStarted = true;
 
