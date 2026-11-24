@@ -1,209 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Enrollment Confirmed | Omaha Restoration™</title>
-  <meta name="robots" content="noindex, nofollow" />
-  <style>
-    :root {
-      --bg: #050505;
-      --panel: #0d0d0d;
-      --text: #ffffff;
-      --muted: #a1a1a1;
-      --gold: #c5a059;
-      --gold-dark: #8e703a;
-      --border: rgba(255,255,255,0.08);
-      --success: #2ee59d;
-    }
 
-    * { box-sizing: border-box; }
+<meta charset="UTF-8">
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    .container {
-      max-width: 520px;
-      width: 100%;
-      padding: 24px;
-      text-align: center;
-    }
+<meta name="robots"
+content="noindex,nofollow">
 
-    /* Success Card */
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      padding: 60px 40px;
-      border-radius: 24px;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-    }
+<title>Application Submitted | Omaha Restoration™</title>
 
-    /* Animated Success Icon */
-    .icon-circle {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: rgba(46, 229, 157, 0.1);
-      border: 2px solid var(--success);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 30px;
-      color: var(--success);
-      font-size: 32px;
-      font-weight: 900;
-    }
+<style>
 
-    h1 {
-      font-size: 34px;
-      font-weight: 900;
-      letter-spacing: -1.5px;
-      margin: 0 0 15px;
-      line-height: 1.1;
-    }
+:root{
+--navy:#001d3d;
+--dark:#000814;
+--gold:#c5a059;
+--white:#ffffff;
+--text:#172231;
+--muted:#647184;
+--line:#e3e7ed;
+--green:#166534;
+}
 
-    p {
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.6;
-      margin-bottom: 40px;
-    }
+*{
+box-sizing:border-box;
+}
 
-    /* Process Steps - Clean & Professional */
-    .process-box {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      text-align: left;
-      margin-bottom: 40px;
-    }
+body{
+margin:0;
+min-height:100vh;
+background:linear-gradient(
+160deg,
+var(--navy),
+var(--dark) 85%
+);
+color:var(--white);
+font-family:-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Arial,
+sans-serif;
+-webkit-font-smoothing:antialiased;
+line-height:1.6;
+}
 
-    .process-title {
-      font-size: 11px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--gold);
-      margin-bottom: 15px;
-      display: block;
-    }
+header{
+background:#050a12;
+border-bottom:2px solid var(--gold);
+padding:22px 20px;
+text-align:center;
+}
 
-    .step-item {
-      font-size: 14px;
-      color: var(--text);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
+.logo{
+font-size:21px;
+font-weight:900;
+text-transform:uppercase;
+letter-spacing:-.5px;
+}
 
-    .step-item:last-child { margin-bottom: 0; }
-    .check-mark { color: var(--gold); font-weight: 900; }
+.logo span{
+color:var(--gold);
+}
 
-    /* Actions */
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 20px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 900;
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      margin-bottom: 12px;
-    }
+.container{
+max-width:680px;
+margin:0 auto;
+padding:50px 20px;
+}
 
-    .btn-primary {
-      background: var(--gold);
-      color: #000;
-      border: none;
-    }
+.card{
+background:var(--white);
+color:var(--text);
+border:1px solid rgba(197,160,89,.4);
+border-radius:25px;
+padding:40px 30px;
+box-shadow:0 30px 80px rgba(0,0,0,.4);
+text-align:center;
+}
 
-    .btn-primary:hover {
-      background: #e0bc7a;
-      transform: translateY(-2px);
-    }
+.icon-circle{
+width:80px;
+height:80px;
+border-radius:50%;
+background:#dcfce7;
+color:var(--green);
+border:1px solid #bbf7d0;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 24px;
+font-size:38px;
+font-weight:900;
+}
 
-    .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
+.status{
+display:inline-block;
+padding:8px 16px;
+margin-bottom:20px;
+background:#fffaf0;
+border:1px solid #ead8b2;
+border-radius:50px;
+color:#947139;
+font-size:11px;
+font-weight:900;
+letter-spacing:1px;
+text-transform:uppercase;
+}
 
-    .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.2);
-    }
+h1{
+font-size:clamp(30px,7vw,42px);
+font-weight:900;
+letter-spacing:-1.5px;
+line-height:1.1;
+color:var(--navy);
+margin:0 0 16px;
+}
 
-    /* Footer Details */
-    .legal-note {
-      margin-top: 30px;
-      font-size: 11px;
-      color: #555;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
+.description{
+font-size:15px;
+color:var(--muted);
+line-height:1.7;
+margin:0 auto 30px;
+max-width:490px;
+}
 
-    footer {
-      margin-top: 40px;
-      color: #333;
-      font-size: 11px;
-      font-weight: 600;
-    }
-  </style>
+.process-box{
+background:#f8fafc;
+border:1px solid var(--line);
+border-radius:16px;
+padding:22px;
+text-align:left;
+margin-bottom:24px;
+}
+
+.process-title{
+display:block;
+font-size:12px;
+font-weight:900;
+text-transform:uppercase;
+letter-spacing:1.5px;
+color:var(--navy);
+margin-bottom:20px;
+}
+
+.step{
+display:flex;
+align-items:flex-start;
+gap:13px;
+margin-bottom:20px;
+}
+
+.step:last-child{
+margin-bottom:0;
+}
+
+.number{
+width:32px;
+height:32px;
+flex-shrink:0;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:var(--navy);
+color:var(--gold);
+font-size:13px;
+font-weight:900;
+}
+
+.step strong{
+display:block;
+font-size:14px;
+color:var(--navy);
+margin-bottom:4px;
+}
+
+.step p{
+margin:0;
+font-size:13px;
+color:var(--muted);
+line-height:1.6;
+}
+
+.notice{
+background:#fffaf0;
+border:1px solid #ead8b2;
+border-left:4px solid var(--gold);
+border-radius:12px;
+padding:18px;
+margin-bottom:26px;
+text-align:left;
+font-size:13px;
+color:#534630;
+}
+
+.notice strong{
+display:block;
+color:var(--navy);
+margin-bottom:6px;
+}
+
+.btn{
+display:block;
+width:100%;
+padding:19px;
+border-radius:13px;
+text-decoration:none;
+font-weight:900;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:1px;
+margin-bottom:12px;
+transition:.2s ease;
+}
+
+.btn-primary{
+background:var(--dark);
+color:var(--gold);
+border:2px solid var(--gold);
+}
+
+.btn-primary:hover{
+background:var(--gold);
+color:var(--dark);
+}
+
+.btn-secondary{
+background:var(--white);
+color:var(--navy);
+border:1px solid #d5dae0;
+}
+
+.btn-secondary:hover{
+background:#f8fafc;
+border-color:var(--gold);
+}
+
+.reference{
+margin-top:25px;
+font-size:11px;
+font-weight:700;
+color:var(--muted);
+line-height:1.8;
+}
+
+footer{
+margin:38px auto 0;
+max-width:600px;
+text-align:center;
+color:#b5bfcc;
+font-size:11px;
+line-height:1.8;
+}
+
+.brand{
+font-size:13px;
+font-weight:900;
+color:var(--gold);
+text-transform:uppercase;
+letter-spacing:2px;
+margin-bottom:12px;
+}
+
+.copyright{
+margin-top:20px;
+font-size:10px;
+font-weight:800;
+letter-spacing:1px;
+color:var(--gold);
+}
+
+@media(max-width:600px){
+
+.container{
+padding:30px 15px;
+}
+
+.card{
+padding:30px 20px;
+border-radius:20px;
+}
+
+.logo{
+font-size:18px;
+}
+
+.process-box{
+padding:18px;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <div class="container">
-    <div class="card">
-      <div class="icon-circle">✓</div>
-      <h1>Enrollment Received.</h1>
-      <p>Your contractor participation agreement has been successfully logged into our network.</p>
+<header>
 
-      <div class="process-box">
-        <span class="process-title">Next Steps</span>
-        <div class="step-item">
-          <span class="check-mark">›</span>
-          <span>We are verifying your credentials and service area.</span>
-        </div>
-        <div class="step-item">
-          <span class="check-mark">›</span>
-          <span>A formal confirmation will be sent to your email.</span>
-        </div>
-        <div class="step-item">
-          <span class="check-mark">›</span>
-          <span>Expect routed job opportunities once activation is complete.</span>
-        </div>
-      </div>
+<div class="logo">
+Omaha<span>Restoration</span>™
+</div>
 
-      <a href="index.html" class="btn btn-primary">Return to Dashboard</a>
-      <a href="contact.html" class="btn btn-secondary">Contact Network Support</a>
+</header>
 
-      <div class="legal-note">
-        Omaha Restoration™ • Managed by <strong>Murrays Empire LLC</strong>
-      </div>
-    </div>
+<main class="container">
 
-    <footer>
-      © <span id="yr"></span> OMAHA RESTORATION™. ALL RIGHTS RESERVED.
-    </footer>
-  </div>
+<div class="card">
 
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+<div class="icon-circle" aria-hidden="true">
+&#10003;
+</div>
+
+<div class="status">
+Pending Application Review
+</div>
+
+<h1>
+Application Submitted
+</h1>
+
+<p class="description">
+
+Thank you for your interest in joining
+the Omaha Restoration™ independent
+contractor network.
+
+Your application is subject to review
+and verification before approval.
+
+</p>
+
+<div class="process-box">
+
+<span class="process-title">
+What Happens Next
+</span>
+
+<div class="step">
+
+<div class="number">1</div>
+
+<div>
+
+<strong>Application Review</strong>
+
+<p>
+Your business information, service areas,
+professional experience, availability,
+and electronically signed agreement
+will be reviewed.
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="number">2</div>
+
+<div>
+
+<strong>Credential Verification</strong>
+
+<p>
+Additional documentation may be requested,
+including contractor registration,
+applicable licenses, professional
+qualifications, and proof of insurance.
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="number">3</div>
+
+<div>
+
+<strong>Application Decision</strong>
+
+<p>
+Omaha Restoration™ will contact applicants
+regarding their application status or
+any additional information required
+for network approval.
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="number">4</div>
+
+<div>
+
+<strong>Project Opportunities</strong>
+
+<p>
+Approved contractors may receive available
+project referral opportunities based on
+their qualifications, service capabilities,
+location, and availability.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="notice">
+
+<strong>
+Important Application Notice
+</strong>
+
+Submitting an application does not
+constitute automatic network approval,
+authorization to perform work, or a
+guarantee of project referrals.
+
+All applicable credential and insurance
+requirements must be satisfied before
+independent project assignments are
+authorized.
+
+</div>
+
+<a href="index.html"
+class="btn btn-primary">
+
+Return to Homepage
+
+</a>
+
+<a href="contact.html"
+class="btn btn-secondary">
+
+Contact Network Support
+
+</a>
+
+<div class="reference">
+
+Contractor Partnership &amp; Referral Agreement
+
+<br>
+
+OR-CPA-2026-V8
+
+<br>
+
+Independent Contractor Network
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="brand">
+
+Omaha Restoration™
+
+</div>
+
+Operated by Murrays Empire LLC.
+
+<br><br>
+
+Omaha Restoration™ operates as an
+independent contractor referral and
+project-routing network.
+
+We do not directly perform restoration,
+construction, mitigation, or repair services.
+
+<br><br>
+
+Independent contractors are responsible
+for their own licensing, registration,
+insurance, permits, workmanship,
+jobsite safety, and customer contracts.
+
+<div class="copyright">
+
+&copy; <span id="year"></span>
+Murrays Empire LLC. All Rights Reserved.
+
+</div>
+
+</footer>
+
+</main>
+
+<script>
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+</script>
+
 </body>
 </html>
