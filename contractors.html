@@ -18,11 +18,9 @@
   </script>
 
   <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#001d3d">
 
   <title>Contractor Registration | Omaha Restoration™</title>
 
@@ -324,6 +322,12 @@
       color:#263343;
       font-size:13px;
       line-height:1.75;
+      scroll-margin-top:100px;
+    }
+
+    .legal:focus-visible{
+      outline:3px solid var(--gold);
+      outline-offset:3px;
     }
 
     .legal h3{
@@ -357,6 +361,38 @@
       color:#172c45;
     }
 
+    /* MANDATORY AGREEMENT REVIEW */
+
+    .agreement-review{
+      background:#fff0f0;
+      border:2px solid var(--red);
+      border-radius:14px;
+      padding:18px;
+      margin:16px 0;
+      color:#861b1b;
+      font-size:13px;
+      font-weight:600;
+      line-height:1.65;
+      scroll-margin-top:100px;
+    }
+
+    .agreement-review strong{
+      display:block;
+      font-size:14px;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    .agreement-review.completed{
+      background:#f0fdf4;
+      border-color:#15803d;
+      color:#166534;
+    }
+
+    .agreement-review.attention{
+      box-shadow:0 0 0 4px rgba(179,25,25,.15);
+    }
+
     .ack{
       display:flex;
       align-items:flex-start;
@@ -385,6 +421,15 @@
       accent-color:var(--red);
     }
 
+    .ack.locked{
+      opacity:.65;
+      cursor:not-allowed;
+    }
+
+    .ack.locked input{
+      cursor:not-allowed;
+    }
+
     .note{
       background:#eef4fa;
       border-left:4px solid var(--navy);
@@ -398,13 +443,14 @@
     .error{
       display:none;
       background:#fff0f0;
-      border:1px solid #d69292;
+      border:2px solid var(--red);
       border-radius:10px;
       color:#861b1b;
       padding:14px;
       margin:16px 0;
       font-weight:700;
       overflow-wrap:anywhere;
+      scroll-margin-top:100px;
     }
 
     button{
@@ -430,6 +476,12 @@
     button:disabled{
       opacity:.65;
       cursor:wait;
+    }
+
+    button:focus-visible,
+    a:focus-visible{
+      outline:3px solid var(--gold);
+      outline-offset:4px;
     }
 
     footer{
@@ -489,6 +541,18 @@
         font-size:12px;
       }
 
+      .agreement-review{
+        padding:15px;
+      }
+
+    }
+
+    @media(prefers-reduced-motion:reduce){
+
+      html{
+        scroll-behavior:auto;
+      }
+
     }
 
   </style>
@@ -535,8 +599,6 @@
     electronically sign this application.
   </div>
 </noscript>
-
-<!-- TRADITIONAL HTML POST: SAME METHOD AS ROUTE.HTML -->
 
 <form id="contractorForm"
       action="https://api.web3forms.com/submit"
@@ -597,6 +659,19 @@
   <input type="hidden"
          name="Selected_Services"
          id="selectedServices">
+
+  <input type="hidden"
+         name="Agreement_Scroll_Completed"
+         id="agreementScrollCompleted"
+         value="No">
+
+  <input type="hidden"
+         name="Agreement_Review_Timestamp_UTC"
+         id="agreementReviewTimestamp">
+
+  <input type="hidden"
+         name="Agreement_Acceptance_Timestamp_UTC"
+         id="agreementAcceptanceTimestamp">
 
   <input type="hidden"
          name="Compensation_Schedule"
@@ -1164,7 +1239,29 @@
 
 </div>
 
-<div class="legal" id="legalAgreement">
+<!-- MANDATORY AGREEMENT REVIEW NOTICE -->
+
+<div class="agreement-review"
+     id="agreementReview"
+     role="status"
+     aria-live="polite"
+     tabindex="-1">
+
+  <strong>AGREEMENT REVIEW REQUIRED</strong>
+
+  Please read the entire Omaha Restoration™
+  Contractor Agreement before signing and
+  submitting your application. You must scroll
+  to the bottom of the agreement to continue.
+
+</div>
+
+<div class="legal"
+     id="legalAgreement"
+     tabindex="0"
+     role="region"
+     aria-label="Omaha Restoration Contractor Agreement"
+     aria-describedby="agreementReview">
 
 <h3>1. Parties &amp; Agreement Purpose</h3>
 
@@ -2242,19 +2339,25 @@ referral provisions.
 
 </label>
 
-<label class="ack">
+<label class="ack locked"
+       id="agreementAcceptanceLabel">
 
 <input type="checkbox"
+       id="agreementAccepted"
        name="Agreement_Accepted"
        value="Yes"
-       required>
+       required
+       disabled>
 
 <span>
-I have reviewed and agree to the complete
-OR-CPA-2026-V8 Contractor Partnership &amp;
-Referral Agreement, including non-circumvention,
-project reporting, record verification,
-payment obligations, and binding arbitration.
+I confirm that I have read, understood,
+and agree to the entire OR-CPA-2026-V8
+Omaha Restoration™ Contractor Partnership
+&amp; Referral Agreement, including
+non-circumvention, project reporting,
+record verification, payment obligations,
+and binding arbitration.
+
 I am authorized to bind the identified business.
 </span>
 
@@ -2360,7 +2463,8 @@ before your contractor status is approved.
 <div class="error"
      id="formError"
      role="alert"
-     aria-live="assertive">
+     aria-live="assertive"
+     tabindex="-1">
 </div>
 
 <button type="submit"
@@ -2416,10 +2520,46 @@ Murrays Empire LLC. All Rights Reserved.
   const error =
     document.getElementById("formError");
 
+  const legalAgreement =
+    document.getElementById("legalAgreement");
+
+  const agreementReview =
+    document.getElementById("agreementReview");
+
+  const agreementAccepted =
+    document.getElementById("agreementAccepted");
+
+  const acceptanceLabel =
+    document.getElementById("agreementAcceptanceLabel");
+
+  const scrollCompleted =
+    document.getElementById("agreementScrollCompleted");
+
+  const reviewTimestamp =
+    document.getElementById("agreementReviewTimestamp");
+
+  const acceptanceTimestamp =
+    document.getElementById("agreementAcceptanceTimestamp");
+
   const agreementVersion =
     "OR-CPA-2026-V8";
 
+  const reviewRequiredMessage =
+    "Please read the entire Omaha Restoration™ " +
+    "Contractor Agreement before signing and " +
+    "submitting your application. You must scroll " +
+    "to the bottom of the agreement to continue.";
+
   let submitting = false;
+  let initialized = false;
+  let agreementReviewed = false;
+  let reviewCompletedAt = "";
+  let acceptedAt = "";
+
+  const scrollBehavior =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ? "auto"
+    : "smooth";
 
   document.getElementById("year").textContent =
     new Date().getFullYear();
@@ -2495,11 +2635,8 @@ Murrays Empire LLC. All Rights Reserved.
 
   function captureAgreement(){
 
-    const agreement =
-      document.getElementById("legalAgreement");
-
     const agreementText =
-      agreement.innerText.trim();
+      legalAgreement.innerText.trim();
 
     if(!agreementText){
 
@@ -2562,30 +2699,259 @@ Murrays Empire LLC. All Rights Reserved.
 
   /* DISPLAY VALIDATION ERRORS */
 
+  function clearError(){
+
+    error.style.display = "none";
+    error.textContent = "";
+
+  }
+
   function showError(message,element){
 
     error.textContent = message;
-
     error.style.display = "block";
 
-    (element || error).scrollIntoView({
+    const target = element || error;
 
-      behavior:"smooth",
+    if(target.focus){
+
+      target.focus({
+        preventScroll:true
+      });
+
+    }
+
+    target.scrollIntoView({
+
+      behavior:scrollBehavior,
       block:"center"
 
     });
 
-    if(element && element.focus){
+  }
 
-      element.focus();
+  /* RESET AGREEMENT REVIEW */
+
+  function resetAgreementReview(){
+
+    agreementReviewed = false;
+    reviewCompletedAt = "";
+    acceptedAt = "";
+
+    scrollCompleted.value = "No";
+    reviewTimestamp.value = "";
+    acceptanceTimestamp.value = "";
+
+    agreementAccepted.checked = false;
+    agreementAccepted.disabled = true;
+
+    acceptanceLabel.classList.add("locked");
+
+    agreementReview.classList.remove(
+      "completed",
+      "attention"
+    );
+
+    agreementReview.innerHTML =
+      "<strong>AGREEMENT REVIEW REQUIRED</strong>" +
+      reviewRequiredMessage;
+
+    legalAgreement.scrollTop = 0;
+
+  }
+
+  /* VERIFY AGREEMENT SCROLL COMPLETION */
+
+  function checkAgreementReview(){
+
+    if(!initialized || agreementReviewed){
+      return;
+    }
+
+    const totalHeight =
+      legalAgreement.scrollHeight;
+
+    const visibleHeight =
+      legalAgreement.clientHeight;
+
+    const currentPosition =
+      legalAgreement.scrollTop;
+
+    if(visibleHeight <= 0){
+      return;
+    }
+
+    const remaining =
+      totalHeight -
+      visibleHeight -
+      currentPosition;
+
+    if(remaining <= 2){
+
+      agreementReviewed = true;
+
+      reviewCompletedAt =
+        new Date().toISOString();
+
+      scrollCompleted.value = "Yes";
+
+      reviewTimestamp.value =
+        reviewCompletedAt;
+
+      agreementAccepted.disabled = false;
+
+      acceptanceLabel.classList.remove(
+        "locked"
+      );
+
+      agreementReview.classList.remove(
+        "attention"
+      );
+
+      agreementReview.classList.add(
+        "completed"
+      );
+
+      agreementReview.innerHTML =
+        "<strong>AGREEMENT REVIEW COMPLETED</strong>" +
+        "Please confirm that you have read, " +
+        "understood, and accepted the entire " +
+        "Contractor Agreement.";
+
+      if(
+        error.textContent.indexOf(
+          "AGREEMENT REVIEW REQUIRED"
+        ) === 0
+      ){
+
+        clearError();
+
+      }
 
     }
 
   }
 
+  legalAgreement.addEventListener(
+
+    "scroll",
+    checkAgreementReview,
+    {passive:true}
+
+  );
+
+  /* RECORD EXPLICIT AGREEMENT ACCEPTANCE */
+
+  agreementAccepted.addEventListener(
+
+    "change",
+
+    function(){
+
+      if(!agreementReviewed){
+
+        agreementAccepted.checked = false;
+        agreementAccepted.disabled = true;
+
+        acceptedAt = "";
+        acceptanceTimestamp.value = "";
+
+        return;
+
+      }
+
+      if(agreementAccepted.checked){
+
+        acceptedAt =
+          new Date().toISOString();
+
+        acceptanceTimestamp.value =
+          acceptedAt;
+
+      }else{
+
+        acceptedAt = "";
+        acceptanceTimestamp.value = "";
+
+      }
+
+    }
+
+  );
+
+  /* REQUIRE AGREEMENT REVIEW BEFORE SUBMISSION */
+
+  function requireAgreementReview(){
+
+    if(
+      agreementReviewed &&
+      reviewCompletedAt
+    ){
+
+      return true;
+
+    }
+
+    agreementReview.classList.add(
+      "attention"
+    );
+
+    showError(
+
+      "AGREEMENT REVIEW REQUIRED. " +
+      reviewRequiredMessage,
+
+      agreementReview
+
+    );
+
+    return false;
+
+  }
+
+  /* DISPLAY WARNING IF LOCKED CHECKBOX IS SELECTED */
+
+  acceptanceLabel.addEventListener(
+
+    "click",
+
+    function(event){
+
+      if(!agreementReviewed){
+
+        event.preventDefault();
+
+        requireAgreementReview();
+
+      }
+
+    }
+
+  );
+
+  /* CHECK AGREEMENT BEFORE NATIVE FORM VALIDATION */
+
+  button.addEventListener(
+
+    "click",
+
+    function(event){
+
+      if(!requireAgreementReview()){
+
+        event.preventDefault();
+
+      }
+
+    }
+
+  );
+
   /* INITIALIZE REGISTRATION */
 
   try{
+
+    resetAgreementReview();
 
     setTime();
 
@@ -2595,9 +2961,36 @@ Murrays Empire LLC. All Rights Reserved.
       "applicationReference"
     ).value = generateReference();
 
+    initialized = true;
+
     button.disabled = false;
 
+    /*
+      JavaScript handles validation order so that
+      the agreement warning appears before other
+      missing-field messages when submitting.
+    */
+
+    form.noValidate = true;
+
+    /*
+      If the agreement is fully visible without
+      scrolling, allow acknowledgment.
+    */
+
+    if(
+      legalAgreement.clientHeight > 0 &&
+      legalAgreement.scrollHeight <=
+      legalAgreement.clientHeight + 2
+    ){
+
+      checkAgreementReview();
+
+    }
+
   }catch(initializationError){
+
+    initialized = false;
 
     showError(
 
@@ -2615,7 +3008,7 @@ Murrays Empire LLC. All Rights Reserved.
 
   form.addEventListener("submit",function(event){
 
-    if(submitting){
+    if(submitting || !initialized){
 
       event.preventDefault();
 
@@ -2623,9 +3016,54 @@ Murrays Empire LLC. All Rights Reserved.
 
     }
 
-    error.style.display = "none";
+    clearError();
 
-    error.textContent = "";
+    /* MANDATORY AGREEMENT REVIEW */
+
+    if(!requireAgreementReview()){
+
+      event.preventDefault();
+
+      return;
+
+    }
+
+    /* MANDATORY AGREEMENT ACCEPTANCE */
+
+    if(
+      !agreementAccepted.checked ||
+      agreementAccepted.disabled ||
+      !acceptedAt
+    ){
+
+      event.preventDefault();
+
+      showError(
+
+        "AGREEMENT ACCEPTANCE REQUIRED. " +
+        "Please confirm that you have read, " +
+        "understood, and accepted the entire " +
+        "Contractor Agreement.",
+
+        agreementAccepted
+
+      );
+
+      return;
+
+    }
+
+    /* VALIDATE REQUIRED FORM FIELDS */
+
+    if(!form.checkValidity()){
+
+      event.preventDefault();
+
+      form.reportValidity();
+
+      return;
+
+    }
 
     /* SERVICE AREA REQUIRED */
 
@@ -2753,6 +3191,14 @@ Murrays Empire LLC. All Rights Reserved.
         "selectedServices"
       ).value = selectedNames("services");
 
+      scrollCompleted.value = "Yes";
+
+      reviewTimestamp.value =
+        reviewCompletedAt;
+
+      acceptanceTimestamp.value =
+        acceptedAt;
+
       const referenceField =
         document.getElementById(
           "applicationReference"
@@ -2775,7 +3221,15 @@ Murrays Empire LLC. All Rights Reserved.
           "timestamp"
         ).value ||
 
-        !referenceField.value
+        !referenceField.value ||
+
+        !agreementReviewed ||
+
+        !reviewCompletedAt ||
+
+        !acceptedAt ||
+
+        !agreementAccepted.checked
 
       ){
 
@@ -2833,13 +3287,23 @@ Murrays Empire LLC. All Rights Reserved.
 
   /* RESTORE BUTTON IF USER RETURNS TO PAGE */
 
-  window.addEventListener("pageshow",function(){
+  window.addEventListener("pageshow",function(event){
 
     submitting = false;
 
     form.removeAttribute("aria-busy");
 
+    if(event.persisted){
+
+      resetAgreementReview();
+
+      clearError();
+
+    }
+
     if(
+
+      initialized &&
 
       document.getElementById(
         "agreementText"
