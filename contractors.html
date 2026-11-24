@@ -43,7 +43,7 @@ header{
 position:sticky;
 top:0;
 z-index:100;
-background:rgba(3,9,18,.97);
+background:#050a12;
 border-bottom:2px solid var(--gold);
 padding:16px 24px;
 display:flex;
@@ -208,7 +208,7 @@ accent-color:var(--navy);
 
 .fee-grid{
 display:grid;
-grid-template-columns:repeat(3,minmax(0,1fr));
+grid-template-columns:repeat(2,minmax(0,1fr));
 gap:14px;
 margin:20px 0;
 }
@@ -222,7 +222,7 @@ padding:20px;
 
 .fee-card strong{
 display:block;
-font-size:26px;
+font-size:28px;
 color:var(--navy);
 font-weight:900;
 line-height:1.3;
@@ -449,9 +449,8 @@ Connect with available restoration, repair,
 and construction opportunities without
 having to independently generate every customer.
 Our flexible referral compensation structure
-accommodates small projects, standard projects,
-and approved contractor dispatch assignments.
-Complete your registration for network review.
+accommodates both small and standard projects.
+Complete your application for network review.
 </p>
 
 <div class="card">
@@ -468,7 +467,7 @@ value="23f73fab-b53f-4ce0-bdfa-0770dd1e7509">
 
 <input type="hidden"
 name="subject"
-value="Omaha Restoration Contractor Enrollment V7">
+value="Omaha Restoration Contractor Enrollment V8">
 
 <input type="hidden"
 name="from_name"
@@ -480,7 +479,7 @@ value="https://omaharestoration.store/enrollment-submitted.html">
 
 <input type="hidden"
 name="Agreement_Version"
-value="OR-CPA-2026-V7">
+value="OR-CPA-2026-V8">
 
 <input type="hidden"
 name="Contractor_Status"
@@ -496,7 +495,7 @@ id="userAgent">
 
 <input type="hidden"
 name="Agreement_Confirmation"
-value="Electronic acceptance of OR-CPA-2026-V7">
+value="Electronic acceptance of OR-CPA-2026-V8">
 
 <input type="hidden"
 name="Agreement_Text"
@@ -504,7 +503,7 @@ id="agreementText">
 
 <input type="hidden"
 name="Compensation_Schedule"
-value="Small projects: $25/$50/$100/$150. Standard projects: $150 plus 10%. Approved dispatch-only assignments: $50 unless otherwise agreed in writing.">
+value="Paid projects under $250: $25. $250-$499.99: $50. $500-$999.99: $100. $1000-$1499.99: $150. $1500 and above: $150 plus 10% of Gross Project Revenue.">
 
 <input type="checkbox"
 name="botcheck"
@@ -538,7 +537,7 @@ required>
 </div>
 
 <div class="field">
-<label for="phone">Lead Dispatch Phone *</label>
+<label for="phone">Direct Contact Phone *</label>
 <input id="phone"
 type="tel"
 name="Direct_Phone"
@@ -877,12 +876,6 @@ placeholder="Describe equipment, crew size, emergency availability, and speciali
 <p>Applies to qualifying projects valued at $1,500 or more.</p>
 </div>
 
-<div class="fee-card">
-<strong>$50</strong>
-<span>APPROVED DISPATCH-ONLY</span>
-<p>Flat prepaid fee for an approved contractor dispatch.</p>
-</div>
-
 </div>
 
 <table class="fee-table">
@@ -914,26 +907,22 @@ placeholder="Describe equipment, crew size, emergency availability, and speciali
 <td>$1,500 and above</td>
 <td>$150 + 10%</td>
 </tr>
-<tr>
-<td>Approved Dispatch-Only</td>
-<td>$50 Flat Fee</td>
-</tr>
 </tbody>
 </table>
 
 <div class="note">
 <strong>Flexible Compensation:</strong>
-The applicable fee model and responsible
-paying party will be identified in writing
-before an assignment is accepted.
-Contractors may accept or decline individual
-opportunities. Alternative compensation
-does not automatically apply to future work.
+Referral compensation is based on the
+applicable project value and accepted
+assignment terms. Contractors may accept
+or decline individual opportunities.
+Any alternative compensation arrangement
+must be accepted in writing by both parties.
 </div>
 
 <div class="legal-top">
 <strong>OMAHA RESTORATION™ CONTRACTOR AGREEMENT</strong>
-<span class="version">OR-CPA-2026-V7</span>
+<span class="version">OR-CPA-2026-V8</span>
 </div>
 
 <div class="legal" id="legalAgreement">
@@ -954,7 +943,7 @@ The purpose of this Agreement is to establish
 the terms under which Company may introduce
 prospective customers, businesses, and project
 opportunities to Contractor in exchange for
-agreed referral or dispatch compensation.
+agreed referral compensation.
 </p>
 
 <p>
@@ -1016,6 +1005,12 @@ text message, email, website, electronic platform,
 or another documented communication method.
 </p>
 
+<p>
+A "Referred Customer" means a customer or business
+first introduced to Contractor through a documented
+referral from Company.
+</p>
+
 <h4>3.2 Job Start</h4>
 
 <p>
@@ -1023,11 +1018,11 @@ or another documented communication method.
 </p>
 
 <ul>
-<li>A project-specific on-site inspection or assessment.</li>
+<li>A project-specific on-site inspection or assessment for an assignment expressly accepted under the standard compensation model.</li>
 <li>Customer approval of a project estimate.</li>
 <li>Execution of a work authorization or service contract.</li>
 <li>Commencement of physical project work.</li>
-<li>Delivery or placement of project equipment.</li>
+<li>Delivery or placement of project equipment for an authorized project.</li>
 </ul>
 
 <p>
@@ -1097,44 +1092,35 @@ excluding federal holidays.
 <p>
 An Assignment Confirmation means a documented
 communication identifying the referred opportunity,
-applicable compensation model, responsible paying
-party, and any assignment-specific terms accepted
-by the applicable parties.
+applicable compensation terms, and any
+assignment-specific conditions accepted
+by Company and Contractor.
 </p>
 
-<h4>3.7 Confirmed Dispatch</h4>
-
-<p>
-A Confirmed Dispatch occurs when an approved
-independent contractor arrives at the designated
-location within the agreed appointment window
-or another mutually accepted time.
-</p>
-
-<p>
-Arrival may be verified through written confirmation
-from the requesting party, Contractor, or other
-reasonably reliable documentation.
-</p>
-
-<h3>4. Referral & Dispatch Compensation</h3>
+<h3>4. Required Referral Compensation</h3>
 
 <h4>4.1 Applicable Compensation Model</h4>
 
 <p>
-Company offers three compensation models:
+Company offers two project-based compensation models:
 </p>
 
 <ul>
 <li>Small Project Referral Compensation.</li>
 <li>Standard Project Referral Compensation.</li>
-<li>Approved Dispatch-Only Compensation.</li>
 </ul>
 
 <p>
 Company shall identify the applicable compensation
-model in writing before Contractor accepts
+terms in writing before Contractor accepts
 an assignment.
+</p>
+
+<p>
+When the project value is unknown, the
+assignment confirmation may identify the
+compensation schedule as applicable according
+to the subsequently documented project value.
 </p>
 
 <p>
@@ -1144,26 +1130,31 @@ and its disclosed compensation terms.
 
 <p>
 Contractor may not independently substitute,
-reduce, or change an accepted compensation model.
+reduce, or change accepted compensation terms.
 </p>
 
 <p>
 Any assignment-specific modification must be
-documented and accepted in writing by the
-affected parties.
+documented and accepted in writing by both Parties.
+</p>
+
+<p>
+Contractor is responsible for the applicable
+referral compensation unless Company expressly
+agrees otherwise in writing.
 </p>
 
 <h4>4.2 Small Project Referral Compensation</h4>
 
 <p>
-Qualifying referred projects with Gross Project
+Qualifying paid referred projects with Gross Project
 Revenue below One Thousand Five Hundred Dollars
-($1,500.00) are eligible for the following
+($1,500.00) are subject to the following
 flat-fee schedule:
 </p>
 
 <ul>
-<li>Under $250.00: $25.00.</li>
+<li>Greater than $0 and under $250.00: $25.00.</li>
 <li>$250.00 through $499.99: $50.00.</li>
 <li>$500.00 through $999.99: $100.00.</li>
 <li>$1,000.00 through $1,499.99: $150.00.</li>
@@ -1172,7 +1163,7 @@ flat-fee schedule:
 <p>
 Small-project compensation replaces the standard
 $150 Job Start fee and 10% Gross Project Revenue
-fee for that qualifying assignment.
+fee for that qualifying project.
 </p>
 
 <p>
@@ -1188,10 +1179,9 @@ Business Days following that event.
 </p>
 
 <p>
-An unsuccessful estimate or inspection alone
-does not trigger a small-project referral fee
-unless a separate dispatch fee was expressly
-accepted for that assignment.
+An unsuccessful estimate, unpaid inspection,
+or customer introduction alone does not trigger
+a small-project referral fee.
 </p>
 
 <h4>4.3 Small Project Value Adjustments</h4>
@@ -1246,6 +1236,14 @@ and the standard compensation model
 was accepted for the assignment.
 </p>
 
+<p>
+Where project value is initially unknown,
+an inspection alone does not establish
+the standard Job Start fee unless that
+fee was expressly accepted in writing
+before the inspection.
+</p>
+
 <h4>4.5 Standard Gross Project Revenue Fee</h4>
 
 <p>
@@ -1271,107 +1269,28 @@ deducted from or credited against the
 10% revenue fee.
 </p>
 
-<h4>4.6 Approved Dispatch-Only Compensation</h4>
-
-<p>
-Company may offer a flat dispatch-only
-compensation arrangement when the requesting
-party requires an independent contractor
-connection or scheduled contractor arrival.
-</p>
-
-<p>
-Unless otherwise agreed in writing, the
-dispatch-only fee is Fifty Dollars ($50.00)
-per separately confirmed assignment.
-</p>
-
-<p>
-The applicable fee and responsible paying
-party must be identified and accepted
-in writing before dispatch.
-</p>
-
-<p>
-The dispatch fee is payable in advance
-unless Company expressly authorizes
-alternative payment terms in writing.
-</p>
-
-<p>
-The dispatch fee becomes earned upon
-Confirmed Dispatch, regardless of whether
-the requesting party ultimately awards
-a project to Contractor.
-</p>
-
-<p>
-An approved dispatch-only fee replaces
-the standard project referral fees for
-that specifically identified assignment,
-unless a different compensation arrangement
-was expressly accepted in writing.
-</p>
-
-<p>
-Dispatch-only compensation does not
-automatically waive fees on separate,
-subsequent, or additional qualifying projects.
-</p>
-
-<p>
-Where a requesting business or third party
-is responsible for the dispatch fee,
-that party must separately accept its
-payment obligation in writing.
-</p>
-
-<p>
-Contractor is not responsible for a third
-party's unpaid dispatch fee unless Contractor
-expressly accepts that obligation in writing.
-</p>
-
-<h4>4.7 Dispatch Cancellation & Refunds</h4>
-
-<p>
-If the assigned contractor fails to arrive
-as agreed, Company shall offer either
-a replacement dispatch accepted by the
-requesting party or a refund of the
-unearned dispatch fee.
-</p>
-
-<p>
-If the requesting party cancels before
-Confirmed Dispatch, the fee shall be
-refunded unless a separate, reasonable
-cancellation charge was disclosed and
-accepted in writing before dispatch.
-</p>
-
-<p>
-Once Confirmed Dispatch occurs, the
-dispatch fee is earned and ordinarily
-nonrefundable, except where required
-by law or otherwise agreed in writing.
-</p>
-
-<h4>4.8 Unknown Project Value</h4>
+<h4>4.6 Unknown Project Value</h4>
 
 <p>
 When the project value cannot reasonably
 be determined before assignment acceptance,
 Company and Contractor may document a
 provisional project-value classification
-or agree to dispatch-only compensation.
+or accept the applicable compensation
+schedule based on the final documented
+project value.
 </p>
 
 <p>
-The final project referral fee shall be
-calculated using the actual documented
-Gross Project Revenue and the accepted
-compensation model.
+Contractor must report the quoted project
+amount and customer approval in accordance
+with Section 7.
+</p>
+
+<p>
+The final referral fee shall be calculated
+using the actual documented Gross Project
+Revenue and accepted compensation terms.
 </p>
 
 <p>
@@ -1379,12 +1298,11 @@ No undisclosed fee or retroactive
 compensation model may be imposed.
 </p>
 
-<h4>4.9 Additional Project Revenue</h4>
+<h4>4.7 Additional Project Revenue</h4>
 
 <p>
 Change orders, project expansions, and additional
-charges are included in Gross Project Revenue
-for project-based compensation models.
+charges are included in Gross Project Revenue.
 </p>
 
 <p>
@@ -1394,7 +1312,7 @@ five (5) Business Days after those charges
 are invoiced.
 </p>
 
-<h4>4.10 Project Splitting & Fee Avoidance</h4>
+<h4>4.8 Project Splitting & Fee Avoidance</h4>
 
 <p>
 Contractor shall not intentionally divide,
@@ -1415,14 +1333,13 @@ classified independently when supported
 by accurate documentation.
 </p>
 
-<h4>4.11 No Duplicate Compensation</h4>
+<h4>4.9 No Duplicate Compensation</h4>
 
 <p>
-Company shall not collect multiple
-alternative compensation models for
-the same assignment unless the applicable
-parties expressly agree to distinct
-services and corresponding fees in writing.
+Company shall not collect both the small-project
+flat fee and standard project compensation
+as separate cumulative compensation models
+for the same project.
 </p>
 
 <p>
@@ -1431,7 +1348,7 @@ shall be credited when required under
 the accepted compensation arrangement.
 </p>
 
-<h4>4.12 Payment Methods</h4>
+<h4>4.10 Payment Methods</h4>
 
 <p>
 All fees must be paid using an authorized
@@ -1449,7 +1366,7 @@ Contractor must identify the corresponding
 project or assignment when submitting payment.
 </p>
 
-<h4>4.13 Late Payments</h4>
+<h4>4.11 Late Payments</h4>
 
 <p>
 Overdue, undisputed amounts may accrue a late charge
@@ -1470,7 +1387,7 @@ by applicable law or awarded under the
 dispute-resolution provisions.
 </p>
 
-<h4>4.14 Payment Disputes</h4>
+<h4>4.12 Payment Disputes</h4>
 
 <p>
 Contractor must provide written notice identifying
@@ -1518,10 +1435,9 @@ agreed in writing.
 </p>
 
 <p>
-A prior small-project or dispatch-only
-arrangement does not establish a permanent
-reduced compensation arrangement for
-future projects.
+A prior small-project arrangement does not
+establish a permanent reduced compensation
+arrangement for future projects.
 </p>
 
 <h4>5.3 Direct Customer Communication</h4>
@@ -1543,6 +1459,13 @@ Using business cards, telephone numbers, websites,
 affiliated companies, or other communication methods
 for the purpose of circumventing Company constitutes
 a material breach.
+</p>
+
+<p>
+Contractor shall not knowingly use an affiliated
+business, subcontractor, intermediary, or separate
+payment arrangement to conceal qualifying work
+or avoid applicable referral compensation.
 </p>
 
 <h4>5.4 Unreported Work</h4>
@@ -1585,7 +1508,6 @@ protected period.
 <li>Contact the customer within 24 hours after accepting.</li>
 <li>Provide accurate scheduling information.</li>
 <li>Notify Company promptly of missed appointments or delays.</li>
-<li>Confirm arrival for dispatch-only assignments.</li>
 <li>Maintain professional customer communication.</li>
 <li>Provide truthful project updates.</li>
 </ul>
@@ -1603,9 +1525,8 @@ Company may reassign unanswered or declined referrals.
 <h3>7. Mandatory Project Reporting</h3>
 
 <p>
-For project-based compensation assignments,
 Contractor must report the following events
-within twenty-four (24) hours:
+within twenty-four (24) hours of their occurrence:
 </p>
 
 <ul>
@@ -1620,21 +1541,6 @@ within twenty-four (24) hours:
 <li>Final invoice amount.</li>
 <li>Qualifying repeat work.</li>
 </ul>
-
-<p>
-For approved dispatch-only assignments,
-Contractor must report appointment scheduling,
-arrival, cancellation, or failure to complete
-the scheduled dispatch.
-</p>
-
-<p>
-Project revenue reporting is not required
-for a completed dispatch-only assignment
-unless expressly agreed or reasonably
-necessary to verify a separate qualifying
-referral obligation.
-</p>
 
 <p>
 Contractor must maintain accurate project
@@ -1656,7 +1562,7 @@ five (5) Business Days.
 
 <p>
 Company may lawfully contact referred customers
-to verify project status, dispatch arrival,
+to verify project status, appointment attendance,
 and applicable project amounts.
 </p>
 
@@ -1720,8 +1626,8 @@ within the Omaha Restoration network.
 
 <p>
 No independent contracting assignment
-or dispatch shall be authorized until
-all applicable requirements are satisfied.
+shall be authorized until all applicable
+requirements are satisfied.
 </p>
 
 <p>
@@ -1993,7 +1899,6 @@ this registration, Contractor confirms:
 <li>It has reviewed this Agreement.</li>
 <li>It understands the small-project fee schedule.</li>
 <li>It understands the standard $150 plus 10% compensation model.</li>
-<li>It understands approved dispatch-only compensation.</li>
 <li>It accepts the applicable payment deadlines.</li>
 <li>It accepts applicable repeat-work provisions.</li>
 <li>It accepts reporting and verification requirements.</li>
@@ -2048,7 +1953,7 @@ qualification, and insurance status.
 I understand that I must satisfy and
 document all applicable requirements
 before receiving independent project
-referrals or dispatch assignments.
+referrals.
 </span>
 </label>
 
@@ -2059,14 +1964,13 @@ value="Yes"
 required>
 <span>
 I specifically understand and accept
-the small-project referral fee schedule,
-the standard <strong>$150 Job Start fee
-PLUS 10% of Gross Project Revenue</strong>,
-and the approved <strong>$50 dispatch-only
-compensation model</strong>, subject to
-assignment-specific written acceptance,
-applicable payment deadlines, and
-repeat-work referral obligations.
+the small-project referral fee schedule
+and the standard <strong>$150 Job Start fee
+PLUS 10% of Gross Project Revenue</strong>
+for qualifying projects valued at $1,500
+or more. I accept the applicable payment
+deadlines, assignment-specific written
+terms, and repeat-work referral obligations.
 </span>
 </label>
 
@@ -2093,7 +1997,7 @@ value="Yes"
 required>
 <span>
 I have reviewed and agree to the complete
-OR-CPA-2026-V7 Contractor Partnership &
+OR-CPA-2026-V8 Contractor Partnership &
 Referral Agreement, including non-circumvention,
 project reporting, record verification,
 payment obligations, and binding arbitration.
@@ -2128,10 +2032,10 @@ required>
 </div>
 
 <div class="field">
-<label for="signatureDate">Date Signed (UTC)</label>
+<label for="signatureDate">Date Signed (Central Time)</label>
 <input id="signatureDate"
 type="text"
-name="Signature_Date_UTC"
+name="Signature_Date_Central"
 readonly>
 </div>
 
@@ -2159,20 +2063,17 @@ electronic execution of this Agreement.
 </label>
 
 <div class="note">
-You may print or save a copy of this
-agreement for your records before submitting.
+<strong>Application Review:</strong>
+Your application will be submitted to
+Omaha Restoration™ for review.
+Additional documentation may be requested
+before your contractor status is approved.
 </div>
-
-<button type="button"
-id="printAgreement"
-style="margin-top:8px;background:white;color:#001d3d;font-size:13px;padding:15px;">
-Print / Save Agreement
-</button>
 
 <div class="error" id="formError" role="alert"></div>
 
 <button type="submit" id="submitBtn">
-Submit Registration for Review
+Submit Application
 </button>
 
 </form>
@@ -2224,15 +2125,30 @@ const now=new Date();
 document.getElementById("timestamp").value=
 now.toISOString();
 
+const dateParts=new Intl.DateTimeFormat("en-US",{
+timeZone:"America/Chicago",
+year:"numeric",
+month:"2-digit",
+day:"2-digit"
+}).formatToParts(now);
+
+const parts={};
+
+dateParts.forEach(function(part){
+if(part.type!=="literal"){
+parts[part.type]=part.value;
+}
+});
+
 document.getElementById("signatureDate").value=
-now.toISOString().slice(0,10);
+parts.year+"-"+parts.month+"-"+parts.day;
 
 }
 
 function captureAgreement(){
 
 document.getElementById("agreementText").value=
-"OR-CPA-2026-V7\n\n"+
+"OR-CPA-2026-V8\n\n"+
 document.getElementById("legalAgreement").innerText;
 
 }
@@ -2350,95 +2266,19 @@ setTime();
 captureAgreement();
 
 button.disabled=true;
-button.textContent="Submitting Registration...";
-
-});
-
-document.getElementById("printAgreement")
-.addEventListener("click",function(){
-
-setTime();
-
-window.print();
+button.textContent="Submitting Application...";
 
 });
 
 window.addEventListener("pageshow",function(){
 
 button.disabled=false;
-button.textContent="Submit Registration for Review";
+button.textContent="Submit Application";
 
 });
 
 })();
 </script>
-
-<style>
-@media print{
-
-body{
-background:white!important;
-color:black!important;
-font-size:11pt;
-}
-
-header,.home,.pill,footer,
-button,.error{
-display:none!important;
-}
-
-.wrap{
-max-width:none;
-padding:0;
-margin:0;
-}
-
-.card{
-padding:0;
-box-shadow:none;
-border-radius:0;
-}
-
-h1{
-color:black;
-font-size:24pt;
-}
-
-.intro{
-color:black;
-}
-
-.legal{
-max-height:none!important;
-height:auto!important;
-overflow:visible!important;
-border:0;
-padding:0;
-background:white;
-color:black;
-}
-
-.legal h3,.legal h4{
-break-after:avoid;
-}
-
-.ack,.fee-card,.field,.note{
-break-inside:avoid;
-}
-
-input,select,textarea{
-border:1px solid #aaa!important;
-background:white!important;
-color:black!important;
-}
-
-.fee-table th{
-background:#eee!important;
-color:black!important;
-}
-
-}
-</style>
 
 </body>
 </html>
