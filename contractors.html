@@ -1,958 +1,1167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
 
-<title>Contractor Registration | Omaha Restoration™</title>
+  <!-- Google Analytics + Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMPN1D7CG"></script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LHMPN1D7CG"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag("js",new Date());
-gtag("config","G-LHMPN1D7CG");
-gtag("config","AW-18034717066");
-</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-<style>
-:root{
---navy:#001d3d;
---dark:#050a12;
---gold:#c5a059;
---red:#b31919;
---white:#ffffff;
---text:#172231;
---muted:#647184;
---line:#e3e7ed;
-}
+    function gtag(){
+      dataLayer.push(arguments);
+    }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+    gtag('js', new Date());
+    gtag('config', 'G-LHMPN1D7CG');
+    gtag('config', 'AW-18034717066');
+  </script>
 
-body{
-margin:0;
-background:linear-gradient(160deg,#001d3d,#000814 80%);
-color:white;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-line-height:1.6;
-}
+  <meta charset="UTF-8">
 
-header{
-position:sticky;
-top:0;
-z-index:100;
-background:#050a12;
-border-bottom:2px solid var(--gold);
-padding:16px 24px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:12px;
-}
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
 
-.logo{
-font-size:17px;
-font-weight:900;
-text-transform:uppercase;
-letter-spacing:1px;
-}
+  <meta name="robots" content="noindex,nofollow">
 
-.logo span{color:var(--gold)}
+  <title>Contractor Registration | Omaha Restoration™</title>
 
-.home{
-color:var(--gold);
-border:1px solid var(--gold);
-border-radius:50px;
-padding:9px 18px;
-text-decoration:none;
-font-size:11px;
-font-weight:900;
-text-transform:uppercase;
-}
+  <style>
 
-.wrap{
-max-width:960px;
-margin:auto;
-padding:45px 20px 80px;
-}
+    :root{
+      --navy:#001d3d;
+      --dark:#050a12;
+      --gold:#c5a059;
+      --red:#b31919;
+      --white:#ffffff;
+      --text:#172231;
+      --muted:#647184;
+      --line:#e3e7ed;
+    }
 
-.pill{
-display:inline-block;
-border:1px solid var(--gold);
-color:var(--gold);
-background:rgba(197,160,89,.12);
-padding:8px 17px;
-border-radius:50px;
-font-size:11px;
-font-weight:900;
-letter-spacing:1px;
-text-transform:uppercase;
-}
+    *{
+      box-sizing:border-box;
+    }
 
-h1{
-font-size:clamp(34px,7vw,56px);
-line-height:1.05;
-font-weight:900;
-text-transform:uppercase;
-letter-spacing:-1.5px;
-margin:22px 0 14px;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-.intro{
-max-width:760px;
-color:#c7d0dc;
-font-size:16px;
-margin-bottom:35px;
-}
+    body{
+      margin:0;
+      background:linear-gradient(160deg,#001d3d,#000814 80%);
+      color:white;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      line-height:1.6;
+    }
 
-.card{
-background:white;
-color:var(--text);
-border-radius:25px;
-padding:38px 32px;
-box-shadow:0 40px 90px rgba(0,0,0,.45);
-}
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#050a12;
+      border-bottom:2px solid var(--gold);
+      padding:16px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
 
-.section{
-margin:38px 0 22px;
-padding-bottom:13px;
-border-bottom:2px solid var(--line);
-}
+    .logo{
+      font-size:17px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
 
-.section.first{margin-top:0}
+    .logo span{
+      color:var(--gold);
+    }
 
-.section h2{
-margin:0;
-color:var(--navy);
-font-size:20px;
-font-weight:900;
-text-transform:uppercase;
-}
+    .home{
+      color:var(--gold);
+      border:1px solid var(--gold);
+      border-radius:50px;
+      padding:9px 18px;
+      text-decoration:none;
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
 
-.section p{
-margin:5px 0 0;
-color:var(--muted);
-font-size:13px;
-}
+    .wrap{
+      max-width:960px;
+      margin:auto;
+      padding:45px 20px 80px;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:17px;
-margin-bottom:18px;
-}
+    .pill{
+      display:inline-block;
+      border:1px solid var(--gold);
+      color:var(--gold);
+      background:rgba(197,160,89,.12);
+      padding:8px 17px;
+      border-radius:50px;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
 
-.full{grid-column:1/-1}
+    h1{
+      font-size:clamp(34px,7vw,56px);
+      line-height:1.05;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:-1.5px;
+      margin:22px 0 14px;
+    }
 
-.field label,.label{
-display:block;
-color:#947139;
-font-size:11px;
-font-weight:900;
-text-transform:uppercase;
-letter-spacing:.7px;
-margin-bottom:8px;
-}
+    .intro{
+      max-width:760px;
+      color:#c7d0dc;
+      font-size:16px;
+      margin-bottom:35px;
+    }
 
-input:not([type=checkbox]):not([type=hidden]),
-select,textarea{
-width:100%;
-min-height:54px;
-padding:15px;
-border:1px solid #d5dae0;
-border-radius:12px;
-background:#f8fafc;
-color:#111;
-font-size:16px;
-font-family:inherit;
-}
+    .card{
+      background:white;
+      color:var(--text);
+      border-radius:25px;
+      padding:38px 32px;
+      box-shadow:0 40px 90px rgba(0,0,0,.45);
+    }
 
-textarea{resize:vertical}
+    .section{
+      margin:38px 0 22px;
+      padding-bottom:13px;
+      border-bottom:2px solid var(--line);
+    }
 
-input:focus,select:focus,textarea:focus{
-outline:none;
-border-color:var(--gold);
-box-shadow:0 0 0 4px rgba(197,160,89,.15);
-background:white;
-}
+    .section.first{
+      margin-top:0;
+    }
 
-.options{
-display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:11px;
-margin:12px 0 23px;
-}
+    .section h2{
+      margin:0;
+      color:var(--navy);
+      font-size:20px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
 
-.check{
-display:flex;
-align-items:center;
-gap:11px;
-padding:14px;
-background:#f7f9fb;
-border:1px solid #dfe4ea;
-border-radius:12px;
-font-size:13px;
-font-weight:700;
-color:#243247;
-cursor:pointer;
-}
+    .section p{
+      margin:5px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
 
-.check input{
-width:20px;
-height:20px;
-flex-shrink:0;
-accent-color:var(--navy);
-}
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:17px;
+      margin-bottom:18px;
+    }
 
-.fee-grid{
-display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:14px;
-margin:20px 0;
-}
+    .full{
+      grid-column:1/-1;
+    }
 
-.fee-card{
-background:#fffaf0;
-border:1px solid #ead8b2;
-border-radius:15px;
-padding:20px;
-}
+    .field label,
+    .label{
+      display:block;
+      color:#947139;
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.7px;
+      margin-bottom:8px;
+    }
 
-.fee-card strong{
-display:block;
-font-size:28px;
-color:var(--navy);
-font-weight:900;
-line-height:1.3;
-}
+    input:not([type=checkbox]):not([type=hidden]),
+    select,
+    textarea{
+      width:100%;
+      min-height:54px;
+      padding:15px;
+      border:1px solid #d5dae0;
+      border-radius:12px;
+      background:#f8fafc;
+      color:#111;
+      font-size:16px;
+      font-family:inherit;
+    }
 
-.fee-card span{
-display:block;
-font-size:11px;
-color:#596575;
-font-weight:800;
-margin-top:8px;
-}
+    textarea{
+      resize:vertical;
+    }
 
-.fee-card p{
-font-size:12px;
-color:#647184;
-margin:10px 0 0;
-}
+    input:focus,
+    select:focus,
+    textarea:focus{
+      outline:none;
+      border-color:var(--gold);
+      box-shadow:0 0 0 4px rgba(197,160,89,.15);
+      background:white;
+    }
 
-.fee-table{
-width:100%;
-border-collapse:collapse;
-margin:18px 0;
-font-size:13px;
-}
+    .options{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:11px;
+      margin:12px 0 23px;
+    }
 
-.fee-table th{
-background:var(--navy);
-color:white;
-padding:13px;
-text-align:left;
-}
+    .check{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      padding:14px;
+      background:#f7f9fb;
+      border:1px solid #dfe4ea;
+      border-radius:12px;
+      font-size:13px;
+      font-weight:700;
+      color:#243247;
+      cursor:pointer;
+    }
 
-.fee-table td{
-padding:12px 13px;
-border-bottom:1px solid var(--line);
-}
+    .check input{
+      width:20px;
+      height:20px;
+      flex-shrink:0;
+      accent-color:var(--navy);
+    }
 
-.fee-table tr:nth-child(even){
-background:#f8fafc;
-}
+    .fee-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin:20px 0;
+    }
 
-.fee-table td:last-child{
-font-weight:800;
-color:var(--navy);
-}
+    .fee-card{
+      background:#fffaf0;
+      border:1px solid #ead8b2;
+      border-radius:15px;
+      padding:20px;
+    }
 
-.legal-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:12px;
-flex-wrap:wrap;
-margin:24px 0 12px;
-}
+    .fee-card strong{
+      display:block;
+      font-size:28px;
+      color:var(--navy);
+      font-weight:900;
+      line-height:1.3;
+    }
 
-.version{
-color:#96713a;
-font-size:11px;
-font-weight:900;
-}
+    .fee-card span{
+      display:block;
+      font-size:11px;
+      color:#596575;
+      font-weight:800;
+      margin-top:8px;
+    }
 
-.legal{
-background:#f8fafc;
-border:1px solid #dbe1e7;
-border-radius:16px;
-padding:25px;
-max-height:480px;
-overflow-y:auto;
-overscroll-behavior:contain;
-color:#263343;
-font-size:13px;
-line-height:1.75;
-}
+    .fee-card p{
+      font-size:12px;
+      color:#647184;
+      margin:10px 0 0;
+    }
 
-.legal h3{
-color:var(--navy);
-font-size:14px;
-font-weight:900;
-text-transform:uppercase;
-margin:25px 0 8px;
-}
+    .fee-table{
+      width:100%;
+      border-collapse:collapse;
+      margin:18px 0;
+      font-size:13px;
+    }
 
-.legal h3:first-child{margin-top:0}
+    .fee-table th{
+      background:var(--navy);
+      color:white;
+      padding:13px;
+      text-align:left;
+    }
 
-.legal h4{
-color:#21364f;
-font-size:13px;
-margin:14px 0 5px;
-}
+    .fee-table td{
+      padding:12px 13px;
+      border-bottom:1px solid var(--line);
+    }
 
-.legal p{margin:0 0 13px}
+    .fee-table tr:nth-child(even){
+      background:#f8fafc;
+    }
 
-.legal ul{
-padding-left:22px;
-margin:8px 0 15px;
-}
+    .fee-table td:last-child{
+      font-weight:800;
+      color:var(--navy);
+    }
 
-.legal strong{color:#172c45}
+    .legal-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:24px 0 12px;
+    }
 
-.ack{
-display:flex;
-align-items:flex-start;
-gap:13px;
-background:#fffaf0;
-border:1px solid #ead8b2;
-border-radius:14px;
-padding:18px;
-margin:14px 0;
-font-size:13px;
-font-weight:700;
-color:#253247;
-cursor:pointer;
-}
+    .version{
+      color:#96713a;
+      font-size:11px;
+      font-weight:900;
+    }
 
-.ack.danger{
-background:#fff5f5;
-border-color:#efc9c9;
-}
+    .legal{
+      background:#f8fafc;
+      border:1px solid #dbe1e7;
+      border-radius:16px;
+      padding:25px;
+      max-height:480px;
+      overflow-y:auto;
+      overscroll-behavior:contain;
+      color:#263343;
+      font-size:13px;
+      line-height:1.75;
+    }
 
-.ack input{
-width:23px;
-height:23px;
-flex-shrink:0;
-margin-top:2px;
-accent-color:var(--red);
-}
+    .legal h3{
+      color:var(--navy);
+      font-size:14px;
+      font-weight:900;
+      text-transform:uppercase;
+      margin:25px 0 8px;
+    }
 
-.note{
-background:#eef4fa;
-border-left:4px solid var(--navy);
-border-radius:7px;
-padding:15px;
-font-size:12px;
-color:#34485d;
-margin:18px 0;
-}
+    .legal h3:first-child{
+      margin-top:0;
+    }
 
-.error{
-display:none;
-background:#fff0f0;
-border:1px solid #d69292;
-border-radius:10px;
-color:#861b1b;
-padding:14px;
-margin:16px 0;
-font-weight:700;
-overflow-wrap:anywhere;
-}
+    .legal h4{
+      color:#21364f;
+      font-size:13px;
+      margin:14px 0 5px;
+    }
 
-.submission-status{
-display:none;
-background:#eef4fa;
-border:1px solid #ccd9e8;
-border-radius:10px;
-padding:14px;
-margin:16px 0;
-font-size:13px;
-font-weight:700;
-color:var(--navy);
-overflow-wrap:anywhere;
-}
+    .legal p{
+      margin:0 0 13px;
+    }
 
-button{
-width:100%;
-margin-top:26px;
-padding:22px;
-border:2px solid var(--gold);
-border-radius:15px;
-background:var(--dark);
-color:var(--gold);
-font-size:17px;
-font-weight:900;
-text-transform:uppercase;
-letter-spacing:1px;
-cursor:pointer;
-}
+    .legal ul{
+      padding-left:22px;
+      margin:8px 0 15px;
+    }
 
-button:hover{
-background:var(--gold);
-color:black;
-}
+    .legal strong{
+      color:#172c45;
+    }
 
-button:disabled{
-opacity:.65;
-cursor:wait;
-}
+    .ack{
+      display:flex;
+      align-items:flex-start;
+      gap:13px;
+      background:#fffaf0;
+      border:1px solid #ead8b2;
+      border-radius:14px;
+      padding:18px;
+      margin:14px 0;
+      font-size:13px;
+      font-weight:700;
+      color:#253247;
+      cursor:pointer;
+    }
 
-footer{
-margin:55px auto 0;
-max-width:780px;
-text-align:center;
-color:#bdc7d2;
-font-size:11px;
-line-height:1.8;
-}
+    .ack.danger{
+      background:#fff5f5;
+      border-color:#efc9c9;
+    }
 
-.brand{
-color:var(--gold);
-font-size:13px;
-font-weight:900;
-letter-spacing:3px;
-text-transform:uppercase;
-margin-bottom:14px;
-}
+    .ack input{
+      width:23px;
+      height:23px;
+      flex-shrink:0;
+      margin-top:2px;
+      accent-color:var(--red);
+    }
 
-@media(max-width:700px){
-header{padding:14px 16px}
-.logo{font-size:13px}
-.home{font-size:10px;padding:8px 12px}
-.wrap{padding:32px 14px 60px}
-.card{padding:25px 18px;border-radius:20px}
-.grid,.options,.fee-grid{grid-template-columns:1fr}
-.legal{padding:17px;max-height:440px}
-.fee-table{font-size:12px}
-}
-</style>
+    .note{
+      background:#eef4fa;
+      border-left:4px solid var(--navy);
+      border-radius:7px;
+      padding:15px;
+      font-size:12px;
+      color:#34485d;
+      margin:18px 0;
+    }
+
+    .error{
+      display:none;
+      background:#fff0f0;
+      border:1px solid #d69292;
+      border-radius:10px;
+      color:#861b1b;
+      padding:14px;
+      margin:16px 0;
+      font-weight:700;
+      overflow-wrap:anywhere;
+    }
+
+    button{
+      width:100%;
+      margin-top:26px;
+      padding:22px;
+      border:2px solid var(--gold);
+      border-radius:15px;
+      background:var(--dark);
+      color:var(--gold);
+      font-size:17px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:var(--gold);
+      color:black;
+    }
+
+    button:disabled{
+      opacity:.65;
+      cursor:wait;
+    }
+
+    footer{
+      margin:55px auto 0;
+      max-width:780px;
+      text-align:center;
+      color:#bdc7d2;
+      font-size:11px;
+      line-height:1.8;
+    }
+
+    .brand{
+      color:var(--gold);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    @media(max-width:700px){
+
+      header{
+        padding:14px 16px;
+      }
+
+      .logo{
+        font-size:13px;
+      }
+
+      .home{
+        font-size:10px;
+        padding:8px 12px;
+      }
+
+      .wrap{
+        padding:32px 14px 60px;
+      }
+
+      .card{
+        padding:25px 18px;
+        border-radius:20px;
+      }
+
+      .grid,
+      .options,
+      .fee-grid{
+        grid-template-columns:1fr;
+      }
+
+      .legal{
+        padding:17px;
+        max-height:440px;
+      }
+
+      .fee-table{
+        font-size:12px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
 
 <header>
-<div class="logo">
-Omaha<span>Restoration</span>™
-</div>
-<a href="index.html" class="home">Home</a>
+
+  <div class="logo">
+    Omaha<span>Restoration</span>™
+  </div>
+
+  <a href="index.html" class="home">
+    Home
+  </a>
+
 </header>
 
 <main class="wrap">
 
-<div class="pill">Independent Contractor Network</div>
+<div class="pill">
+  Independent Contractor Network
+</div>
 
 <h1>Contractor Registration</h1>
 
 <p class="intro">
-Grow your business with Omaha Restoration™.
-Connect with available restoration, repair,
-and construction opportunities without
-having to independently generate every customer.
-Our flexible referral compensation structure
-accommodates both small and standard projects.
-Complete your application for network review.
+  Grow your business with Omaha Restoration™.
+  Connect with available restoration, repair,
+  and construction opportunities without
+  having to independently generate every customer.
+  Our flexible referral compensation structure
+  accommodates both small and standard projects.
+  Complete your application for network review.
 </p>
 
 <div class="card">
 
-<div class="note">
-<strong>Temporary System Test:</strong>
-This registration page is undergoing an email delivery
-test. Do not submit an actual contractor application
-until normal enrollment resumes.
-</div>
-
 <noscript>
-<div class="note">
-JavaScript must be enabled to complete and
-electronically sign this application.
-</div>
+  <div class="note">
+    JavaScript must be enabled to complete and
+    electronically sign this application.
+  </div>
 </noscript>
 
+<!-- TRADITIONAL HTML POST: SAME METHOD AS ROUTE.HTML -->
+
 <form id="contractorForm"
-action="https://api.web3forms.com/submit"
-method="POST">
+      action="https://api.web3forms.com/submit"
+      method="POST">
 
-<input type="hidden"
-name="access_key"
-value="23f73fab-b53f-4ce0-bdfa-0770dd1e7509">
+  <input type="hidden"
+         name="access_key"
+         value="23f73fab-b53f-4ce0-bdfa-0770dd1e7509">
 
-<input type="hidden"
-name="subject"
-value="Omaha Restoration Contractor Enrollment V8">
+  <input type="hidden"
+         name="subject"
+         value="New Omaha Restoration Contractor Application">
 
-<input type="hidden"
-name="from_name"
-value="Omaha Restoration Contractor Portal">
+  <input type="hidden"
+         name="from_name"
+         value="Omaha Restoration Contractor Portal">
 
-<input type="hidden"
-name="Agreement_Version"
-value="OR-CPA-2026-V8">
+  <input type="hidden"
+         name="redirect"
+         value="https://omaharestoration.store/enrollment-submitted.html">
 
-<input type="hidden"
-name="Contractor_Status"
-value="Submitted for Review - Not Approved">
+  <input type="hidden"
+         name="Agreement_Version"
+         value="OR-CPA-2026-V8">
 
-<input type="hidden"
-name="Application_Reference"
-id="applicationReference">
+  <input type="hidden"
+         name="Contractor_Status"
+         value="Submitted for Review - Not Approved">
 
-<input type="hidden"
-name="Submission_Timestamp_UTC"
-id="timestamp">
+  <input type="hidden"
+         name="Application_Reference"
+         id="applicationReference">
 
-<input type="hidden"
-name="Browser_User_Agent"
-id="userAgent">
+  <input type="hidden"
+         name="Submission_Timestamp_UTC"
+         id="timestamp">
 
-<input type="hidden"
-name="Agreement_Confirmation"
-value="Electronic acceptance of OR-CPA-2026-V8">
+  <input type="hidden"
+         name="Browser_User_Agent"
+         id="userAgent">
 
-<input type="hidden"
-name="Agreement_Text"
-id="agreementText">
+  <input type="hidden"
+         name="Agreement_Confirmation"
+         value="Electronic acceptance of OR-CPA-2026-V8">
 
-<input type="hidden"
-name="Submission_Method"
-value="Electronic Contractor Registration">
+  <input type="hidden"
+         name="Agreement_Text"
+         id="agreementText">
 
-<input type="hidden"
-name="Compensation_Schedule"
-value="Paid projects under $250: $25. $250-$499.99: $50. $500-$999.99: $100. $1000-$1499.99: $150. $1500 and above: $150 plus 10% of Gross Project Revenue.">
+  <input type="hidden"
+         name="Submission_Method"
+         value="Traditional HTML Electronic Registration">
 
-<input type="checkbox"
-name="botcheck"
-style="display:none"
-tabindex="-1"
-autocomplete="off">
+  <input type="hidden"
+         name="Selected_Service_Areas"
+         id="selectedAreas">
+
+  <input type="hidden"
+         name="Selected_Services"
+         id="selectedServices">
+
+  <input type="hidden"
+         name="Compensation_Schedule"
+         value="Paid projects under $250: $25. $250-$499.99: $50. $500-$999.99: $100. $1000-$1499.99: $150. $1500 and above: $150 plus 10% of Gross Project Revenue.">
 
 <!-- SECTION 1 -->
 
 <div class="section first">
-<h2>1. Company Profile</h2>
-<p>Provide your legal business and contact information.</p>
+
+  <h2>1. Company Profile</h2>
+
+  <p>
+    Provide your legal business and contact information.
+  </p>
+
 </div>
 
 <div class="grid">
 
 <div class="field full">
-<label for="business">Legal Business Name *</label>
-<input id="business"
-type="text"
-name="Legal_Business_Name"
-required>
+
+  <label for="business">
+    Legal Business Name *
+  </label>
+
+  <input id="business"
+         type="text"
+         name="Legal_Business_Name"
+         required>
+
 </div>
 
 <div class="field">
-<label for="contact">Primary Contact Name *</label>
-<input id="contact"
-type="text"
-name="Primary_Contact_Name"
-required>
+
+  <label for="contact">
+    Primary Contact Name *
+  </label>
+
+  <input id="contact"
+         type="text"
+         name="Primary_Contact_Name"
+         required>
+
 </div>
 
 <div class="field">
-<label for="phone">Direct Contact Phone *</label>
-<input id="phone"
-type="tel"
-name="Direct_Phone"
-required>
+
+  <label for="phone">
+    Direct Contact Phone *
+  </label>
+
+  <input id="phone"
+         type="tel"
+         name="Direct_Phone"
+         required>
+
 </div>
 
 <div class="field">
-<label for="email">Business Email *</label>
-<input id="email"
-type="email"
-name="Email_Address"
-required>
+
+  <label for="email">
+    Business Email *
+  </label>
+
+  <input id="email"
+         type="email"
+         name="Email_Address"
+         required>
+
 </div>
 
 <div class="field">
-<label for="registration">
-Contractor Registration / License Number
-</label>
-<input id="registration"
-type="text"
-name="Contractor_Registration_Number"
-placeholder="Enter number or N/A">
+
+  <label for="registration">
+    Contractor Registration / License Number
+  </label>
+
+  <input id="registration"
+         type="text"
+         name="Contractor_Registration_Number"
+         placeholder="Enter number or N/A">
+
 </div>
 
 <div class="field full">
-<label for="address">Business Mailing Address *</label>
-<input id="address"
-type="text"
-name="Business_Address"
-required>
+
+  <label for="address">
+    Business Mailing Address *
+  </label>
+
+  <input id="address"
+         type="text"
+         name="Business_Address"
+         required>
+
 </div>
 
 <div class="field full">
-<label for="website">Business Website (Optional)</label>
-<input id="website"
-type="url"
-name="Business_Website"
-placeholder="https://">
+
+  <label for="website">
+    Business Website (Optional)
+  </label>
+
+  <input id="website"
+         type="url"
+         name="Business_Website"
+         placeholder="https://">
+
 </div>
 
 <div class="field">
-<label for="experience">Years of Experience *</label>
-<input id="experience"
-type="number"
-name="Years_of_Experience"
-min="0"
-max="100"
-required>
+
+  <label for="experience">
+    Years of Experience *
+  </label>
+
+  <input id="experience"
+         type="number"
+         name="Years_of_Experience"
+         min="0"
+         max="100"
+         required>
+
 </div>
 
 <div class="field">
-<label for="registrationStatus">
-Registration Status *
-</label>
 
-<select id="registrationStatus"
-name="Registration_Status"
-required>
-<option value="">Select status</option>
-<option value="Current">
-Currently Registered
-</option>
-<option value="Pending">
-Registration Pending
-</option>
-<option value="Not Registered">
-Not Currently Registered
-</option>
-<option value="Exemption Claimed">
-Legal Exemption Claimed - Subject to Verification
-</option>
-</select>
+  <label for="registrationStatus">
+    Registration Status *
+  </label>
+
+  <select id="registrationStatus"
+          name="Registration_Status"
+          required>
+
+    <option value="">
+      Select status
+    </option>
+
+    <option value="Current">
+      Currently Registered
+    </option>
+
+    <option value="Pending">
+      Registration Pending
+    </option>
+
+    <option value="Not Registered">
+      Not Currently Registered
+    </option>
+
+    <option value="Exemption Claimed">
+      Legal Exemption Claimed - Subject to Verification
+    </option>
+
+  </select>
+
 </div>
 
 <div class="field">
-<label for="insuranceStatus">
-Liability Insurance Status *
-</label>
 
-<select id="insuranceStatus"
-name="Insurance_Status"
-required>
-<option value="">Select status</option>
-<option value="Active">
-Active Liability Insurance
-</option>
-<option value="Pending">
-Insurance Pending
-</option>
-<option value="Not Insured">
-Not Currently Insured
-</option>
-</select>
+  <label for="insuranceStatus">
+    Liability Insurance Status *
+  </label>
+
+  <select id="insuranceStatus"
+          name="Insurance_Status"
+          required>
+
+    <option value="">
+      Select status
+    </option>
+
+    <option value="Active">
+      Active Liability Insurance
+    </option>
+
+    <option value="Pending">
+      Insurance Pending
+    </option>
+
+    <option value="Not Insured">
+      Not Currently Insured
+    </option>
+
+  </select>
+
 </div>
 
 <div class="field">
-<label for="certification">
-Professional Certification
-</label>
 
-<select id="certification"
-name="Certification_Status">
-<option value="Not Specified">
-Select status
-</option>
-<option value="Current IICRC">
-Current IICRC Certification
-</option>
-<option value="Expired IICRC">
-Previous IICRC - Renewal Required
-</option>
-<option value="Other Certification">
-Other Professional Certification
-</option>
-<option value="None">
-No Current Certification
-</option>
-</select>
+  <label for="certification">
+    Professional Certification
+  </label>
+
+  <select id="certification"
+          name="Certification_Status">
+
+    <option value="Not Specified">
+      Select status
+    </option>
+
+    <option value="Current IICRC">
+      Current IICRC Certification
+    </option>
+
+    <option value="Expired IICRC">
+      Previous IICRC - Renewal Required
+    </option>
+
+    <option value="Other Certification">
+      Other Professional Certification
+    </option>
+
+    <option value="None">
+      No Current Certification
+    </option>
+
+  </select>
+
 </div>
 
 <div class="field full">
-<label for="availability">
-Earliest Availability *
-</label>
 
-<select id="availability"
-name="Availability"
-required>
-<option value="">Select availability</option>
-<option value="Immediately">
-Immediately
-</option>
-<option value="Within 24 Hours">
-Within 24 Hours
-</option>
-<option value="Within 7 Days">
-Within 7 Days
-</option>
-<option value="By Appointment">
-By Appointment
-</option>
-</select>
+  <label for="availability">
+    Earliest Availability *
+  </label>
+
+  <select id="availability"
+          name="Availability"
+          required>
+
+    <option value="">
+      Select availability
+    </option>
+
+    <option value="Immediately">
+      Immediately
+    </option>
+
+    <option value="Within 24 Hours">
+      Within 24 Hours
+    </option>
+
+    <option value="Within 7 Days">
+      Within 7 Days
+    </option>
+
+    <option value="By Appointment">
+      By Appointment
+    </option>
+
+  </select>
+
 </div>
 
 <div class="field full">
-<label for="portfolio">
-Previous Work / Portfolio Link
-</label>
-<input id="portfolio"
-type="url"
-name="Portfolio_URL"
-placeholder="Optional website or portfolio link">
-</div>
+
+  <label for="portfolio">
+    Previous Work / Portfolio Link
+  </label>
+
+  <input id="portfolio"
+         type="url"
+         name="Portfolio_URL"
+         placeholder="Optional website or portfolio link">
 
 </div>
 
-<div class="note" id="credentialNotice">
-Applicants without current credentials may
-submit their information for preliminary review.
-No independent project referrals will be
-authorized until all applicable registration,
-insurance, and qualification requirements
-have been verified.
+</div>
+
+<div class="note">
+
+  Applicants without current credentials may
+  submit their information for preliminary review.
+
+  No independent project referrals will be
+  authorized until all applicable registration,
+  insurance, and qualification requirements
+  have been verified.
+
 </div>
 
 <!-- SECTION 2 -->
 
 <div class="section">
-<h2>2. Service Areas &amp; Capabilities</h2>
-<p>Select the locations and services your company accepts.</p>
+
+  <h2>2. Service Areas &amp; Capabilities</h2>
+
+  <p>
+    Select the locations and services your company accepts.
+  </p>
+
 </div>
 
-<div class="label">Service Areas *</div>
+<div class="label">
+  Service Areas *
+</div>
 
 <div class="options" id="areas">
 
 <label class="check">
-<input type="checkbox" name="Area_Omaha" value="Yes">
-Omaha
+  <input type="checkbox" name="Area_Omaha" value="Yes">
+  Omaha
 </label>
 
 <label class="check">
-<input type="checkbox" name="Area_Bellevue" value="Yes">
-Bellevue
+  <input type="checkbox" name="Area_Bellevue" value="Yes">
+  Bellevue
 </label>
 
 <label class="check">
-<input type="checkbox" name="Area_Papillion" value="Yes">
-Papillion
+  <input type="checkbox" name="Area_Papillion" value="Yes">
+  Papillion
 </label>
 
 <label class="check">
-<input type="checkbox" name="Area_La_Vista" value="Yes">
-La Vista
+  <input type="checkbox" name="Area_La_Vista" value="Yes">
+  La Vista
 </label>
 
 <label class="check">
-<input type="checkbox" name="Area_Gretna" value="Yes">
-Gretna
+  <input type="checkbox" name="Area_Gretna" value="Yes">
+  Gretna
 </label>
 
 <label class="check">
-<input type="checkbox" name="Area_Elkhorn" value="Yes">
-Elkhorn
+  <input type="checkbox" name="Area_Elkhorn" value="Yes">
+  Elkhorn
 </label>
 
 <label class="check">
-<input type="checkbox" name="Area_Bennington" value="Yes">
-Bennington
+  <input type="checkbox" name="Area_Bennington" value="Yes">
+  Bennington
 </label>
 
 <label class="check">
-<input type="checkbox" name="Area_Council_Bluffs" value="Yes">
-Council Bluffs, IA
+  <input type="checkbox" name="Area_Council_Bluffs" value="Yes">
+  Council Bluffs, IA
 </label>
 
 <label class="check">
-<input type="checkbox" name="Area_Other" value="Yes">
-Other Surrounding Areas
+  <input type="checkbox" name="Area_Other" value="Yes">
+  Other Surrounding Areas
 </label>
 
 </div>
 
 <div class="field">
-<label for="otherArea">Additional Service Areas</label>
-<input id="otherArea"
-type="text"
-name="Other_Service_Areas"
-placeholder="Additional cities or counties">
+
+  <label for="otherArea">
+    Additional Service Areas
+  </label>
+
+  <input id="otherArea"
+         type="text"
+         name="Other_Service_Areas"
+         placeholder="Additional cities or counties">
+
 </div>
 
 <br>
 
-<div class="label">Services Offered *</div>
+<div class="label">
+  Services Offered *
+</div>
 
 <div class="options" id="services">
 
 <label class="check">
-<input type="checkbox" name="Service_Water_Damage" value="Yes">
-Water Damage Mitigation
+  <input type="checkbox" name="Service_Water_Damage" value="Yes">
+  Water Damage Mitigation
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_Flood_Cleanup" value="Yes">
-Flood &amp; Basement Cleanup
+  <input type="checkbox" name="Service_Flood_Cleanup" value="Yes">
+  Flood &amp; Basement Cleanup
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_Mold" value="Yes">
-Mold Remediation
+  <input type="checkbox" name="Service_Mold" value="Yes">
+  Mold Remediation
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_Plumbing" value="Yes">
-Plumbing Repairs
+  <input type="checkbox" name="Service_Plumbing" value="Yes">
+  Plumbing Repairs
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_Drywall" value="Yes">
-Drywall Installation &amp; Repair
+  <input type="checkbox" name="Service_Drywall" value="Yes">
+  Drywall Installation &amp; Repair
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_Painting" value="Yes">
-Interior &amp; Exterior Painting
+  <input type="checkbox" name="Service_Painting" value="Yes">
+  Interior &amp; Exterior Painting
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_Flooring" value="Yes">
-Flooring Installation &amp; Repair
+  <input type="checkbox" name="Service_Flooring" value="Yes">
+  Flooring Installation &amp; Repair
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_Roofing" value="Yes">
-Roofing &amp; Exterior Repairs
+  <input type="checkbox" name="Service_Roofing" value="Yes">
+  Roofing &amp; Exterior Repairs
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_General_Construction" value="Yes">
-General Construction
+  <input type="checkbox" name="Service_General_Construction" value="Yes">
+  General Construction
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_Demolition" value="Yes">
-Demolition &amp; Debris Removal
+  <input type="checkbox" name="Service_Demolition" value="Yes">
+  Demolition &amp; Debris Removal
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_Storm_Damage" value="Yes">
-Storm Damage Restoration
+  <input type="checkbox" name="Service_Storm_Damage" value="Yes">
+  Storm Damage Restoration
 </label>
 
 <label class="check">
-<input type="checkbox" name="Service_Other" value="Yes">
-Other Property Repairs
+  <input type="checkbox" name="Service_Other" value="Yes">
+  Other Property Repairs
 </label>
 
 </div>
 
 <div class="field">
-<label for="otherServices">Additional Services</label>
-<textarea id="otherServices"
-name="Additional_Services"
-rows="3"
-placeholder="Describe other services your company provides"></textarea>
+
+  <label for="otherServices">
+    Additional Services
+  </label>
+
+  <textarea id="otherServices"
+            name="Additional_Services"
+            rows="3"
+            placeholder="Describe other services your company provides"></textarea>
+
 </div>
 
 <br>
 
 <div class="field">
-<label for="equipment">Equipment &amp; Capabilities</label>
-<textarea id="equipment"
-name="Equipment_and_Capabilities"
-rows="4"
-placeholder="Describe equipment, crew size, emergency availability, and specialized capabilities"></textarea>
+
+  <label for="equipment">
+    Equipment &amp; Capabilities
+  </label>
+
+  <textarea id="equipment"
+            name="Equipment_and_Capabilities"
+            rows="4"
+            placeholder="Describe equipment, crew size, emergency availability, and specialized capabilities"></textarea>
+
 </div>
 
 <!-- SECTION 3 -->
 
 <div class="section">
-<h2>3. Contractor Partnership Agreement</h2>
-<p>Review the compensation structure and complete contractual terms.</p>
+
+  <h2>3. Contractor Partnership Agreement</h2>
+
+  <p>
+    Review the compensation structure and complete contractual terms.
+  </p>
+
 </div>
 
 <div class="fee-grid">
 
 <div class="fee-card">
-<strong>$25–$150</strong>
-<span>SMALL PROJECT REFERRALS</span>
-<p>Reduced flat fees based on total project value.</p>
+
+  <strong>$25–$150</strong>
+
+  <span>SMALL PROJECT REFERRALS</span>
+
+  <p>
+    Reduced flat fees based on total project value.
+  </p>
+
 </div>
 
 <div class="fee-card">
-<strong>$150 + 10%</strong>
-<span>STANDARD PROJECT REFERRALS</span>
-<p>Applies to qualifying projects valued at $1,500 or more.</p>
+
+  <strong>$150 + 10%</strong>
+
+  <span>STANDARD PROJECT REFERRALS</span>
+
+  <p>
+    Applies to qualifying projects valued at $1,500 or more.
+  </p>
+
 </div>
 
 </div>
 
 <table class="fee-table">
+
 <thead>
+
 <tr>
-<th>Project Value</th>
-<th>Referral Compensation</th>
+  <th>Project Value</th>
+  <th>Referral Compensation</th>
 </tr>
+
 </thead>
 
 <tbody>
+
 <tr>
-<td>Under $250</td>
-<td>$25</td>
+  <td>Under $250</td>
+  <td>$25</td>
 </tr>
+
 <tr>
-<td>$250–$499.99</td>
-<td>$50</td>
+  <td>$250–$499.99</td>
+  <td>$50</td>
 </tr>
+
 <tr>
-<td>$500–$999.99</td>
-<td>$100</td>
+  <td>$500–$999.99</td>
+  <td>$100</td>
 </tr>
+
 <tr>
-<td>$1,000–$1,499.99</td>
-<td>$150</td>
+  <td>$1,000–$1,499.99</td>
+  <td>$150</td>
 </tr>
+
 <tr>
-<td>$1,500 and above</td>
-<td>$150 + 10%</td>
+  <td>$1,500 and above</td>
+  <td>$150 + 10%</td>
 </tr>
+
 </tbody>
+
 </table>
 
 <div class="note">
-<strong>Flexible Compensation:</strong>
-Referral compensation is based on the
-applicable project value and accepted
-assignment terms. Contractors may accept
-or decline individual opportunities.
-Any alternative compensation arrangement
-must be accepted in writing by both parties.
+
+  <strong>Flexible Compensation:</strong>
+
+  Referral compensation is based on the
+  applicable project value and accepted
+  assignment terms. Contractors may accept
+  or decline individual opportunities.
+
+  Any alternative compensation arrangement
+  must be accepted in writing by both parties.
+
 </div>
 
 <div class="legal-top">
-<strong>OMAHA RESTORATION™ CONTRACTOR AGREEMENT</strong>
-<span class="version">OR-CPA-2026-V8</span>
+
+  <strong>
+    OMAHA RESTORATION™ CONTRACTOR AGREEMENT
+  </strong>
+
+  <span class="version">
+    OR-CPA-2026-V8
+  </span>
+
 </div>
 
 <div class="legal" id="legalAgreement">
@@ -1962,20 +2171,26 @@ No lead volume or future work is guaranteed.
 </div>
 
 <div class="note">
+
 <strong>Important:</strong>
+
 Read the complete agreement before signing.
 Submitting this form does not automatically
 approve your company for referrals.
+
 Proof of required credentials and insurance
 must be provided before independent
 project assignments are authorized.
+
 </div>
 
 <label class="ack danger">
+
 <input type="checkbox"
-name="Compliance_Mandate_Accepted"
-value="Yes"
-required>
+       name="Compliance_Mandate_Accepted"
+       value="Yes"
+       required>
+
 <span>
 I certify that I have accurately disclosed
 my current registration, licensing,
@@ -1985,13 +2200,16 @@ document all applicable requirements
 before receiving independent project
 referrals.
 </span>
+
 </label>
 
 <label class="ack danger">
+
 <input type="checkbox"
-name="Fee_Terms_Accepted"
-value="Yes"
-required>
+       name="Fee_Terms_Accepted"
+       value="Yes"
+       required>
+
 <span>
 I specifically understand and accept
 the small-project referral fee schedule
@@ -2002,13 +2220,16 @@ or more. I accept the applicable payment
 deadlines, assignment-specific written
 terms, and repeat-work referral obligations.
 </span>
+
 </label>
 
 <label class="ack">
+
 <input type="checkbox"
-name="Non_Circumvention_Accepted"
-value="Yes"
-required>
+       name="Non_Circumvention_Accepted"
+       value="Yes"
+       required>
+
 <span>
 I understand that I may communicate
 directly with referred customers for
@@ -2018,13 +2239,16 @@ to avoid applicable referral compensation.
 I accept the twelve-month protected
 referral provisions.
 </span>
+
 </label>
 
 <label class="ack">
+
 <input type="checkbox"
-name="Agreement_Accepted"
-value="Yes"
-required>
+       name="Agreement_Accepted"
+       value="Yes"
+       required>
+
 <span>
 I have reviewed and agree to the complete
 OR-CPA-2026-V8 Contractor Partnership &amp;
@@ -2033,97 +2257,129 @@ project reporting, record verification,
 payment obligations, and binding arbitration.
 I am authorized to bind the identified business.
 </span>
+
 </label>
 
 <!-- SECTION 4 -->
 
 <div class="section">
+
 <h2>4. Electronic Signature</h2>
-<p>Complete the required fields to finalize your application.</p>
+
+<p>
+Complete the required fields to finalize your application.
+</p>
+
 </div>
 
 <div class="grid">
 
 <div class="field">
-<label for="signer">Authorized Signer Name *</label>
+
+<label for="signer">
+Authorized Signer Name *
+</label>
+
 <input id="signer"
-type="text"
-name="Signature_Printed_Name"
-required>
+       type="text"
+       name="Signature_Printed_Name"
+       required>
+
 </div>
 
 <div class="field">
-<label for="title">Title / Position *</label>
+
+<label for="title">
+Title / Position *
+</label>
+
 <input id="title"
-type="text"
-name="Signature_Title"
-placeholder="Owner, Member, President"
-required>
+       type="text"
+       name="Signature_Title"
+       placeholder="Owner, Member, President"
+       required>
+
 </div>
 
 <div class="field">
-<label for="signatureDate">Date Signed (Central Time)</label>
+
+<label for="signatureDate">
+Date Signed (Central Time)
+</label>
+
 <input id="signatureDate"
-type="text"
-name="Signature_Date_Central"
-readonly>
+       type="text"
+       name="Signature_Date_Central"
+       readonly>
+
 </div>
 
 <div class="field">
-<label for="signature">Electronic Signature *</label>
+
+<label for="signature">
+Electronic Signature *
+</label>
+
 <input id="signature"
-type="text"
-name="Electronic_Signature"
-placeholder="Type your full name"
-required>
+       type="text"
+       name="Electronic_Signature"
+       placeholder="Type your full name"
+       required>
+
 </div>
 
 </div>
 
 <label class="ack">
+
 <input type="checkbox"
-name="Electronic_Signature_Consent"
-value="Yes"
-required>
+       name="Electronic_Signature_Consent"
+       value="Yes"
+       required>
+
 <span>
 I intend my typed name to serve as my
 electronic signature and consent to
 electronic execution of this Agreement.
 </span>
+
 </label>
 
 <div class="note">
+
 <strong>Application Review:</strong>
+
 Your application will be submitted to
 Omaha Restoration™ for review.
+
 Additional documentation may be requested
 before your contractor status is approved.
+
 </div>
 
 <div class="error"
-id="formError"
-role="alert"
-aria-live="assertive">
-</div>
-
-<div class="submission-status"
-id="submissionStatus"
-role="status"
-aria-live="polite">
+     id="formError"
+     role="alert"
+     aria-live="assertive">
 </div>
 
 <button type="submit"
-id="submitBtn"
-disabled>
+        id="submitBtn"
+        disabled>
+
 Submit Application
+
 </button>
 
 </form>
+
 </div>
 
 <footer>
 
-<div class="brand">Omaha Restoration™</div>
+<div class="brand">
+Omaha Restoration™
+</div>
 
 Omaha Restoration™ is operated by Murrays Empire LLC.
 
@@ -2146,729 +2402,466 @@ Murrays Empire LLC. All Rights Reserved.
 </main>
 
 <script>
+
 (function(){
 
-"use strict";
+  "use strict";
 
-/* SYSTEM CONFIGURATION */
+  const form =
+    document.getElementById("contractorForm");
 
-const form =
-document.getElementById("contractorForm");
+  const button =
+    document.getElementById("submitBtn");
 
-const error =
-document.getElementById("formError");
+  const error =
+    document.getElementById("formError");
 
-const status =
-document.getElementById("submissionStatus");
+  const agreementVersion =
+    "OR-CPA-2026-V8";
 
-const button =
-document.getElementById("submitBtn");
+  let submitting = false;
 
-const endpoint =
-"https://api.web3forms.com/submit";
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-const confirmationPage =
-"https://omaharestoration.store/enrollment-submitted.html";
+  document.getElementById("userAgent").value =
+    navigator.userAgent;
 
-const agreementVersion =
-"OR-CPA-2026-V8";
+  /* APPLICATION REFERENCE */
 
-let submitting = false;
-let submitted = false;
-let uncertainSubmission = false;
-let applicationReference = "";
+  function generateReference(){
 
-/* INITIALIZE PAGE */
+    const random = new Uint8Array(16);
 
-document.getElementById("year").textContent =
-new Date().getFullYear();
+    window.crypto.getRandomValues(random);
 
-document.getElementById("userAgent").value =
-navigator.userAgent;
+    const identifier = Array.from(random)
+      .map(function(value){
 
-/* UNIQUE APPLICATION REFERENCE */
+        return value
+          .toString(16)
+          .padStart(2,"0");
 
-function generateReference(){
+      })
+      .join("")
+      .toUpperCase();
 
-const random = new Uint8Array(16);
+    return "OR-" +
+      new Date().getFullYear() +
+      "-" +
+      identifier;
 
-window.crypto.getRandomValues(random);
+  }
 
-const identifier = Array.from(random)
-.map(function(value){
+  /* CENTRAL TIME SIGNATURE RECORD */
 
-return value.toString(16).padStart(2,"0");
+  function setTime(){
 
-})
-.join("")
-.toUpperCase();
+    const now = new Date();
 
-return "OR-" +
-new Date().getFullYear() +
-"-" + identifier;
+    document.getElementById("timestamp").value =
+      now.toISOString();
 
-}
+    const dateParts =
+      new Intl.DateTimeFormat("en-US",{
 
-/* CENTRAL TIME SIGNATURE DATE */
+        timeZone:"America/Chicago",
+        year:"numeric",
+        month:"2-digit",
+        day:"2-digit"
 
-function setTime(){
+      }).formatToParts(now);
 
-const now = new Date();
+    const parts = {};
 
-document.getElementById("timestamp").value =
-now.toISOString();
+    dateParts.forEach(function(part){
 
-const dateParts =
-new Intl.DateTimeFormat("en-US",{
+      if(part.type !== "literal"){
 
-timeZone:"America/Chicago",
-year:"numeric",
-month:"2-digit",
-day:"2-digit"
+        parts[part.type] = part.value;
 
-}).formatToParts(now);
+      }
 
-const parts = {};
+    });
 
-dateParts.forEach(function(part){
+    document.getElementById("signatureDate").value =
+      parts.year + "-" +
+      parts.month + "-" +
+      parts.day;
 
-if(part.type !== "literal"){
+  }
 
-parts[part.type] = part.value;
+  /* CAPTURE COMPLETE CONTRACT */
 
-}
+  function captureAgreement(){
 
-});
+    const agreement =
+      document.getElementById("legalAgreement");
 
-document.getElementById("signatureDate").value =
-parts.year + "-" +
-parts.month + "-" +
-parts.day;
+    const agreementText =
+      agreement.innerText.trim();
 
-}
+    if(!agreementText){
 
-/* CAPTURE COMPLETE CONTRACT */
+      throw new Error(
+        "The contractor agreement could not be captured."
+      );
 
-function captureAgreement(){
+    }
 
-const agreement =
-document.getElementById("legalAgreement");
+    document.getElementById("agreementText").value =
+      agreementVersion +
+      "\n\n" +
+      agreementText;
 
-const agreementText =
-agreement.innerText.trim();
+  }
 
-if(!agreementText){
+  /* SERVICE SELECTION VALIDATION */
 
-throw new Error(
-"The contractor agreement could not be captured."
-);
+  function selected(group){
 
-}
+    return !!document.querySelector(
 
-document.getElementById("agreementText").value =
-agreementVersion + "\n\n" + agreementText;
+      "#" + group +
+      ' input[type="checkbox"]:checked'
 
-}
+    );
 
-/* VALIDATION HELPERS */
+  }
 
-function selected(group){
+  function selectedNames(group){
 
-return !!document.querySelector(
+    return Array.from(
 
-"#" + group +
-' input[type="checkbox"]:checked'
+      document.querySelectorAll(
 
-);
+        "#" + group +
+        ' input[type="checkbox"]:checked'
 
-}
+      )
 
-function normalizeName(value){
+    ).map(function(input){
 
-return value.trim()
-.replace(/\s+/g," ")
-.toLowerCase();
+      return input.closest("label")
+        .innerText
+        .trim();
 
-}
+    }).join(", ");
 
-function showError(message,element){
+  }
 
-error.textContent = message;
-error.style.display = "block";
+  /* SIGNATURE VALIDATION */
 
-status.style.display = "none";
+  function normalizeName(value){
 
-(element || error).scrollIntoView({
+    return value.trim()
+      .replace(/\s+/g," ")
+      .toLowerCase();
 
-behavior:"smooth",
-block:"center"
+  }
 
-});
+  /* DISPLAY VALIDATION ERRORS */
 
-if(element && element.focus){
+  function showError(message,element){
 
-element.focus();
+    error.textContent = message;
 
-}
+    error.style.display = "block";
 
-}
+    (element || error).scrollIntoView({
 
-function showStatus(message){
+      behavior:"smooth",
+      block:"center"
 
-status.textContent = message;
-status.style.display = "block";
+    });
 
-}
+    if(element && element.focus){
 
-function resetButton(){
+      element.focus();
 
-submitting = false;
+    }
 
-form.removeAttribute("aria-busy");
+  }
 
-if(submitted){
+  /* INITIALIZE REGISTRATION */
 
-button.disabled = true;
+  try{
 
-button.textContent =
-"Application Submitted Successfully";
+    setTime();
 
-return;
+    captureAgreement();
 
-}
+    document.getElementById(
+      "applicationReference"
+    ).value = generateReference();
 
-if(uncertainSubmission){
+    button.disabled = false;
 
-button.disabled = true;
+  }catch(initializationError){
 
-button.textContent =
-"Submission Requires Verification";
+    showError(
 
-return;
+      "The application could not initialize. " +
+      "Please refresh the page or contact " +
+      "Omaha Restoration for assistance."
 
-}
+    );
 
-button.disabled = false;
+    button.disabled = true;
 
-button.textContent =
-"Submit Application";
+  }
 
-}
+  /* VALIDATE BEFORE TRADITIONAL HTML POST */
 
-/* INITIAL FORM PREPARATION */
+  form.addEventListener("submit",function(event){
 
-try{
+    if(submitting){
 
-setTime();
+      event.preventDefault();
 
-captureAgreement();
+      return;
 
-button.disabled = false;
+    }
 
-}catch(initializationError){
+    error.style.display = "none";
 
-showError(
+    error.textContent = "";
 
-"The application could not initialize. " +
-"Please refresh the page or contact " +
-"Omaha Restoration for assistance."
+    /* SERVICE AREA REQUIRED */
 
-);
+    if(!selected("areas")){
 
-button.disabled = true;
+      event.preventDefault();
 
-}
+      showError(
 
-/* VERIFIED WEB3FORMS SUBMISSION */
+        "Please select at least one service area.",
 
-form.addEventListener("submit",async function(event){
+        document.querySelector("#areas input")
 
-event.preventDefault();
+      );
 
-if(submitting || submitted || uncertainSubmission){
+      return;
 
-return;
+    }
 
-}
+    /* SERVICE TYPE REQUIRED */
 
-error.style.display = "none";
-error.textContent = "";
+    if(!selected("services")){
 
-status.style.display = "none";
+      event.preventDefault();
 
-if(!form.reportValidity()){
+      showError(
 
-return;
+        "Please select at least one service type.",
 
-}
+        document.querySelector("#services input")
 
-/* VALIDATE SERVICE AREAS */
+      );
 
-if(!selected("areas")){
+      return;
 
-showError(
+    }
 
-"Please select at least one service area.",
+    /* ELECTRONIC SIGNATURE MUST MATCH */
 
-document.querySelector("#areas input")
+    const signer = normalizeName(
 
-);
+      document.getElementById("signer").value
 
-return;
+    );
 
-}
+    const signature = normalizeName(
 
-/* VALIDATE SERVICES */
+      document.getElementById("signature").value
 
-if(!selected("services")){
+    );
 
-showError(
+    if(!signer || signer !== signature){
 
-"Please select at least one service type.",
+      event.preventDefault();
 
-document.querySelector("#services input")
+      showError(
 
-);
+        "Your electronic signature must match " +
+        "your Authorized Signer Name.",
 
-return;
+        document.getElementById("signature")
 
-}
+      );
 
-/* VALIDATE ELECTRONIC SIGNATURE */
+      return;
 
-const signer = normalizeName(
+    }
 
-document.getElementById("signer").value
+    /* VERIFY REGISTRATION NUMBER */
 
-);
+    const registrationStatus =
 
-const signature = normalizeName(
+      document.getElementById(
+        "registrationStatus"
+      ).value;
 
-document.getElementById("signature").value
+    const registrationNumber =
 
-);
+      document.getElementById(
+        "registration"
+      ).value.trim();
 
-if(!signer || signer !== signature){
+    if(
 
-showError(
+      registrationStatus === "Current" &&
 
-"Your electronic signature must match " +
-"your Authorized Signer Name.",
+      (
 
-document.getElementById("signature")
+        !registrationNumber ||
 
-);
+        registrationNumber.toLowerCase() === "n/a"
 
-return;
+      )
 
-}
+    ){
 
-/* VALIDATE REGISTRATION STATUS */
+      event.preventDefault();
 
-const registrationStatus =
+      showError(
 
-document.getElementById("registrationStatus").value;
+        "Please provide your current contractor " +
+        "registration or license number.",
 
-const registrationNumber =
+        document.getElementById("registration")
 
-document.getElementById("registration").value.trim();
+      );
 
-if(
+      return;
 
-registrationStatus === "Current" &&
+    }
 
-(
+    /* PREPARE COMPLETE SUBMISSION RECORD */
 
-!registrationNumber ||
+    try{
 
-registrationNumber.toLowerCase() === "n/a"
+      setTime();
 
-)
+      captureAgreement();
 
-){
+      document.getElementById(
+        "selectedAreas"
+      ).value = selectedNames("areas");
 
-showError(
+      document.getElementById(
+        "selectedServices"
+      ).value = selectedNames("services");
 
-"Please provide your current contractor " +
-"registration or license number.",
+      const referenceField =
+        document.getElementById(
+          "applicationReference"
+        );
 
-document.getElementById("registration")
+      if(!referenceField.value){
 
-);
+        referenceField.value =
+          generateReference();
 
-return;
+      }
 
-}
+      if(
 
-/* PREVENT DUPLICATE SUBMISSIONS */
+        !document.getElementById(
+          "agreementText"
+        ).value ||
 
-submitting = true;
+        !document.getElementById(
+          "timestamp"
+        ).value ||
 
-button.disabled = true;
+        !referenceField.value
 
-button.textContent =
-"Submitting Application...";
+      ){
 
-form.setAttribute("aria-busy","true");
+        throw new Error(
 
-let timeout;
+          "Required agreement information is missing."
 
-let requestStarted = false;
+        );
 
-try{
+      }
 
-/* FINALIZE SIGNATURE RECORD */
+    }catch(preparationError){
 
-setTime();
+      event.preventDefault();
 
-captureAgreement();
+      showError(
 
-if(!applicationReference){
+        "The application could not be prepared. " +
+        preparationError.message
 
-applicationReference =
-generateReference();
+      );
 
-}
+      return;
 
-document.getElementById("applicationReference").value =
-applicationReference;
+    }
 
-/* PREPARE APPLICATION DATA */
+    /* PREVENT ACCIDENTAL DOUBLE SUBMISSION */
 
-const formData =
-new FormData(form);
+    submitting = true;
 
-const payload =
-Object.fromEntries(formData.entries());
+    button.disabled = true;
 
-/* WEB3FORMS EMAIL SETTINGS */
+    button.textContent =
+      "Submitting Application...";
 
-payload.subject =
+    form.setAttribute("aria-busy","true");
 
-"New Signed Contractor Application | " +
-applicationReference;
+    /*
+      DO NOT PREVENT DEFAULT HERE.
 
-payload.from_name =
+      The browser submits the complete form
+      directly to Web3Forms using traditional
+      HTML POST, exactly like route.html.
 
-"Omaha Restoration Contractor Portal";
+      No fetch.
+      No AJAX.
+      No JSON conversion.
+      No JavaScript redirect.
 
-payload.Application_Reference =
+      Web3Forms processes the submission
+      and handles the configured redirect.
+    */
 
-applicationReference;
+  });
 
-payload.Agreement_Version =
+  /* RESTORE BUTTON IF USER RETURNS TO PAGE */
 
-agreementVersion;
+  window.addEventListener("pageshow",function(){
 
-payload.Contractor_Status =
+    submitting = false;
 
-"Submitted for Review - Not Approved";
+    form.removeAttribute("aria-busy");
 
-payload.Submission_Method =
+    if(
 
-"Electronic Contractor Registration";
+      document.getElementById(
+        "agreementText"
+      ).value &&
 
-payload.Agreement_Confirmation =
+      document.getElementById(
+        "applicationReference"
+      ).value
 
-"Electronically signed and accepted " +
-agreementVersion;
+    ){
 
-/* INCLUDE SELECTED SERVICE AREAS */
+      button.disabled = false;
 
-payload.Selected_Service_Areas =
+      button.textContent =
+        "Submit Application";
 
-Array.from(
+    }
 
-document.querySelectorAll(
-"#areas input[type='checkbox']:checked"
-)
-
-)
-
-.map(function(input){
-
-return input.closest("label").innerText.trim();
-
-})
-
-.join(", ");
-
-/* INCLUDE SELECTED SERVICES */
-
-payload.Selected_Services =
-
-Array.from(
-
-document.querySelectorAll(
-"#services input[type='checkbox']:checked"
-)
-
-)
-
-.map(function(input){
-
-return input.closest("label").innerText.trim();
-
-})
-
-.join(", ");
-
-/* CONFIRM AGREEMENT DATA EXISTS */
-
-if(
-
-!payload.Agreement_Text ||
-
-!payload.Electronic_Signature ||
-
-!payload.Signature_Printed_Name ||
-
-!payload.Submission_Timestamp_UTC
-
-){
-
-throw new Error(
-
-"Required agreement or signature information " +
-"is missing."
-
-);
-
-}
-
-/* TEMPORARY EMAIL DELIVERY DIAGNOSTIC */
-
-/*
-The complete agreement remains visible and
-is captured locally by the page.
-
-For this controlled test only, exclude the
-full agreement text from the outgoing request.
-Restore this field before actual enrollment.
-*/
-
-delete payload.Agreement_Text;
-
-/* PREPARE JSON REQUEST */
-
-const requestBody =
-JSON.stringify(payload);
-
-showStatus(
-
-"Securely submitting your signed application. " +
-"Please keep this page open. " +
-"Reference: " + applicationReference
-
-);
-
-/* REQUEST TIMEOUT */
-
-const controller =
-new AbortController();
-
-timeout = setTimeout(function(){
-
-controller.abort();
-
-},45000);
-
-/* SEND APPLICATION */
-
-requestStarted = true;
-
-const response = await fetch(endpoint,{
-
-method:"POST",
-
-headers:{
-
-"Content-Type":"application/json",
-
-"Accept":"application/json"
-
-},
-
-body:requestBody,
-
-signal:controller.signal
-
-});
-
-/* READ WEB3FORMS RESPONSE */
-
-let result;
-
-try{
-
-result = await response.json();
-
-}catch(parseError){
-
-uncertainSubmission = true;
-
-throw new Error(
-
-"The submission service returned an " +
-"unexpected response. HTTP status: " +
-response.status
-
-);
-
-}
-
-/* VERIFY API ACCEPTANCE */
-
-if(
-
-!response.ok ||
-
-!result ||
-
-result.success !== true
-
-){
-
-const serverMessage =
-
-result && typeof result.message === "string"
-
-? result.message
-
-: "The submission service did not confirm acceptance.";
-
-if(response.status >= 500){
-
-uncertainSubmission = true;
-
-}
-
-throw new Error(
-
-serverMessage +
-" (HTTP " + response.status + ")"
-
-);
-
-}
-
-/* CONFIRMED API SUCCESS */
-
-submitted = true;
-
-submitting = false;
-
-button.disabled = true;
-
-button.textContent =
-
-"Application Submitted Successfully";
-
-showStatus(
-
-"Your application has been accepted by " +
-"the submission service. Reference: " +
-applicationReference
-
-);
-
-form.removeAttribute("aria-busy");
-
-/* REDIRECT ONLY AFTER CONFIRMED SUCCESS */
-
-window.location.assign(confirmationPage);
-
-}catch(submissionError){
-
-if(submitted){
-
-showStatus(
-
-"Your application was submitted successfully. " +
-"Reference: " + applicationReference
-
-);
-
-return;
-
-}
-
-/* HANDLE TIMEOUT OR CONNECTION FAILURE */
-
-if(
-
-submissionError.name === "AbortError" ||
-
-(
-
-requestStarted &&
-
-submissionError instanceof TypeError
-
-)
-
-){
-
-uncertainSubmission = true;
-
-}
-
-/* PREVENT AUTOMATIC DUPLICATE SUBMISSIONS */
-
-if(uncertainSubmission){
-
-showError(
-
-"We could not verify the final submission status. " +
-"Your information remains on this page. " +
-"The application may already have been received. " +
-"Please contact Omaha Restoration before " +
-"submitting again. Reference: " +
-applicationReference
-
-);
-
-}else{
-
-showError(
-
-"Your application could not be submitted. " +
-
-submissionError.message +
-
-" Your information remains on this page. " +
-
-"Please correct the issue and try again. " +
-
-"Reference: " + applicationReference
-
-);
-
-}
-
-resetButton();
-
-}finally{
-
-clearTimeout(timeout);
-
-}
-
-});
-
-/* HANDLE BROWSER BACK NAVIGATION */
-
-window.addEventListener("pageshow",function(){
-
-if(!submitting){
-
-resetButton();
-
-}
-
-});
+  });
 
 })();
+
 </script>
 
 </body>
