@@ -57,7 +57,7 @@
       position:sticky;
       top:0;
       z-index:100;
-      background:var(--dark);
+      background:#050a12;
       border-bottom:2px solid var(--gold);
       padding:16px 24px;
       display:flex;
@@ -264,7 +264,7 @@
 
     .fee-card p{
       font-size:12px;
-      color:var(--muted);
+      color:#647184;
       margin:10px 0 0;
     }
 
@@ -297,9 +297,17 @@
     }
 
     .legal-top{
-      margin:25px 0 12px;
-      color:var(--navy);
-      font-size:17px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:24px 0 12px;
+    }
+
+    .version{
+      color:#96713a;
+      font-size:11px;
       font-weight:900;
     }
 
@@ -312,7 +320,7 @@
       overflow-y:auto;
       overscroll-behavior:contain;
       color:#263343;
-      font-size:15px;
+      font-size:13px;
       line-height:1.75;
       scroll-margin-top:100px;
     }
@@ -324,9 +332,10 @@
 
     .legal h3{
       color:var(--navy);
-      font-size:16px;
+      font-size:14px;
       font-weight:900;
-      margin:26px 0 10px;
+      text-transform:uppercase;
+      margin:25px 0 8px;
     }
 
     .legal h3:first-child{
@@ -334,9 +343,9 @@
     }
 
     .legal h4{
-      color:var(--navy);
-      font-size:15px;
-      margin:18px 0 7px;
+      color:#21364f;
+      font-size:13px;
+      margin:14px 0 5px;
     }
 
     .legal p{
@@ -348,13 +357,11 @@
       margin:8px 0 15px;
     }
 
-    .legal li{
-      margin-bottom:5px;
+    .legal strong{
+      color:#172c45;
     }
 
-    .legal strong{
-      color:var(--navy);
-    }
+    /* MANDATORY AGREEMENT REVIEW */
 
     .agreement-review{
       background:#fff0f0;
@@ -363,8 +370,9 @@
       padding:18px;
       margin:16px 0;
       color:#861b1b;
-      font-size:14px;
+      font-size:13px;
       font-weight:600;
+      line-height:1.65;
       scroll-margin-top:100px;
     }
 
@@ -394,7 +402,7 @@
       border-radius:14px;
       padding:18px;
       margin:14px 0;
-      font-size:14px;
+      font-size:13px;
       font-weight:700;
       color:#253247;
       cursor:pointer;
@@ -418,12 +426,16 @@
       cursor:not-allowed;
     }
 
+    .ack.locked input{
+      cursor:not-allowed;
+    }
+
     .note{
       background:#eef4fa;
       border-left:4px solid var(--navy);
       border-radius:7px;
       padding:15px;
-      font-size:13px;
+      font-size:12px;
       color:#34485d;
       margin:18px 0;
     }
@@ -463,7 +475,7 @@
 
     button:disabled{
       opacity:.65;
-      cursor:not-allowed;
+      cursor:wait;
     }
 
     button:focus-visible,
@@ -572,314 +584,360 @@
 <p class="intro">
   Grow your business with Omaha Restoration™.
   Connect with available restoration, repair,
-  and construction opportunities.
-  Complete your application to be considered
-  for our contractor network.
+  and construction opportunities without
+  having to independently generate every customer.
+  Our flexible referral compensation structure
+  accommodates both small and standard projects.
+  Complete your application for network review.
 </p>
 
 <div class="card">
 
 <noscript>
-
-<div class="note">
-  JavaScript must be enabled to complete
-  and sign this application.
-</div>
-
+  <div class="note">
+    JavaScript must be enabled to complete and
+    electronically sign this application.
+  </div>
 </noscript>
 
 <form id="contractorForm"
       action="https://api.web3forms.com/submit"
-      method="POST"
-      novalidate>
+      method="POST">
 
-<input type="hidden"
-       name="access_key"
-       value="03396aaa-00b7-4b52-9d46-a6903a1623e7">
+  <input type="hidden"
+         name="access_key"
+         value="03396aaa-00b7-4b52-9d46-a6903a1623e7">
 
-<input type="hidden"
-       name="subject"
-       value="New Omaha Restoration Contractor Application">
+  <input type="hidden"
+         name="subject"
+         value="New Omaha Restoration Contractor Application">
 
-<input type="hidden"
-       name="from_name"
-       value="Omaha Restoration Contractor Portal">
+  <input type="hidden"
+         name="from_name"
+         value="Omaha Restoration Contractor Portal">
 
-<input type="hidden"
-       name="redirect"
-       value="https://omaharestoration.store/enrollment-submitted.html">
+  <input type="hidden"
+         name="redirect"
+         value="https://omaharestoration.store/enrollment-submitted.html">
 
-<!-- BUSINESS INFORMATION -->
+  <input type="hidden"
+         name="Agreement_Version"
+         value="OR-CPA-2026-V8">
+
+  <input type="hidden"
+         name="Contractor_Status"
+         value="Submitted for Review - Not Approved">
+
+  <input type="hidden"
+         name="Application_Reference"
+         id="applicationReference">
+
+  <input type="hidden"
+         name="Submission_Timestamp_UTC"
+         id="timestamp">
+
+  <input type="hidden"
+         name="Browser_User_Agent"
+         id="userAgent">
+
+  <input type="hidden"
+         name="Agreement_Confirmation"
+         value="Electronic acceptance of OR-CPA-2026-V8">
+
+  <input type="hidden"
+         name="Agreement_Text"
+         id="agreementText">
+
+  <input type="hidden"
+         name="Submission_Method"
+         value="Traditional HTML Electronic Registration">
+
+  <input type="hidden"
+         name="Selected_Service_Areas"
+         id="selectedAreas">
+
+  <input type="hidden"
+         name="Selected_Services"
+         id="selectedServices">
+
+  <input type="hidden"
+         name="Agreement_Scroll_Completed"
+         id="agreementScrollCompleted"
+         value="No">
+
+  <input type="hidden"
+         name="Agreement_Review_Timestamp_UTC"
+         id="agreementReviewTimestamp">
+
+  <input type="hidden"
+         name="Agreement_Acceptance_Timestamp_UTC"
+         id="agreementAcceptanceTimestamp">
+
+  <input type="hidden"
+         name="Compensation_Schedule"
+         value="Paid projects under $250: $25. $250-$499.99: $50. $500-$999.99: $100. $1000-$1499.99: $150. $1500 and above: $150 plus 10% of Gross Project Revenue.">
+
+<!-- SECTION 1 -->
 
 <div class="section first">
 
-  <h2>1. Business Information</h2>
+  <h2>1. Company Profile</h2>
 
-  <p>Tell us about your business.</p>
-
-</div>
-
-<div class="grid">
-
-<div class="field full">
-
-<label for="business">
-  Legal Business Name *
-</label>
-
-<input id="business"
-       name="Legal_Business_Name"
-       type="text"
-       autocomplete="organization"
-       required>
-
-</div>
-
-<div class="field">
-
-<label for="contact">
-  Contact Name *
-</label>
-
-<input id="contact"
-       name="Primary_Contact_Name"
-       type="text"
-       autocomplete="name"
-       required>
-
-</div>
-
-<div class="field">
-
-<label for="phone">
-  Phone Number *
-</label>
-
-<input id="phone"
-       name="Direct_Phone"
-       type="tel"
-       autocomplete="tel"
-       required>
-
-</div>
-
-<div class="field full">
-
-<label for="email">
-  Business Email *
-</label>
-
-<input id="email"
-       name="Email_Address"
-       type="email"
-       autocomplete="email"
-       required>
-
-</div>
-
-<div class="field full">
-
-<label for="address">
-  Business Mailing Address *
-</label>
-
-<input id="address"
-       name="Business_Address"
-       type="text"
-       required>
-
-</div>
-
-<div class="field full">
-
-<label for="website">
-  Business Website
-</label>
-
-<input id="website"
-       name="Business_Website"
-       type="url"
-       placeholder="https://">
-
-</div>
-
-</div>
-
-<!-- QUALIFICATIONS -->
-
-<div class="section">
-
-<h2>2. Qualifications</h2>
-
-<p>Tell us about your experience and credentials.</p>
+  <p>
+    Provide your legal business and contact information.
+  </p>
 
 </div>
 
 <div class="grid">
 
-<div class="field">
+<div class="field full">
 
-<label for="experience">
-  Years of Experience *
-</label>
+  <label for="business">
+    Legal Business Name *
+  </label>
 
-<input id="experience"
-       name="Years_of_Experience"
-       type="number"
-       min="0"
-       max="100"
-       required>
+  <input id="business"
+         type="text"
+         name="Legal_Business_Name"
+         required>
 
 </div>
 
 <div class="field">
 
-<label for="registrationStatus">
-  Registration Status *
-</label>
+  <label for="contact">
+    Primary Contact Name *
+  </label>
 
-<select id="registrationStatus"
-        name="Registration_Status"
-        required>
-
-<option value="">Select status</option>
-
-<option value="Current">
-  Currently Registered
-</option>
-
-<option value="Pending">
-  Registration Pending
-</option>
-
-<option value="Not Registered">
-  Not Registered
-</option>
-
-<option value="Exemption Claimed">
-  Legal Exemption Claimed
-</option>
-
-</select>
+  <input id="contact"
+         type="text"
+         name="Primary_Contact_Name"
+         required>
 
 </div>
 
 <div class="field">
 
-<label for="registration">
-  Registration / License Number
-</label>
+  <label for="phone">
+    Direct Contact Phone *
+  </label>
 
-<input id="registration"
-       name="Contractor_Registration_Number"
-       type="text"
-       placeholder="Number or N/A">
-
-</div>
-
-<div class="field">
-
-<label for="insuranceStatus">
-  Liability Insurance *
-</label>
-
-<select id="insuranceStatus"
-        name="Insurance_Status"
-        required>
-
-<option value="">Select status</option>
-
-<option value="Active">
-  Active Insurance
-</option>
-
-<option value="Pending">
-  Insurance Pending
-</option>
-
-<option value="Not Insured">
-  Not Insured
-</option>
-
-</select>
+  <input id="phone"
+         type="tel"
+         name="Direct_Phone"
+         required>
 
 </div>
 
 <div class="field">
 
-<label for="certification">
-  Professional Certification
-</label>
+  <label for="email">
+    Business Email *
+  </label>
 
-<select id="certification"
-        name="Certification_Status">
-
-<option value="Not Specified">
-  Select status
-</option>
-
-<option value="Current IICRC">
-  Current IICRC Certification
-</option>
-
-<option value="Expired IICRC">
-  Expired IICRC Certification
-</option>
-
-<option value="Other Certification">
-  Other Certification
-</option>
-
-<option value="None">
-  None
-</option>
-
-</select>
+  <input id="email"
+         type="email"
+         name="Email_Address"
+         required>
 
 </div>
 
 <div class="field">
 
-<label for="availability">
-  When Can You Start? *
-</label>
+  <label for="registration">
+    Contractor Registration / License Number
+  </label>
 
-<select id="availability"
-        name="Availability"
-        required>
-
-<option value="">Select availability</option>
-
-<option value="Immediately">
-  Immediately
-</option>
-
-<option value="Within 24 Hours">
-  Within 24 Hours
-</option>
-
-<option value="Within 7 Days">
-  Within 7 Days
-</option>
-
-<option value="By Appointment">
-  By Appointment
-</option>
-
-</select>
+  <input id="registration"
+         type="text"
+         name="Contractor_Registration_Number"
+         placeholder="Enter number or N/A">
 
 </div>
 
 <div class="field full">
 
-<label for="portfolio">
-  Previous Work / Portfolio Link
-</label>
+  <label for="address">
+    Business Mailing Address *
+  </label>
 
-<input id="portfolio"
-       name="Portfolio_URL"
-       type="url"
-       placeholder="Optional">
+  <input id="address"
+         type="text"
+         name="Business_Address"
+         required>
+
+</div>
+
+<div class="field full">
+
+  <label for="website">
+    Business Website (Optional)
+  </label>
+
+  <input id="website"
+         type="url"
+         name="Business_Website"
+         placeholder="https://">
+
+</div>
+
+<div class="field">
+
+  <label for="experience">
+    Years of Experience *
+  </label>
+
+  <input id="experience"
+         type="number"
+         name="Years_of_Experience"
+         min="0"
+         max="100"
+         required>
+
+</div>
+
+<div class="field">
+
+  <label for="registrationStatus">
+    Registration Status *
+  </label>
+
+  <select id="registrationStatus"
+          name="Registration_Status"
+          required>
+
+    <option value="">
+      Select status
+    </option>
+
+    <option value="Current">
+      Currently Registered
+    </option>
+
+    <option value="Pending">
+      Registration Pending
+    </option>
+
+    <option value="Not Registered">
+      Not Currently Registered
+    </option>
+
+    <option value="Exemption Claimed">
+      Legal Exemption Claimed - Subject to Verification
+    </option>
+
+  </select>
+
+</div>
+
+<div class="field">
+
+  <label for="insuranceStatus">
+    Liability Insurance Status *
+  </label>
+
+  <select id="insuranceStatus"
+          name="Insurance_Status"
+          required>
+
+    <option value="">
+      Select status
+    </option>
+
+    <option value="Active">
+      Active Liability Insurance
+    </option>
+
+    <option value="Pending">
+      Insurance Pending
+    </option>
+
+    <option value="Not Insured">
+      Not Currently Insured
+    </option>
+
+  </select>
+
+</div>
+
+<div class="field">
+
+  <label for="certification">
+    Professional Certification
+  </label>
+
+  <select id="certification"
+          name="Certification_Status">
+
+    <option value="Not Specified">
+      Select status
+    </option>
+
+    <option value="Current IICRC">
+      Current IICRC Certification
+    </option>
+
+    <option value="Expired IICRC">
+      Previous IICRC - Renewal Required
+    </option>
+
+    <option value="Other Certification">
+      Other Professional Certification
+    </option>
+
+    <option value="None">
+      No Current Certification
+    </option>
+
+  </select>
+
+</div>
+
+<div class="field full">
+
+  <label for="availability">
+    Earliest Availability *
+  </label>
+
+  <select id="availability"
+          name="Availability"
+          required>
+
+    <option value="">
+      Select availability
+    </option>
+
+    <option value="Immediately">
+      Immediately
+    </option>
+
+    <option value="Within 24 Hours">
+      Within 24 Hours
+    </option>
+
+    <option value="Within 7 Days">
+      Within 7 Days
+    </option>
+
+    <option value="By Appointment">
+      By Appointment
+    </option>
+
+  </select>
+
+</div>
+
+<div class="field full">
+
+  <label for="portfolio">
+    Previous Work / Portfolio Link
+  </label>
+
+  <input id="portfolio"
+         type="url"
+         name="Portfolio_URL"
+         placeholder="Optional website or portfolio link">
 
 </div>
 
@@ -887,20 +945,25 @@
 
 <div class="note">
 
-You may apply without current registration
-or insurance. However, you cannot receive
-independent project referrals until all
-required credentials have been verified.
+  Applicants without current credentials may
+  submit their information for preliminary review.
+
+  No independent project referrals will be
+  authorized until all applicable registration,
+  insurance, and qualification requirements
+  have been verified.
 
 </div>
 
-<!-- SERVICE AREAS -->
+<!-- SECTION 2 -->
 
 <div class="section">
 
-<h2>3. Service Areas &amp; Services</h2>
+  <h2>2. Service Areas &amp; Capabilities</h2>
 
-<p>Select where you work and what you do.</p>
+  <p>
+    Select the locations and services your company accepts.
+  </p>
 
 </div>
 
@@ -911,66 +974,62 @@ required credentials have been verified.
 <div class="options" id="areas">
 
 <label class="check">
-<input type="checkbox" value="Omaha">
-Omaha
+  <input type="checkbox" name="Area_Omaha" value="Yes">
+  Omaha
 </label>
 
 <label class="check">
-<input type="checkbox" value="Bellevue">
-Bellevue
+  <input type="checkbox" name="Area_Bellevue" value="Yes">
+  Bellevue
 </label>
 
 <label class="check">
-<input type="checkbox" value="Papillion">
-Papillion
+  <input type="checkbox" name="Area_Papillion" value="Yes">
+  Papillion
 </label>
 
 <label class="check">
-<input type="checkbox" value="La Vista">
-La Vista
+  <input type="checkbox" name="Area_La_Vista" value="Yes">
+  La Vista
 </label>
 
 <label class="check">
-<input type="checkbox" value="Gretna">
-Gretna
+  <input type="checkbox" name="Area_Gretna" value="Yes">
+  Gretna
 </label>
 
 <label class="check">
-<input type="checkbox" value="Elkhorn">
-Elkhorn
+  <input type="checkbox" name="Area_Elkhorn" value="Yes">
+  Elkhorn
 </label>
 
 <label class="check">
-<input type="checkbox" value="Bennington">
-Bennington
+  <input type="checkbox" name="Area_Bennington" value="Yes">
+  Bennington
 </label>
 
 <label class="check">
-<input type="checkbox" value="Council Bluffs, IA">
-Council Bluffs, IA
+  <input type="checkbox" name="Area_Council_Bluffs" value="Yes">
+  Council Bluffs, IA
 </label>
 
 <label class="check">
-<input type="checkbox" value="Other Surrounding Areas">
-Other Surrounding Areas
+  <input type="checkbox" name="Area_Other" value="Yes">
+  Other Surrounding Areas
 </label>
 
 </div>
 
-<input type="hidden"
-       name="Service_Areas"
-       id="selectedAreas">
-
 <div class="field">
 
-<label for="otherArea">
-  Additional Service Areas
-</label>
+  <label for="otherArea">
+    Additional Service Areas
+  </label>
 
-<input id="otherArea"
-       name="Other_Service_Areas"
-       type="text"
-       placeholder="Additional cities or counties">
+  <input id="otherArea"
+         type="text"
+         name="Other_Service_Areas"
+         placeholder="Additional cities or counties">
 
 </div>
 
@@ -983,81 +1042,77 @@ Other Surrounding Areas
 <div class="options" id="services">
 
 <label class="check">
-<input type="checkbox" value="Water Damage Mitigation">
-Water Damage Mitigation
+  <input type="checkbox" name="Service_Water_Damage" value="Yes">
+  Water Damage Mitigation
 </label>
 
 <label class="check">
-<input type="checkbox" value="Flood and Basement Cleanup">
-Flood &amp; Basement Cleanup
+  <input type="checkbox" name="Service_Flood_Cleanup" value="Yes">
+  Flood &amp; Basement Cleanup
 </label>
 
 <label class="check">
-<input type="checkbox" value="Mold Remediation">
-Mold Remediation
+  <input type="checkbox" name="Service_Mold" value="Yes">
+  Mold Remediation
 </label>
 
 <label class="check">
-<input type="checkbox" value="Plumbing Repairs">
-Plumbing Repairs
+  <input type="checkbox" name="Service_Plumbing" value="Yes">
+  Plumbing Repairs
 </label>
 
 <label class="check">
-<input type="checkbox" value="Drywall Installation and Repair">
-Drywall Installation &amp; Repair
+  <input type="checkbox" name="Service_Drywall" value="Yes">
+  Drywall Installation &amp; Repair
 </label>
 
 <label class="check">
-<input type="checkbox" value="Interior and Exterior Painting">
-Interior &amp; Exterior Painting
+  <input type="checkbox" name="Service_Painting" value="Yes">
+  Interior &amp; Exterior Painting
 </label>
 
 <label class="check">
-<input type="checkbox" value="Flooring Installation and Repair">
-Flooring Installation &amp; Repair
+  <input type="checkbox" name="Service_Flooring" value="Yes">
+  Flooring Installation &amp; Repair
 </label>
 
 <label class="check">
-<input type="checkbox" value="Roofing and Exterior Repairs">
-Roofing &amp; Exterior Repairs
+  <input type="checkbox" name="Service_Roofing" value="Yes">
+  Roofing &amp; Exterior Repairs
 </label>
 
 <label class="check">
-<input type="checkbox" value="General Construction">
-General Construction
+  <input type="checkbox" name="Service_General_Construction" value="Yes">
+  General Construction
 </label>
 
 <label class="check">
-<input type="checkbox" value="Demolition and Debris Removal">
-Demolition &amp; Debris Removal
+  <input type="checkbox" name="Service_Demolition" value="Yes">
+  Demolition &amp; Debris Removal
 </label>
 
 <label class="check">
-<input type="checkbox" value="Storm Damage Restoration">
-Storm Damage Restoration
+  <input type="checkbox" name="Service_Storm_Damage" value="Yes">
+  Storm Damage Restoration
 </label>
 
 <label class="check">
-<input type="checkbox" value="Other Property Repairs">
-Other Property Repairs
+  <input type="checkbox" name="Service_Other" value="Yes">
+  Other Property Repairs
 </label>
 
 </div>
 
-<input type="hidden"
-       name="Services_Offered"
-       id="selectedServices">
-
 <div class="field">
 
-<label for="otherServices">
-  Additional Services
-</label>
+  <label for="otherServices">
+    Additional Services
+  </label>
 
-<textarea id="otherServices"
-          name="Additional_Services"
-          rows="3"
-          placeholder="Other services you provide"></textarea>
+  <textarea id="otherServices"
+            name="Additional_Services"
+            rows="3"
+            placeholder="Describe other services your company provides"></textarea>
 
 </div>
 
@@ -1065,24 +1120,26 @@ Other Property Repairs
 
 <div class="field">
 
-<label for="equipment">
-  Equipment &amp; Capabilities
-</label>
+  <label for="equipment">
+    Equipment &amp; Capabilities
+  </label>
 
-<textarea id="equipment"
-          name="Equipment_and_Capabilities"
-          rows="4"
-          placeholder="Equipment, crew size, emergency availability, and special skills"></textarea>
+  <textarea id="equipment"
+            name="Equipment_and_Capabilities"
+            rows="4"
+            placeholder="Describe equipment, crew size, emergency availability, and specialized capabilities"></textarea>
 
 </div>
 
-<!-- COMPENSATION -->
+<!-- SECTION 3 -->
 
 <div class="section">
 
-<h2>4. Referral Fees &amp; Agreement</h2>
+  <h2>3. Contractor Partnership Agreement</h2>
 
-<p>Understand what you pay and when you pay it.</p>
+  <p>
+    Review the compensation structure and complete contractual terms.
+  </p>
 
 </div>
 
@@ -1090,21 +1147,25 @@ Other Property Repairs
 
 <div class="fee-card">
 
-<strong>$25–$150</strong>
+  <strong>$25–$150</strong>
 
-<span>SMALL PROJECTS</span>
+  <span>SMALL PROJECT REFERRALS</span>
 
-<p>One flat fee based on the total job value.</p>
+  <p>
+    Reduced flat fees based on total project value.
+  </p>
 
 </div>
 
 <div class="fee-card">
 
-<strong>$150 + 10%</strong>
+  <strong>$150 + 10%</strong>
 
-<span>STANDARD PROJECTS</span>
+  <span>STANDARD PROJECT REFERRALS</span>
 
-<p>For qualifying jobs worth $1,500 or more.</p>
+  <p>
+    Applies to qualifying projects valued at $1,500 or more.
+  </p>
 
 </div>
 
@@ -1115,8 +1176,8 @@ Other Property Repairs
 <thead>
 
 <tr>
-<th>Total Job Value</th>
-<th>Our Fee</th>
+  <th>Project Value</th>
+  <th>Referral Compensation</th>
 </tr>
 
 </thead>
@@ -1124,28 +1185,28 @@ Other Property Repairs
 <tbody>
 
 <tr>
-<td>Over $0 and under $250</td>
-<td>$25</td>
+  <td>Under $250</td>
+  <td>$25</td>
 </tr>
 
 <tr>
-<td>$250–$499.99</td>
-<td>$50</td>
+  <td>$250–$499.99</td>
+  <td>$50</td>
 </tr>
 
 <tr>
-<td>$500–$999.99</td>
-<td>$100</td>
+  <td>$500–$999.99</td>
+  <td>$100</td>
 </tr>
 
 <tr>
-<td>$1,000–$1,499.99</td>
-<td>$150</td>
+  <td>$1,000–$1,499.99</td>
+  <td>$150</td>
 </tr>
 
 <tr>
-<td>$1,500 or more</td>
-<td>$150 + 10%</td>
+  <td>$1,500 and above</td>
+  <td>$150 + 10%</td>
 </tr>
 
 </tbody>
@@ -1154,23 +1215,31 @@ Other Property Repairs
 
 <div class="note">
 
-<strong>How it works:</strong>
+  <strong>Flexible Compensation:</strong>
 
-We send you job opportunities.
-You decide whether to accept them.
-We disclose the applicable fees before
-you accept a job.
+  Referral compensation is based on the
+  applicable project value and accepted
+  assignment terms. Contractors may accept
+  or decline individual opportunities.
 
-Any different fee arrangement must be
-agreed to in writing by both sides.
+  Any alternative compensation arrangement
+  must be accepted in writing by both parties.
 
 </div>
 
 <div class="legal-top">
 
-OMAHA RESTORATION™ CONTRACTOR AGREEMENT
+  <strong>
+    OMAHA RESTORATION™ CONTRACTOR AGREEMENT
+  </strong>
+
+  <span class="version">
+    OR-CPA-2026-V8
+  </span>
 
 </div>
+
+<!-- MANDATORY AGREEMENT REVIEW NOTICE -->
 
 <div class="agreement-review"
      id="agreementReview"
@@ -1178,16 +1247,14 @@ OMAHA RESTORATION™ CONTRACTOR AGREEMENT
      aria-live="polite"
      tabindex="-1">
 
-<strong>AGREEMENT REVIEW REQUIRED</strong>
+  <strong>AGREEMENT REVIEW REQUIRED</strong>
 
-Please read the entire Omaha Restoration™
-Contractor Agreement before signing and
-submitting your application. You must scroll
-to the bottom of the agreement to continue.
+  Please read the entire Omaha Restoration™
+  Contractor Agreement before signing and
+  submitting your application. You must scroll
+  to the bottom of the agreement to continue.
 
 </div>
-
-<!-- COMPLETE CONTRACT -->
 
 <div class="legal"
      id="legalAgreement"
@@ -1196,786 +1263,1006 @@ to the bottom of the agreement to continue.
      aria-label="Omaha Restoration Contractor Agreement"
      aria-describedby="agreementReview">
 
-<h3>1. Who We Are and How We Work</h3>
+<h3>1. Parties &amp; Agreement Purpose</h3>
 
 <p>
-This agreement is between Murrays Empire LLC,
-a Nebraska limited liability company doing
-business as Omaha Restoration™ ("we," "us,"
-or "Company"), and the contractor business
-listed in this application ("you" or "Contractor").
+This Contractor Partnership and Referral Agreement
+("Agreement") is entered into between Murrays Empire LLC,
+a Nebraska limited liability company operating under
+the brand Omaha Restoration™ ("Company"), and the
+independent contractor business identified in the
+registration form ("Contractor").
 </p>
 
 <p>
-We connect contractors with customers and job
-opportunities in exchange for referral fees.
-A referral is a customer, property owner,
-property manager, business, or job opportunity
-we introduce through a call, text, email,
-website, electronic platform, or other
-documented communication.
+The purpose of this Agreement is to establish
+the terms under which Company may introduce
+prospective customers, businesses, and project
+opportunities to Contractor in exchange for
+agreed referral compensation.
 </p>
 
 <p>
-A referred customer is a customer or business
-we first introduce to you through a documented
-referral.
+Submission of an application does not guarantee
+acceptance into the network, referrals, project awards,
+exclusive territories, or minimum earnings.
+</p>
+
+<h3>2. Independent Referral Platform</h3>
+
+<p>
+Omaha Restoration™ operates as an independent
+contractor referral and project-routing network.
 </p>
 
 <p>
-We do not perform physical restoration,
-construction, mitigation, plumbing, roofing,
-electrical, HVAC, drywall, painting, mold
-remediation, or other contracting work.
-You or another properly authorized service
-provider independently estimate, contract,
-manage, and perform the work.
+Company does not directly perform restoration,
+mitigation, construction, plumbing, roofing,
+electrical, HVAC, drywall, painting, mold remediation,
+or other physical contracting services.
 </p>
 
 <p>
-You run your own business. You are responsible
-for your prices, customer contracts, workers,
-subcontractors, taxes, tools, materials,
-equipment, permits, insurance, licenses,
-work methods, safety, workmanship, warranties,
-and customer satisfaction.
+All physical services are independently estimated,
+contracted, managed, and performed by Contractor
+or another properly authorized service provider.
 </p>
 
 <p>
-This agreement does not make you our employee,
-agent, franchisee, legal partner, or joint
-venture partner. You cannot make agreements
-or promises that legally bind us.
+Contractor is solely responsible for pricing,
+customer contracts, labor, equipment, materials,
+permits, licensing, insurance, workmanship,
+jobsite safety, warranties, and customer satisfaction.
 </p>
 
 <p>
-We do not supply employees, handle payroll,
-supervise workers, or act as an employer
-of record under this agreement.
-Any separate employment-placement opportunity
-requires its own review and legal compliance.
+Nothing in this Agreement establishes employment,
+agency, franchise, joint venture, or legal partnership.
+Contractor has no authority to bind Company.
 </p>
 
 <p>
-Applying does not guarantee approval, jobs,
-referrals, project awards, exclusive service
-areas, or earnings.
+This Agreement does not authorize Company to
+supply employees, administer payroll, supervise
+workers, or operate as an employer of record.
+Any employment-placement arrangement requires
+separate review and applicable legal compliance.
 </p>
 
-<h3>2. Referral Fees and Payments</h3>
+<h3>3. Definitions</h3>
 
-<h4>Before You Accept a Job</h4>
+<h4>3.1 Referred Lead</h4>
 
 <p>
-We will identify the job, applicable fees,
-and any special conditions in writing before
-you accept. An assignment confirmation is
-the documented job offer and its terms
-accepted by both sides.
+A "Lead" means a prospective customer, property owner,
+property manager, business, or project opportunity
+introduced or transmitted by Company through telephone,
+text message, email, website, electronic platform,
+or another documented communication method.
 </p>
 
 <p>
-You may accept or decline each job.
-You are responsible for the agreed fees
-unless we expressly agree otherwise in writing.
-Neither side may change accepted fees on its own.
-Both sides must agree to changes in writing.
+A "Referred Customer" means a customer or business
+first introduced to Contractor through a documented
+referral from Company.
 </p>
 
-<h4>Small Jobs</h4>
+<h4>3.2 Job Start</h4>
 
 <p>
-For qualifying paid jobs worth less than $1,500,
-you pay one flat referral fee:
+"Job Start" means the earliest occurrence of:
 </p>
 
 <ul>
-<li>Over $0 and under $250: $25.</li>
-<li>$250–$499.99: $50.</li>
-<li>$500–$999.99: $100.</li>
-<li>$1,000–$1,499.99: $150.</li>
+<li>A project-specific on-site inspection or assessment for an assignment expressly accepted under the standard compensation model.</li>
+<li>Customer approval of a project estimate.</li>
+<li>Execution of a work authorization or service contract.</li>
+<li>Commencement of physical project work.</li>
+<li>Delivery or placement of project equipment for an authorized project.</li>
 </ul>
 
 <p>
-The fee is earned when the customer approves
-a paid job or paid physical work begins,
-whichever happens first.
-Pay the fee within five business days
-after that event.
+Only one Job Start fee applies to each separately
+identifiable referred project unless otherwise
+agreed in writing.
+</p>
+
+<h4>3.3 Gross Project Revenue</h4>
+
+<p>
+"Gross Project Revenue" means the total amount
+charged or invoiced to the customer for a referred
+project before deductions.
+</p>
+
+<p>It includes:</p>
+
+<ul>
+<li>Labor and professional services.</li>
+<li>Materials and supplies.</li>
+<li>Equipment and equipment rentals.</li>
+<li>Subcontractor charges.</li>
+<li>Project management charges.</li>
+<li>Approved change orders.</li>
+<li>Additional project services.</li>
+<li>Other project-related charges.</li>
+</ul>
+
+<p>
+Gross Project Revenue excludes separately stated
+sales taxes collected and remitted to the appropriate
+taxing authority.
 </p>
 
 <p>
-An introduction, unsuccessful estimate,
-or unpaid inspection alone does not
-trigger a small-job fee.
+Operating expenses, labor costs, material costs,
+subcontractor payments, overhead, and payment
+processing charges do not reduce Gross Project Revenue.
 </p>
 
 <p>
-The small-job fee replaces the standard
-$150 Job Start fee and 10% fee for that job.
-We do not charge both compensation models
-as separate cumulative fees for the same job.
+Documented refunds and credits actually issued
+to the customer reduce the applicable revenue calculation.
 </p>
 
-<h4>Standard Jobs</h4>
+<h4>3.4 Job Completion</h4>
 
 <p>
-For qualifying jobs worth $1,500 or more,
-you pay:
+"Job Completion" occurs upon the earlier of:
 </p>
 
 <ul>
-<li>$150 when the job starts.</li>
-<li>10% of the total project revenue.</li>
+<li>Substantial completion of contracted work and customer acceptance.</li>
+<li>Receipt of final payment for the project.</li>
 </ul>
 
-<p>
-The $150 fee is due within five business
-days after Job Start. The 10% fee is due
-within five business days after Job Completion.
-</p>
+<h4>3.5 Business Day</h4>
 
 <p>
-These are separate fees. The $150 fee does
-not reduce the 10% fee unless a credit is
-expressly allowed under this agreement.
-</p>
-
-<h4>What Counts as Job Start?</h4>
-
-<p>
-Job Start is the first of these events:
-</p>
-
-<ul>
-<li>You perform an on-site inspection or assessment for a specific job expressly accepted under the standard fee model.</li>
-<li>The customer approves the estimate.</li>
-<li>A work authorization or service contract is signed.</li>
-<li>Physical work begins.</li>
-<li>Equipment is delivered or placed for an authorized job.</li>
-</ul>
-
-<p>
-Only one Job Start fee applies to each
-separately identifiable referred job unless
-both sides agree otherwise in writing.
-</p>
-
-<p>
-If the customer cancels after a qualifying
-Job Start, the $150 fee remains due when
-the standard fee model was accepted.
-</p>
-
-<p>
-If the job value is unknown, an inspection
-alone does not trigger the $150 fee unless
-you expressly accepted that fee in writing
-before the inspection.
-</p>
-
-<h4>What Does Total Project Revenue Mean?</h4>
-
-<p>
-Total project revenue, also called Gross
-Project Revenue, is the full amount charged
-or invoiced to the customer before deductions.
-It is not your profit.
-</p>
-
-<p>
-It includes labor, professional services,
-materials, supplies, equipment, rentals,
-subcontractor charges, project management,
-approved change orders, extra services,
-and other project charges.
-</p>
-
-<p>
-You cannot subtract your business expenses,
-labor costs, materials, subcontractor payments,
-overhead, or payment processing fees.
-</p>
-
-<p>
-Separately listed sales taxes collected and
-paid to the proper tax authority are excluded.
-Documented refunds and credits actually given
-to the customer reduce the revenue amount.
-</p>
-
-<h4>When Is a Job Complete?</h4>
-
-<p>
-Job Completion happens when the contracted
-work is substantially complete and the
-customer accepts it, or when you receive
-final payment, whichever happens first.
-</p>
-
-<p>
-Business days are Monday through Friday,
+A Business Day means Monday through Friday,
 excluding federal holidays.
 </p>
 
-<h4>Unknown Prices and Extra Work</h4>
+<h4>3.6 Assignment Confirmation</h4>
 
 <p>
-If the job price is unknown, both sides
-may agree to a temporary price category
-or use the fee schedule based on the final
-documented job value.
+An Assignment Confirmation means a documented
+communication identifying the referred opportunity,
+applicable compensation terms, and any
+assignment-specific conditions accepted
+by Company and Contractor.
 </p>
 
-<p>
-You must report the quoted price and customer
-approval under Section 4. The final fee is
-based on the actual documented revenue and
-accepted terms. We cannot impose undisclosed
-fees or retroactively change the fee model.
-</p>
+<h3>4. Required Referral Compensation</h3>
+
+<h4>4.1 Applicable Compensation Model</h4>
 
 <p>
-If extra work, approved changes, or revised
-charges increase the job value, the fee moves
-to the correct price tier.
-</p>
-
-<p>
-If the job reaches $1,500, the standard
-$150 plus 10% model applies unless both
-sides expressly accepted different terms
-in writing.
-</p>
-
-<p>
-Any small-job fees already paid count
-toward the recalculated total fee.
-The remaining balance is due within five
-business days after Job Completion or
-subsequent invoicing of additional charges.
-</p>
-
-<p>
-Extra charges, change orders, and project
-expansions count toward total revenue.
-Additional referral fees from charges
-invoiced after completion are due within
-five business days after those charges
-are invoiced.
-</p>
-
-<p>
-You cannot intentionally split, rename,
-underreport, or separately invoice one
-job to avoid fees. Related work under
-the same contracted project is counted
-together. Truly separate jobs may be
-treated separately when properly documented.
-</p>
-
-<p>
-Payments already made are credited when
-required by the accepted fee arrangement.
-</p>
-
-<h4>Making Payments</h4>
-
-<p>
-Pay using an authorized business payment
-method we designate, such as ACH, bank
-transfer, approved electronic business
-payments, or another method approved
-in writing. Identify the job with each payment.
-</p>
-
-<p>
-Undisputed overdue fees may be charged
-1.5% per month without compounding,
-or the legal maximum if it is lower.
-</p>
-
-<p>
-If an undisputed payment is more than
-15 calendar days overdue, we may stop
-sending referrals until the balance
-is resolved.
-</p>
-
-<p>
-Reasonable collection costs and attorney
-fees may be recovered only when permitted
-by law or awarded under the dispute
-resolution terms.
-</p>
-
-<p>
-If you dispute an invoice, notify us
-in writing within 10 business days
-of receiving it. Identify the disputed
-fee and provide supporting documents.
-Both sides must try to resolve the issue
-in good faith. Undisputed amounts remain
-due on their original dates.
-</p>
-
-<h3>3. Protecting Our Customer Referrals</h3>
-
-<p>
-For 12 months after we first document
-our introduction of each referred customer,
-you cannot intentionally go around Omaha
-Restoration to avoid paying referral fees
-on qualifying additional work resulting
-from that introduction.
-</p>
-
-<p>
-Before accepting qualifying additional
-work involving that customer or the
-originally referred property during
-the protected period, you must notify us.
-</p>
-
-<p>
-Each separately contracted qualifying job
-follows the fee schedule unless both sides
-agree otherwise in writing. A reduced fee
-on one job does not guarantee reduced
-fees on future jobs.
-</p>
-
-<p>
-You may communicate directly with customers
-to estimate, schedule, perform, and manage
-authorized work.
-</p>
-
-<p>
-You cannot intentionally redirect customers
-or arrange payments to avoid our fees.
-You cannot use business cards, phone numbers,
-websites, related businesses, subcontractors,
-middlemen, separate payments, or other methods
-to intentionally hide qualifying work or
-avoid referral fees.
-Doing so is a serious breach of this agreement.
-</p>
-
-<p>
-If you discover qualifying work that was
-not reported, tell us within 24 hours.
-Reporting it late does not erase fees owed
-or automatically fix a contract violation.
-</p>
-
-<p>
-This protection does not apply to independently
-obtained jobs or customer relationships you
-can reasonably document existed before
-our introduction.
-</p>
-
-<p>
-The protection continues for the remainder
-of each customer's 12-month period even
-if this agreement ends.
-</p>
-
-<h3>4. Your Responsibilities and Job Updates</h3>
-
-<p>
-You must:
+Company offers two project-based compensation models:
 </p>
 
 <ul>
-<li>Review the fees before accepting a job.</li>
-<li>Accept or decline each referral within 24 hours.</li>
-<li>Contact the customer within 24 hours after accepting.</li>
-<li>Provide accurate appointment information.</li>
-<li>Promptly report missed appointments or delays.</li>
-<li>Treat customers professionally.</li>
-<li>Provide honest job updates.</li>
+<li>Small Project Referral Compensation.</li>
+<li>Standard Project Referral Compensation.</li>
 </ul>
 
 <p>
-We may reassign unanswered or declined jobs.
-Repeated missed appointments, failure to respond,
-customer abandonment, or intentional dishonesty
-may result in suspension or removal.
+Company shall identify the applicable compensation
+terms in writing before Contractor accepts
+an assignment.
 </p>
 
 <p>
-You must report the following within 24 hours
-after each event happens:
+When the project value is unknown, the
+assignment confirmation may identify the
+compensation schedule as applicable according
+to the subsequently documented project value.
+</p>
+
+<p>
+Contractor may accept or decline the assignment
+and its disclosed compensation terms.
+</p>
+
+<p>
+Contractor may not independently substitute,
+reduce, or change accepted compensation terms.
+</p>
+
+<p>
+Any assignment-specific modification must be
+documented and accepted in writing by both Parties.
+</p>
+
+<p>
+Contractor is responsible for the applicable
+referral compensation unless Company expressly
+agrees otherwise in writing.
+</p>
+
+<h4>4.2 Small Project Referral Compensation</h4>
+
+<p>
+Qualifying paid referred projects with Gross Project
+Revenue below One Thousand Five Hundred Dollars
+($1,500.00) are subject to the following
+flat-fee schedule:
 </p>
 
 <ul>
-<li>First customer contact.</li>
+<li>Greater than $0 and under $250.00: $25.00.</li>
+<li>$250.00 through $499.99: $50.00.</li>
+<li>$500.00 through $999.99: $100.00.</li>
+<li>$1,000.00 through $1,499.99: $150.00.</li>
+</ul>
+
+<p>
+Small-project compensation replaces the standard
+$150 Job Start fee and 10% Gross Project Revenue
+fee for that qualifying project.
+</p>
+
+<p>
+The small-project referral fee becomes earned
+when the customer approves a paid project
+or physical paid project work begins,
+whichever occurs first.
+</p>
+
+<p>
+The applicable fee is payable within five (5)
+Business Days following that event.
+</p>
+
+<p>
+An unsuccessful estimate, unpaid inspection,
+or customer introduction alone does not trigger
+a small-project referral fee.
+</p>
+
+<h4>4.3 Small Project Value Adjustments</h4>
+
+<p>
+If approved change orders, additional services,
+or revised project charges increase the total
+Gross Project Revenue, the referral fee shall
+be adjusted to the applicable project-value tier.
+</p>
+
+<p>
+If the total project value reaches or exceeds
+$1,500.00, the Standard Project Referral
+Compensation model applies unless an alternative
+arrangement was expressly accepted in writing.
+</p>
+
+<p>
+Previously paid small-project referral fees
+shall be credited against the recalculated
+total referral compensation.
+</p>
+
+<p>
+Any remaining balance is payable within
+five (5) Business Days following Job Completion,
+or within five (5) Business Days following
+subsequent invoicing of additional charges.
+</p>
+
+<h4>4.4 Standard Project Job Start Fee</h4>
+
+<p>
+For qualifying standard projects valued at
+$1,500.00 or more, Contractor agrees to pay
+Company a flat referral fee of One Hundred
+Fifty Dollars ($150.00) for each qualifying
+Job Start.
+</p>
+
+<p>
+The Job Start fee is due within five (5)
+Business Days following Job Start.
+</p>
+
+<p>
+The fee remains payable if the customer
+subsequently cancels the project, provided
+a qualifying Job Start actually occurred
+and the standard compensation model
+was accepted for the assignment.
+</p>
+
+<p>
+Where project value is initially unknown,
+an inspection alone does not establish
+the standard Job Start fee unless that
+fee was expressly accepted in writing
+before the inspection.
+</p>
+
+<h4>4.5 Standard Gross Project Revenue Fee</h4>
+
+<p>
+Contractor agrees to pay Company ten percent
+(10%) of Gross Project Revenue for each
+qualifying standard referred project.
+</p>
+
+<p>
+Payment is due within five (5) Business Days
+following Job Completion.
+</p>
+
+<p>
+The $150 Job Start fee and 10% Gross Project
+Revenue fee are separate obligations.
+</p>
+
+<p>
+Except for credits expressly provided under
+this Agreement, the $150 fee shall not be
+deducted from or credited against the
+10% revenue fee.
+</p>
+
+<h4>4.6 Unknown Project Value</h4>
+
+<p>
+When the project value cannot reasonably
+be determined before assignment acceptance,
+Company and Contractor may document a
+provisional project-value classification
+or accept the applicable compensation
+schedule based on the final documented
+project value.
+</p>
+
+<p>
+Contractor must report the quoted project
+amount and customer approval in accordance
+with Section 7.
+</p>
+
+<p>
+The final referral fee shall be calculated
+using the actual documented Gross Project
+Revenue and accepted compensation terms.
+</p>
+
+<p>
+No undisclosed fee or retroactive
+compensation model may be imposed.
+</p>
+
+<h4>4.7 Additional Project Revenue</h4>
+
+<p>
+Change orders, project expansions, and additional
+charges are included in Gross Project Revenue.
+</p>
+
+<p>
+Additional referral fees resulting from charges
+invoiced after Job Completion are due within
+five (5) Business Days after those charges
+are invoiced.
+</p>
+
+<h4>4.8 Project Splitting &amp; Fee Avoidance</h4>
+
+<p>
+Contractor shall not intentionally divide,
+reclassify, underreport, or separately invoice
+a single project for the purpose of reducing
+or avoiding applicable referral compensation.
+</p>
+
+<p>
+Related work forming part of the same
+contracted project shall be evaluated
+using the combined applicable project value.
+</p>
+
+<p>
+Legitimately separate projects may be
+classified independently when supported
+by accurate documentation.
+</p>
+
+<h4>4.9 No Duplicate Compensation</h4>
+
+<p>
+Company shall not collect both the small-project
+flat fee and standard project compensation
+as separate cumulative compensation models
+for the same project.
+</p>
+
+<p>
+Amounts already paid toward a project
+shall be credited when required under
+the accepted compensation arrangement.
+</p>
+
+<h4>4.10 Payment Methods</h4>
+
+<p>
+All fees must be paid using an authorized
+business payment method designated by Company.
+</p>
+
+<p>
+Payment methods may include ACH, bank transfer,
+approved electronic business payment services,
+or another method authorized in writing.
+</p>
+
+<p>
+Contractor must identify the corresponding
+project or assignment when submitting payment.
+</p>
+
+<h4>4.11 Late Payments</h4>
+
+<p>
+Overdue, undisputed amounts may accrue a late charge
+of 1.5% per month, without compounding, or the maximum
+rate permitted by applicable law, whichever is less.
+</p>
+
+<p>
+If an undisputed payment remains overdue for fifteen
+(15) calendar days, Company may suspend additional
+referrals until the balance is resolved.
+</p>
+
+<p>
+Reasonable collection costs and attorney fees
+may be recovered only to the extent permitted
+by applicable law or awarded under the
+dispute-resolution provisions.
+</p>
+
+<h4>4.12 Payment Disputes</h4>
+
+<p>
+Contractor must provide written notice identifying
+a disputed fee and supporting documentation within
+ten (10) Business Days after receiving the invoice.
+</p>
+
+<p>
+The Parties shall attempt to resolve the dispute
+in good faith. Undisputed amounts remain payable
+by their original deadlines.
+</p>
+
+<h3>5. Non-Circumvention &amp; Repeat Customer Protection</h3>
+
+<h4>5.1 Protected Referral Period</h4>
+
+<p>
+For twelve (12) months following Company's first
+documented introduction of a Referred Customer,
+Contractor shall not intentionally circumvent
+Company to avoid referral compensation on
+qualifying additional work arising from that introduction.
+</p>
+
+<p>
+The protected period applies separately to each
+customer introduced by Company.
+</p>
+
+<h4>5.2 Repeat Projects</h4>
+
+<p>
+Contractor must notify Company before accepting
+additional qualifying work involving a Referred
+Customer or the originally referred property
+during the protected period.
+</p>
+
+<p>
+Each separately contracted qualifying additional
+project is subject to the applicable compensation
+schedule under Section 4, unless otherwise
+agreed in writing.
+</p>
+
+<p>
+A prior small-project arrangement does not
+establish a permanent reduced compensation
+arrangement for future projects.
+</p>
+
+<h4>5.3 Direct Customer Communication</h4>
+
+<p>
+Contractor may communicate directly with customers
+when reasonably necessary to estimate, schedule,
+perform, or administer authorized work.
+</p>
+
+<p>
+However, Contractor may not intentionally redirect
+customers or structure transactions to avoid
+applicable referral fees.
+</p>
+
+<p>
+Using business cards, telephone numbers, websites,
+affiliated companies, or other communication methods
+for the purpose of circumventing Company constitutes
+a material breach.
+</p>
+
+<p>
+Contractor shall not knowingly use an affiliated
+business, subcontractor, intermediary, or separate
+payment arrangement to conceal qualifying work
+or avoid applicable referral compensation.
+</p>
+
+<h4>5.4 Unreported Work</h4>
+
+<p>
+Contractor must disclose previously unreported
+qualifying work within twenty-four (24) hours
+after discovering the omission.
+</p>
+
+<p>
+Late disclosure does not eliminate fees owed
+or automatically cure a contractual breach.
+</p>
+
+<h4>5.5 Existing Customer Relationships</h4>
+
+<p>
+This section does not apply to independently
+obtained projects or customer relationships
+Contractor can reasonably document existed
+before Company's introduction.
+</p>
+
+<h4>5.6 Survival</h4>
+
+<p>
+These obligations survive expiration or termination
+for the remainder of the applicable twelve-month
+protected period.
+</p>
+
+<h3>6. Lead Acceptance &amp; Performance</h3>
+
+<p>Contractor agrees to:</p>
+
+<ul>
+<li>Accept or decline each referral within 24 hours.</li>
+<li>Review applicable compensation before acceptance.</li>
+<li>Contact the customer within 24 hours after accepting.</li>
+<li>Provide accurate scheduling information.</li>
+<li>Notify Company promptly of missed appointments or delays.</li>
+<li>Maintain professional customer communication.</li>
+<li>Provide truthful project updates.</li>
+</ul>
+
+<p>
+Repeated missed appointments, failure to respond,
+customer abandonment, or intentional misrepresentation
+may result in suspension or removal from the network.
+</p>
+
+<p>
+Company may reassign unanswered or declined referrals.
+</p>
+
+<h3>7. Mandatory Project Reporting</h3>
+
+<p>
+Contractor must report the following events
+within twenty-four (24) hours of their occurrence:
+</p>
+
+<ul>
+<li>Initial customer contact.</li>
 <li>Appointment scheduling.</li>
-<li>Estimate preparation and quoted price.</li>
+<li>Estimate preparation and quoted amount.</li>
 <li>Customer approval or rejection.</li>
 <li>Job Start date.</li>
-<li>Original contract amount.</li>
-<li>Change orders and revised prices.</li>
+<li>Initial contract amount.</li>
+<li>Change orders and revised project value.</li>
 <li>Job Completion date.</li>
 <li>Final invoice amount.</li>
 <li>Qualifying repeat work.</li>
 </ul>
 
 <p>
-Keep accurate job and assignment records
-for at least two years after completion.
+Contractor must maintain accurate project
+and assignment records for at least two
+(2) years following completion.
 </p>
 
 <p>
-When reasonably requested in writing,
-provide relevant estimates, contracts,
-invoices, change orders, and payment
-records needed to verify our fees.
-You should ordinarily respond within
-five business days.
+Upon reasonable written request, Contractor shall
+provide relevant estimates, contracts, invoices,
+change orders, and payment records necessary
+to verify applicable referral compensation.
 </p>
 
 <p>
-We may lawfully contact referred customers
-to confirm job status, appointment attendance,
-and project amounts.
+Contractor shall ordinarily respond within
+five (5) Business Days.
 </p>
 
 <p>
-Knowingly hiding revenue or providing false
-job information is a serious breach of
-this agreement.
-</p>
-
-<h3>5. Insurance, Legal Requirements and Protection</h3>
-
-<h4>Required Credentials</h4>
-
-<p>
-You must maintain all licenses, registrations,
-permits, qualifications, and business authority
-required by law for the work you accept.
+Company may lawfully contact referred customers
+to verify project status, appointment attendance,
+and applicable project amounts.
 </p>
 
 <p>
-Before receiving your first independent
-project referral, provide a current
-certificate of insurance showing:
+Knowingly concealing revenue or falsifying
+project information constitutes a material breach.
+</p>
+
+<h3>8. Licensing, Registration &amp; Insurance</h3>
+
+<p>
+Contractor must maintain all licenses,
+registrations, permits, qualifications,
+and business authority required by law
+for the services it accepts.
+</p>
+
+<p>
+Before receiving the first independent
+project referral, Contractor must provide
+a current certificate of insurance demonstrating:
 </p>
 
 <ul>
-<li>General liability insurance of $1 million per occurrence.</li>
-<li>General liability insurance of $2 million total aggregate coverage.</li>
-<li>Workers' compensation insurance when legally required.</li>
+<li>Commercial General Liability: $1,000,000 per occurrence.</li>
+<li>Commercial General Liability: $2,000,000 general aggregate.</li>
+<li>Workers' Compensation where required by applicable law.</li>
 </ul>
 
 <p>
-We may require additional insurance for
-specialized or higher-risk work.
+Company may require additional coverage
+appropriate to specialized or higher-risk services.
 </p>
 
 <p>
-Promptly notify us if required credentials
-or insurance expire, are canceled, suspended,
-or materially change.
+Contractor must promptly notify Company if
+required insurance or credentials expire,
+are canceled, suspended, or materially change.
 </p>
 
 <p>
-We may verify your credentials and stop
-referrals until satisfactory proof is provided.
+Company may verify credentials and suspend
+referrals until satisfactory documentation
+is provided.
+</p>
+
+<h4>8.1 Conditional Applicant Review</h4>
+
+<p>
+An applicant who does not currently maintain
+required registration, insurance, or
+professional qualifications may submit
+information for preliminary review.
 </p>
 
 <p>
-You may apply without current credentials
-for preliminary review. This does not mean
-you are approved. No independent contracting
-assignment will be authorized until all
-applicable requirements are met.
+Conditional review does not constitute
+approval as an independent contractor
+within the Omaha Restoration network.
 </p>
 
 <p>
-Any employment opportunity with another
-business requires separate review and
-is not authorized by this agreement.
+No independent contracting assignment
+shall be authorized until all applicable
+requirements are satisfied.
 </p>
 
 <p>
-You must follow the laws and requirements
-of every state, city, and service category
-where you work. Approval for one location
-or service does not approve you for all others.
+Any separate opportunity involving employment
+by another business must be evaluated
+independently and is not authorized
+under this Agreement.
 </p>
 
-<h4>Customer Information and Our Brand</h4>
+<h4>8.2 Jurisdiction-Specific Requirements</h4>
 
 <p>
-Customer information, job inquiries,
-referral records, and our nonpublic
-business information are confidential.
-Use them only for legitimate referred
-work, lawful recordkeeping, and related
+Contractor is responsible for satisfying
+the legal and regulatory requirements
+applicable to the state, municipality,
+and service category where work occurs.
+</p>
+
+<p>
+Approval for one service or jurisdiction
+does not establish approval for every
+other service or jurisdiction.
+</p>
+
+<h3>9. Confidentiality &amp; Brand Protection</h3>
+
+<p>
+Customer information, project inquiries,
+lead records, and nonpublic Company business
+information disclosed through the referral
+relationship are confidential.
+</p>
+
+<p>
+Contractor may use this information only for
+legitimate purposes associated with the referred
+project, lawful recordkeeping, and related
 customer obligations.
 </p>
 
 <p>
-Do not sell, improperly share, or disclose
-this information to unauthorized people.
+Contractor may not sell, improperly distribute,
+or disclose confidential referral information
+to unauthorized third parties.
+</p>
+
+<p>Contractor may not:</p>
+
+<ul>
+<li>Claim to be an employee of Omaha Restoration™.</li>
+<li>Claim authority to bind Company.</li>
+<li>Make unauthorized promises on Company's behalf.</li>
+<li>Use Company logos or trademarks without written permission.</li>
+<li>Misrepresent its qualifications or relationship with Company.</li>
+<li>Intentionally misuse referral information to avoid fees.</li>
+</ul>
+
+<p>
+Applicable confidentiality obligations survive
+termination, subject to law and legitimate
+disclosure requirements.
+</p>
+
+<h3>10. Independent Contractor Liability &amp; Indemnification</h3>
+
+<p>
+Contractor is an independent business responsible
+for its own personnel, subcontractors, taxes,
+insurance, permits, equipment, project methods,
+jobsite safety, workmanship, and customer contracts.
 </p>
 
 <p>
-You cannot claim to be our employee,
-claim authority to bind us, make unauthorized
-promises for us, use our logos or trademarks
-without written permission, misrepresent
-your qualifications or relationship with us,
-or intentionally misuse referral information
-to avoid fees.
-</p>
-
-<p>
-These confidentiality duties continue after
-this agreement ends, subject to law and
-legitimate disclosure requirements.
-</p>
-
-<h4>Responsibility for Claims</h4>
-
-<p>
-You are responsible for your own business
-operations, workers, subcontractors, and work.
-</p>
-
-<p>
-To the extent allowed by law, you agree
-to defend, indemnify, and hold harmless
-Murrays Empire LLC, Omaha Restoration™,
-and their owners, members, managers,
-and authorized representatives against
-third-party claims, damages, liabilities,
+To the extent permitted by law, Contractor shall
+defend, indemnify, and hold harmless Murrays Empire LLC,
+Omaha Restoration™, and their respective owners,
+members, managers, and authorized representatives
+against third-party claims, damages, liabilities,
 and reasonable expenses arising from:
 </p>
 
 <ul>
-<li>Your negligence, including acts or failures to act.</li>
-<li>Your violations of this agreement.</li>
-<li>Your unlawful conduct.</li>
-<li>Your workers or subcontractors.</li>
-<li>Your physical work or jobsite operations.</li>
-<li>Your failure to obtain legally required permits or credentials.</li>
+<li>Contractor's negligent acts or omissions.</li>
+<li>Contractor's contractual breaches.</li>
+<li>Contractor's unlawful conduct.</li>
+<li>Contractor's personnel or subcontractors.</li>
+<li>Contractor's physical work or jobsite operations.</li>
+<li>Failure to obtain legally required permits or credentials.</li>
 </ul>
 
 <p>
-This means you must provide the applicable
-legal defense and protection against covered
-claims arising from your business and work.
-</p>
-
-<p>
 This provision does not require indemnification
-for our own negligence, misconduct, or
-other liability where prohibited by law.
+for Company's own negligence, misconduct,
+or other liability where prohibited by law.
 </p>
 
-<h3>6. Agreement Length, Termination and Disputes</h3>
+<h3>11. Term, Renewal &amp; Termination</h3>
 
-<h4>How Long the Agreement Lasts</h4>
+<h4>11.1 Initial Term</h4>
 
 <p>
-This agreement lasts 12 months from our
-documented acceptance and automatically
-renews for another 12 months at a time
-unless ended under these terms.
+This Agreement has an initial term of twelve
+(12) months beginning upon Company's documented
+acceptance.
 </p>
 
-<p>
-Either side may end the agreement with
-30 days' written notice.
-</p>
+<h4>11.2 Automatic Renewal</h4>
 
 <p>
-We may end it immediately by written
-notice for:
+The Agreement automatically renews for successive
+twelve-month periods unless terminated in
+accordance with this section.
+</p>
+
+<h4>11.3 Standard Termination</h4>
+
+<p>
+Either Party may terminate the Agreement
+upon thirty (30) days' written notice.
+</p>
+
+<h4>11.4 Immediate Termination</h4>
+
+<p>
+Company may terminate immediately upon
+written notice for:
 </p>
 
 <ul>
-<li>A serious contract violation.</li>
-<li>Fraud or intentional dishonesty.</li>
-<li>Failure to pay undisputed fees.</li>
-<li>Intentionally bypassing our referral fees.</li>
-<li>Serious insurance or licensing violations.</li>
+<li>Material contractual breach.</li>
+<li>Fraud or intentional misrepresentation.</li>
+<li>Nonpayment of undisputed fees.</li>
+<li>Intentional referral circumvention.</li>
+<li>Material insurance or licensing violations.</li>
 <li>Serious customer safety violations.</li>
 </ul>
 
 <p>
-We may temporarily stop referrals while
-investigating credible compliance concerns.
+Company may temporarily suspend referrals
+while investigating credible compliance concerns.
+</p>
+
+<h4>11.5 Continuing Obligations</h4>
+
+<p>
+Termination does not eliminate accrued referral
+fees or qualifying payment obligations arising
+from referrals made before termination.
 </p>
 
 <p>
-Ending this agreement does not erase
-fees already owed or qualifying payment
-obligations from referrals made before
-termination.
+Applicable confidentiality, recordkeeping,
+indemnification, dispute-resolution, and
+non-circumvention obligations survive termination.
+</p>
+
+<h3>12. Nebraska Law &amp; Binding Arbitration</h3>
+
+<p>
+This Agreement is governed by Nebraska law,
+subject to mandatory applicable laws
+in other jurisdictions.
 </p>
 
 <p>
-Applicable customer protection, confidentiality,
-recordkeeping, indemnification, and dispute
-resolution duties continue after termination.
-</p>
-
-<h4>Disagreements</h4>
-
-<p>
-Nebraska law governs this agreement,
-subject to mandatory laws that apply
-in other locations.
+Before commencing arbitration, a Party must
+provide written notice describing the dispute
+and requested remedy.
 </p>
 
 <p>
-Before starting arbitration, the party
-raising the dispute must provide written
-notice explaining the problem and requested
-solution.
+The Parties shall attempt good-faith informal
+resolution for fifteen (15) calendar days.
 </p>
 
 <p>
-Both sides must try in good faith to
-resolve the dispute for 15 calendar days.
+Unresolved disputes shall be resolved through
+binding arbitration administered by the
+American Arbitration Association under
+its applicable Commercial Arbitration Rules.
 </p>
 
 <p>
-If the dispute remains unresolved,
-it must be settled through binding
-arbitration administered by the American
-Arbitration Association under its applicable
-Commercial Arbitration Rules.
+Either Party may instead bring an eligible
+claim in a court of competent small-claims
+jurisdiction, subject to applicable law.
 </p>
 
 <p>
-Binding arbitration means a neutral
-decision-maker resolves the dispute
-and issues a binding decision.
+Arbitration shall take place in Douglas County,
+Nebraska, unless the Parties agree otherwise
+in writing.
 </p>
 
 <p>
-Either side may instead bring an eligible
-claim in a proper small-claims court,
-subject to applicable law.
+Unless applicable rules require otherwise,
+one neutral arbitrator shall decide the dispute.
 </p>
 
 <p>
-Arbitration takes place in Douglas County,
-Nebraska, unless both sides agree to another
-location in writing.
-</p>
-
-<p>
-One neutral arbitrator decides the dispute
-unless applicable rules require otherwise.
-</p>
-
-<p>
-Filing fees, administrative costs, and
-arbitrator compensation are initially
-allocated under applicable arbitration rules.
+Filing fees, administrative expenses,
+and arbitrator compensation shall initially
+be allocated under applicable AAA rules.
 </p>
 
 <p>
 The arbitrator may award costs and attorney
-fees only when authorized by law or an
-enforceable contract provision.
-A court with proper authority may enter
-judgment on the arbitration award.
-</p>
-
-<h4>Other Agreement Rules</h4>
-
-<p>
-You cannot transfer this agreement or
-referred job opportunities to another
-business without our prior written consent.
+fees only when authorized by applicable law
+or an enforceable contractual provision.
 </p>
 
 <p>
-Required notices may be sent through
-our designated business email addresses
-or another documented written method.
+A court of competent jurisdiction may enter
+judgment upon the arbitration award.
+</p>
+
+<h3>13. Assignment, Notices &amp; Entire Agreement</h3>
+
+<p>
+Contractor may not assign this Agreement
+or transfer referred opportunities to another
+business without Company's prior written consent.
 </p>
 
 <p>
-This is the complete agreement covering
-our referral relationship. It replaces
-earlier agreements on the same subject,
+Required notices may be delivered through
+the Parties' designated business email
+addresses or another documented written method.
+</p>
+
+<p>
+This Agreement constitutes the complete agreement
+regarding the referral relationship and supersedes
+prior agreements concerning the same subject,
 except accrued obligations expressly preserved.
 </p>
 
 <p>
-Existing assignments keep their previously
-accepted fee terms unless both sides agree
-to changes in writing.
+Existing assignments remain governed by
+their previously accepted compensation
+terms unless both Parties expressly
+agree to modify those terms in writing.
 </p>
 
 <p>
-Changes to this agreement must be accepted
-in writing by authorized representatives
-of both sides.
+Amendments must be in writing and accepted
+by authorized representatives of both Parties.
 </p>
 
 <p>
-If one provision cannot legally be enforced,
+If any provision is held unenforceable,
 the remaining provisions continue to the
 extent permitted by law.
 </p>
 
 <p>
-Not enforcing a rule once does not
-automatically waive our right to enforce
-it later.
+Failure to enforce a provision does not
+automatically waive future enforcement.
 </p>
 
-<h3>7. Signing and Approval</h3>
+<h3>14. Electronic Signature &amp; Acceptance</h3>
 
 <p>
 By electronically signing and submitting
-this application, you confirm that:
+this registration, Contractor confirms:
 </p>
 
 <ul>
-<li>You have read and understood the entire agreement.</li>
-<li>You accept all applicable referral fees and payment deadlines.</li>
-<li>You understand the small-job fee schedule and standard $150 plus 10% model.</li>
-<li>You accept the repeat-work and customer protection rules.</li>
-<li>You accept the reporting and record verification requirements.</li>
-<li>Your credential information is accurate.</li>
-<li>You will obtain and maintain required credentials before receiving independent assignments.</li>
-<li>You accept binding arbitration.</li>
-<li>You have authority to legally bind the business listed in this application.</li>
+<li>It has reviewed this Agreement.</li>
+<li>It understands the small-project fee schedule.</li>
+<li>It understands the standard $150 plus 10% compensation model.</li>
+<li>It accepts the applicable payment deadlines.</li>
+<li>It accepts applicable repeat-work provisions.</li>
+<li>It accepts reporting and verification requirements.</li>
+<li>It has accurately disclosed its credential status.</li>
+<li>It agrees to obtain and maintain required credentials before receiving independent assignments.</li>
+<li>It accepts the arbitration provisions.</li>
+<li>The signer is authorized to bind the identified business.</li>
 </ul>
 
 <p>
-Both sides agree to electronic records
-and signatures to the extent allowed by law.
+The Parties consent to electronic records
+and signatures to the extent permitted by law.
 </p>
 
 <p>
-Submitting this application is your offer
-to enter this agreement. It does not
-automatically approve your business.
+Submission constitutes Contractor's application
+and offer to enter this Agreement.
 </p>
 
 <p>
-The agreement becomes effective only
-when Omaha Restoration documents its acceptance.
+The Agreement becomes effective only upon
+Company's documented acceptance.
 </p>
 
 <p>
-We may approve, deny, suspend, or remove
-contractors under these terms.
-We do not guarantee referrals, jobs,
-or future income.
+Company may approve, deny, suspend, or remove
+contractors in accordance with this Agreement.
+No lead volume or future work is guaranteed.
 </p>
 
 </div>
@@ -1984,28 +2271,31 @@ or future income.
 
 <strong>Important:</strong>
 
-Submitting your application does not mean
-you are approved. Required credentials
-and insurance must be verified before
-independent project assignments.
+Read the complete agreement before signing.
+Submitting this form does not automatically
+approve your company for referrals.
+
+Proof of required credentials and insurance
+must be provided before independent
+project assignments are authorized.
 
 </div>
-
-<!-- REQUIRED ACCEPTANCE -->
 
 <label class="ack danger">
 
 <input type="checkbox"
-       name="Compliance_Requirements_Accepted"
+       name="Compliance_Mandate_Accepted"
        value="Yes"
        required>
 
 <span>
-I provided accurate information about
-my business, registration, licenses,
-qualifications, and insurance.
-I understand that required credentials
-must be verified before I receive jobs.
+I certify that I have accurately disclosed
+my current registration, licensing,
+qualification, and insurance status.
+I understand that I must satisfy and
+document all applicable requirements
+before receiving independent project
+referrals.
 </span>
 
 </label>
@@ -2013,16 +2303,19 @@ must be verified before I receive jobs.
 <label class="ack danger">
 
 <input type="checkbox"
-       name="Referral_Fees_Accepted"
+       name="Fee_Terms_Accepted"
        value="Yes"
        required>
 
 <span>
-I understand and accept the small-job fees
-and the standard <strong>$150 plus 10%</strong>
-fee for qualifying jobs worth $1,500 or more.
-I accept the payment deadlines, written
-assignment terms, and repeat-work fees.
+I specifically understand and accept
+the small-project referral fee schedule
+and the standard <strong>$150 Job Start fee
+PLUS 10% of Gross Project Revenue</strong>
+for qualifying projects valued at $1,500
+or more. I accept the applicable payment
+deadlines, assignment-specific written
+terms, and repeat-work referral obligations.
 </span>
 
 </label>
@@ -2030,16 +2323,18 @@ assignment terms, and repeat-work fees.
 <label class="ack">
 
 <input type="checkbox"
-       name="Customer_Protection_Accepted"
+       name="Non_Circumvention_Accepted"
        value="Yes"
        required>
 
 <span>
-I accept the 12-month customer protection
-rules. I may communicate directly with
-customers, but I cannot intentionally
-go around Omaha Restoration to avoid
-paying referral fees.
+I understand that I may communicate
+directly with referred customers for
+legitimate business purposes but may
+not intentionally bypass Omaha Restoration
+to avoid applicable referral compensation.
+I accept the twelve-month protected
+referral provisions.
 </span>
 
 </label>
@@ -2049,29 +2344,34 @@ paying referral fees.
 
 <input type="checkbox"
        id="agreementAccepted"
-       name="Complete_Agreement_Accepted"
+       name="Agreement_Accepted"
        value="Yes"
        required
        disabled>
 
 <span>
 I confirm that I have read, understood,
-and agree to the entire Omaha Restoration™
-Contractor Agreement, including all payment,
-customer protection, reporting, record
-verification, and binding arbitration terms.
-I have authority to sign for my business.
+and agree to the entire OR-CPA-2026-V8
+Omaha Restoration™ Contractor Partnership
+&amp; Referral Agreement, including
+non-circumvention, project reporting,
+record verification, payment obligations,
+and binding arbitration.
+
+I am authorized to bind the identified business.
 </span>
 
 </label>
 
-<!-- ELECTRONIC SIGNATURE -->
+<!-- SECTION 4 -->
 
 <div class="section">
 
-<h2>5. Electronic Signature</h2>
+<h2>4. Electronic Signature</h2>
 
-<p>Sign your agreement and submit your application.</p>
+<p>
+Complete the required fields to finalize your application.
+</p>
 
 </div>
 
@@ -2080,12 +2380,12 @@ I have authority to sign for my business.
 <div class="field">
 
 <label for="signer">
-  Full Legal Name *
+Authorized Signer Name *
 </label>
 
 <input id="signer"
-       name="Authorized_Signer"
        type="text"
+       name="Signature_Printed_Name"
        required>
 
 </div>
@@ -2093,27 +2393,13 @@ I have authority to sign for my business.
 <div class="field">
 
 <label for="title">
-  Position / Title *
+Title / Position *
 </label>
 
 <input id="title"
-       name="Signer_Position"
        type="text"
-       placeholder="Owner, President, Member"
-       required>
-
-</div>
-
-<div class="field">
-
-<label for="signature">
-  Electronic Signature *
-</label>
-
-<input id="signature"
-       name="Electronic_Signature"
-       type="text"
-       placeholder="Type your full legal name"
+       name="Signature_Title"
+       placeholder="Owner, Member, President"
        required>
 
 </div>
@@ -2121,13 +2407,27 @@ I have authority to sign for my business.
 <div class="field">
 
 <label for="signatureDate">
-  Date Signed
+Date Signed (Central Time)
 </label>
 
 <input id="signatureDate"
-       name="Date_Signed_Central"
        type="text"
+       name="Signature_Date_Central"
        readonly>
+
+</div>
+
+<div class="field">
+
+<label for="signature">
+Electronic Signature *
+</label>
+
+<input id="signature"
+       type="text"
+       name="Electronic_Signature"
+       placeholder="Type your full name"
+       required>
 
 </div>
 
@@ -2141,8 +2441,9 @@ I have authority to sign for my business.
        required>
 
 <span>
-I agree that typing my name serves as
-my electronic signature on this agreement.
+I intend my typed name to serve as my
+electronic signature and consent to
+electronic execution of this Agreement.
 </span>
 
 </label>
@@ -2151,48 +2452,13 @@ my electronic signature on this agreement.
 
 <strong>Application Review:</strong>
 
-Your application will be reviewed by
-Omaha Restoration™. Additional documents
-may be requested before approval.
+Your application will be submitted to
+Omaha Restoration™ for review.
+
+Additional documentation may be requested
+before your contractor status is approved.
 
 </div>
-
-<!-- ADMINISTRATIVE RECORDS -->
-
-<input type="hidden"
-       name="Contractor_Status"
-       value="Pending Review - Not Approved">
-
-<input type="hidden"
-       name="Agreement_Scroll_Completed"
-       id="agreementScrollCompleted"
-       value="No">
-
-<input type="hidden"
-       name="Agreement_Review_Timestamp_UTC"
-       id="agreementReviewTimestamp">
-
-<input type="hidden"
-       name="Agreement_Acceptance_Timestamp_UTC"
-       id="agreementAcceptanceTimestamp">
-
-<input type="hidden"
-       name="Submission_Timestamp_UTC"
-       id="timestamp">
-
-<input type="hidden"
-       name="Application_Reference"
-       id="applicationReference">
-
-<input type="hidden"
-       name="Agreement_Revision_Date"
-       value="2026-11-24">
-
-<!-- COMPLETE AGREEMENT SENT LAST -->
-
-<input type="hidden"
-       name="Complete_Contractor_Agreement"
-       id="agreementText">
 
 <div class="error"
      id="formError"
@@ -2219,17 +2485,16 @@ Submit Application
 Omaha Restoration™
 </div>
 
-Omaha Restoration™ is operated by
-Murrays Empire LLC.
+Omaha Restoration™ is operated by Murrays Empire LLC.
 
-We are an independent contractor referral
-and project-routing network. We do not
-perform physical restoration services.
+Omaha Restoration™ is an independent contractor
+referral and project-routing network and does
+not perform physical restoration services.
 
-Independent contractors are responsible
-for their work, credentials, insurance,
-permits, safety, workmanship, and
-customer outcomes.
+Independent contractors are solely responsible
+for their services, licensing, registration,
+insurance, permits, safety, workmanship,
+and customer outcomes.
 
 <br><br>
 
@@ -2255,13 +2520,13 @@ Murrays Empire LLC. All Rights Reserved.
   const error =
     document.getElementById("formError");
 
-  const legal =
+  const legalAgreement =
     document.getElementById("legalAgreement");
 
-  const review =
+  const agreementReview =
     document.getElementById("agreementReview");
 
-  const accepted =
+  const agreementAccepted =
     document.getElementById("agreementAccepted");
 
   const acceptanceLabel =
@@ -2276,27 +2541,33 @@ Murrays Empire LLC. All Rights Reserved.
   const acceptanceTimestamp =
     document.getElementById("agreementAcceptanceTimestamp");
 
-  const requiredMessage =
+  const agreementVersion =
+    "OR-CPA-2026-V8";
+
+  const reviewRequiredMessage =
     "Please read the entire Omaha Restoration™ " +
     "Contractor Agreement before signing and " +
     "submitting your application. You must scroll " +
     "to the bottom of the agreement to continue.";
+
+  let submitting = false;
+  let initialized = false;
+  let agreementReviewed = false;
+  let reviewCompletedAt = "";
+  let acceptedAt = "";
 
   const scrollBehavior =
     window.matchMedia("(prefers-reduced-motion: reduce)").matches
     ? "auto"
     : "smooth";
 
-  let initialized = false;
-  let submitting = false;
-  let reviewed = false;
-  let reviewedAt = "";
-  let acceptedAt = "";
-
   document.getElementById("year").textContent =
     new Date().getFullYear();
 
-  /* UNIQUE APPLICATION REFERENCE */
+  document.getElementById("userAgent").value =
+    navigator.userAgent;
+
+  /* APPLICATION REFERENCE */
 
   function generateReference(){
 
@@ -2304,18 +2575,25 @@ Murrays Empire LLC. All Rights Reserved.
 
     window.crypto.getRandomValues(random);
 
+    const identifier = Array.from(random)
+      .map(function(value){
+
+        return value
+          .toString(16)
+          .padStart(2,"0");
+
+      })
+      .join("")
+      .toUpperCase();
+
     return "OR-" +
       new Date().getFullYear() +
       "-" +
-      Array.from(random).map(function(value){
-
-        return value.toString(16).padStart(2,"0");
-
-      }).join("").toUpperCase();
+      identifier;
 
   }
 
-  /* RECORD DATE AND TIME */
+  /* CENTRAL TIME SIGNATURE RECORD */
 
   function setTime(){
 
@@ -2324,16 +2602,19 @@ Murrays Empire LLC. All Rights Reserved.
     document.getElementById("timestamp").value =
       now.toISOString();
 
+    const dateParts =
+      new Intl.DateTimeFormat("en-US",{
+
+        timeZone:"America/Chicago",
+        year:"numeric",
+        month:"2-digit",
+        day:"2-digit"
+
+      }).formatToParts(now);
+
     const parts = {};
 
-    new Intl.DateTimeFormat("en-US",{
-
-      timeZone:"America/Chicago",
-      year:"numeric",
-      month:"2-digit",
-      day:"2-digit"
-
-    }).formatToParts(now).forEach(function(part){
+    dateParts.forEach(function(part){
 
       if(part.type !== "literal"){
 
@@ -2350,27 +2631,42 @@ Murrays Empire LLC. All Rights Reserved.
 
   }
 
-  /* CAPTURE COMPLETE AGREEMENT */
+  /* CAPTURE COMPLETE CONTRACT */
 
   function captureAgreement(){
 
-    const text = legal.innerText.trim();
+    const agreementText =
+      legalAgreement.innerText.trim();
 
-    if(!text){
+    if(!agreementText){
 
-      throw new Error("Agreement text is missing.");
+      throw new Error(
+        "The contractor agreement could not be captured."
+      );
 
     }
 
     document.getElementById("agreementText").value =
-      "OMAHA RESTORATION™ CONTRACTOR AGREEMENT\n\n" +
-      text;
+      agreementVersion +
+      "\n\n" +
+      agreementText;
 
   }
 
-  /* COMBINE SELECTED SERVICES AND AREAS */
+  /* SERVICE SELECTION VALIDATION */
 
-  function selectedValues(group){
+  function selected(group){
+
+    return !!document.querySelector(
+
+      "#" + group +
+      ' input[type="checkbox"]:checked'
+
+    );
+
+  }
+
+  function selectedNames(group){
 
     return Array.from(
 
@@ -2383,11 +2679,15 @@ Murrays Empire LLC. All Rights Reserved.
 
     ).map(function(input){
 
-      return input.value;
+      return input.closest("label")
+        .innerText
+        .trim();
 
     }).join(", ");
 
   }
+
+  /* SIGNATURE VALIDATION */
 
   function normalizeName(value){
 
@@ -2397,126 +2697,132 @@ Murrays Empire LLC. All Rights Reserved.
 
   }
 
-  /* VALIDATION MESSAGES */
+  /* DISPLAY VALIDATION ERRORS */
 
   function clearError(){
 
-    error.textContent = "";
     error.style.display = "none";
+    error.textContent = "";
 
   }
 
-  function showError(message,target){
+  function showError(message,element){
 
     error.textContent = message;
     error.style.display = "block";
 
-    if(target){
+    const target = element || error;
 
-      target.focus({preventScroll:true});
+    if(target.focus){
 
-      target.scrollIntoView({
-
-        behavior:scrollBehavior,
-        block:"center"
-
-      });
-
-    }else{
-
-      error.focus({preventScroll:true});
-
-      error.scrollIntoView({
-
-        behavior:scrollBehavior,
-        block:"center"
-
+      target.focus({
+        preventScroll:true
       });
 
     }
+
+    target.scrollIntoView({
+
+      behavior:scrollBehavior,
+      block:"center"
+
+    });
 
   }
 
   /* RESET AGREEMENT REVIEW */
 
-  function resetReview(){
+  function resetAgreementReview(){
 
-    reviewed = false;
-    reviewedAt = "";
+    agreementReviewed = false;
+    reviewCompletedAt = "";
     acceptedAt = "";
-
-    accepted.checked = false;
-    accepted.disabled = true;
 
     scrollCompleted.value = "No";
     reviewTimestamp.value = "";
     acceptanceTimestamp.value = "";
 
+    agreementAccepted.checked = false;
+    agreementAccepted.disabled = true;
+
     acceptanceLabel.classList.add("locked");
 
-    review.classList.remove(
+    agreementReview.classList.remove(
       "completed",
       "attention"
     );
 
-    review.innerHTML =
+    agreementReview.innerHTML =
       "<strong>AGREEMENT REVIEW REQUIRED</strong>" +
-      requiredMessage;
+      reviewRequiredMessage;
 
-    legal.scrollTop = 0;
+    legalAgreement.scrollTop = 0;
 
   }
 
-  /* REQUIRE SCROLLING TO THE BOTTOM */
+  /* VERIFY AGREEMENT SCROLL COMPLETION */
 
-  function checkReview(){
+  function checkAgreementReview(){
 
-    if(!initialized || reviewed){
-
+    if(!initialized || agreementReviewed){
       return;
-
     }
 
-    if(legal.clientHeight <= 0){
+    const totalHeight =
+      legalAgreement.scrollHeight;
 
+    const visibleHeight =
+      legalAgreement.clientHeight;
+
+    const currentPosition =
+      legalAgreement.scrollTop;
+
+    if(visibleHeight <= 0){
       return;
-
     }
 
     const remaining =
-      legal.scrollHeight -
-      legal.clientHeight -
-      legal.scrollTop;
+      totalHeight -
+      visibleHeight -
+      currentPosition;
 
     if(remaining <= 2){
 
-      reviewed = true;
+      agreementReviewed = true;
 
-      reviewedAt =
+      reviewCompletedAt =
         new Date().toISOString();
 
       scrollCompleted.value = "Yes";
 
       reviewTimestamp.value =
-        reviewedAt;
+        reviewCompletedAt;
 
-      accepted.disabled = false;
+      agreementAccepted.disabled = false;
 
-      acceptanceLabel.classList.remove("locked");
+      acceptanceLabel.classList.remove(
+        "locked"
+      );
 
-      review.classList.remove("attention");
+      agreementReview.classList.remove(
+        "attention"
+      );
 
-      review.classList.add("completed");
+      agreementReview.classList.add(
+        "completed"
+      );
 
-      review.innerHTML =
+      agreementReview.innerHTML =
         "<strong>AGREEMENT REVIEW COMPLETED</strong>" +
         "Please confirm that you have read, " +
         "understood, and accepted the entire " +
         "Contractor Agreement.";
 
-      if(error.textContent.indexOf(
-        "AGREEMENT REVIEW REQUIRED"
-      ) === 0){
+      if(
+        error.textContent.indexOf(
+          "AGREEMENT REVIEW REQUIRED"
+        ) === 0
+      ){
 
         clearError();
 
@@ -2526,74 +2832,46 @@ Murrays Empire LLC. All Rights Reserved.
 
   }
 
-  legal.addEventListener(
+  legalAgreement.addEventListener(
 
     "scroll",
-    checkReview,
+    checkAgreementReview,
     {passive:true}
 
   );
 
-  /* RECORD AGREEMENT ACCEPTANCE */
+  /* RECORD EXPLICIT AGREEMENT ACCEPTANCE */
 
-  accepted.addEventListener("change",function(){
+  agreementAccepted.addEventListener(
 
-    if(!reviewed){
+    "change",
 
-      accepted.checked = false;
-      accepted.disabled = true;
-      acceptedAt = "";
-      acceptanceTimestamp.value = "";
+    function(){
 
-      return;
+      if(!agreementReviewed){
 
-    }
+        agreementAccepted.checked = false;
+        agreementAccepted.disabled = true;
 
-    acceptedAt = accepted.checked
-      ? new Date().toISOString()
-      : "";
+        acceptedAt = "";
+        acceptanceTimestamp.value = "";
 
-    acceptanceTimestamp.value =
-      acceptedAt;
+        return;
 
-  });
+      }
 
-  /* RETURN CONTRACTOR TO AGREEMENT */
+      if(agreementAccepted.checked){
 
-  function requireReview(){
+        acceptedAt =
+          new Date().toISOString();
 
-    if(reviewed && reviewedAt){
+        acceptanceTimestamp.value =
+          acceptedAt;
 
-      return true;
+      }else{
 
-    }
-
-    review.classList.add("attention");
-
-    showError(
-
-      "AGREEMENT REVIEW REQUIRED. " +
-      requiredMessage,
-
-      review
-
-    );
-
-    return false;
-
-  }
-
-  acceptanceLabel.addEventListener(
-
-    "click",
-
-    function(event){
-
-      if(!reviewed){
-
-        event.preventDefault();
-
-        requireReview();
+        acceptedAt = "";
+        acceptanceTimestamp.value = "";
 
       }
 
@@ -2601,11 +2879,79 @@ Murrays Empire LLC. All Rights Reserved.
 
   );
 
-  /* INITIALIZE APPLICATION */
+  /* REQUIRE AGREEMENT REVIEW BEFORE SUBMISSION */
+
+  function requireAgreementReview(){
+
+    if(
+      agreementReviewed &&
+      reviewCompletedAt
+    ){
+
+      return true;
+
+    }
+
+    agreementReview.classList.add(
+      "attention"
+    );
+
+    showError(
+
+      "AGREEMENT REVIEW REQUIRED. " +
+      reviewRequiredMessage,
+
+      agreementReview
+
+    );
+
+    return false;
+
+  }
+
+  /* DISPLAY WARNING IF LOCKED CHECKBOX IS SELECTED */
+
+  acceptanceLabel.addEventListener(
+
+    "click",
+
+    function(event){
+
+      if(!agreementReviewed){
+
+        event.preventDefault();
+
+        requireAgreementReview();
+
+      }
+
+    }
+
+  );
+
+  /* CHECK AGREEMENT BEFORE NATIVE FORM VALIDATION */
+
+  button.addEventListener(
+
+    "click",
+
+    function(event){
+
+      if(!requireAgreementReview()){
+
+        event.preventDefault();
+
+      }
+
+    }
+
+  );
+
+  /* INITIALIZE REGISTRATION */
 
   try{
 
-    resetReview();
+    resetAgreementReview();
 
     setTime();
 
@@ -2619,24 +2965,46 @@ Murrays Empire LLC. All Rights Reserved.
 
     button.disabled = false;
 
-    checkReview();
+    /*
+      JavaScript handles validation order so that
+      the agreement warning appears before other
+      missing-field messages when submitting.
+    */
+
+    form.noValidate = true;
+
+    /*
+      If the agreement is fully visible without
+      scrolling, allow acknowledgment.
+    */
+
+    if(
+      legalAgreement.clientHeight > 0 &&
+      legalAgreement.scrollHeight <=
+      legalAgreement.clientHeight + 2
+    ){
+
+      checkAgreementReview();
+
+    }
 
   }catch(initializationError){
 
     initialized = false;
 
-    button.disabled = true;
-
     showError(
 
-      "The application could not load correctly. " +
-      "Please refresh the page or contact Omaha Restoration."
+      "The application could not initialize. " +
+      "Please refresh the page or contact " +
+      "Omaha Restoration for assistance."
 
     );
 
+    button.disabled = true;
+
   }
 
-  /* VALIDATE APPLICATION */
+  /* VALIDATE BEFORE TRADITIONAL HTML POST */
 
   form.addEventListener("submit",function(event){
 
@@ -2650,7 +3018,9 @@ Murrays Empire LLC. All Rights Reserved.
 
     clearError();
 
-    if(!requireReview()){
+    /* MANDATORY AGREEMENT REVIEW */
+
+    if(!requireAgreementReview()){
 
       event.preventDefault();
 
@@ -2658,9 +3028,11 @@ Murrays Empire LLC. All Rights Reserved.
 
     }
 
+    /* MANDATORY AGREEMENT ACCEPTANCE */
+
     if(
-      !accepted.checked ||
-      accepted.disabled ||
+      !agreementAccepted.checked ||
+      agreementAccepted.disabled ||
       !acceptedAt
     ){
 
@@ -2668,16 +3040,20 @@ Murrays Empire LLC. All Rights Reserved.
 
       showError(
 
+        "AGREEMENT ACCEPTANCE REQUIRED. " +
         "Please confirm that you have read, " +
-        "understood, and accepted the agreement.",
+        "understood, and accepted the entire " +
+        "Contractor Agreement.",
 
-        accepted
+        agreementAccepted
 
       );
 
       return;
 
     }
+
+    /* VALIDATE REQUIRED FORM FIELDS */
 
     if(!form.checkValidity()){
 
@@ -2689,11 +3065,9 @@ Murrays Empire LLC. All Rights Reserved.
 
     }
 
-    const areas = selectedValues("areas");
+    /* SERVICE AREA REQUIRED */
 
-    const services = selectedValues("services");
-
-    if(!areas){
+    if(!selected("areas")){
 
       event.preventDefault();
 
@@ -2709,13 +3083,15 @@ Murrays Empire LLC. All Rights Reserved.
 
     }
 
-    if(!services){
+    /* SERVICE TYPE REQUIRED */
+
+    if(!selected("services")){
 
       event.preventDefault();
 
       showError(
 
-        "Please select at least one service.",
+        "Please select at least one service type.",
 
         document.querySelector("#services input")
 
@@ -2725,36 +3101,7 @@ Murrays Empire LLC. All Rights Reserved.
 
     }
 
-    const registrationStatus =
-      document.getElementById("registrationStatus").value;
-
-    const registrationNumber =
-      document.getElementById("registration").value.trim();
-
-    if(
-
-      registrationStatus === "Current" &&
-
-      (
-        !registrationNumber ||
-        registrationNumber.toLowerCase() === "n/a"
-      )
-
-    ){
-
-      event.preventDefault();
-
-      showError(
-
-        "Please enter your current registration or license number.",
-
-        document.getElementById("registration")
-
-      );
-
-      return;
-
-    }
+    /* ELECTRONIC SIGNATURE MUST MATCH */
 
     const signer = normalizeName(
 
@@ -2774,7 +3121,8 @@ Murrays Empire LLC. All Rights Reserved.
 
       showError(
 
-        "Your electronic signature must match your full legal name.",
+        "Your electronic signature must match " +
+        "your Authorized Signer Name.",
 
         document.getElementById("signature")
 
@@ -2784,7 +3132,50 @@ Murrays Empire LLC. All Rights Reserved.
 
     }
 
-    /* PREPARE EMAIL RECORD */
+    /* VERIFY REGISTRATION NUMBER */
+
+    const registrationStatus =
+
+      document.getElementById(
+        "registrationStatus"
+      ).value;
+
+    const registrationNumber =
+
+      document.getElementById(
+        "registration"
+      ).value.trim();
+
+    if(
+
+      registrationStatus === "Current" &&
+
+      (
+
+        !registrationNumber ||
+
+        registrationNumber.toLowerCase() === "n/a"
+
+      )
+
+    ){
+
+      event.preventDefault();
+
+      showError(
+
+        "Please provide your current contractor " +
+        "registration or license number.",
+
+        document.getElementById("registration")
+
+      );
+
+      return;
+
+    }
+
+    /* PREPARE COMPLETE SUBMISSION RECORD */
 
     try{
 
@@ -2792,49 +3183,60 @@ Murrays Empire LLC. All Rights Reserved.
 
       captureAgreement();
 
-      document.getElementById("selectedAreas").value =
-        areas;
+      document.getElementById(
+        "selectedAreas"
+      ).value = selectedNames("areas");
 
-      document.getElementById("selectedServices").value =
-        services;
+      document.getElementById(
+        "selectedServices"
+      ).value = selectedNames("services");
 
       scrollCompleted.value = "Yes";
 
       reviewTimestamp.value =
-        reviewedAt;
+        reviewCompletedAt;
 
       acceptanceTimestamp.value =
         acceptedAt;
 
-      const reference =
-        document.getElementById("applicationReference");
+      const referenceField =
+        document.getElementById(
+          "applicationReference"
+        );
 
-      if(!reference.value){
+      if(!referenceField.value){
 
-        reference.value = generateReference();
+        referenceField.value =
+          generateReference();
 
       }
 
       if(
 
-        !reference.value ||
+        !document.getElementById(
+          "agreementText"
+        ).value ||
 
-        !document.getElementById("agreementText").value ||
+        !document.getElementById(
+          "timestamp"
+        ).value ||
 
-        !document.getElementById("timestamp").value ||
+        !referenceField.value ||
 
-        !reviewed ||
+        !agreementReviewed ||
 
-        !reviewedAt ||
+        !reviewCompletedAt ||
 
         !acceptedAt ||
 
-        !accepted.checked
+        !agreementAccepted.checked
 
       ){
 
         throw new Error(
+
           "Required agreement information is missing."
+
         );
 
       }
@@ -2846,7 +3248,7 @@ Murrays Empire LLC. All Rights Reserved.
       showError(
 
         "The application could not be prepared. " +
-        "Please try again."
+        preparationError.message
 
       );
 
@@ -2854,7 +3256,7 @@ Murrays Empire LLC. All Rights Reserved.
 
     }
 
-    /* PREVENT DUPLICATE SUBMISSIONS */
+    /* PREVENT ACCIDENTAL DOUBLE SUBMISSION */
 
     submitting = true;
 
@@ -2866,17 +3268,24 @@ Murrays Empire LLC. All Rights Reserved.
     form.setAttribute("aria-busy","true");
 
     /*
-      Allow traditional HTML POST.
+      DO NOT PREVENT DEFAULT HERE.
 
-      Web3Forms receives the application
-      and processes the configured redirect.
+      The browser submits the complete form
+      directly to Web3Forms using traditional
+      HTML POST, exactly like route.html.
 
-      No AJAX or fetch is required.
+      No fetch.
+      No AJAX.
+      No JSON conversion.
+      No JavaScript redirect.
+
+      Web3Forms processes the submission
+      and handles the configured redirect.
     */
 
   });
 
-  /* RESTORE FORM IF USER RETURNS */
+  /* RESTORE BUTTON IF USER RETURNS TO PAGE */
 
   window.addEventListener("pageshow",function(event){
 
@@ -2886,15 +3295,25 @@ Murrays Empire LLC. All Rights Reserved.
 
     if(event.persisted){
 
-      resetReview();
+      resetAgreementReview();
 
       clearError();
 
-      checkReview();
-
     }
 
-    if(initialized){
+    if(
+
+      initialized &&
+
+      document.getElementById(
+        "agreementText"
+      ).value &&
+
+      document.getElementById(
+        "applicationReference"
+      ).value
+
+    ){
 
       button.disabled = false;
 
