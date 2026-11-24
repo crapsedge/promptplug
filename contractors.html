@@ -156,7 +156,7 @@ letter-spacing:.7px;
 margin-bottom:8px;
 }
 
-input:not([type=checkbox]),
+input:not([type=checkbox]):not([type=hidden]),
 select,textarea{
 width:100%;
 min-height:54px;
@@ -370,6 +370,20 @@ color:#861b1b;
 padding:14px;
 margin:16px 0;
 font-weight:700;
+overflow-wrap:anywhere;
+}
+
+.submission-status{
+display:none;
+background:#eef4fa;
+border:1px solid #ccd9e8;
+border-radius:10px;
+padding:14px;
+margin:16px 0;
+font-size:13px;
+font-weight:700;
+color:var(--navy);
+overflow-wrap:anywhere;
 }
 
 button{
@@ -455,6 +469,13 @@ Complete your application for network review.
 
 <div class="card">
 
+<noscript>
+<div class="note">
+JavaScript must be enabled to complete and
+electronically sign this application.
+</div>
+</noscript>
+
 <form id="contractorForm"
 action="https://api.web3forms.com/submit"
 method="POST">
@@ -474,16 +495,16 @@ name="from_name"
 value="Omaha Restoration Contractor Portal">
 
 <input type="hidden"
-name="redirect"
-value="https://omaharestoration.store/enrollment-submitted.html">
-
-<input type="hidden"
 name="Agreement_Version"
 value="OR-CPA-2026-V8">
 
 <input type="hidden"
 name="Contractor_Status"
 value="Submitted for Review - Not Approved">
+
+<input type="hidden"
+name="Application_Reference"
+id="applicationReference">
 
 <input type="hidden"
 name="Submission_Timestamp_UTC"
@@ -500,6 +521,10 @@ value="Electronic acceptance of OR-CPA-2026-V8">
 <input type="hidden"
 name="Agreement_Text"
 id="agreementText">
+
+<input type="hidden"
+name="Submission_Method"
+value="Electronic Contractor Registration">
 
 <input type="hidden"
 name="Compensation_Schedule"
@@ -706,7 +731,7 @@ have been verified.
 <!-- SECTION 2 -->
 
 <div class="section">
-<h2>2. Service Areas & Capabilities</h2>
+<h2>2. Service Areas &amp; Capabilities</h2>
 <p>Select the locations and services your company accepts.</p>
 </div>
 
@@ -782,7 +807,7 @@ Water Damage Mitigation
 
 <label class="check">
 <input type="checkbox" name="Service_Flood_Cleanup" value="Yes">
-Flood & Basement Cleanup
+Flood &amp; Basement Cleanup
 </label>
 
 <label class="check">
@@ -797,22 +822,22 @@ Plumbing Repairs
 
 <label class="check">
 <input type="checkbox" name="Service_Drywall" value="Yes">
-Drywall Installation & Repair
+Drywall Installation &amp; Repair
 </label>
 
 <label class="check">
 <input type="checkbox" name="Service_Painting" value="Yes">
-Interior & Exterior Painting
+Interior &amp; Exterior Painting
 </label>
 
 <label class="check">
 <input type="checkbox" name="Service_Flooring" value="Yes">
-Flooring Installation & Repair
+Flooring Installation &amp; Repair
 </label>
 
 <label class="check">
 <input type="checkbox" name="Service_Roofing" value="Yes">
-Roofing & Exterior Repairs
+Roofing &amp; Exterior Repairs
 </label>
 
 <label class="check">
@@ -822,7 +847,7 @@ General Construction
 
 <label class="check">
 <input type="checkbox" name="Service_Demolition" value="Yes">
-Demolition & Debris Removal
+Demolition &amp; Debris Removal
 </label>
 
 <label class="check">
@@ -848,7 +873,7 @@ placeholder="Describe other services your company provides"></textarea>
 <br>
 
 <div class="field">
-<label for="equipment">Equipment & Capabilities</label>
+<label for="equipment">Equipment &amp; Capabilities</label>
 <textarea id="equipment"
 name="Equipment_and_Capabilities"
 rows="4"
@@ -927,7 +952,7 @@ must be accepted in writing by both parties.
 
 <div class="legal" id="legalAgreement">
 
-<h3>1. Parties & Agreement Purpose</h3>
+<h3>1. Parties &amp; Agreement Purpose</h3>
 
 <p>
 This Contractor Partnership and Referral Agreement
@@ -1312,7 +1337,7 @@ five (5) Business Days after those charges
 are invoiced.
 </p>
 
-<h4>4.8 Project Splitting & Fee Avoidance</h4>
+<h4>4.8 Project Splitting &amp; Fee Avoidance</h4>
 
 <p>
 Contractor shall not intentionally divide,
@@ -1401,7 +1426,7 @@ in good faith. Undisputed amounts remain payable
 by their original deadlines.
 </p>
 
-<h3>5. Non-Circumvention & Repeat Customer Protection</h3>
+<h3>5. Non-Circumvention &amp; Repeat Customer Protection</h3>
 
 <h4>5.1 Protected Referral Period</h4>
 
@@ -1498,7 +1523,7 @@ for the remainder of the applicable twelve-month
 protected period.
 </p>
 
-<h3>6. Lead Acceptance & Performance</h3>
+<h3>6. Lead Acceptance &amp; Performance</h3>
 
 <p>Contractor agrees to:</p>
 
@@ -1571,7 +1596,7 @@ Knowingly concealing revenue or falsifying
 project information constitutes a material breach.
 </p>
 
-<h3>8. Licensing, Registration & Insurance</h3>
+<h3>8. Licensing, Registration &amp; Insurance</h3>
 
 <p>
 Contractor must maintain all licenses,
@@ -1652,7 +1677,7 @@ does not establish approval for every
 other service or jurisdiction.
 </p>
 
-<h3>9. Confidentiality & Brand Protection</h3>
+<h3>9. Confidentiality &amp; Brand Protection</h3>
 
 <p>
 Customer information, project inquiries,
@@ -1691,7 +1716,7 @@ termination, subject to law and legitimate
 disclosure requirements.
 </p>
 
-<h3>10. Independent Contractor Liability & Indemnification</h3>
+<h3>10. Independent Contractor Liability &amp; Indemnification</h3>
 
 <p>
 Contractor is an independent business responsible
@@ -1724,7 +1749,7 @@ for Company's own negligence, misconduct,
 or other liability where prohibited by law.
 </p>
 
-<h3>11. Term, Renewal & Termination</h3>
+<h3>11. Term, Renewal &amp; Termination</h3>
 
 <h4>11.1 Initial Term</h4>
 
@@ -1784,7 +1809,7 @@ indemnification, dispute-resolution, and
 non-circumvention obligations survive termination.
 </p>
 
-<h3>12. Nebraska Law & Binding Arbitration</h3>
+<h3>12. Nebraska Law &amp; Binding Arbitration</h3>
 
 <p>
 This Agreement is governed by Nebraska law,
@@ -1844,7 +1869,7 @@ A court of competent jurisdiction may enter
 judgment upon the arbitration award.
 </p>
 
-<h3>13. Assignment, Notices & Entire Agreement</h3>
+<h3>13. Assignment, Notices &amp; Entire Agreement</h3>
 
 <p>
 Contractor may not assign this Agreement
@@ -1888,7 +1913,7 @@ Failure to enforce a provision does not
 automatically waive future enforcement.
 </p>
 
-<h3>14. Electronic Signature & Acceptance</h3>
+<h3>14. Electronic Signature &amp; Acceptance</h3>
 
 <p>
 By electronically signing and submitting
@@ -1997,7 +2022,7 @@ value="Yes"
 required>
 <span>
 I have reviewed and agree to the complete
-OR-CPA-2026-V8 Contractor Partnership &
+OR-CPA-2026-V8 Contractor Partnership &amp;
 Referral Agreement, including non-circumvention,
 project reporting, record verification,
 payment obligations, and binding arbitration.
@@ -2070,9 +2095,21 @@ Additional documentation may be requested
 before your contractor status is approved.
 </div>
 
-<div class="error" id="formError" role="alert"></div>
+<div class="error"
+id="formError"
+role="alert"
+aria-live="assertive">
+</div>
 
-<button type="submit" id="submitBtn">
+<div class="submission-status"
+id="submissionStatus"
+role="status"
+aria-live="polite">
+</div>
+
+<button type="submit"
+id="submitBtn"
+disabled>
 Submit Application
 </button>
 
@@ -2108,75 +2145,136 @@ Murrays Empire LLC. All Rights Reserved.
 
 "use strict";
 
-const form=document.getElementById("contractorForm");
-const error=document.getElementById("formError");
-const button=document.getElementById("submitBtn");
+/* SYSTEM CONFIGURATION */
 
-document.getElementById("year").textContent=
+const form =
+document.getElementById("contractorForm");
+
+const error =
+document.getElementById("formError");
+
+const status =
+document.getElementById("submissionStatus");
+
+const button =
+document.getElementById("submitBtn");
+
+const endpoint =
+"https://api.web3forms.com/submit";
+
+const confirmationPage =
+"https://omaharestoration.store/enrollment-submitted.html";
+
+const agreementVersion =
+"OR-CPA-2026-V8";
+
+let submitting = false;
+let submitted = false;
+let uncertainSubmission = false;
+let applicationReference = "";
+
+/* INITIALIZE PAGE */
+
+document.getElementById("year").textContent =
 new Date().getFullYear();
 
-document.getElementById("userAgent").value=
+document.getElementById("userAgent").value =
 navigator.userAgent;
+
+/* UNIQUE APPLICATION REFERENCE */
+
+function generateReference(){
+
+const random = new Uint8Array(16);
+
+window.crypto.getRandomValues(random);
+
+const identifier = Array.from(random)
+.map(function(value){
+
+return value.toString(16).padStart(2,"0");
+
+})
+.join("")
+.toUpperCase();
+
+return "OR-" +
+new Date().getFullYear() +
+"-" + identifier;
+
+}
+
+/* CENTRAL TIME SIGNATURE DATE */
 
 function setTime(){
 
-const now=new Date();
+const now = new Date();
 
-document.getElementById("timestamp").value=
+document.getElementById("timestamp").value =
 now.toISOString();
 
-const dateParts=new Intl.DateTimeFormat("en-US",{
+const dateParts =
+new Intl.DateTimeFormat("en-US",{
+
 timeZone:"America/Chicago",
 year:"numeric",
 month:"2-digit",
 day:"2-digit"
+
 }).formatToParts(now);
 
-const parts={};
+const parts = {};
 
 dateParts.forEach(function(part){
-if(part.type!=="literal"){
-parts[part.type]=part.value;
+
+if(part.type !== "literal"){
+
+parts[part.type] = part.value;
+
 }
+
 });
 
-document.getElementById("signatureDate").value=
-parts.year+"-"+parts.month+"-"+parts.day;
+document.getElementById("signatureDate").value =
+parts.year + "-" +
+parts.month + "-" +
+parts.day;
 
 }
+
+/* CAPTURE COMPLETE CONTRACT */
 
 function captureAgreement(){
 
-document.getElementById("agreementText").value=
-"OR-CPA-2026-V8\n\n"+
-document.getElementById("legalAgreement").innerText;
+const agreement =
+document.getElementById("legalAgreement");
 
-}
+const agreementText =
+agreement.innerText.trim();
 
-setTime();
-captureAgreement();
+if(!agreementText){
 
-function selected(group){
-
-return !!document.querySelector(
-"#"+group+' input[type="checkbox"]:checked'
+throw new Error(
+"The contractor agreement could not be captured."
 );
 
 }
 
-function showError(message,element){
+document.getElementById("agreementText").value =
+agreementVersion + "\n\n" + agreementText;
 
-error.textContent=message;
-error.style.display="block";
-
-(element||error).scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-
-if(element&&element.focus){
-element.focus();
 }
+
+/* VALIDATION HELPERS */
+
+function selected(group){
+
+return !!document.querySelector(
+
+"#" + group +
+' input[type="checkbox"]:checked'
+
+);
 
 }
 
@@ -2188,92 +2286,567 @@ return value.trim()
 
 }
 
-form.addEventListener("submit",function(event){
+function showError(message,element){
 
-error.style.display="none";
+error.textContent = message;
+error.style.display = "block";
 
-if(!selected("areas")){
+status.style.display = "none";
 
-event.preventDefault();
+(element || error).scrollIntoView({
 
-showError(
-"Please select at least one service area.",
-document.querySelector("#areas input")
-);
-
-return;
-
-}
-
-if(!selected("services")){
-
-event.preventDefault();
-
-showError(
-"Please select at least one service type.",
-document.querySelector("#services input")
-);
-
-return;
-
-}
-
-const signer=normalizeName(
-document.getElementById("signer").value
-);
-
-const signature=normalizeName(
-document.getElementById("signature").value
-);
-
-if(!signer||signer!==signature){
-
-event.preventDefault();
-
-showError(
-"Your electronic signature must match your Authorized Signer Name.",
-document.getElementById("signature")
-);
-
-return;
-
-}
-
-const registrationStatus=
-document.getElementById("registrationStatus").value;
-
-const registrationNumber=
-document.getElementById("registration").value.trim();
-
-if(
-registrationStatus==="Current"&&
-(!registrationNumber||
-registrationNumber.toLowerCase()==="n/a")
-){
-
-event.preventDefault();
-
-showError(
-"Please provide your current contractor registration or license number.",
-document.getElementById("registration")
-);
-
-return;
-
-}
-
-setTime();
-captureAgreement();
-
-button.disabled=true;
-button.textContent="Submitting Application...";
+behavior:"smooth",
+block:"center"
 
 });
 
+if(element && element.focus){
+
+element.focus();
+
+}
+
+}
+
+function showStatus(message){
+
+status.textContent = message;
+status.style.display = "block";
+
+}
+
+function resetButton(){
+
+submitting = false;
+
+form.removeAttribute("aria-busy");
+
+if(submitted){
+
+button.disabled = true;
+
+button.textContent =
+"Application Submitted Successfully";
+
+return;
+
+}
+
+if(uncertainSubmission){
+
+button.disabled = true;
+
+button.textContent =
+"Submission Requires Verification";
+
+return;
+
+}
+
+button.disabled = false;
+
+button.textContent =
+"Submit Application";
+
+}
+
+/* INITIAL FORM PREPARATION */
+
+try{
+
+setTime();
+
+captureAgreement();
+
+button.disabled = false;
+
+}catch(initializationError){
+
+showError(
+
+"The application could not initialize. " +
+"Please refresh the page or contact " +
+"Omaha Restoration for assistance."
+
+);
+
+button.disabled = true;
+
+}
+
+/* VERIFIED WEB3FORMS SUBMISSION */
+
+form.addEventListener("submit",async function(event){
+
+event.preventDefault();
+
+if(submitting || submitted || uncertainSubmission){
+
+return;
+
+}
+
+error.style.display = "none";
+error.textContent = "";
+
+status.style.display = "none";
+
+if(!form.reportValidity()){
+
+return;
+
+}
+
+/* VALIDATE SERVICE AREAS */
+
+if(!selected("areas")){
+
+showError(
+
+"Please select at least one service area.",
+
+document.querySelector("#areas input")
+
+);
+
+return;
+
+}
+
+/* VALIDATE SERVICES */
+
+if(!selected("services")){
+
+showError(
+
+"Please select at least one service type.",
+
+document.querySelector("#services input")
+
+);
+
+return;
+
+}
+
+/* VALIDATE ELECTRONIC SIGNATURE */
+
+const signer = normalizeName(
+
+document.getElementById("signer").value
+
+);
+
+const signature = normalizeName(
+
+document.getElementById("signature").value
+
+);
+
+if(!signer || signer !== signature){
+
+showError(
+
+"Your electronic signature must match " +
+"your Authorized Signer Name.",
+
+document.getElementById("signature")
+
+);
+
+return;
+
+}
+
+/* VALIDATE REGISTRATION STATUS */
+
+const registrationStatus =
+
+document.getElementById("registrationStatus").value;
+
+const registrationNumber =
+
+document.getElementById("registration").value.trim();
+
+if(
+
+registrationStatus === "Current" &&
+
+(
+
+!registrationNumber ||
+
+registrationNumber.toLowerCase() === "n/a"
+
+)
+
+){
+
+showError(
+
+"Please provide your current contractor " +
+"registration or license number.",
+
+document.getElementById("registration")
+
+);
+
+return;
+
+}
+
+/* PREVENT DUPLICATE SUBMISSIONS */
+
+submitting = true;
+
+button.disabled = true;
+
+button.textContent =
+"Submitting Application...";
+
+form.setAttribute("aria-busy","true");
+
+let timeout;
+
+let requestStarted = false;
+
+try{
+
+/* FINALIZE SIGNATURE RECORD */
+
+setTime();
+
+captureAgreement();
+
+if(!applicationReference){
+
+applicationReference =
+generateReference();
+
+}
+
+document.getElementById("applicationReference").value =
+applicationReference;
+
+/* PREPARE APPLICATION DATA */
+
+const formData =
+new FormData(form);
+
+const payload =
+Object.fromEntries(formData.entries());
+
+/* WEB3FORMS EMAIL SETTINGS */
+
+payload.subject =
+
+"New Signed Contractor Application | " +
+applicationReference;
+
+payload.from_name =
+
+"Omaha Restoration Contractor Portal";
+
+payload.Application_Reference =
+
+applicationReference;
+
+payload.Agreement_Version =
+
+agreementVersion;
+
+payload.Contractor_Status =
+
+"Submitted for Review - Not Approved";
+
+payload.Submission_Method =
+
+"Electronic Contractor Registration";
+
+payload.Agreement_Confirmation =
+
+"Electronically signed and accepted " +
+agreementVersion;
+
+/* INCLUDE SELECTED SERVICE AREAS */
+
+payload.Selected_Service_Areas =
+
+Array.from(
+
+document.querySelectorAll(
+"#areas input[type='checkbox']:checked"
+)
+
+)
+
+.map(function(input){
+
+return input.closest("label").innerText.trim();
+
+})
+
+.join(", ");
+
+/* INCLUDE SELECTED SERVICES */
+
+payload.Selected_Services =
+
+Array.from(
+
+document.querySelectorAll(
+"#services input[type='checkbox']:checked"
+)
+
+)
+
+.map(function(input){
+
+return input.closest("label").innerText.trim();
+
+})
+
+.join(", ");
+
+/* CONFIRM AGREEMENT DATA EXISTS */
+
+if(
+
+!payload.Agreement_Text ||
+
+!payload.Electronic_Signature ||
+
+!payload.Signature_Printed_Name ||
+
+!payload.Submission_Timestamp_UTC
+
+){
+
+throw new Error(
+
+"Required agreement or signature information " +
+"is missing."
+
+);
+
+}
+
+/* PREPARE JSON REQUEST */
+
+const requestBody =
+JSON.stringify(payload);
+
+showStatus(
+
+"Securely submitting your signed application. " +
+"Please keep this page open. " +
+"Reference: " + applicationReference
+
+);
+
+/* REQUEST TIMEOUT */
+
+const controller =
+new AbortController();
+
+timeout = setTimeout(function(){
+
+controller.abort();
+
+},45000);
+
+/* SEND COMPLETE APPLICATION */
+
+requestStarted = true;
+
+const response = await fetch(endpoint,{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json",
+
+"Accept":"application/json"
+
+},
+
+body:requestBody,
+
+signal:controller.signal
+
+});
+
+/* READ WEB3FORMS RESPONSE */
+
+let result;
+
+try{
+
+result = await response.json();
+
+}catch(parseError){
+
+uncertainSubmission = true;
+
+throw new Error(
+
+"The submission service returned an " +
+"unexpected response. HTTP status: " +
+response.status
+
+);
+
+}
+
+/* VERIFY API ACCEPTANCE */
+
+if(
+
+!response.ok ||
+
+!result ||
+
+result.success !== true
+
+){
+
+const serverMessage =
+
+result && typeof result.message === "string"
+
+? result.message
+
+: "The submission service did not confirm acceptance.";
+
+if(response.status >= 500){
+
+uncertainSubmission = true;
+
+}
+
+throw new Error(
+
+serverMessage +
+" (HTTP " + response.status + ")"
+
+);
+
+}
+
+/* CONFIRMED API SUCCESS */
+
+submitted = true;
+
+submitting = false;
+
+button.disabled = true;
+
+button.textContent =
+
+"Application Submitted Successfully";
+
+showStatus(
+
+"Your application has been accepted by " +
+"the submission service. Reference: " +
+applicationReference
+
+);
+
+form.removeAttribute("aria-busy");
+
+/* REDIRECT ONLY AFTER CONFIRMED SUCCESS */
+
+window.location.assign(confirmationPage);
+
+}catch(submissionError){
+
+if(submitted){
+
+showStatus(
+
+"Your application was submitted successfully. " +
+"Reference: " + applicationReference
+
+);
+
+return;
+
+}
+
+/* HANDLE TIMEOUT OR CONNECTION FAILURE */
+
+if(
+
+submissionError.name === "AbortError" ||
+
+(
+
+requestStarted &&
+
+submissionError instanceof TypeError
+
+)
+
+){
+
+uncertainSubmission = true;
+
+}
+
+/* PREVENT AUTOMATIC DUPLICATE SUBMISSIONS */
+
+if(uncertainSubmission){
+
+showError(
+
+"We could not verify the final submission status. " +
+"Your information remains on this page. " +
+"The application may already have been received. " +
+"Please contact Omaha Restoration before " +
+"submitting again. Reference: " +
+applicationReference
+
+);
+
+}else{
+
+showError(
+
+"Your application could not be submitted. " +
+
+submissionError.message +
+
+" Your information remains on this page. " +
+
+"Please correct the issue and try again. " +
+
+"Reference: " + applicationReference
+
+);
+
+}
+
+resetButton();
+
+}finally{
+
+clearTimeout(timeout);
+
+}
+
+});
+
+/* HANDLE BROWSER BACK NAVIGATION */
+
 window.addEventListener("pageshow",function(){
 
-button.disabled=false;
-button.textContent="Submit Application";
+if(!submitting){
+
+resetButton();
+
+}
 
 });
 
