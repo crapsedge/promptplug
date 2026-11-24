@@ -29,7 +29,6 @@ gtag("config","AW-18034717066");
 }
 
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
 
 body{
@@ -209,7 +208,7 @@ accent-color:var(--navy);
 
 .fee-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(3,minmax(0,1fr));
 gap:14px;
 margin:20px 0;
 }
@@ -223,15 +222,52 @@ padding:20px;
 
 .fee-card strong{
 display:block;
-font-size:28px;
+font-size:26px;
 color:var(--navy);
 font-weight:900;
+line-height:1.3;
 }
 
 .fee-card span{
-font-size:12px;
+display:block;
+font-size:11px;
 color:#596575;
-font-weight:700;
+font-weight:800;
+margin-top:8px;
+}
+
+.fee-card p{
+font-size:12px;
+color:#647184;
+margin:10px 0 0;
+}
+
+.fee-table{
+width:100%;
+border-collapse:collapse;
+margin:18px 0;
+font-size:13px;
+}
+
+.fee-table th{
+background:var(--navy);
+color:white;
+padding:13px;
+text-align:left;
+}
+
+.fee-table td{
+padding:12px 13px;
+border-bottom:1px solid var(--line);
+}
+
+.fee-table tr:nth-child(even){
+background:#f8fafc;
+}
+
+.fee-table td:last-child{
+font-weight:800;
+color:var(--navy);
 }
 
 .legal-top{
@@ -240,7 +276,7 @@ justify-content:space-between;
 align-items:center;
 gap:12px;
 flex-wrap:wrap;
-margin-bottom:12px;
+margin:24px 0 12px;
 }
 
 .version{
@@ -387,6 +423,7 @@ header{padding:14px 16px}
 .card{padding:25px 18px;border-radius:20px}
 .grid,.options,.fee-grid{grid-template-columns:1fr}
 .legal{padding:17px;max-height:440px}
+.fee-table{font-size:12px}
 }
 </style>
 </head>
@@ -407,11 +444,14 @@ Omaha<span>Restoration</span>™
 <h1>Contractor Registration</h1>
 
 <p class="intro">
-Apply to join the Omaha Restoration™ contractor referral network.
-Connect with available restoration, repair, and construction
-opportunities in your service area. Complete the registration,
-review the partnership agreement, and submit your application
-for approval.
+Grow your business with Omaha Restoration™.
+Connect with available restoration, repair,
+and construction opportunities without
+having to independently generate every customer.
+Our flexible referral compensation structure
+accommodates small projects, standard projects,
+and approved contractor dispatch assignments.
+Complete your registration for network review.
 </p>
 
 <div class="card">
@@ -428,7 +468,7 @@ value="23f73fab-b53f-4ce0-bdfa-0770dd1e7509">
 
 <input type="hidden"
 name="subject"
-value="Omaha Restoration Contractor Enrollment V6">
+value="Omaha Restoration Contractor Enrollment V7">
 
 <input type="hidden"
 name="from_name"
@@ -440,7 +480,7 @@ value="https://omaharestoration.store/enrollment-submitted.html">
 
 <input type="hidden"
 name="Agreement_Version"
-value="OR-CPA-2026-V6">
+value="OR-CPA-2026-V7">
 
 <input type="hidden"
 name="Contractor_Status"
@@ -456,7 +496,15 @@ id="userAgent">
 
 <input type="hidden"
 name="Agreement_Confirmation"
-value="Electronic acceptance of OR-CPA-2026-V6">
+value="Electronic acceptance of OR-CPA-2026-V7">
+
+<input type="hidden"
+name="Agreement_Text"
+id="agreementText">
+
+<input type="hidden"
+name="Compensation_Schedule"
+value="Small projects: $25/$50/$100/$150. Standard projects: $150 plus 10%. Approved dispatch-only assignments: $50 unless otherwise agreed in writing.">
 
 <input type="checkbox"
 name="botcheck"
@@ -531,6 +579,129 @@ name="Business_Website"
 placeholder="https://">
 </div>
 
+<div class="field">
+<label for="experience">Years of Experience *</label>
+<input id="experience"
+type="number"
+name="Years_of_Experience"
+min="0"
+max="100"
+required>
+</div>
+
+<div class="field">
+<label for="registrationStatus">
+Registration Status *
+</label>
+
+<select id="registrationStatus"
+name="Registration_Status"
+required>
+<option value="">Select status</option>
+<option value="Current">
+Currently Registered
+</option>
+<option value="Pending">
+Registration Pending
+</option>
+<option value="Not Registered">
+Not Currently Registered
+</option>
+<option value="Exemption Claimed">
+Legal Exemption Claimed - Subject to Verification
+</option>
+</select>
+</div>
+
+<div class="field">
+<label for="insuranceStatus">
+Liability Insurance Status *
+</label>
+
+<select id="insuranceStatus"
+name="Insurance_Status"
+required>
+<option value="">Select status</option>
+<option value="Active">
+Active Liability Insurance
+</option>
+<option value="Pending">
+Insurance Pending
+</option>
+<option value="Not Insured">
+Not Currently Insured
+</option>
+</select>
+</div>
+
+<div class="field">
+<label for="certification">
+Professional Certification
+</label>
+
+<select id="certification"
+name="Certification_Status">
+<option value="Not Specified">
+Select status
+</option>
+<option value="Current IICRC">
+Current IICRC Certification
+</option>
+<option value="Expired IICRC">
+Previous IICRC - Renewal Required
+</option>
+<option value="Other Certification">
+Other Professional Certification
+</option>
+<option value="None">
+No Current Certification
+</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="availability">
+Earliest Availability *
+</label>
+
+<select id="availability"
+name="Availability"
+required>
+<option value="">Select availability</option>
+<option value="Immediately">
+Immediately
+</option>
+<option value="Within 24 Hours">
+Within 24 Hours
+</option>
+<option value="Within 7 Days">
+Within 7 Days
+</option>
+<option value="By Appointment">
+By Appointment
+</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="portfolio">
+Previous Work / Portfolio Link
+</label>
+<input id="portfolio"
+type="url"
+name="Portfolio_URL"
+placeholder="Optional website or portfolio link">
+</div>
+
+</div>
+
+<div class="note" id="credentialNotice">
+Applicants without current credentials may
+submit their information for preliminary review.
+No independent project referrals will be
+authorized until all applicable registration,
+insurance, and qualification requirements
+have been verified.
 </div>
 
 <!-- SECTION 2 -->
@@ -572,6 +743,11 @@ Gretna
 <label class="check">
 <input type="checkbox" name="Area_Elkhorn" value="Yes">
 Elkhorn
+</label>
+
+<label class="check">
+<input type="checkbox" name="Area_Bennington" value="Yes">
+Bennington
 </label>
 
 <label class="check">
@@ -670,30 +846,94 @@ rows="3"
 placeholder="Describe other services your company provides"></textarea>
 </div>
 
+<br>
+
+<div class="field">
+<label for="equipment">Equipment & Capabilities</label>
+<textarea id="equipment"
+name="Equipment_and_Capabilities"
+rows="4"
+placeholder="Describe equipment, crew size, emergency availability, and specialized capabilities"></textarea>
+</div>
+
 <!-- SECTION 3 -->
 
 <div class="section">
 <h2>3. Contractor Partnership Agreement</h2>
-<p>Review the complete contractual terms before signing.</p>
+<p>Review the compensation structure and complete contractual terms.</p>
 </div>
 
 <div class="fee-grid">
 
 <div class="fee-card">
-<strong>$150</strong>
-<span>JOB START REFERRAL FEE</span>
+<strong>$25–$150</strong>
+<span>SMALL PROJECT REFERRALS</span>
+<p>Reduced flat fees based on total project value.</p>
 </div>
 
 <div class="fee-card">
-<strong>10%</strong>
-<span>GROSS PROJECT REVENUE FEE</span>
+<strong>$150 + 10%</strong>
+<span>STANDARD PROJECT REFERRALS</span>
+<p>Applies to qualifying projects valued at $1,500 or more.</p>
 </div>
 
+<div class="fee-card">
+<strong>$50</strong>
+<span>APPROVED DISPATCH-ONLY</span>
+<p>Flat prepaid fee for an approved contractor dispatch.</p>
+</div>
+
+</div>
+
+<table class="fee-table">
+<thead>
+<tr>
+<th>Project Value</th>
+<th>Referral Compensation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Under $250</td>
+<td>$25</td>
+</tr>
+<tr>
+<td>$250–$499.99</td>
+<td>$50</td>
+</tr>
+<tr>
+<td>$500–$999.99</td>
+<td>$100</td>
+</tr>
+<tr>
+<td>$1,000–$1,499.99</td>
+<td>$150</td>
+</tr>
+<tr>
+<td>$1,500 and above</td>
+<td>$150 + 10%</td>
+</tr>
+<tr>
+<td>Approved Dispatch-Only</td>
+<td>$50 Flat Fee</td>
+</tr>
+</tbody>
+</table>
+
+<div class="note">
+<strong>Flexible Compensation:</strong>
+The applicable fee model and responsible
+paying party will be identified in writing
+before an assignment is accepted.
+Contractors may accept or decline individual
+opportunities. Alternative compensation
+does not automatically apply to future work.
 </div>
 
 <div class="legal-top">
 <strong>OMAHA RESTORATION™ CONTRACTOR AGREEMENT</strong>
-<span class="version">OR-CPA-2026-V6</span>
+<span class="version">OR-CPA-2026-V7</span>
 </div>
 
 <div class="legal" id="legalAgreement">
@@ -710,10 +950,11 @@ registration form ("Contractor").
 </p>
 
 <p>
-The purpose of this Agreement is to establish the terms
-under which Company may introduce prospective customers
-and project opportunities to Contractor in exchange
-for agreed referral compensation.
+The purpose of this Agreement is to establish
+the terms under which Company may introduce
+prospective customers, businesses, and project
+opportunities to Contractor in exchange for
+agreed referral or dispatch compensation.
 </p>
 
 <p>
@@ -725,8 +966,8 @@ exclusive territories, or minimum earnings.
 <h3>2. Independent Referral Platform</h3>
 
 <p>
-Omaha Restoration™ operates as a contractor referral
-and project-routing network.
+Omaha Restoration™ operates as an independent
+contractor referral and project-routing network.
 </p>
 
 <p>
@@ -738,7 +979,8 @@ or other physical contracting services.
 
 <p>
 All physical services are independently estimated,
-contracted, managed, and performed by Contractor.
+contracted, managed, and performed by Contractor
+or another properly authorized service provider.
 </p>
 
 <p>
@@ -752,6 +994,14 @@ jobsite safety, warranties, and customer satisfaction.
 Nothing in this Agreement establishes employment,
 agency, franchise, joint venture, or legal partnership.
 Contractor has no authority to bind Company.
+</p>
+
+<p>
+This Agreement does not authorize Company to
+supply employees, administer payroll, supervise
+workers, or operate as an employer of record.
+Any employment-placement arrangement requires
+separate review and applicable legal compliance.
 </p>
 
 <h3>3. Definitions</h3>
@@ -842,33 +1092,166 @@ A Business Day means Monday through Friday,
 excluding federal holidays.
 </p>
 
-<h3>4. Required Referral Compensation</h3>
-
-<h4>4.1 Job Start Fee</h4>
+<h4>3.6 Assignment Confirmation</h4>
 
 <p>
-Contractor agrees to pay Company a flat referral fee
-of One Hundred Fifty Dollars ($150.00) for each
-qualifying Job Start.
+An Assignment Confirmation means a documented
+communication identifying the referred opportunity,
+applicable compensation model, responsible paying
+party, and any assignment-specific terms accepted
+by the applicable parties.
+</p>
+
+<h4>3.7 Confirmed Dispatch</h4>
+
+<p>
+A Confirmed Dispatch occurs when an approved
+independent contractor arrives at the designated
+location within the agreed appointment window
+or another mutually accepted time.
 </p>
 
 <p>
-The Job Start fee is due within five (5) Business Days
-following Job Start.
+Arrival may be verified through written confirmation
+from the requesting party, Contractor, or other
+reasonably reliable documentation.
+</p>
+
+<h3>4. Referral & Dispatch Compensation</h3>
+
+<h4>4.1 Applicable Compensation Model</h4>
+
+<p>
+Company offers three compensation models:
+</p>
+
+<ul>
+<li>Small Project Referral Compensation.</li>
+<li>Standard Project Referral Compensation.</li>
+<li>Approved Dispatch-Only Compensation.</li>
+</ul>
+
+<p>
+Company shall identify the applicable compensation
+model in writing before Contractor accepts
+an assignment.
 </p>
 
 <p>
-The fee remains payable if the customer subsequently
-cancels the project, provided a qualifying Job Start
-actually occurred.
+Contractor may accept or decline the assignment
+and its disclosed compensation terms.
 </p>
 
-<h4>4.2 Gross Project Revenue Fee</h4>
+<p>
+Contractor may not independently substitute,
+reduce, or change an accepted compensation model.
+</p>
 
 <p>
-Contractor agrees to pay Company ten percent (10%)
-of Gross Project Revenue for each qualifying
-referred project.
+Any assignment-specific modification must be
+documented and accepted in writing by the
+affected parties.
+</p>
+
+<h4>4.2 Small Project Referral Compensation</h4>
+
+<p>
+Qualifying referred projects with Gross Project
+Revenue below One Thousand Five Hundred Dollars
+($1,500.00) are eligible for the following
+flat-fee schedule:
+</p>
+
+<ul>
+<li>Under $250.00: $25.00.</li>
+<li>$250.00 through $499.99: $50.00.</li>
+<li>$500.00 through $999.99: $100.00.</li>
+<li>$1,000.00 through $1,499.99: $150.00.</li>
+</ul>
+
+<p>
+Small-project compensation replaces the standard
+$150 Job Start fee and 10% Gross Project Revenue
+fee for that qualifying assignment.
+</p>
+
+<p>
+The small-project referral fee becomes earned
+when the customer approves a paid project
+or physical paid project work begins,
+whichever occurs first.
+</p>
+
+<p>
+The applicable fee is payable within five (5)
+Business Days following that event.
+</p>
+
+<p>
+An unsuccessful estimate or inspection alone
+does not trigger a small-project referral fee
+unless a separate dispatch fee was expressly
+accepted for that assignment.
+</p>
+
+<h4>4.3 Small Project Value Adjustments</h4>
+
+<p>
+If approved change orders, additional services,
+or revised project charges increase the total
+Gross Project Revenue, the referral fee shall
+be adjusted to the applicable project-value tier.
+</p>
+
+<p>
+If the total project value reaches or exceeds
+$1,500.00, the Standard Project Referral
+Compensation model applies unless an alternative
+arrangement was expressly accepted in writing.
+</p>
+
+<p>
+Previously paid small-project referral fees
+shall be credited against the recalculated
+total referral compensation.
+</p>
+
+<p>
+Any remaining balance is payable within
+five (5) Business Days following Job Completion,
+or within five (5) Business Days following
+subsequent invoicing of additional charges.
+</p>
+
+<h4>4.4 Standard Project Job Start Fee</h4>
+
+<p>
+For qualifying standard projects valued at
+$1,500.00 or more, Contractor agrees to pay
+Company a flat referral fee of One Hundred
+Fifty Dollars ($150.00) for each qualifying
+Job Start.
+</p>
+
+<p>
+The Job Start fee is due within five (5)
+Business Days following Job Start.
+</p>
+
+<p>
+The fee remains payable if the customer
+subsequently cancels the project, provided
+a qualifying Job Start actually occurred
+and the standard compensation model
+was accepted for the assignment.
+</p>
+
+<h4>4.5 Standard Gross Project Revenue Fee</h4>
+
+<p>
+Contractor agrees to pay Company ten percent
+(10%) of Gross Project Revenue for each
+qualifying standard referred project.
 </p>
 
 <p>
@@ -876,23 +1259,132 @@ Payment is due within five (5) Business Days
 following Job Completion.
 </p>
 
-<h4>4.3 Separate Fees</h4>
-
 <p>
-The $150 Job Start fee and 10% Gross Project Revenue
-fee are separate obligations.
+The $150 Job Start fee and 10% Gross Project
+Revenue fee are separate obligations.
 </p>
 
 <p>
-The $150 fee shall not be deducted from or credited
-against the 10% revenue fee.
+Except for credits expressly provided under
+this Agreement, the $150 fee shall not be
+deducted from or credited against the
+10% revenue fee.
 </p>
 
-<h4>4.4 Additional Project Revenue</h4>
+<h4>4.6 Approved Dispatch-Only Compensation</h4>
+
+<p>
+Company may offer a flat dispatch-only
+compensation arrangement when the requesting
+party requires an independent contractor
+connection or scheduled contractor arrival.
+</p>
+
+<p>
+Unless otherwise agreed in writing, the
+dispatch-only fee is Fifty Dollars ($50.00)
+per separately confirmed assignment.
+</p>
+
+<p>
+The applicable fee and responsible paying
+party must be identified and accepted
+in writing before dispatch.
+</p>
+
+<p>
+The dispatch fee is payable in advance
+unless Company expressly authorizes
+alternative payment terms in writing.
+</p>
+
+<p>
+The dispatch fee becomes earned upon
+Confirmed Dispatch, regardless of whether
+the requesting party ultimately awards
+a project to Contractor.
+</p>
+
+<p>
+An approved dispatch-only fee replaces
+the standard project referral fees for
+that specifically identified assignment,
+unless a different compensation arrangement
+was expressly accepted in writing.
+</p>
+
+<p>
+Dispatch-only compensation does not
+automatically waive fees on separate,
+subsequent, or additional qualifying projects.
+</p>
+
+<p>
+Where a requesting business or third party
+is responsible for the dispatch fee,
+that party must separately accept its
+payment obligation in writing.
+</p>
+
+<p>
+Contractor is not responsible for a third
+party's unpaid dispatch fee unless Contractor
+expressly accepts that obligation in writing.
+</p>
+
+<h4>4.7 Dispatch Cancellation & Refunds</h4>
+
+<p>
+If the assigned contractor fails to arrive
+as agreed, Company shall offer either
+a replacement dispatch accepted by the
+requesting party or a refund of the
+unearned dispatch fee.
+</p>
+
+<p>
+If the requesting party cancels before
+Confirmed Dispatch, the fee shall be
+refunded unless a separate, reasonable
+cancellation charge was disclosed and
+accepted in writing before dispatch.
+</p>
+
+<p>
+Once Confirmed Dispatch occurs, the
+dispatch fee is earned and ordinarily
+nonrefundable, except where required
+by law or otherwise agreed in writing.
+</p>
+
+<h4>4.8 Unknown Project Value</h4>
+
+<p>
+When the project value cannot reasonably
+be determined before assignment acceptance,
+Company and Contractor may document a
+provisional project-value classification
+or agree to dispatch-only compensation.
+</p>
+
+<p>
+The final project referral fee shall be
+calculated using the actual documented
+Gross Project Revenue and the accepted
+compensation model.
+</p>
+
+<p>
+No undisclosed fee or retroactive
+compensation model may be imposed.
+</p>
+
+<h4>4.9 Additional Project Revenue</h4>
 
 <p>
 Change orders, project expansions, and additional
-charges are included in Gross Project Revenue.
+charges are included in Gross Project Revenue
+for project-based compensation models.
 </p>
 
 <p>
@@ -902,11 +1394,48 @@ five (5) Business Days after those charges
 are invoiced.
 </p>
 
-<h4>4.5 Payment Methods</h4>
+<h4>4.10 Project Splitting & Fee Avoidance</h4>
 
 <p>
-All fees must be paid using an authorized business
-payment method designated by Company.
+Contractor shall not intentionally divide,
+reclassify, underreport, or separately invoice
+a single project for the purpose of reducing
+or avoiding applicable referral compensation.
+</p>
+
+<p>
+Related work forming part of the same
+contracted project shall be evaluated
+using the combined applicable project value.
+</p>
+
+<p>
+Legitimately separate projects may be
+classified independently when supported
+by accurate documentation.
+</p>
+
+<h4>4.11 No Duplicate Compensation</h4>
+
+<p>
+Company shall not collect multiple
+alternative compensation models for
+the same assignment unless the applicable
+parties expressly agree to distinct
+services and corresponding fees in writing.
+</p>
+
+<p>
+Amounts already paid toward a project
+shall be credited when required under
+the accepted compensation arrangement.
+</p>
+
+<h4>4.12 Payment Methods</h4>
+
+<p>
+All fees must be paid using an authorized
+business payment method designated by Company.
 </p>
 
 <p>
@@ -917,10 +1446,10 @@ or another method authorized in writing.
 
 <p>
 Contractor must identify the corresponding
-project when submitting payment.
+project or assignment when submitting payment.
 </p>
 
-<h4>4.6 Late Payments</h4>
+<h4>4.13 Late Payments</h4>
 
 <p>
 Overdue, undisputed amounts may accrue a late charge
@@ -941,7 +1470,7 @@ by applicable law or awarded under the
 dispute-resolution provisions.
 </p>
 
-<h4>4.7 Payment Disputes</h4>
+<h4>4.14 Payment Disputes</h4>
 
 <p>
 Contractor must provide written notice identifying
@@ -976,20 +1505,24 @@ customer introduced by Company.
 
 <p>
 Contractor must notify Company before accepting
-additional qualifying work involving a Referred Customer
-or the originally referred property during the
-protected period.
+additional qualifying work involving a Referred
+Customer or the originally referred property
+during the protected period.
 </p>
 
 <p>
-Unless otherwise agreed in writing, each separately
-contracted qualifying additional project is subject to:
+Each separately contracted qualifying additional
+project is subject to the applicable compensation
+schedule under Section 4, unless otherwise
+agreed in writing.
 </p>
 
-<ul>
-<li>A new $150 Job Start fee.</li>
-<li>A 10% Gross Project Revenue fee.</li>
-</ul>
+<p>
+A prior small-project or dispatch-only
+arrangement does not establish a permanent
+reduced compensation arrangement for
+future projects.
+</p>
 
 <h4>5.3 Direct Customer Communication</h4>
 
@@ -1048,9 +1581,11 @@ protected period.
 
 <ul>
 <li>Accept or decline each referral within 24 hours.</li>
+<li>Review applicable compensation before acceptance.</li>
 <li>Contact the customer within 24 hours after accepting.</li>
 <li>Provide accurate scheduling information.</li>
 <li>Notify Company promptly of missed appointments or delays.</li>
+<li>Confirm arrival for dispatch-only assignments.</li>
 <li>Maintain professional customer communication.</li>
 <li>Provide truthful project updates.</li>
 </ul>
@@ -1068,6 +1603,7 @@ Company may reassign unanswered or declined referrals.
 <h3>7. Mandatory Project Reporting</h3>
 
 <p>
+For project-based compensation assignments,
 Contractor must report the following events
 within twenty-four (24) hours:
 </p>
@@ -1086,15 +1622,31 @@ within twenty-four (24) hours:
 </ul>
 
 <p>
-Contractor must maintain accurate project records
-for at least two (2) years following Job Completion.
+For approved dispatch-only assignments,
+Contractor must report appointment scheduling,
+arrival, cancellation, or failure to complete
+the scheduled dispatch.
+</p>
+
+<p>
+Project revenue reporting is not required
+for a completed dispatch-only assignment
+unless expressly agreed or reasonably
+necessary to verify a separate qualifying
+referral obligation.
+</p>
+
+<p>
+Contractor must maintain accurate project
+and assignment records for at least two
+(2) years following completion.
 </p>
 
 <p>
 Upon reasonable written request, Contractor shall
 provide relevant estimates, contracts, invoices,
 change orders, and payment records necessary
-to verify referral compensation.
+to verify applicable referral compensation.
 </p>
 
 <p>
@@ -1104,7 +1656,8 @@ five (5) Business Days.
 
 <p>
 Company may lawfully contact referred customers
-to verify project status and amounts.
+to verify project status, dispatch arrival,
+and applicable project amounts.
 </p>
 
 <p>
@@ -1115,16 +1668,16 @@ project information constitutes a material breach.
 <h3>8. Licensing, Registration & Insurance</h3>
 
 <p>
-Contractor represents that it maintains all
-licenses, registrations, permits, qualifications,
+Contractor must maintain all licenses,
+registrations, permits, qualifications,
 and business authority required by law
 for the services it accepts.
 </p>
 
 <p>
-Before receiving the first referral,
-Contractor must provide a current
-certificate of insurance demonstrating:
+Before receiving the first independent
+project referral, Contractor must provide
+a current certificate of insurance demonstrating:
 </p>
 
 <ul>
@@ -1148,6 +1701,49 @@ are canceled, suspended, or materially change.
 Company may verify credentials and suspend
 referrals until satisfactory documentation
 is provided.
+</p>
+
+<h4>8.1 Conditional Applicant Review</h4>
+
+<p>
+An applicant who does not currently maintain
+required registration, insurance, or
+professional qualifications may submit
+information for preliminary review.
+</p>
+
+<p>
+Conditional review does not constitute
+approval as an independent contractor
+within the Omaha Restoration network.
+</p>
+
+<p>
+No independent contracting assignment
+or dispatch shall be authorized until
+all applicable requirements are satisfied.
+</p>
+
+<p>
+Any separate opportunity involving employment
+by another business must be evaluated
+independently and is not authorized
+under this Agreement.
+</p>
+
+<h4>8.2 Jurisdiction-Specific Requirements</h4>
+
+<p>
+Contractor is responsible for satisfying
+the legal and regulatory requirements
+applicable to the state, municipality,
+and service category where work occurs.
+</p>
+
+<p>
+Approval for one service or jurisdiction
+does not establish approval for every
+other service or jurisdiction.
 </p>
 
 <h3>9. Confidentiality & Brand Protection</h3>
@@ -1285,7 +1881,9 @@ non-circumvention obligations survive termination.
 <h3>12. Nebraska Law & Binding Arbitration</h3>
 
 <p>
-This Agreement is governed by Nebraska law.
+This Agreement is governed by Nebraska law,
+subject to mandatory applicable laws
+in other jurisdictions.
 </p>
 
 <p>
@@ -1304,6 +1902,12 @@ Unresolved disputes shall be resolved through
 binding arbitration administered by the
 American Arbitration Association under
 its applicable Commercial Arbitration Rules.
+</p>
+
+<p>
+Either Party may instead bring an eligible
+claim in a court of competent small-claims
+jurisdiction, subject to applicable law.
 </p>
 
 <p>
@@ -1356,6 +1960,13 @@ except accrued obligations expressly preserved.
 </p>
 
 <p>
+Existing assignments remain governed by
+their previously accepted compensation
+terms unless both Parties expressly
+agree to modify those terms in writing.
+</p>
+
+<p>
 Amendments must be in writing and accepted
 by authorized representatives of both Parties.
 </p>
@@ -1380,14 +1991,16 @@ this registration, Contractor confirms:
 
 <ul>
 <li>It has reviewed this Agreement.</li>
-<li>It understands the $150 Job Start fee.</li>
-<li>It understands the additional 10% revenue fee.</li>
-<li>It accepts the payment deadlines.</li>
+<li>It understands the small-project fee schedule.</li>
+<li>It understands the standard $150 plus 10% compensation model.</li>
+<li>It understands approved dispatch-only compensation.</li>
+<li>It accepts the applicable payment deadlines.</li>
 <li>It accepts applicable repeat-work provisions.</li>
 <li>It accepts reporting and verification requirements.</li>
-<li>It agrees to maintain required credentials and insurance.</li>
+<li>It has accurately disclosed its credential status.</li>
+<li>It agrees to obtain and maintain required credentials before receiving independent assignments.</li>
 <li>It accepts the arbitration provisions.</li>
-<li>The signer is authorized to bind the business.</li>
+<li>The signer is authorized to bind the identified business.</li>
 </ul>
 
 <p>
@@ -1419,7 +2032,8 @@ Read the complete agreement before signing.
 Submitting this form does not automatically
 approve your company for referrals.
 Proof of required credentials and insurance
-must be provided before your first lead.
+must be provided before independent
+project assignments are authorized.
 </div>
 
 <label class="ack danger">
@@ -1428,11 +2042,13 @@ name="Compliance_Mandate_Accepted"
 value="Yes"
 required>
 <span>
-I certify that my business maintains all legally
-required licenses, registrations, qualifications,
-and insurance for the services it accepts.
-I agree to provide proof before receiving referrals
-and promptly report any lapse.
+I certify that I have accurately disclosed
+my current registration, licensing,
+qualification, and insurance status.
+I understand that I must satisfy and
+document all applicable requirements
+before receiving independent project
+referrals or dispatch assignments.
 </span>
 </label>
 
@@ -1442,10 +2058,31 @@ name="Fee_Terms_Accepted"
 value="Yes"
 required>
 <span>
-I specifically understand and accept the
-<strong>$150 Job Start fee PLUS 10% of Gross Project Revenue</strong>,
-the five-business-day payment deadlines,
-and applicable repeat-work referral fees.
+I specifically understand and accept
+the small-project referral fee schedule,
+the standard <strong>$150 Job Start fee
+PLUS 10% of Gross Project Revenue</strong>,
+and the approved <strong>$50 dispatch-only
+compensation model</strong>, subject to
+assignment-specific written acceptance,
+applicable payment deadlines, and
+repeat-work referral obligations.
+</span>
+</label>
+
+<label class="ack">
+<input type="checkbox"
+name="Non_Circumvention_Accepted"
+value="Yes"
+required>
+<span>
+I understand that I may communicate
+directly with referred customers for
+legitimate business purposes but may
+not intentionally bypass Omaha Restoration
+to avoid applicable referral compensation.
+I accept the twelve-month protected
+referral provisions.
 </span>
 </label>
 
@@ -1456,11 +2093,11 @@ value="Yes"
 required>
 <span>
 I have reviewed and agree to the complete
-OR-CPA-2026-V6 Contractor Partnership &
+OR-CPA-2026-V7 Contractor Partnership &
 Referral Agreement, including non-circumvention,
 project reporting, record verification,
 payment obligations, and binding arbitration.
-I am authorized to bind this business.
+I am authorized to bind the identified business.
 </span>
 </label>
 
@@ -1521,6 +2158,17 @@ electronic execution of this Agreement.
 </span>
 </label>
 
+<div class="note">
+You may print or save a copy of this
+agreement for your records before submitting.
+</div>
+
+<button type="button"
+id="printAgreement"
+style="margin-top:8px;background:white;color:#001d3d;font-size:13px;padding:15px;">
+Print / Save Agreement
+</button>
+
 <div class="error" id="formError" role="alert"></div>
 
 <button type="submit" id="submitBtn">
@@ -1557,6 +2205,8 @@ Murrays Empire LLC. All Rights Reserved.
 <script>
 (function(){
 
+"use strict";
+
 const form=document.getElementById("contractorForm");
 const error=document.getElementById("formError");
 const button=document.getElementById("submitBtn");
@@ -1568,6 +2218,7 @@ document.getElementById("userAgent").value=
 navigator.userAgent;
 
 function setTime(){
+
 const now=new Date();
 
 document.getElementById("timestamp").value=
@@ -1575,17 +2226,30 @@ now.toISOString();
 
 document.getElementById("signatureDate").value=
 now.toISOString().slice(0,10);
+
+}
+
+function captureAgreement(){
+
+document.getElementById("agreementText").value=
+"OR-CPA-2026-V7\n\n"+
+document.getElementById("legalAgreement").innerText;
+
 }
 
 setTime();
+captureAgreement();
 
 function selected(group){
+
 return !!document.querySelector(
 "#"+group+' input[type="checkbox"]:checked'
 );
+
 }
 
 function showError(message,element){
+
 error.textContent=message;
 error.style.display="block";
 
@@ -1597,6 +2261,15 @@ block:"center"
 if(element&&element.focus){
 element.focus();
 }
+
+}
+
+function normalizeName(value){
+
+return value.trim()
+.replace(/\s+/g," ")
+.toLowerCase();
+
 }
 
 form.addEventListener("submit",function(event){
@@ -1604,53 +2277,168 @@ form.addEventListener("submit",function(event){
 error.style.display="none";
 
 if(!selected("areas")){
+
 event.preventDefault();
+
 showError(
 "Please select at least one service area.",
 document.querySelector("#areas input")
 );
+
 return;
+
 }
 
 if(!selected("services")){
+
 event.preventDefault();
+
 showError(
 "Please select at least one service type.",
 document.querySelector("#services input")
 );
+
 return;
+
 }
 
-const signer=document.getElementById("signer")
-.value.trim().replace(/\s+/g," ").toLowerCase();
+const signer=normalizeName(
+document.getElementById("signer").value
+);
 
-const signature=document.getElementById("signature")
-.value.trim().replace(/\s+/g," ").toLowerCase();
+const signature=normalizeName(
+document.getElementById("signature").value
+);
 
-if(signer!==signature){
+if(!signer||signer!==signature){
+
 event.preventDefault();
 
 showError(
 "Your electronic signature must match your Authorized Signer Name.",
 document.getElementById("signature")
 );
+
 return;
+
+}
+
+const registrationStatus=
+document.getElementById("registrationStatus").value;
+
+const registrationNumber=
+document.getElementById("registration").value.trim();
+
+if(
+registrationStatus==="Current"&&
+(!registrationNumber||
+registrationNumber.toLowerCase()==="n/a")
+){
+
+event.preventDefault();
+
+showError(
+"Please provide your current contractor registration or license number.",
+document.getElementById("registration")
+);
+
+return;
+
 }
 
 setTime();
+captureAgreement();
 
 button.disabled=true;
 button.textContent="Submitting Registration...";
 
 });
 
+document.getElementById("printAgreement")
+.addEventListener("click",function(){
+
+setTime();
+
+window.print();
+
+});
+
 window.addEventListener("pageshow",function(){
+
 button.disabled=false;
 button.textContent="Submit Registration for Review";
+
 });
 
 })();
 </script>
+
+<style>
+@media print{
+
+body{
+background:white!important;
+color:black!important;
+font-size:11pt;
+}
+
+header,.home,.pill,footer,
+button,.error{
+display:none!important;
+}
+
+.wrap{
+max-width:none;
+padding:0;
+margin:0;
+}
+
+.card{
+padding:0;
+box-shadow:none;
+border-radius:0;
+}
+
+h1{
+color:black;
+font-size:24pt;
+}
+
+.intro{
+color:black;
+}
+
+.legal{
+max-height:none!important;
+height:auto!important;
+overflow:visible!important;
+border:0;
+padding:0;
+background:white;
+color:black;
+}
+
+.legal h3,.legal h4{
+break-after:avoid;
+}
+
+.ack,.fee-card,.field,.note{
+break-inside:avoid;
+}
+
+input,select,textarea{
+border:1px solid #aaa!important;
+background:white!important;
+color:black!important;
+}
+
+.fee-table th{
+background:#eee!important;
+color:black!important;
+}
+
+}
+</style>
 
 </body>
 </html>
