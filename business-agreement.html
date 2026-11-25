@@ -7,11 +7,7 @@
 
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag(){
-      dataLayer.push(arguments);
-    }
-
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-LHMPN1D7CG');
     gtag('config', 'AW-18034717066');
@@ -31,7 +27,6 @@
       --dark:#050a12;
       --gold:#c5a059;
       --red:#b31919;
-      --white:#ffffff;
       --text:#172231;
       --muted:#647184;
       --line:#e3e7ed;
@@ -312,10 +307,6 @@
       line-height:1.75;
     }
 
-    .legal h3:first-child{
-      margin-top:0;
-    }
-
     .legal section{
       border-bottom:1px solid var(--line);
       padding-bottom:10px;
@@ -324,6 +315,10 @@
     .legal section:last-child{
       border-bottom:none;
       padding-bottom:0;
+    }
+
+    .legal section:first-child h3{
+      margin-top:0;
     }
 
     .ack{
@@ -392,6 +387,13 @@
     button:disabled{
       opacity:.65;
       cursor:not-allowed;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    .legal:focus-visible{
+      outline:3px solid var(--gold);
+      outline-offset:3px;
     }
 
     footer{
@@ -533,7 +535,7 @@
 
     <input type="hidden"
            name="Agreement_Version"
-           value="OR-BCSA-2026-V3">
+           value="OR-BCSA-2026-V4">
 
     <input type="hidden"
            name="Submission_Status"
@@ -809,41 +811,25 @@
 
         <div class="fee-card">
 
-          <div class="fee-label">
-            STANDARD
-          </div>
+          <div class="fee-label">STANDARD</div>
 
-          <div class="price">
-            $150
-          </div>
+          <div class="price">$150</div>
 
-          <div class="per-person">
-            PER PERSON
-          </div>
+          <div class="per-person">PER PERSON</div>
 
-          <p>
-            At least 24 hours' advance notice.
-          </p>
+          <p>At least 24 hours' advance notice.</p>
 
         </div>
 
         <div class="fee-card rush">
 
-          <div class="fee-label">
-            RUSH
-          </div>
+          <div class="fee-label">RUSH</div>
 
-          <div class="price">
-            $300
-          </div>
+          <div class="price">$300</div>
 
-          <div class="per-person">
-            PER PERSON
-          </div>
+          <div class="per-person">PER PERSON</div>
 
-          <p>
-            Less than 24 hours' advance notice.
-          </p>
+          <p>Less than 24 hours' advance notice.</p>
 
         </div>
 
@@ -934,7 +920,7 @@
       <h2>3. Agreement Terms</h2>
 
       <div class="version">
-        OR-BCSA-2026-V3 | VERSION 3.0
+        OR-BCSA-2026-V4 | VERSION 4.0
       </div>
 
       <p class="small">
@@ -953,22 +939,35 @@
           <h3>1. Parties and Services</h3>
 
           <p>
-            This Agreement is between Murrays Empire LLC,
-            a Nebraska limited liability company operating
-            as Omaha Restoration™ ("Omaha Restoration"),
-            and the business identified above ("Client").
-            In exchange for agreed sourcing services and
-            compensation, both parties accept these terms.
+            This Business Contractor Sourcing and
+            Referral Agreement ("Agreement") is between
+            Murrays Empire LLC, a Nebraska limited
+            liability company operating under the brand
+            Omaha Restoration™ ("Company"), and the
+            business identified in this form ("Client").
           </p>
 
           <p>
-            Omaha Restoration provides independent
-            contractor sourcing, introductions, referrals,
-            and administrative coordination. Omaha
-            Restoration does not perform physical
+            Company provides independent contractor
+            sourcing, introductions, referrals, and
+            administrative coordination in exchange
+            for agreed compensation.
+          </p>
+
+          <p>
+            Company does not directly perform physical
             construction, supervise job-site activities,
-            administer payroll, or guarantee project
-            completion.
+            administer payroll, supply employees,
+            operate as an employer of record, or
+            guarantee project completion.
+          </p>
+
+          <p>
+            Nothing in this Agreement creates an
+            employment relationship, legal partnership,
+            joint venture, franchise, or agency between
+            the parties. Neither party may bind the
+            other without written authorization.
           </p>
 
         </section>
@@ -987,6 +986,13 @@
           </p>
 
           <p>
+            Fees are calculated individually for each
+            authorized person, including multiple
+            individuals from the same contracting
+            company.
+          </p>
+
+          <p>
             Recurring discounts require a separate
             written agreement establishing applicable
             rates, monthly commitment, billing period,
@@ -1000,21 +1006,28 @@
             required qualifications, arrival requirements,
             applicable fees, paying party, and any
             cancellation or repeat-assignment terms.
-            Email, text message, or electronic acceptance
-            may establish written authorization.
           </p>
 
           <p>
+            Email, text message, or electronic acceptance
+            may establish written authorization.
             Unauthorized additional personnel do not
             automatically generate additional charges.
             Silence does not constitute acceptance.
+          </p>
+
+          <p>
+            No undisclosed or retroactive compensation
+            changes may be imposed. Assignment-specific
+            pricing modifications require mutual
+            written acceptance.
           </p>
 
         </section>
 
         <section>
 
-          <h3>3. Payment Terms</h3>
+          <h3>3. Payment Terms and Collections</h3>
 
           <p>
             The applicable sourcing fee becomes earned
@@ -1026,9 +1039,9 @@
 
           <p>
             Earned fees and lawfully assessed cancellation
-            charges are payable within five business days
-            after the applicable payment trigger, unless
-            otherwise agreed in writing.
+            charges are payable within five (5) business
+            days after the applicable payment trigger,
+            unless otherwise agreed in writing.
           </p>
 
           <p>
@@ -1039,11 +1052,54 @@
           </p>
 
           <p>
+            Payments must be made through an authorized
+            business payment method designated by Company.
+            Client shall identify the applicable invoice
+            or assignment when submitting payment.
+          </p>
+
+          <p>
             Client shall reasonably cooperate in confirming
-            qualifying arrivals and promptly report disputes.
-            Omaha Restoration may suspend future services
-            while undisputed amounts remain overdue and
-            pursue lawful collection remedies.
+            qualifying arrivals and promptly report
+            material assignment discrepancies.
+          </p>
+
+          <p>
+            Overdue, undisputed amounts may accrue a
+            non-compounding late charge of 1.5% per
+            month, or the maximum rate permitted by
+            applicable law, whichever is less.
+          </p>
+
+          <p>
+            Company may suspend additional sourcing
+            services while undisputed balances remain
+            overdue and pursue lawful collection remedies.
+          </p>
+
+          <p>
+            Reasonable collection expenses, court costs,
+            and attorney fees may be recovered only to
+            the extent permitted by applicable law or
+            awarded by a court or arbitrator under an
+            enforceable contractual provision.
+          </p>
+
+          <p>
+            Client shall provide written notice of
+            invoice disputes within ten (10) business
+            days after receiving the invoice, identifying
+            the disputed amount, reason, and reasonably
+            available supporting documentation.
+          </p>
+
+          <p>
+            Both parties shall attempt to resolve
+            disputes in good faith. Undisputed amounts
+            remain payable by their original deadlines.
+            This notice requirement does not waive
+            rights or defenses that cannot lawfully
+            be waived.
           </p>
 
         </section>
@@ -1060,11 +1116,25 @@
           </p>
 
           <p>
-            Omaha Restoration does not establish or
-            administer those payments. Actual worker
-            classification depends on applicable law
-            and the circumstances of the working
-            relationship, not contractual labels alone.
+            Company does not establish or administer
+            those payments and is not responsible for
+            paying the service provider's labor,
+            wages, materials, equipment, or other
+            independently negotiated expenses.
+          </p>
+
+          <p>
+            Actual worker classification depends on
+            applicable law and the circumstances of
+            the working relationship, not contractual
+            labels alone.
+          </p>
+
+          <p>
+            Client and each service provider remain
+            responsible for their respective lawful
+            tax, insurance, employment, and contractual
+            obligations.
           </p>
 
         </section>
@@ -1075,12 +1145,16 @@
 
           <p>
             When accepted in the assignment authorization,
-            cancellation before confirmed travel begins
-            incurs no fee. Client cancellation after
-            confirmed travel begins may incur 50% of
-            the authorized sourcing fee, to the extent
-            reasonably related to anticipated losses
-            and legally enforceable.
+            Client cancellation before confirmed travel
+            begins incurs no fee.
+          </p>
+
+          <p>
+            Client cancellation after confirmed travel
+            begins may incur 50% of the authorized
+            sourcing fee, to the extent reasonably
+            related to anticipated losses and legally
+            enforceable.
           </p>
 
           <p>
@@ -1089,13 +1163,24 @@
           </p>
 
           <p>
-            No sourcing fee is owed for an individual
-            who cancels, fails to arrive, or fails to
-            satisfy the agreed arrival and qualification
-            requirements. Replacement efforts are subject
-            to availability and do not create duplicate
+            Except for an applicable Client-initiated
+            cancellation charge, no sourcing fee is
+            owed for an individual who cancels, fails
+            to arrive, or fails to satisfy the agreed
+            arrival and qualification requirements.
+          </p>
+
+          <p>
+            Replacement efforts are subject to
+            availability and do not create duplicate
             sourcing charges. Unearned payments and
             billing errors shall be refunded or corrected.
+          </p>
+
+          <p>
+            Company shall not collect both a full
+            sourcing fee and a separate cancellation
+            fee for the same individual assignment.
           </p>
 
         </section>
@@ -1105,34 +1190,61 @@
           <h3>6. Non-Circumvention and Repeat Assignments</h3>
 
           <p>
-            For twelve months following a documented
+            For twelve (12) months following a documented
             introduction, Client shall not intentionally
-            bypass Omaha Restoration to avoid expressly
-            agreed sourcing fees for qualifying assignments.
+            bypass Company to avoid expressly agreed
+            sourcing fees for qualifying assignments.
+          </p>
+
+          <p>
+            Client shall not knowingly use an affiliated
+            business, intermediary, subcontractor,
+            alternative payment arrangement, or false
+            assignment information to conceal qualifying
+            work or evade lawfully agreed fees.
           </p>
 
           <p>
             New assignments involving introduced service
             providers may generate additional fees only
             where repeat-assignment obligations, scope,
-            pricing, duration, and payment triggers were
-            expressly accepted in writing.
+            pricing, duration, and payment triggers
+            were expressly accepted in writing.
           </p>
 
           <p>
-            Additional visits necessary to complete the
-            original assignment do not automatically
-            generate new fees. This provision does not
-            prohibit direct communication, lawful worker
-            mobility, or independently established
-            business relationships.
+            Additional visits necessary to complete
+            the original assignment do not automatically
+            generate new fees.
+          </p>
+
+          <p>
+            This provision does not prohibit legitimate
+            direct communication, lawful worker mobility,
+            or independently established business
+            relationships.
           </p>
 
           <p>
             Client shall promptly disclose relevant
             pre-existing relationships concerning the
-            same assignment and report qualifying repeat
-            assignments within two business days.
+            same assignment and report qualifying
+            repeat assignments within two (2)
+            business days.
+          </p>
+
+          <p>
+            Intentional circumvention constitutes a
+            material breach. Company may pursue
+            lawfully recoverable unpaid fees and
+            proven damages without imposing
+            unauthorized penalties.
+          </p>
+
+          <p>
+            Applicable non-circumvention obligations
+            survive termination for the remainder
+            of the original twelve-month period.
           </p>
 
         </section>
@@ -1142,25 +1254,35 @@
           <h3>7. Separate Compensation Agreements</h3>
 
           <p>
-            Omaha Restoration may maintain separate
-            compensation agreements with independent
-            contracting businesses.
+            Company may maintain separate compensation
+            agreements with independent contracting
+            businesses.
           </p>
 
           <p>
             Compensation from both Client and a service
-            provider shall not be collected unless legally
-            permitted, disclosed to the affected parties,
-            and affirmatively accepted before the
-            compensated introduction.
+            provider shall not be collected unless
+            legally permitted, disclosed to the affected
+            parties, and affirmatively accepted before
+            the compensated introduction.
           </p>
 
           <p>
-            Omaha Restoration may reduce or waive fees
-            through written authorization. Client is not
-            responsible for another party's separate
-            compensation obligations unless expressly
-            agreed in writing.
+            Company may reduce or waive fees through
+            written authorization.
+          </p>
+
+          <p>
+            Client is not responsible for another
+            party's separate compensation obligations
+            unless expressly agreed in writing.
+          </p>
+
+          <p>
+            No compensation arrangement authorizes
+            prohibited employment-placement fees,
+            unlawful wage deductions, or undisclosed
+            duplicate charges.
           </p>
 
         </section>
@@ -1170,45 +1292,126 @@
           <h3>8. Responsibilities and Qualifications</h3>
 
           <p>
-            Service providers must possess the applicable
+            Service providers must possess applicable
             registrations, licenses, insurance, and
             qualifications required by law and the
             accepted assignment.
           </p>
 
           <p>
-            Omaha Restoration shall not knowingly
-            represent unverified qualifications as
-            verified. Client shall independently evaluate
-            service providers, provide accurate project
-            information, coordinate access, disclose
-            known safety concerns, and comply with
-            applicable workplace and construction
-            requirements.
+            Company shall not knowingly represent
+            unverified qualifications as verified
+            or authorize independent assignments
+            before applicable credential requirements
+            have been satisfied.
           </p>
 
           <p>
-            Omaha Restoration does not guarantee
-            continuous availability, workmanship,
-            construction pricing, insurance coverage,
-            or project completion. Neither party may
-            make unauthorized commitments on behalf
-            of the other.
+            Client shall independently evaluate service
+            providers, provide accurate project
+            information, coordinate property access,
+            disclose known safety concerns, and
+            comply with applicable workplace and
+            construction requirements.
+          </p>
+
+          <p>
+            Client and service providers are responsible
+            for independently negotiated construction
+            contracts, permits, supervision, safety,
+            workmanship, warranties, and project
+            performance according to their respective
+            legal and contractual obligations.
+          </p>
+
+          <p>
+            Company does not guarantee continuous
+            availability, workmanship, construction
+            pricing, insurance coverage, or project
+            completion.
+          </p>
+
+          <p>
+            Company may decline or suspend assignments
+            involving unsafe conditions, unlawful
+            activities, inaccurate project information,
+            or unresolved qualification concerns.
           </p>
 
         </section>
 
         <section>
 
-          <h3>9. Liability and Legal Compliance</h3>
+          <h3>9. Liability, Indemnification and Legal Compliance</h3>
 
           <p>
-            Each party remains responsible for its own
-            acts, omissions, negligence, misconduct,
-            and legal obligations. Omaha Restoration
-            does not assume construction obligations
-            independently undertaken by Client or
-            service providers.
+            Each party remains responsible for its
+            own acts, omissions, negligence, misconduct,
+            and legal obligations.
+          </p>
+
+          <p>
+            Company does not assume construction
+            obligations independently undertaken
+            by Client or service providers.
+          </p>
+
+          <p>
+            To the extent permitted by applicable law,
+            Client shall indemnify and hold harmless
+            Murrays Empire LLC, Omaha Restoration™,
+            and their respective owners, members,
+            managers, and authorized representatives
+            against third-party claims, damages,
+            liabilities, and reasonable defense
+            expenses to the extent caused by:
+          </p>
+
+          <ul>
+
+            <li>
+              Client's negligent acts or omissions.
+            </li>
+
+            <li>
+              Client's material contractual breaches.
+            </li>
+
+            <li>
+              Client's unlawful conduct or misconduct.
+            </li>
+
+            <li>
+              Unsafe conditions for which Client
+              is legally responsible.
+            </li>
+
+            <li>
+              Acts of Client's personnel for which
+              Client is legally responsible.
+            </li>
+
+            <li>
+              Client's failure to satisfy applicable
+              legal or regulatory obligations.
+            </li>
+
+          </ul>
+
+          <p>
+            This provision does not require Client
+            to indemnify Company for Company's own
+            negligence, misconduct, or other liability
+            where prohibited by applicable law.
+          </p>
+
+          <p>
+            Company shall provide reasonably prompt
+            notice of an indemnifiable claim and
+            reasonably cooperate in its resolution.
+            Neither party may impose a settlement
+            obligation on the other without written
+            consent.
           </p>
 
           <p>
@@ -1224,8 +1427,12 @@
             unlawful wage deductions, worker
             misclassification, fraudulent insurance
             activities, or other unlawful compensation
-            arrangements are authorized. Omaha Restoration
-            does not negotiate or adjust insurance claims.
+            arrangements are authorized.
+          </p>
+
+          <p>
+            Company does not negotiate or adjust
+            insurance claims.
           </p>
 
         </section>
@@ -1237,59 +1444,167 @@
           <p>
             Both parties shall reasonably protect
             confidential business, customer, property,
-            and contractor information and use it only
-            for legitimate business, contractual, or
-            legal purposes.
+            and contractor information and use it
+            only for legitimate business, contractual,
+            or legal purposes.
           </p>
 
           <p>
-            Relevant assignment authorizations, arrival
-            confirmations, invoices, payments, and
-            agreement records shall be retained for
-            at least three years, or longer when
-            required by law or an existing dispute.
+            Neither party may improperly sell,
+            disclose, distribute, or misuse confidential
+            information received through the
+            sourcing relationship.
+          </p>
+
+          <p>
+            Client may not misrepresent its relationship
+            with Company, claim unauthorized authority,
+            or use Company trademarks or branding
+            without written permission.
+          </p>
+
+          <p>
+            Relevant assignment authorizations,
+            arrival confirmations, invoices, payments,
+            and agreement records shall be retained
+            for at least three (3) years, or longer
+            when required by law or an existing dispute.
+          </p>
+
+          <p>
+            Upon reasonable written request, Client
+            shall provide relevant documentation
+            necessary to verify authorized assignments,
+            qualifying arrivals, and applicable
+            sourcing compensation.
           </p>
 
           <p>
             Client consents to transmission of submitted
-            business information and electronic signatures
-            through a third-party form processing service
-            for agreement administration and recordkeeping.
+            business information and electronic
+            signatures through a third-party form
+            processing service for agreement
+            administration and recordkeeping.
+          </p>
+
+          <p>
+            Applicable confidentiality and recordkeeping
+            obligations survive termination.
           </p>
 
         </section>
 
         <section>
 
-          <h3>11. Termination and Disputes</h3>
+          <h3>11. Termination and Binding Arbitration</h3>
 
           <p>
             This Agreement is non-exclusive and does
             not guarantee a minimum number of assignments.
-            Either party may terminate upon fifteen
-            calendar days' written notice, or immediately
-            suspend services for unlawful conduct,
-            material fraud, serious safety concerns,
-            or incurable material breach.
+            No automatic monthly subscription or
+            annual renewal commitment is established.
+          </p>
+
+          <p>
+            Either party may terminate this Agreement
+            upon fifteen (15) calendar days' written
+            notice.
+          </p>
+
+          <p>
+            Company may suspend services or terminate
+            immediately upon written notice for fraud,
+            unlawful conduct, serious safety concerns,
+            intentional circumvention, material
+            nonpayment, or an incurable material breach.
           </p>
 
           <p>
             Termination does not eliminate lawfully
-            earned fees or applicable surviving
-            obligations. Nebraska law governs this
-            Agreement. The parties shall first attempt
-            good-faith written resolution of disputes
-            for fifteen calendar days, unless urgent
-            legal relief is necessary.
+            earned fees, outstanding payment obligations,
+            or applicable surviving confidentiality,
+            indemnification, non-circumvention,
+            recordkeeping, and dispute-resolution
+            provisions.
           </p>
 
           <p>
-            Unresolved disputes may be brought before
-            a court of competent jurisdiction serving
-            Douglas County, Nebraska, subject to
-            applicable law. Business days exclude
-            weekends and observed United States
-            federal holidays.
+            This Agreement is governed by Nebraska law,
+            subject to mandatory applicable laws in
+            other jurisdictions.
+          </p>
+
+          <p>
+            Before commencing arbitration, the
+            complaining party shall provide written
+            notice describing the dispute and
+            requested remedy. The parties shall
+            attempt good-faith informal resolution
+            for fifteen (15) calendar days, unless
+            urgent legal relief is necessary.
+          </p>
+
+          <p>
+            Except for eligible small-claims matters,
+            disputes arising from or relating to
+            this Agreement shall be resolved through
+            binding arbitration administered by the
+            American Arbitration Association under
+            its applicable Commercial Arbitration Rules.
+          </p>
+
+          <p>
+            Arbitration shall take place in Douglas
+            County, Nebraska, unless the parties
+            agree otherwise in writing or mandatory
+            applicable law requires another location.
+          </p>
+
+          <p>
+            Unless applicable rules require otherwise,
+            one neutral arbitrator shall decide
+            the dispute.
+          </p>
+
+          <p>
+            Filing fees, administrative expenses,
+            and arbitrator compensation shall initially
+            be allocated according to applicable
+            arbitration rules and mandatory law.
+          </p>
+
+          <p>
+            The arbitrator may award costs and
+            attorney fees only when authorized by
+            applicable law or an enforceable
+            contractual provision.
+          </p>
+
+          <p>
+            Either party may instead bring an
+            eligible claim in a court of competent
+            small-claims jurisdiction.
+          </p>
+
+          <p>
+            Either party may seek temporary judicial
+            relief where legally available without
+            waiving applicable arbitration obligations.
+            A court of competent jurisdiction may
+            enter judgment upon an arbitration award.
+          </p>
+
+          <p>
+            By accepting this Agreement, the parties
+            acknowledge that covered disputes will
+            generally be resolved by an arbitrator
+            rather than through a court trial or
+            jury trial.
+          </p>
+
+          <p>
+            Business days exclude Saturdays, Sundays,
+            and observed United States federal holidays.
           </p>
 
         </section>
@@ -1303,7 +1618,7 @@
             they possess authority to bind the
             identified business and voluntarily
             consent to electronic signatures
-            and records.
+            and electronic records.
           </p>
 
           <p>
@@ -1325,17 +1640,47 @@
             authorizations, and mutually accepted
             written amendments establish the
             commercial sourcing relationship.
+          </p>
+
+          <p>
+            Assignment-specific written terms control
+            expressly identified assignment details.
+            Other provisions remain effective unless
+            expressly modified through mutual written
+            acceptance.
+          </p>
+
+          <p>
             Material changes require mutual written
-            acceptance. Unenforceable provisions
-            shall be severed to the extent permitted
-            by law.
+            acceptance. Neither party may unilaterally
+            impose retroactive compensation changes.
+          </p>
+
+          <p>
+            Unenforceable provisions shall be severed
+            to the extent permitted by law. Failure
+            to enforce a provision does not
+            automatically waive future enforcement.
+          </p>
+
+          <p>
+            Neither party may transfer this Agreement
+            to an unrelated third party without the
+            other party's written consent, except
+            where otherwise permitted by law.
+          </p>
+
+          <p>
+            Required notices may be delivered through
+            designated business email addresses or
+            another documented written method.
           </p>
 
           <p>
             Both parties shall receive or have access
             to a copy of the mutually accepted Agreement.
-            Official notices to Omaha Restoration may
-            be sent to murraysempirellc@gmail.com.
+            Official notices to Company may be sent
+            to murraysempirellc@gmail.com.
           </p>
 
         </section>
@@ -1362,12 +1707,18 @@
         <span id="acceptanceText">
 
           I have read, understand, and accept the
-          complete Agreement, including its pricing
-          and payment terms. I confirm that I am
-          authorized to bind the identified business
-          and consent to electronic signatures,
-          electronic records, and third-party
-          processing of this submission.
+          complete OR-BCSA-2026-V4 Agreement,
+          including pricing, payment obligations,
+          non-circumvention, indemnification,
+          and binding arbitration.
+
+          I confirm that I am authorized to bind
+          the identified business and consent to
+          electronic signatures, electronic records,
+          and third-party processing of this submission.
+
+          I intend my typed name to serve as my
+          electronic signature.
 
         </span>
 
@@ -1471,7 +1822,7 @@
 
     <br>
 
-    OR-BCSA-2026-V3
+    OR-BCSA-2026-V4
 
   </footer>
 
@@ -1601,11 +1952,11 @@
 
       "Powered by Murrays Empire LLC",
 
-      "Business Partnership Agreement",
+      "Business Contractor Sourcing and Referral Agreement",
 
-      "Document ID: OR-BCSA-2026-V3",
+      "Document ID: OR-BCSA-2026-V4",
 
-      "Version: 3.0",
+      "Version: 4.0",
 
       "",
 
@@ -1659,7 +2010,10 @@
 
     target.scrollIntoView({
 
-      behavior:"smooth",
+      behavior:window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches ? "auto" : "smooth",
+
       block:"center"
 
     });
