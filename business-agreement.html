@@ -541,8 +541,7 @@ button{
   width:100%;
 }
 
-#submitBtn,
-#testBtn{
+#submitBtn{
   width:100%;
   margin-top:20px;
   padding:23px;
@@ -556,14 +555,12 @@ button{
   letter-spacing:1px;
 }
 
-#submitBtn:hover,
-#testBtn:hover{
+#submitBtn:hover{
   background:var(--gold);
   color:var(--navy);
 }
 
-#submitBtn:disabled,
-#testBtn:disabled{
+#submitBtn:disabled{
   opacity:.65;
   cursor:wait;
 }
@@ -572,37 +569,6 @@ button:focus-visible,
 a:focus-visible{
   outline:3px solid var(--gold);
   outline-offset:4px;
-}
-
-.test-panel{
-  background:#fff8eb;
-  border:2px dashed var(--gold);
-  border-radius:12px;
-  padding:20px;
-  margin-bottom:28px;
-  color:var(--navy);
-}
-
-.test-panel h2{
-  font-size:17px;
-  margin:0 0 8px;
-}
-
-.test-panel p{
-  font-size:13px;
-  margin:0;
-}
-
-.test-panel #testBtn{
-  padding:17px;
-  font-size:13px;
-  margin-top:14px;
-}
-
-.test-status{
-  font-size:12px;
-  margin-top:10px;
-  overflow-wrap:anywhere;
 }
 
 .submission-caption{
@@ -673,7 +639,6 @@ footer{
   .print-button,
   .scroll-button,
   .agreement-review,
-  .test-panel,
   #submitBtn,
   #formError,
   .submission-caption{
@@ -788,29 +753,6 @@ Omaha Restoration™ connects businesses with independent contractors and qualif
 JavaScript must be enabled to complete and electronically sign this Agreement.
 </div>
 </noscript>
-
-<!-- TEMPORARY TEST PANEL -->
-
-<div class="test-panel" id="testPanel" hidden>
-
-<h2>Temporary Email Delivery Test</h2>
-
-<p>
-Internal diagnostic only. No information, scrolling, agreement acceptance or signature is required. This submission is not a signed agreement.
-</p>
-
-<button type="button" id="testBtn" disabled>
-Send Full Test Submission
-</button>
-
-<div id="testStatus"
-class="test-status"
-role="status"
-aria-live="polite"></div>
-
-</div>
-
-<!-- BUSINESS AGREEMENT FORM -->
 
 <form id="businessForm">
 
@@ -1855,12 +1797,11 @@ Omaha Restoration™ Business Partnership Network
 </form>
 
 <!--
-SEPARATE WEB3FORMS TRANSMISSION FORM
+WEB3FORMS DELIVERY FORM
 
-Both actual submissions and diagnostic submissions
-use this exact form.
-
-Only seven named fields are transmitted.
+Seven transmitted fields.
+Separate business access key.
+Traditional HTML POST.
 -->
 
 <form id="deliveryForm"
@@ -1941,24 +1882,6 @@ OR-BCSA-2026-V5
 
 "use strict";
 
-/*
-========================================
-CONFIGURATION
-========================================
-
-Change TEST_MODE to false after confirming
-that business email delivery works.
-
-The diagnostic panel will only appear
-when TEST_MODE is true and the page
-is opened with ?test=1.
-
-This is a diagnostic visibility setting,
-not an authentication mechanism.
-*/
-
-const TEST_MODE = true;
-
 const AGREEMENT_VERSION = "OR-BCSA-2026-V5";
 
 const $ = function(id){
@@ -1967,11 +1890,7 @@ const $ = function(id){
 
 const form = $("businessForm");
 const deliveryForm = $("deliveryForm");
-
 const button = $("submitBtn");
-const testButton = $("testBtn");
-const testPanel = $("testPanel");
-const testStatus = $("testStatus");
 
 const error = $("formError");
 const legalAgreement = $("legalAgreement");
@@ -1979,13 +1898,6 @@ const agreementReview = $("agreementReview");
 const agreementAccepted = $("agreementAccepted");
 const acceptanceLabel = $("agreementAcceptanceLabel");
 const signatureConsent = $("electronicSignatureConsent");
-
-const testRequested =
-new URLSearchParams(window.location.search)
-.get("test") === "1";
-
-const testEnabled =
-TEST_MODE && testRequested;
 
 let submitting = false;
 let initialized = false;
@@ -2009,7 +1921,7 @@ REFERENCE NUMBER
 ========================================
 */
 
-function generateReference(isTest){
+function generateReference(){
 
   const random = new Uint8Array(12);
 
@@ -2022,11 +1934,7 @@ function generateReference(isTest){
   .join("")
   .toUpperCase();
 
-  const prefix = isTest
-  ? "OR-BIZ-TEST-"
-  : "OR-BIZ-";
-
-  return prefix +
+  return "OR-BIZ-" +
   new Date().getFullYear() +
   "-" +
   identifier;
@@ -2172,11 +2080,6 @@ function checkAgreementReview(){
   visibleHeight -
   currentPosition;
 
-  /*
-  Increased tolerance for mobile browsers,
-  zoomed displays and fractional pixels.
-  */
-
   if(remaining <= 10){
 
     agreementReviewed = true;
@@ -2285,7 +2188,7 @@ $("printAgreement").addEventListener(
 
 /*
 ========================================
-ACTUAL BUSINESS SUBMISSION DATA
+BUSINESS SUBMISSION DATA
 ========================================
 */
 
@@ -2295,9 +2198,7 @@ function getBusinessData(){
 
   return {
 
-    isTest:false,
-
-    reference:generateReference(false),
+    reference:generateReference(),
 
     status:
     "Submitted for Review - Pending Written Acceptance",
@@ -2372,131 +2273,11 @@ function getBusinessData(){
 
 /*
 ========================================
-DIAGNOSTIC SUBMISSION DATA
-
-No manual form completion required.
-No real signature or acceptance recorded.
-========================================
-*/
-
-function getTestData(){
-
-  const now = new Date();
-
-  return {
-
-    isTest:true,
-
-    reference:generateReference(true),
-
-    status:
-    "Diagnostic only - Not a signed agreement",
-
-    business:
-    "Murrays Empire LLC - Internal Diagnostic",
-
-    contact:
-    "Business Portal Diagnostic",
-
-    phone:
-    "Not applicable - diagnostic",
-
-    email:
-    "murraysempirellc@gmail.com",
-
-    businessType:
-    "Commercial Business",
-
-    address:
-    "Not applicable - diagnostic",
-
-    city:
-    "Omaha",
-
-    state:
-    "Nebraska",
-
-    zip:
-    "Not applicable - diagnostic",
-
-    website:
-    "https://omaharestoration.store",
-
-    frequency:
-    "Occasional Projects",
-
-    serviceArea:
-    "Omaha, Nebraska",
-
-    services:
-    "Contractor sourcing and referral submission diagnostic.",
-
-    signer:
-    "Not signed - diagnostic",
-
-    title:
-    "Internal diagnostic",
-
-    signature:
-    "NONE - NOT A SIGNATURE",
-
-    signatureDate:
-    "Not signed",
-
-    submittedAt:
-    now.toISOString(),
-
-    reviewCompleted:
-    "No - diagnostic",
-
-    reviewMethod:
-    "Diagnostic bypass",
-
-    reviewTimestamp:
-    "Not applicable",
-
-    acceptanceTimestamp:
-    "Not applicable",
-
-    consentTimestamp:
-    "Not applicable",
-
-    agreementAccepted:
-    "No - diagnostic",
-
-    electronicConsent:
-    "No - diagnostic",
-
-    relationshipAccepted:
-    "No - diagnostic",
-
-    feeTermsAccepted:
-    "No - diagnostic",
-
-    nonCircumventionAccepted:
-    "No - diagnostic",
-
-    userAgent:
-    navigator.userAgent
-
-  };
-
-}
-
-/*
-========================================
-BUILD ORGANIZED EMAIL RECORD
-
-Both diagnostic and actual submissions
-use the same message builder.
+ORGANIZED EMAIL RECORD
 ========================================
 */
 
 function buildMessage(data){
-
-  const heading = data.isTest
-  ? "TEST - NOT A SIGNED AGREEMENT"
-  : "NEW BUSINESS PARTNERSHIP AGREEMENT";
 
   const lines = [
 
@@ -2505,7 +2286,7 @@ function buildMessage(data){
 
     "",
 
-    heading,
+    "NEW BUSINESS PARTNERSHIP AGREEMENT",
 
     "",
 
@@ -2650,9 +2431,7 @@ function buildMessage(data){
 
     "",
 
-    data.isTest
-    ? "DIAGNOSTIC ONLY. No agreement was executed, accepted or authorized."
-    : "Submitted for Omaha Restoration review and documented written acceptance. Submission alone does not authorize an assignment or create a sourcing charge.",
+    "Submitted for Omaha Restoration review and documented written acceptance. Submission alone does not authorize an assignment or create a sourcing charge.",
 
     "",
 
@@ -2666,7 +2445,7 @@ function buildMessage(data){
 
 /*
 ========================================
-SHARED WEB3FORMS TRANSMISSION
+WEB3FORMS TRANSMISSION
 
 Seven fields only:
 
@@ -2680,8 +2459,7 @@ message
 
 No AJAX.
 No fetch.
-No contractual text payload.
-No contractor access key.
+No full agreement text payload.
 ========================================
 */
 
@@ -2707,9 +2485,7 @@ function sendSubmission(data){
   }
 
   $("deliverySubject").value =
-  data.isTest
-  ? "TEST - Omaha Restoration Business Agreement"
-  : "New Omaha Restoration Business Agreement";
+  "New Omaha Restoration Business Agreement";
 
   $("deliveryName").value =
   data.business;
@@ -2723,34 +2499,11 @@ function sendSubmission(data){
   submitting = true;
 
   button.disabled = true;
-  testButton.disabled = true;
 
   form.setAttribute("aria-busy","true");
 
-  if(data.isTest){
-
-    testButton.textContent =
-    "Sending Diagnostic...";
-
-    testStatus.textContent =
-    "Sending reference: " +
-    data.reference +
-    " | Fields: 7" +
-    " | Message length: " +
-    message.length +
-    " characters.";
-
-  }else{
-
-    button.textContent =
-    "Submitting Agreement...";
-
-  }
-
-  /*
-  Submit the separate delivery form using
-  the browser's native HTML POST mechanism.
-  */
+  button.textContent =
+  "Submitting Agreement...";
 
   HTMLFormElement.prototype.submit.call(
     deliveryForm
@@ -2760,7 +2513,7 @@ function sendSubmission(data){
 
 /*
 ========================================
-RESET SUBMISSION BUTTONS
+RESTORE SUBMISSION BUTTON
 ========================================
 */
 
@@ -2775,16 +2528,11 @@ function restoreButtons(){
   button.textContent =
   "Sign & Submit Agreement";
 
-  testButton.disabled = !testEnabled;
-
-  testButton.textContent =
-  "Send Full Test Submission";
-
 }
 
 /*
 ========================================
-ACTUAL FORM VALIDATION
+FORM VALIDATION
 ========================================
 */
 
@@ -2917,42 +2665,6 @@ form.addEventListener(
 
 /*
 ========================================
-ONE-CLICK FULL DIAGNOSTIC
-========================================
-*/
-
-testButton.addEventListener(
-  "click",
-  function(){
-
-    if(!testEnabled || submitting){
-      return;
-    }
-
-    try{
-
-      testStatus.textContent =
-      "Preparing diagnostic submission...";
-
-      const data = getTestData();
-
-      sendSubmission(data);
-
-    }catch(testError){
-
-      restoreButtons();
-
-      testStatus.textContent =
-      "Diagnostic error: " +
-      testError.message;
-
-    }
-
-  }
-);
-
-/*
-========================================
 INITIALIZATION
 ========================================
 */
@@ -2977,16 +2689,7 @@ try{
 
   initialized = true;
 
-  /*
-  Standard browser validation remains enabled.
-  No form.noValidate setting is used.
-  */
-
   button.disabled = false;
-
-  testPanel.hidden = !testEnabled;
-
-  testButton.disabled = !testEnabled;
 
   checkAgreementReview();
 
@@ -3025,8 +2728,6 @@ window.addEventListener(
 
       $("signatureDate").value =
       centralDate(new Date());
-
-      testStatus.textContent = "";
 
       $("deliverySubject").value = "";
       $("deliveryName").value = "";
