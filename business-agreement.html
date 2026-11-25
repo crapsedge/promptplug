@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>Business Agreement Diagnostic Test</title>
+  <title>Business Agreement Text Test</title>
 </head>
 
 <body>
 
-<h1>Business Agreement Test</h1>
+<h1>Business Agreement Text Test</h1>
 
-<p>Diagnostic submission only. Not a binding agreement.</p>
+<p>Diagnostic test only. Not a binding agreement.</p>
+
+<p id="status">Loading complete business agreement...</p>
 
 <form action="https://api.web3forms.com/submit" method="POST">
 
@@ -19,13 +21,10 @@
          value="1e7fcd38-95a7-4b9e-8e93-d25b3b6e1c3d">
 
   <input type="hidden" name="subject"
-         value="Omaha Restoration Business Diagnostic Test">
+         value="Omaha Restoration - Full Agreement Text Test">
 
-  <input type="hidden" name="from_name"
-         value="Omaha Restoration Business Portal">
-
-  <input type="hidden" name="redirect"
-         value="https://omaharestoration.store/business-submitted.html">
+  <input type="hidden" name="name"
+         value="Test Business">
 
   <input type="hidden" name="Test_Status"
          value="DIAGNOSTIC TEST ONLY - NOT A CONTRACT">
@@ -33,131 +32,93 @@
   <input type="hidden" name="Agreement_Version"
          value="OR-BCSA-2026-V5">
 
-  <input type="hidden" name="Business_Status"
-         value="Test Submission">
-
-  <input type="hidden" name="Application_Reference"
-         value="OR-BIZ-TEST-001">
-
-  <input type="hidden" name="Submission_Timestamp_UTC"
-         id="timestamp">
-
-  <input type="hidden" name="Browser_User_Agent"
-         id="userAgent">
-
-  <input type="hidden" name="Agreement_Confirmation"
-         value="Diagnostic Test Only">
-
-  <input type="hidden" name="Submission_Method"
-         value="Traditional HTML Electronic Registration">
-
-  <input type="hidden" name="Legal_Business_Name"
-         value="Test Business LLC">
-
-  <input type="hidden" name="Primary_Contact_Name"
-         value="Test Contact">
-
-  <input type="hidden" name="Direct_Phone"
-         value="402-555-0100">
-
-  <input type="hidden" name="email"
-         value="test@example.com">
-
-  <input type="hidden" name="Business_Type"
-         value="General Contractor">
-
-  <input type="hidden" name="Business_Address"
-         value="Test Address">
-
-  <input type="hidden" name="City"
-         value="Omaha">
-
-  <input type="hidden" name="State"
-         value="Nebraska">
-
-  <input type="hidden" name="ZIP_Code"
-         value="68102">
-
-  <input type="hidden" name="Business_Website"
-         value="">
-
-  <input type="hidden" name="Anticipated_Sourcing_Frequency"
-         value="Weekly">
-
-  <input type="hidden" name="Primary_Project_Location"
-         value="Omaha Nebraska">
-
-  <input type="hidden" name="Anticipated_Contractor_Needs"
-         value="Drywall, painting and restoration">
-
-  <input type="hidden" name="Compensation_Schedule"
-         value="Standard sourcing $150 per authorized person. Rush sourcing $300 per authorized person. Contractor compensation is separate. Recurring discounts require written approval.">
-
-  <input type="hidden" name="Independent_Contractor_Relationship_Accepted"
-         value="TEST">
-
-  <input type="hidden" name="Fee_Terms_Accepted"
-         value="TEST">
-
-  <input type="hidden" name="Non_Circumvention_Accepted"
-         value="TEST">
-
-  <input type="hidden" name="Agreement_Accepted"
-         value="TEST">
-
-  <input type="hidden" name="Agreement_Scroll_Completed"
-         value="TEST">
-
-  <input type="hidden" name="Agreement_Review_Timestamp_UTC"
-         id="reviewTimestamp">
-
-  <input type="hidden" name="Agreement_Acceptance_Timestamp_UTC"
-         id="acceptanceTimestamp">
-
-  <input type="hidden" name="Signature_Printed_Name"
-         value="Test Signer">
-
-  <input type="hidden" name="Signature_Title"
-         value="Owner">
-
-  <input type="hidden" name="Signature_Date_Central"
-         id="signatureDate">
-
-  <input type="hidden" name="Electronic_Signature"
-         value="TEST ONLY">
-
-  <input type="hidden" name="Electronic_Signature_Consent"
-         value="TEST">
+  <input type="hidden" name="Agreement_Text"
+         id="agreementText">
 
   <input type="hidden" name="message"
-         value="Testing business agreement fields without the complete contractual text.">
+         value="Testing delivery of the complete contractual text.">
 
-  <button type="submit">
-    Send Business Agreement Test
+  <button type="submit" id="submitBtn" disabled>
+    Send Full Agreement Test
   </button>
 
 </form>
 
 <script>
 
-const now = new Date();
+async function loadAgreement(){
 
-document.getElementById("timestamp").value =
-  now.toISOString();
+  const status = document.getElementById("status");
+  const button = document.getElementById("submitBtn");
 
-document.getElementById("reviewTimestamp").value =
-  now.toISOString();
+  try {
 
-document.getElementById("acceptanceTimestamp").value =
-  now.toISOString();
+    const response = await fetch(
+      "./business-agreement.html",
+      {cache:"no-store"}
+    );
 
-document.getElementById("userAgent").value =
-  navigator.userAgent;
+    if(!response.ok){
+      throw new Error("Business agreement page could not be loaded.");
+    }
 
-document.getElementById("signatureDate").value =
-  new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/Chicago"
-  }).format(now);
+    const html = await response.text();
+
+    const documentCopy = new DOMParser()
+      .parseFromString(html,"text/html");
+
+    const agreement = documentCopy
+      .getElementById("legalAgreement");
+
+    if(!agreement){
+      throw new Error("Agreement text could not be located.");
+    }
+
+    const headings = agreement.querySelectorAll("h3");
+
+    if(headings.length !== 14){
+      throw new Error("Expected 14 contractual sections.");
+    }
+
+    const container = document.createElement("div");
+
+    container.style.position = "absolute";
+    container.style.left = "-99999px";
+    container.style.width = "800px";
+
+    container.innerHTML = agreement.innerHTML;
+
+    document.body.appendChild(container);
+
+    const text =
+      "OR-BCSA-2026-V5\n\n" +
+      container.innerText.trim();
+
+    container.remove();
+
+    document.getElementById("agreementText").value = text;
+
+    const bytes = new TextEncoder().encode(text).length;
+
+    status.textContent =
+      "Ready. Loaded " + headings.length +
+      " contractual sections, " +
+      text.length + " characters, " +
+      bytes + " bytes.";
+
+    button.disabled = false;
+
+  } catch(error){
+
+    status.textContent = "ERROR: " + error.message;
+
+    button.disabled = true;
+
+  }
+
+}
+
+loadAgreement();
 
 </script>
 
