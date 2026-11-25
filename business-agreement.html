@@ -48,7 +48,7 @@ header{
   position:sticky;
   top:0;
   z-index:100;
-  background:#050a12;
+  background:var(--dark);
   border-bottom:2px solid var(--gold);
   padding:20px 28px;
   display:flex;
@@ -221,6 +221,7 @@ textarea{
   color:#111;
   font-size:16px;
   font-family:inherit;
+  scroll-margin-top:100px;
 }
 
 input[readonly]{
@@ -411,11 +412,6 @@ textarea:focus{
   color:#166534;
 }
 
-.agreement-review.attention{
-  border-color:var(--red);
-  box-shadow:0 0 0 4px rgba(179,25,25,.15);
-}
-
 .ack{
   display:flex;
   align-items:flex-start;
@@ -430,6 +426,7 @@ textarea:focus{
   font-weight:600;
   color:#253247;
   cursor:pointer;
+  scroll-margin-top:100px;
 }
 
 .ack input{
@@ -460,8 +457,6 @@ textarea:focus{
   opacity:.65;
   cursor:not-allowed;
 }
-
-.ack.locked input{cursor:not-allowed}
 
 .note{
   background:#f2f5f9;
@@ -520,7 +515,8 @@ button{
   cursor:pointer;
 }
 
-.print-button{
+.print-button,
+.scroll-button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -535,9 +531,18 @@ button{
   text-transform:uppercase;
 }
 
-.print-button:hover{background:#fffaf0}
+.print-button:hover,
+.scroll-button:hover{
+  background:#fffaf0;
+}
 
-#submitBtn{
+.scroll-button{
+  margin-top:12px;
+  width:100%;
+}
+
+#submitBtn,
+#testBtn{
   width:100%;
   margin-top:20px;
   padding:23px;
@@ -551,12 +556,14 @@ button{
   letter-spacing:1px;
 }
 
-#submitBtn:hover{
+#submitBtn:hover,
+#testBtn:hover{
   background:var(--gold);
   color:var(--navy);
 }
 
-#submitBtn:disabled{
+#submitBtn:disabled,
+#testBtn:disabled{
   opacity:.65;
   cursor:wait;
 }
@@ -565,6 +572,37 @@ button:focus-visible,
 a:focus-visible{
   outline:3px solid var(--gold);
   outline-offset:4px;
+}
+
+.test-panel{
+  background:#fff8eb;
+  border:2px dashed var(--gold);
+  border-radius:12px;
+  padding:20px;
+  margin-bottom:28px;
+  color:var(--navy);
+}
+
+.test-panel h2{
+  font-size:17px;
+  margin:0 0 8px;
+}
+
+.test-panel p{
+  font-size:13px;
+  margin:0;
+}
+
+.test-panel #testBtn{
+  padding:17px;
+  font-size:13px;
+  margin-top:14px;
+}
+
+.test-status{
+  font-size:12px;
+  margin-top:10px;
+  overflow-wrap:anywhere;
 }
 
 .submission-caption{
@@ -633,7 +671,9 @@ footer{
   .intro,
   .overview,
   .print-button,
+  .scroll-button,
   .agreement-review,
+  .test-panel,
   #submitBtn,
   #formError,
   .submission-caption{
@@ -749,66 +789,30 @@ JavaScript must be enabled to complete and electronically sign this Agreement.
 </div>
 </noscript>
 
-<form id="businessForm"
-action="https://api.web3forms.com/submit"
-method="POST">
+<!-- TEMPORARY TEST PANEL -->
 
-<input type="hidden" name="access_key"
-value="1e7fcd38-95a7-4b9e-8e93-d25b3b6e1c3d">
+<div class="test-panel" id="testPanel" hidden>
 
-<input type="hidden" name="subject"
-value="New Omaha Restoration Business Agreement">
+<h2>Temporary Email Delivery Test</h2>
 
-<input type="hidden" name="from_name"
-value="Omaha Restoration Business Portal">
+<p>
+Internal diagnostic only. No information, scrolling, agreement acceptance or signature is required. This submission is not a signed agreement.
+</p>
 
-<input type="hidden" name="redirect"
-value="https://omaharestoration.store/business-submitted.html">
+<button type="button" id="testBtn" disabled>
+Send Full Test Submission
+</button>
 
-<input type="hidden" name="message"
-value="New Omaha Restoration Business Agreement submitted for review and written acceptance.">
+<div id="testStatus"
+class="test-status"
+role="status"
+aria-live="polite"></div>
 
-<input type="hidden" name="Agreement_Version"
-value="OR-BCSA-2026-V5">
+</div>
 
-<input type="hidden" name="Business_Status"
-value="Submitted for Review - Pending Written Acceptance">
+<!-- BUSINESS AGREEMENT FORM -->
 
-<input type="hidden" name="Application_Reference"
-id="applicationReference">
-
-<input type="hidden" name="Submission_Timestamp_UTC"
-id="timestamp">
-
-<input type="hidden" name="Browser_User_Agent"
-id="userAgent">
-
-<input type="hidden" name="Agreement_Confirmation"
-value="Electronic acceptance of OR-BCSA-2026-V5">
-
-<input type="hidden" name="Submission_Method"
-value="Traditional HTML Electronic Registration">
-
-<input type="hidden" name="Agreement_Scroll_Completed"
-id="agreementScrollCompleted" value="No">
-
-<input type="hidden" name="Agreement_Review_Timestamp_UTC"
-id="agreementReviewTimestamp">
-
-<input type="hidden" name="Agreement_Acceptance_Timestamp_UTC"
-id="agreementAcceptanceTimestamp">
-
-<input type="hidden" name="Compensation_Schedule"
-value="Standard sourcing $150 per authorized person. Rush sourcing $300 per authorized person. Contractor compensation is separate. Recurring discounts require written approval.">
-
-<input type="hidden" name="Independent_Contractor_Relationship_Accepted"
-id="relationshipAccepted" value="No">
-
-<input type="hidden" name="Fee_Terms_Accepted"
-id="feeTermsAccepted" value="No">
-
-<input type="hidden" name="Non_Circumvention_Accepted"
-id="nonCircumventionAccepted" value="No">
+<form id="businessForm">
 
 <!-- SECTION 1 -->
 
@@ -1030,7 +1034,6 @@ Requests made less than 24 hours before the requested arrival time. Subject to a
 
 </tbody>
 </table>
-
 </div>
 
 <div class="note">
@@ -1694,6 +1697,12 @@ Submission alone does not establish an individual sourcing charge or guarantee c
 
 </div>
 
+<button type="button"
+class="scroll-button"
+id="scrollToEnd">
+Go to End of Agreement
+</button>
+
 <div class="note">
 
 <strong>Important:</strong>
@@ -1844,6 +1853,52 @@ Omaha Restoration™ Business Partnership Network
 </p>
 
 </form>
+
+<!--
+SEPARATE WEB3FORMS TRANSMISSION FORM
+
+Both actual submissions and diagnostic submissions
+use this exact form.
+
+Only seven named fields are transmitted.
+-->
+
+<form id="deliveryForm"
+action="https://api.web3forms.com/submit"
+method="POST"
+accept-charset="UTF-8"
+hidden>
+
+<input type="hidden"
+name="access_key"
+value="1e7fcd38-95a7-4b9e-8e93-d25b3b6e1c3d">
+
+<input type="hidden"
+name="subject"
+id="deliverySubject">
+
+<input type="hidden"
+name="from_name"
+value="Omaha Restoration Business Portal">
+
+<input type="hidden"
+name="redirect"
+value="https://omaharestoration.store/business-submitted.html">
+
+<input type="hidden"
+name="name"
+id="deliveryName">
+
+<input type="hidden"
+name="email"
+id="deliveryEmail">
+
+<input type="hidden"
+name="message"
+id="deliveryMessage">
+
+</form>
+
 </div>
 
 <footer>
@@ -1886,64 +1941,77 @@ OR-BCSA-2026-V5
 
 "use strict";
 
-const form = document.getElementById("businessForm");
-const button = document.getElementById("submitBtn");
-const error = document.getElementById("formError");
+/*
+========================================
+CONFIGURATION
+========================================
 
-const legalAgreement =
-document.getElementById("legalAgreement");
+Change TEST_MODE to false after confirming
+that business email delivery works.
 
-const agreementReview =
-document.getElementById("agreementReview");
+The diagnostic panel will only appear
+when TEST_MODE is true and the page
+is opened with ?test=1.
 
-const agreementAccepted =
-document.getElementById("agreementAccepted");
+This is a diagnostic visibility setting,
+not an authentication mechanism.
+*/
 
-const acceptanceLabel =
-document.getElementById("agreementAcceptanceLabel");
+const TEST_MODE = true;
 
-const scrollCompleted =
-document.getElementById("agreementScrollCompleted");
+const AGREEMENT_VERSION = "OR-BCSA-2026-V5";
 
-const reviewTimestamp =
-document.getElementById("agreementReviewTimestamp");
+const $ = function(id){
+  return document.getElementById(id);
+};
 
-const acceptanceTimestamp =
-document.getElementById("agreementAcceptanceTimestamp");
+const form = $("businessForm");
+const deliveryForm = $("deliveryForm");
 
-const signatureConsent =
-document.getElementById("electronicSignatureConsent");
+const button = $("submitBtn");
+const testButton = $("testBtn");
+const testPanel = $("testPanel");
+const testStatus = $("testStatus");
 
-const referenceField =
-document.getElementById("applicationReference");
+const error = $("formError");
+const legalAgreement = $("legalAgreement");
+const agreementReview = $("agreementReview");
+const agreementAccepted = $("agreementAccepted");
+const acceptanceLabel = $("agreementAcceptanceLabel");
+const signatureConsent = $("electronicSignatureConsent");
 
-const reviewRequiredMessage =
-"Please read the entire Omaha Restoration™ " +
-"Business Agreement before signing and " +
-"submitting your application. You must scroll " +
-"to the bottom of the agreement to continue.";
+const testRequested =
+new URLSearchParams(window.location.search)
+.get("test") === "1";
+
+const testEnabled =
+TEST_MODE && testRequested;
 
 let submitting = false;
 let initialized = false;
 let agreementReviewed = false;
 let reviewCompletedAt = "";
 let acceptedAt = "";
+let consentAt = "";
+let reviewMethod = "Not completed";
 
 const scrollBehavior =
-window.matchMedia("(prefers-reduced-motion: reduce)").matches
-? "auto" : "smooth";
+window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches ? "auto" : "smooth";
 
-document.getElementById("year").textContent =
+$("year").textContent =
 new Date().getFullYear();
 
-document.getElementById("userAgent").value =
-navigator.userAgent;
+/*
+========================================
+REFERENCE NUMBER
+========================================
+*/
 
-/* APPLICATION REFERENCE */
+function generateReference(isTest){
 
-function generateReference(){
-
-  const random = new Uint8Array(16);
+  const random = new Uint8Array(12);
 
   window.crypto.getRandomValues(random);
 
@@ -1954,21 +2022,24 @@ function generateReference(){
   .join("")
   .toUpperCase();
 
-  return "OR-BIZ-" +
+  const prefix = isTest
+  ? "OR-BIZ-TEST-"
+  : "OR-BIZ-";
+
+  return prefix +
   new Date().getFullYear() +
   "-" +
   identifier;
 
 }
 
-/* CENTRAL TIME SIGNATURE RECORD */
+/*
+========================================
+CENTRAL TIME
+========================================
+*/
 
-function setTime(){
-
-  const now = new Date();
-
-  document.getElementById("timestamp").value =
-  now.toISOString();
+function centralDate(now){
 
   const dateParts =
   new Intl.DateTimeFormat("en-US",{
@@ -1988,42 +2059,19 @@ function setTime(){
 
   });
 
-  document.getElementById("signatureDate").value =
-  parts.year + "-" + parts.month + "-" + parts.day;
+  return parts.year +
+  "-" +
+  parts.month +
+  "-" +
+  parts.day;
 
 }
 
-/* ACKNOWLEDGMENT RECORDS */
-
-function updateAcknowledgments(accepted){
-
-  const value = accepted ? "Yes" : "No";
-
-  document.getElementById(
-    "relationshipAccepted"
-  ).value = value;
-
-  document.getElementById(
-    "feeTermsAccepted"
-  ).value = value;
-
-  document.getElementById(
-    "nonCircumventionAccepted"
-  ).value = value;
-
-}
-
-/* SIGNATURE VALIDATION */
-
-function normalizeName(value){
-
-  return value.trim()
-  .replace(/\s+/g," ")
-  .toLowerCase();
-
-}
-
-/* ERROR DISPLAY */
+/*
+========================================
+ERROR HANDLING
+========================================
+*/
 
 function clearError(){
 
@@ -2050,39 +2098,55 @@ function showError(message,element){
 
 }
 
-/* RESET AGREEMENT REVIEW */
+function normalizeName(value){
+
+  return value.trim()
+  .replace(/\s+/g," ")
+  .toLowerCase();
+
+}
+
+function readValue(id){
+
+  return $(id).value.trim();
+
+}
+
+/*
+========================================
+AGREEMENT REVIEW
+========================================
+*/
 
 function resetAgreementReview(){
 
   agreementReviewed = false;
   reviewCompletedAt = "";
   acceptedAt = "";
-
-  scrollCompleted.value = "No";
-  reviewTimestamp.value = "";
-  acceptanceTimestamp.value = "";
+  consentAt = "";
+  reviewMethod = "Not completed";
 
   agreementAccepted.checked = false;
   agreementAccepted.disabled = true;
 
-  updateAcknowledgments(false);
+  signatureConsent.checked = false;
 
   acceptanceLabel.classList.add("locked");
 
   agreementReview.classList.remove(
-    "completed",
-    "attention"
+    "completed"
   );
 
   agreementReview.innerHTML =
   "<strong>AGREEMENT REVIEW REQUIRED</strong>" +
-  reviewRequiredMessage;
+  "Please read the entire Omaha Restoration™ " +
+  "Business Agreement before signing and " +
+  "submitting your application. You must scroll " +
+  "to the bottom of the agreement to continue.";
 
   legalAgreement.scrollTop = 0;
 
 }
-
-/* VERIFY SCROLL COMPLETION */
 
 function checkAgreementReview(){
 
@@ -2090,47 +2154,51 @@ function checkAgreementReview(){
     return;
   }
 
-  const totalHeight = legalAgreement.scrollHeight;
-  const visibleHeight = legalAgreement.clientHeight;
-  const currentPosition = legalAgreement.scrollTop;
+  const totalHeight =
+  legalAgreement.scrollHeight;
+
+  const visibleHeight =
+  legalAgreement.clientHeight;
+
+  const currentPosition =
+  legalAgreement.scrollTop;
 
   if(visibleHeight <= 0){
     return;
   }
 
   const remaining =
-  totalHeight - visibleHeight - currentPosition;
+  totalHeight -
+  visibleHeight -
+  currentPosition;
 
-  if(remaining <= 2){
+  /*
+  Increased tolerance for mobile browsers,
+  zoomed displays and fractional pixels.
+  */
+
+  if(remaining <= 10){
 
     agreementReviewed = true;
 
     reviewCompletedAt =
     new Date().toISOString();
 
-    scrollCompleted.value = "Yes";
-    reviewTimestamp.value = reviewCompletedAt;
+    if(reviewMethod === "Not completed"){
+      reviewMethod = "Manual scroll";
+    }
 
     agreementAccepted.disabled = false;
 
     acceptanceLabel.classList.remove("locked");
 
-    agreementReview.classList.remove("attention");
     agreementReview.classList.add("completed");
 
     agreementReview.innerHTML =
-    "<strong>AGREEMENT REVIEW COMPLETED</strong>" +
+    "<strong>END OF AGREEMENT REACHED</strong>" +
     "Please confirm that you have read, " +
     "understood, and accepted the entire " +
     "Business Agreement.";
-
-    if(
-      error.textContent.indexOf(
-        "AGREEMENT REVIEW REQUIRED"
-      ) === 0
-    ){
-      clearError();
-    }
 
   }
 
@@ -2142,7 +2210,21 @@ legalAgreement.addEventListener(
   {passive:true}
 );
 
-/* RECORD AGREEMENT ACCEPTANCE */
+$("scrollToEnd").addEventListener(
+  "click",
+  function(){
+
+    if(!agreementReviewed){
+      reviewMethod = "Go to End button";
+    }
+
+    legalAgreement.scrollTop =
+    legalAgreement.scrollHeight;
+
+    checkAgreementReview();
+
+  }
+);
 
 agreementAccepted.addEventListener(
   "change",
@@ -2151,56 +2233,29 @@ agreementAccepted.addEventListener(
     if(!agreementReviewed){
 
       agreementAccepted.checked = false;
-      agreementAccepted.disabled = true;
-
       acceptedAt = "";
-      acceptanceTimestamp.value = "";
-
-      updateAcknowledgments(false);
 
       return;
 
     }
 
-    if(agreementAccepted.checked){
-
-      acceptedAt = new Date().toISOString();
-
-      acceptanceTimestamp.value = acceptedAt;
-
-      updateAcknowledgments(true);
-
-    }else{
-
-      acceptedAt = "";
-      acceptanceTimestamp.value = "";
-
-      updateAcknowledgments(false);
-
-    }
+    acceptedAt = agreementAccepted.checked
+    ? new Date().toISOString()
+    : "";
 
   }
 );
 
-/* REQUIRE REVIEW */
+signatureConsent.addEventListener(
+  "change",
+  function(){
 
-function requireAgreementReview(){
+    consentAt = signatureConsent.checked
+    ? new Date().toISOString()
+    : "";
 
-  if(agreementReviewed && reviewCompletedAt){
-    return true;
   }
-
-  agreementReview.classList.add("attention");
-
-  showError(
-    "AGREEMENT REVIEW REQUIRED. " +
-    reviewRequiredMessage,
-    agreementReview
-  );
-
-  return false;
-
-}
+);
 
 acceptanceLabel.addEventListener(
   "click",
@@ -2210,43 +2265,699 @@ acceptanceLabel.addEventListener(
 
       event.preventDefault();
 
-      requireAgreementReview();
+      showError(
+        "Please reach the end of the agreement " +
+        "before confirming contractual acceptance.",
+        agreementReview
+      );
 
     }
 
   }
 );
 
-/* PRINT OR SAVE */
-
-document.getElementById(
-  "printAgreement"
-).addEventListener("click",function(){
-
-  window.print();
-
-});
-
-/* REVIEW BEFORE FORM VALIDATION */
-
-button.addEventListener(
+$("printAgreement").addEventListener(
   "click",
+  function(){
+    window.print();
+  }
+);
+
+/*
+========================================
+ACTUAL BUSINESS SUBMISSION DATA
+========================================
+*/
+
+function getBusinessData(){
+
+  const now = new Date();
+
+  return {
+
+    isTest:false,
+
+    reference:generateReference(false),
+
+    status:
+    "Submitted for Review - Pending Written Acceptance",
+
+    business:readValue("business"),
+
+    contact:readValue("contact"),
+
+    phone:readValue("phone"),
+
+    email:readValue("email"),
+
+    businessType:readValue("businessType"),
+
+    address:readValue("address"),
+
+    city:readValue("city"),
+
+    state:readValue("state"),
+
+    zip:readValue("zip"),
+
+    website:readValue("website"),
+
+    frequency:readValue("frequency"),
+
+    serviceArea:readValue("serviceArea"),
+
+    services:readValue("services"),
+
+    signer:readValue("signer"),
+
+    title:readValue("title"),
+
+    signature:readValue("signature"),
+
+    signatureDate:centralDate(now),
+
+    submittedAt:now.toISOString(),
+
+    reviewCompleted:
+    agreementReviewed ? "Yes" : "No",
+
+    reviewMethod:reviewMethod,
+
+    reviewTimestamp:reviewCompletedAt,
+
+    acceptanceTimestamp:acceptedAt,
+
+    consentTimestamp:consentAt,
+
+    agreementAccepted:
+    agreementAccepted.checked ? "Yes" : "No",
+
+    electronicConsent:
+    signatureConsent.checked ? "Yes" : "No",
+
+    relationshipAccepted:
+    agreementAccepted.checked ? "Yes" : "No",
+
+    feeTermsAccepted:
+    agreementAccepted.checked ? "Yes" : "No",
+
+    nonCircumventionAccepted:
+    agreementAccepted.checked ? "Yes" : "No",
+
+    userAgent:navigator.userAgent
+
+  };
+
+}
+
+/*
+========================================
+DIAGNOSTIC SUBMISSION DATA
+
+No manual form completion required.
+No real signature or acceptance recorded.
+========================================
+*/
+
+function getTestData(){
+
+  const now = new Date();
+
+  return {
+
+    isTest:true,
+
+    reference:generateReference(true),
+
+    status:
+    "Diagnostic only - Not a signed agreement",
+
+    business:
+    "Murrays Empire LLC - Internal Diagnostic",
+
+    contact:
+    "Business Portal Diagnostic",
+
+    phone:
+    "Not applicable - diagnostic",
+
+    email:
+    "murraysempirellc@gmail.com",
+
+    businessType:
+    "Commercial Business",
+
+    address:
+    "Not applicable - diagnostic",
+
+    city:
+    "Omaha",
+
+    state:
+    "Nebraska",
+
+    zip:
+    "Not applicable - diagnostic",
+
+    website:
+    "https://omaharestoration.store",
+
+    frequency:
+    "Occasional Projects",
+
+    serviceArea:
+    "Omaha, Nebraska",
+
+    services:
+    "Contractor sourcing and referral submission diagnostic.",
+
+    signer:
+    "Not signed - diagnostic",
+
+    title:
+    "Internal diagnostic",
+
+    signature:
+    "NONE - NOT A SIGNATURE",
+
+    signatureDate:
+    "Not signed",
+
+    submittedAt:
+    now.toISOString(),
+
+    reviewCompleted:
+    "No - diagnostic",
+
+    reviewMethod:
+    "Diagnostic bypass",
+
+    reviewTimestamp:
+    "Not applicable",
+
+    acceptanceTimestamp:
+    "Not applicable",
+
+    consentTimestamp:
+    "Not applicable",
+
+    agreementAccepted:
+    "No - diagnostic",
+
+    electronicConsent:
+    "No - diagnostic",
+
+    relationshipAccepted:
+    "No - diagnostic",
+
+    feeTermsAccepted:
+    "No - diagnostic",
+
+    nonCircumventionAccepted:
+    "No - diagnostic",
+
+    userAgent:
+    navigator.userAgent
+
+  };
+
+}
+
+/*
+========================================
+BUILD ORGANIZED EMAIL RECORD
+
+Both diagnostic and actual submissions
+use the same message builder.
+========================================
+*/
+
+function buildMessage(data){
+
+  const heading = data.isTest
+  ? "TEST - NOT A SIGNED AGREEMENT"
+  : "NEW BUSINESS PARTNERSHIP AGREEMENT";
+
+  const lines = [
+
+    "OMAHA RESTORATION",
+    "Powered by Murrays Empire LLC",
+
+    "",
+
+    heading,
+
+    "",
+
+    "SUBMISSION INFORMATION",
+    "--------------------------------",
+
+    "Application Reference: " +
+    data.reference,
+
+    "Agreement Version: " +
+    AGREEMENT_VERSION,
+
+    "Status: " +
+    data.status,
+
+    "Submission Timestamp UTC: " +
+    data.submittedAt,
+
+    "",
+
+    "BUSINESS INFORMATION",
+    "--------------------------------",
+
+    "Legal Business Name: " +
+    data.business,
+
+    "Primary Contact: " +
+    data.contact,
+
+    "Phone: " +
+    data.phone,
+
+    "Email: " +
+    data.email,
+
+    "Business Type: " +
+    data.businessType,
+
+    "Business Address: " +
+    data.address,
+
+    "City: " +
+    data.city,
+
+    "State: " +
+    data.state,
+
+    "ZIP Code: " +
+    data.zip,
+
+    "Website: " +
+    (data.website || "Not provided"),
+
+    "",
+
+    "CONTRACTOR SOURCING REQUIREMENTS",
+    "--------------------------------",
+
+    "Anticipated Frequency: " +
+    data.frequency,
+
+    "Primary Project Location: " +
+    (data.serviceArea || "Not provided"),
+
+    "Contractor Needs: " +
+    (data.services || "Not provided"),
+
+    "",
+
+    "COMPENSATION SCHEDULE",
+    "--------------------------------",
+
+    "Standard sourcing: $150 per authorized person.",
+
+    "Rush sourcing: $300 per authorized person.",
+
+    "Contractor compensation is separate.",
+
+    "Recurring discounts require written approval.",
+
+    "",
+
+    "AGREEMENT ACCEPTANCE RECORD",
+    "--------------------------------",
+
+    "End of Agreement Reached: " +
+    data.reviewCompleted,
+
+    "Review Navigation Method: " +
+    data.reviewMethod,
+
+    "Review Timestamp UTC: " +
+    data.reviewTimestamp,
+
+    "Contractual Acceptance: " +
+    data.agreementAccepted,
+
+    "Independent Contractor Relationship Accepted: " +
+    data.relationshipAccepted,
+
+    "Fee Terms Accepted: " +
+    data.feeTermsAccepted,
+
+    "Non-Circumvention Accepted: " +
+    data.nonCircumventionAccepted,
+
+    "Acceptance Timestamp UTC: " +
+    data.acceptanceTimestamp,
+
+    "",
+
+    "ELECTRONIC SIGNATURE RECORD",
+    "--------------------------------",
+
+    "Authorized Signer: " +
+    data.signer,
+
+    "Title: " +
+    data.title,
+
+    "Electronic Signature: " +
+    data.signature,
+
+    "Signature Date Central Time: " +
+    data.signatureDate,
+
+    "Electronic Signature Consent: " +
+    data.electronicConsent,
+
+    "Consent Timestamp UTC: " +
+    data.consentTimestamp,
+
+    "",
+
+    "TECHNICAL RECORD",
+    "--------------------------------",
+
+    "Submission Method: Traditional HTML POST",
+
+    "Browser User Agent: " +
+    data.userAgent,
+
+    "",
+
+    data.isTest
+    ? "DIAGNOSTIC ONLY. No agreement was executed, accepted or authorized."
+    : "Submitted for Omaha Restoration review and documented written acceptance. Submission alone does not authorize an assignment or create a sourcing charge.",
+
+    "",
+
+    "END OF SUBMISSION RECORD"
+
+  ];
+
+  return lines.join("\n");
+
+}
+
+/*
+========================================
+SHARED WEB3FORMS TRANSMISSION
+
+Seven fields only:
+
+access_key
+subject
+from_name
+redirect
+name
+email
+message
+
+No AJAX.
+No fetch.
+No contractual text payload.
+No contractor access key.
+========================================
+*/
+
+function sendSubmission(data){
+
+  if(submitting){
+    return;
+  }
+
+  const message = buildMessage(data);
+
+  if(
+    !data.reference ||
+    !data.business ||
+    !data.email ||
+    !message
+  ){
+
+    throw new Error(
+      "Required transmission information is missing."
+    );
+
+  }
+
+  $("deliverySubject").value =
+  data.isTest
+  ? "TEST - Omaha Restoration Business Agreement"
+  : "New Omaha Restoration Business Agreement";
+
+  $("deliveryName").value =
+  data.business;
+
+  $("deliveryEmail").value =
+  data.email;
+
+  $("deliveryMessage").value =
+  message;
+
+  submitting = true;
+
+  button.disabled = true;
+  testButton.disabled = true;
+
+  form.setAttribute("aria-busy","true");
+
+  if(data.isTest){
+
+    testButton.textContent =
+    "Sending Diagnostic...";
+
+    testStatus.textContent =
+    "Sending reference: " +
+    data.reference +
+    " | Fields: 7" +
+    " | Message length: " +
+    message.length +
+    " characters.";
+
+  }else{
+
+    button.textContent =
+    "Submitting Agreement...";
+
+  }
+
+  /*
+  Submit the separate delivery form using
+  the browser's native HTML POST mechanism.
+  */
+
+  HTMLFormElement.prototype.submit.call(
+    deliveryForm
+  );
+
+}
+
+/*
+========================================
+RESET SUBMISSION BUTTONS
+========================================
+*/
+
+function restoreButtons(){
+
+  submitting = false;
+
+  form.removeAttribute("aria-busy");
+
+  button.disabled = !initialized;
+
+  button.textContent =
+  "Sign & Submit Agreement";
+
+  testButton.disabled = !testEnabled;
+
+  testButton.textContent =
+  "Send Full Test Submission";
+
+}
+
+/*
+========================================
+ACTUAL FORM VALIDATION
+========================================
+*/
+
+form.addEventListener(
+  "submit",
   function(event){
 
-    if(!requireAgreementReview()){
-      event.preventDefault();
+    event.preventDefault();
+
+    if(submitting || !initialized){
+      return;
+    }
+
+    clearError();
+
+    if(!agreementReviewed){
+
+      showError(
+        "Please reach the end of the agreement " +
+        "before submitting.",
+        agreementReview
+      );
+
+      return;
+
+    }
+
+    if(
+      !agreementAccepted.checked ||
+      agreementAccepted.disabled ||
+      !acceptedAt
+    ){
+
+      showError(
+        "Contractual acceptance is required.",
+        agreementAccepted
+      );
+
+      return;
+
+    }
+
+    if(!form.reportValidity()){
+      return;
+    }
+
+    const requiredTextFields = [
+
+      "business",
+      "contact",
+      "phone",
+      "address",
+      "city",
+      "state",
+      "signer",
+      "title",
+      "signature"
+
+    ];
+
+    for(const fieldId of requiredTextFields){
+
+      if(!readValue(fieldId)){
+
+        showError(
+          "Please complete all required fields.",
+          $(fieldId)
+        );
+
+        return;
+
+      }
+
+    }
+
+    if(
+      !signatureConsent.checked ||
+      !consentAt
+    ){
+
+      showError(
+        "Electronic signature consent is required.",
+        signatureConsent
+      );
+
+      return;
+
+    }
+
+    const signer =
+    normalizeName(readValue("signer"));
+
+    const signature =
+    normalizeName(readValue("signature"));
+
+    if(!signer || signer !== signature){
+
+      showError(
+        "Your electronic signature must match " +
+        "your Authorized Signer Name.",
+        $("signature")
+      );
+
+      return;
+
+    }
+
+    try{
+
+      const data = getBusinessData();
+
+      $("signatureDate").value =
+      data.signatureDate;
+
+      sendSubmission(data);
+
+    }catch(submissionError){
+
+      restoreButtons();
+
+      showError(
+        "The submission could not be prepared. " +
+        submissionError.message
+      );
+
     }
 
   }
 );
 
-/* INITIALIZATION */
+/*
+========================================
+ONE-CLICK FULL DIAGNOSTIC
+========================================
+*/
+
+testButton.addEventListener(
+  "click",
+  function(){
+
+    if(!testEnabled || submitting){
+      return;
+    }
+
+    try{
+
+      testStatus.textContent =
+      "Preparing diagnostic submission...";
+
+      const data = getTestData();
+
+      sendSubmission(data);
+
+    }catch(testError){
+
+      restoreButtons();
+
+      testStatus.textContent =
+      "Diagnostic error: " +
+      testError.message;
+
+    }
+
+  }
+);
+
+/*
+========================================
+INITIALIZATION
+========================================
+*/
 
 try{
-
-  resetAgreementReview();
-
-  setTime();
 
   if(
     !legalAgreement.innerText.trim() ||
@@ -2259,13 +2970,23 @@ try{
 
   }
 
-  referenceField.value = generateReference();
+  $("signatureDate").value =
+  centralDate(new Date());
+
+  resetAgreementReview();
 
   initialized = true;
 
-  form.noValidate = true;
+  /*
+  Standard browser validation remains enabled.
+  No form.noValidate setting is used.
+  */
 
   button.disabled = false;
+
+  testPanel.hidden = !testEnabled;
+
+  testButton.disabled = !testEnabled;
 
   checkAgreementReview();
 
@@ -2278,196 +2999,48 @@ try{
   showError(
     "The agreement could not initialize. " +
     "Please refresh the page or contact " +
-    "Omaha Restoration for assistance."
+    "Omaha Restoration for assistance. " +
+    initializationError.message
   );
 
 }
 
-/* VALIDATE AND SUBMIT */
+/*
+========================================
+RESTORE AFTER BACK NAVIGATION
+========================================
+*/
 
-form.addEventListener("submit",function(event){
+window.addEventListener(
+  "pageshow",
+  function(event){
 
-  if(submitting || !initialized){
+    restoreButtons();
 
-    event.preventDefault();
+    if(event.persisted){
 
-    return;
+      resetAgreementReview();
 
-  }
+      clearError();
 
-  clearError();
+      $("signatureDate").value =
+      centralDate(new Date());
 
-  if(!requireAgreementReview()){
+      testStatus.textContent = "";
 
-    event.preventDefault();
-
-    return;
-
-  }
-
-  if(
-    !agreementAccepted.checked ||
-    agreementAccepted.disabled ||
-    !acceptedAt
-  ){
-
-    event.preventDefault();
-
-    showError(
-      "AGREEMENT ACCEPTANCE REQUIRED. " +
-      "Please confirm that you have read, " +
-      "understood, and accepted the entire " +
-      "Business Agreement.",
-      agreementAccepted
-    );
-
-    return;
-
-  }
-
-  if(!form.checkValidity()){
-
-    event.preventDefault();
-
-    form.reportValidity();
-
-    return;
-
-  }
-
-  if(!signatureConsent.checked){
-
-    event.preventDefault();
-
-    showError(
-      "Electronic signature consent is required.",
-      signatureConsent
-    );
-
-    return;
-
-  }
-
-  const signer = normalizeName(
-    document.getElementById("signer").value
-  );
-
-  const signature = normalizeName(
-    document.getElementById("signature").value
-  );
-
-  if(!signer || signer !== signature){
-
-    event.preventDefault();
-
-    showError(
-      "Your electronic signature must match " +
-      "your Authorized Signer Name.",
-      document.getElementById("signature")
-    );
-
-    return;
-
-  }
-
-  try{
-
-    setTime();
-
-    updateAcknowledgments(true);
-
-    scrollCompleted.value = "Yes";
-
-    reviewTimestamp.value = reviewCompletedAt;
-
-    acceptanceTimestamp.value = acceptedAt;
-
-    if(!referenceField.value){
-      referenceField.value = generateReference();
-    }
-
-    if(
-      !referenceField.value ||
-      !document.getElementById("timestamp").value ||
-      !reviewCompletedAt ||
-      !acceptedAt ||
-      !agreementAccepted.checked ||
-      !signatureConsent.checked
-    ){
-
-      throw new Error(
-        "Required agreement information is missing."
-      );
+      $("deliverySubject").value = "";
+      $("deliveryName").value = "";
+      $("deliveryEmail").value = "";
+      $("deliveryMessage").value = "";
 
     }
 
-  }catch(preparationError){
-
-    event.preventDefault();
-
-    showError(
-      "The agreement could not be prepared. " +
-      preparationError.message
-    );
-
-    return;
+    if(initialized){
+      checkAgreementReview();
+    }
 
   }
-
-  submitting = true;
-
-  button.disabled = true;
-
-  button.textContent = "Submitting Agreement...";
-
-  form.setAttribute("aria-busy","true");
-
-  /*
-  Traditional HTML POST to Web3Forms.
-
-  The full agreement remains visible on the page.
-
-  Only business information, agreement version,
-  acknowledgment records, signatures, timestamps,
-  and compensation information are transmitted.
-
-  No fetch.
-  No AJAX.
-  No large contractual text fields.
-  No JavaScript redirect.
-  */
-
-});
-
-/* RESTORE FORM AFTER BACK NAVIGATION */
-
-window.addEventListener("pageshow",function(event){
-
-  submitting = false;
-
-  form.removeAttribute("aria-busy");
-
-  if(event.persisted){
-
-    resetAgreementReview();
-
-    signatureConsent.checked = false;
-
-    clearError();
-
-  }
-
-  if(initialized && referenceField.value){
-
-    button.disabled = false;
-
-    button.textContent = "Sign & Submit Agreement";
-
-    checkAgreementReview();
-
-  }
-
-});
+);
 
 })();
 
