@@ -4,39 +4,162 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>Business Email Test</title>
+  <title>Business Agreement Diagnostic Test</title>
 </head>
 
 <body>
 
-  <h1>Business Email Test</h1>
+<h1>Business Agreement Test</h1>
 
-  <form action="https://api.web3forms.com/submit" method="POST">
+<p>Diagnostic submission only. Not a binding agreement.</p>
 
-    <input type="hidden" name="access_key"
-           value="1e7fcd38-95a7-4b9e-8e93-d25b3b6e1c3d">
+<form action="https://api.web3forms.com/submit" method="POST">
 
-    <input type="hidden" name="subject"
-           value="Omaha Restoration Business Email Test">
+  <input type="hidden" name="access_key"
+         value="1e7fcd38-95a7-4b9e-8e93-d25b3b6e1c3d">
 
-    <label>Name:</label><br>
-    <input type="text" name="name" required>
+  <input type="hidden" name="subject"
+         value="Omaha Restoration Business Diagnostic Test">
 
-    <br><br>
+  <input type="hidden" name="from_name"
+         value="Omaha Restoration Business Portal">
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required>
+  <input type="hidden" name="redirect"
+         value="https://omaharestoration.store/business-submitted.html">
 
-    <br><br>
+  <input type="hidden" name="Test_Status"
+         value="DIAGNOSTIC TEST ONLY - NOT A CONTRACT">
 
-    <label>Message:</label><br>
-    <textarea name="message" required>Testing business email delivery.</textarea>
+  <input type="hidden" name="Agreement_Version"
+         value="OR-BCSA-2026-V5">
 
-    <br><br>
+  <input type="hidden" name="Business_Status"
+         value="Test Submission">
 
-    <button type="submit">Send Test Email</button>
+  <input type="hidden" name="Application_Reference"
+         value="OR-BIZ-TEST-001">
 
-  </form>
+  <input type="hidden" name="Submission_Timestamp_UTC"
+         id="timestamp">
+
+  <input type="hidden" name="Browser_User_Agent"
+         id="userAgent">
+
+  <input type="hidden" name="Agreement_Confirmation"
+         value="Diagnostic Test Only">
+
+  <input type="hidden" name="Submission_Method"
+         value="Traditional HTML Electronic Registration">
+
+  <input type="hidden" name="Legal_Business_Name"
+         value="Test Business LLC">
+
+  <input type="hidden" name="Primary_Contact_Name"
+         value="Test Contact">
+
+  <input type="hidden" name="Direct_Phone"
+         value="402-555-0100">
+
+  <input type="hidden" name="email"
+         value="test@example.com">
+
+  <input type="hidden" name="Business_Type"
+         value="General Contractor">
+
+  <input type="hidden" name="Business_Address"
+         value="Test Address">
+
+  <input type="hidden" name="City"
+         value="Omaha">
+
+  <input type="hidden" name="State"
+         value="Nebraska">
+
+  <input type="hidden" name="ZIP_Code"
+         value="68102">
+
+  <input type="hidden" name="Business_Website"
+         value="">
+
+  <input type="hidden" name="Anticipated_Sourcing_Frequency"
+         value="Weekly">
+
+  <input type="hidden" name="Primary_Project_Location"
+         value="Omaha Nebraska">
+
+  <input type="hidden" name="Anticipated_Contractor_Needs"
+         value="Drywall, painting and restoration">
+
+  <input type="hidden" name="Compensation_Schedule"
+         value="Standard sourcing $150 per authorized person. Rush sourcing $300 per authorized person. Contractor compensation is separate. Recurring discounts require written approval.">
+
+  <input type="hidden" name="Independent_Contractor_Relationship_Accepted"
+         value="TEST">
+
+  <input type="hidden" name="Fee_Terms_Accepted"
+         value="TEST">
+
+  <input type="hidden" name="Non_Circumvention_Accepted"
+         value="TEST">
+
+  <input type="hidden" name="Agreement_Accepted"
+         value="TEST">
+
+  <input type="hidden" name="Agreement_Scroll_Completed"
+         value="TEST">
+
+  <input type="hidden" name="Agreement_Review_Timestamp_UTC"
+         id="reviewTimestamp">
+
+  <input type="hidden" name="Agreement_Acceptance_Timestamp_UTC"
+         id="acceptanceTimestamp">
+
+  <input type="hidden" name="Signature_Printed_Name"
+         value="Test Signer">
+
+  <input type="hidden" name="Signature_Title"
+         value="Owner">
+
+  <input type="hidden" name="Signature_Date_Central"
+         id="signatureDate">
+
+  <input type="hidden" name="Electronic_Signature"
+         value="TEST ONLY">
+
+  <input type="hidden" name="Electronic_Signature_Consent"
+         value="TEST">
+
+  <input type="hidden" name="message"
+         value="Testing business agreement fields without the complete contractual text.">
+
+  <button type="submit">
+    Send Business Agreement Test
+  </button>
+
+</form>
+
+<script>
+
+const now = new Date();
+
+document.getElementById("timestamp").value =
+  now.toISOString();
+
+document.getElementById("reviewTimestamp").value =
+  now.toISOString();
+
+document.getElementById("acceptanceTimestamp").value =
+  now.toISOString();
+
+document.getElementById("userAgent").value =
+  navigator.userAgent;
+
+document.getElementById("signatureDate").value =
+  new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Chicago"
+  }).format(now);
+
+</script>
 
 </body>
 </html>
