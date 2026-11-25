@@ -7,7 +7,11 @@
 
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
     gtag('config', 'G-LHMPN1D7CG');
     gtag('config', 'AW-18034717066');
@@ -18,7 +22,7 @@
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#001d3d">
 
-  <title>Business Agreement | Omaha Restoration™</title>
+  <title>Business Partnership Agreement | Omaha Restoration™</title>
 
   <style>
 
@@ -27,6 +31,7 @@
       --dark:#050a12;
       --gold:#c5a059;
       --red:#b31919;
+      --white:#ffffff;
       --text:#172231;
       --muted:#647184;
       --line:#e3e7ed;
@@ -36,13 +41,16 @@
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       background:linear-gradient(160deg,#001d3d,#000814 80%);
       color:white;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      line-height:1.65;
-      min-height:100vh;
+      line-height:1.6;
     }
 
     header{
@@ -81,7 +89,7 @@
     }
 
     .wrap{
-      max-width:900px;
+      max-width:960px;
       margin:auto;
       padding:45px 20px 80px;
     }
@@ -100,9 +108,10 @@
     }
 
     h1{
-      font-size:clamp(32px,7vw,52px);
-      line-height:1.1;
+      font-size:clamp(34px,7vw,56px);
+      line-height:1.05;
       font-weight:900;
+      text-transform:uppercase;
       letter-spacing:-1.5px;
       margin:22px 0 14px;
     }
@@ -110,215 +119,252 @@
     .intro{
       max-width:760px;
       color:#c7d0dc;
-      font-size:15px;
-      margin-bottom:30px;
+      font-size:16px;
+      margin-bottom:35px;
     }
 
     .card{
       background:white;
       color:var(--text);
-      border-radius:22px;
-      padding:30px;
-      margin-bottom:20px;
-      box-shadow:0 20px 50px rgba(0,0,0,.25);
+      border-radius:25px;
+      padding:38px 32px;
+      box-shadow:0 40px 90px rgba(0,0,0,.45);
     }
 
-    h2{
-      color:var(--navy);
-      font-size:21px;
-      font-weight:900;
-      margin:0 0 20px;
-      padding-bottom:12px;
+    .section{
+      margin:38px 0 22px;
+      padding-bottom:13px;
       border-bottom:2px solid var(--line);
     }
 
-    h3{
-      color:var(--navy);
-      font-size:15px;
-      font-weight:900;
-      margin:22px 0 8px;
+    .section.first{
+      margin-top:0;
     }
 
-    p{
-      margin:8px 0 13px;
+    .section h2{
+      margin:0;
+      color:var(--navy);
+      font-size:20px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .section p{
+      margin:5px 0 0;
+      color:var(--muted);
+      font-size:13px;
     }
 
     .grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:17px;
+      margin-bottom:18px;
     }
 
     .full{
       grid-column:1/-1;
     }
 
-    .field label{
+    .field label,
+    .label{
       display:block;
       color:#947139;
       font-size:11px;
       font-weight:900;
       text-transform:uppercase;
-      letter-spacing:.6px;
+      letter-spacing:.7px;
       margin-bottom:8px;
     }
 
     input:not([type=checkbox]):not([type=hidden]),
-    select{
+    select,
+    textarea{
       width:100%;
-      min-height:52px;
-      padding:14px;
+      min-height:54px;
+      padding:15px;
       border:1px solid #d5dae0;
-      border-radius:10px;
+      border-radius:12px;
       background:#f8fafc;
       color:#111;
       font-size:16px;
       font-family:inherit;
     }
 
+    textarea{
+      resize:vertical;
+    }
+
     input:focus,
-    select:focus{
+    select:focus,
+    textarea:focus{
       outline:none;
       border-color:var(--gold);
-      box-shadow:0 0 0 3px rgba(197,160,89,.15);
+      box-shadow:0 0 0 4px rgba(197,160,89,.15);
       background:white;
-    }
-
-    input[readonly]{
-      background:#eef2f6;
-      color:#475569;
-    }
-
-    .note{
-      background:#eef4fa;
-      border-left:4px solid var(--navy);
-      border-radius:7px;
-      padding:15px;
-      font-size:13px;
-      color:#34485d;
-      margin:18px 0;
     }
 
     .fee-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:14px;
-      margin:18px 0;
+      margin:20px 0;
     }
 
     .fee-card{
       background:#fffaf0;
       border:1px solid #ead8b2;
       border-radius:15px;
-      padding:22px 12px;
-      text-align:center;
+      padding:20px;
     }
 
-    .fee-card.rush{
-      background:var(--navy);
-      color:white;
-      border-color:var(--navy);
-    }
-
-    .fee-label{
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:1px;
-    }
-
-    .price{
-      font-size:42px;
-      line-height:1.2;
-      font-weight:900;
+    .fee-card strong{
+      display:block;
+      font-size:28px;
       color:var(--navy);
-      margin:10px 0 4px;
-    }
-
-    .rush .price{
-      color:white;
-    }
-
-    .per-person{
-      font-size:12px;
       font-weight:900;
-      letter-spacing:1px;
+      line-height:1.3;
+    }
+
+    .fee-card span{
+      display:block;
+      font-size:11px;
+      color:#596575;
+      font-weight:800;
+      margin-top:8px;
     }
 
     .fee-card p{
       font-size:12px;
-      margin:12px 0 0;
+      color:#647184;
+      margin:10px 0 0;
     }
 
     .table-wrap{
       overflow-x:auto;
     }
 
-    table{
+    .fee-table{
       width:100%;
       border-collapse:collapse;
-      margin:15px 0;
+      margin:18px 0;
       font-size:13px;
     }
 
-    th{
+    .fee-table th{
       background:var(--navy);
       color:white;
+      padding:13px;
       text-align:left;
-      padding:12px 10px;
     }
 
-    td{
-      padding:12px 10px;
+    .fee-table td{
+      padding:12px 13px;
       border-bottom:1px solid var(--line);
     }
 
-    tr:nth-child(even){
+    .fee-table tr:nth-child(even){
       background:#f8fafc;
     }
 
-    td:nth-child(2),
-    td:nth-child(3){
+    .fee-table td:last-child{
       font-weight:800;
       color:var(--navy);
     }
 
-    .small{
-      font-size:12px;
-      color:var(--muted);
+    .legal-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:24px 0 12px;
     }
 
     .version{
-      color:#947139;
+      color:#96713a;
       font-size:11px;
       font-weight:900;
-      margin-bottom:14px;
     }
 
     .legal{
       background:#f8fafc;
       border:1px solid #dbe1e7;
-      border-radius:12px;
-      padding:22px;
-      max-height:500px;
+      border-radius:16px;
+      padding:25px;
+      max-height:480px;
       overflow-y:auto;
       overscroll-behavior:contain;
-      font-size:13px;
       color:#263343;
+      font-size:13px;
       line-height:1.75;
+      scroll-margin-top:100px;
     }
 
-    .legal section{
-      border-bottom:1px solid var(--line);
-      padding-bottom:10px;
+    .legal:focus-visible{
+      outline:3px solid var(--gold);
+      outline-offset:3px;
     }
 
-    .legal section:last-child{
-      border-bottom:none;
-      padding-bottom:0;
+    .legal h3{
+      color:var(--navy);
+      font-size:14px;
+      font-weight:900;
+      text-transform:uppercase;
+      margin:25px 0 8px;
     }
 
-    .legal section:first-child h3{
+    .legal h3:first-child{
       margin-top:0;
+    }
+
+    .legal h4{
+      color:#21364f;
+      font-size:13px;
+      margin:14px 0 5px;
+    }
+
+    .legal p{
+      margin:0 0 13px;
+    }
+
+    .legal ul{
+      padding-left:22px;
+      margin:8px 0 15px;
+    }
+
+    .legal strong{
+      color:#172c45;
+    }
+
+    .agreement-review{
+      background:#fff0f0;
+      border:2px solid var(--red);
+      border-radius:14px;
+      padding:18px;
+      margin:16px 0;
+      color:#861b1b;
+      font-size:13px;
+      font-weight:600;
+      line-height:1.65;
+      scroll-margin-top:100px;
+    }
+
+    .agreement-review strong{
+      display:block;
+      font-size:14px;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    .agreement-review.completed{
+      background:#f0fdf4;
+      border-color:#15803d;
+      color:#166534;
+    }
+
+    .agreement-review.attention{
+      box-shadow:0 0 0 4px rgba(179,25,25,.15);
     }
 
     .ack{
@@ -327,13 +373,18 @@
       gap:13px;
       background:#fffaf0;
       border:1px solid #ead8b2;
-      border-radius:12px;
+      border-radius:14px;
       padding:18px;
-      margin:18px 0 24px;
+      margin:14px 0;
       font-size:13px;
-      font-weight:600;
+      font-weight:700;
       color:#253247;
       cursor:pointer;
+    }
+
+    .ack.danger{
+      background:#fff5f5;
+      border-color:#efc9c9;
     }
 
     .ack input{
@@ -341,41 +392,53 @@
       height:23px;
       flex-shrink:0;
       margin-top:2px;
-      accent-color:var(--navy);
+      accent-color:var(--red);
     }
 
-    #signature{
-      font-family:Georgia,serif;
-      font-style:italic;
-      font-size:23px;
-      min-height:60px;
+    .ack.locked{
+      opacity:.65;
+      cursor:not-allowed;
+    }
+
+    .ack.locked input{
+      cursor:not-allowed;
+    }
+
+    .note{
+      background:#eef4fa;
+      border-left:4px solid var(--navy);
+      border-radius:7px;
+      padding:15px;
+      font-size:12px;
+      color:#34485d;
+      margin:18px 0;
     }
 
     .error{
       display:none;
       background:#fff0f0;
-      border:1px solid var(--red);
+      border:2px solid var(--red);
       border-radius:10px;
       color:#861b1b;
       padding:14px;
       margin:16px 0;
-      font-size:13px;
       font-weight:700;
       overflow-wrap:anywhere;
+      scroll-margin-top:100px;
     }
 
     button{
       width:100%;
-      margin-top:22px;
-      padding:20px;
+      margin-top:26px;
+      padding:22px;
       border:2px solid var(--gold);
-      border-radius:12px;
+      border-radius:15px;
       background:var(--dark);
       color:var(--gold);
-      font-size:16px;
+      font-size:17px;
       font-weight:900;
       text-transform:uppercase;
-      letter-spacing:.7px;
+      letter-spacing:1px;
       cursor:pointer;
     }
 
@@ -386,35 +449,31 @@
 
     button:disabled{
       opacity:.65;
-      cursor:not-allowed;
+      cursor:wait;
     }
 
     button:focus-visible,
-    a:focus-visible,
-    .legal:focus-visible{
+    a:focus-visible{
       outline:3px solid var(--gold);
-      outline-offset:3px;
+      outline-offset:4px;
     }
 
     footer{
+      margin:55px auto 0;
+      max-width:780px;
       text-align:center;
       color:#bdc7d2;
       font-size:11px;
       line-height:1.8;
-      margin-top:45px;
     }
 
     .brand{
       color:var(--gold);
-      font-size:14px;
+      font-size:13px;
       font-weight:900;
       letter-spacing:3px;
-      margin-bottom:10px;
-    }
-
-    footer a{
-      color:#dbe4ee;
-      overflow-wrap:anywhere;
+      text-transform:uppercase;
+      margin-bottom:14px;
     }
 
     @media(max-width:700px){
@@ -433,37 +492,38 @@
       }
 
       .wrap{
-        padding:30px 14px 60px;
+        padding:32px 14px 60px;
       }
 
       .card{
-        padding:22px 17px;
-        border-radius:17px;
+        padding:25px 18px;
+        border-radius:20px;
       }
 
-      .grid{
+      .grid,
+      .fee-grid{
         grid-template-columns:1fr;
       }
 
-      .price{
-        font-size:34px;
+      .legal{
+        padding:17px;
+        max-height:440px;
       }
 
-      .fee-card{
-        padding:18px 8px;
-      }
-
-      table{
+      .fee-table{
         font-size:12px;
       }
 
-      th,td{
-        padding:10px 7px;
+      .agreement-review{
+        padding:15px;
       }
 
-      .legal{
-        padding:16px;
-        max-height:440px;
+    }
+
+    @media(prefers-reduced-motion:reduce){
+
+      html{
+        scroll-behavior:auto;
       }
 
     }
@@ -488,1343 +548,1691 @@
 
 <main class="wrap">
 
-  <div class="pill">
-    Business Partnership Network
+<div class="pill">
+  Business Partnership Network
+</div>
+
+<h1>Business Partnership Agreement</h1>
+
+<p class="intro">
+  Omaha Restoration™ connects businesses with
+  independent contractors and qualified service
+  providers for restoration, construction,
+  repairs, maintenance, and property-related
+  projects. Our contractor sourcing network
+  helps businesses locate available service
+  providers without independently searching
+  for every contractor.
+</p>
+
+<div class="card">
+
+<noscript>
+  <div class="note">
+    JavaScript must be enabled to complete and
+    electronically sign this Agreement.
   </div>
+</noscript>
 
-  <h1>Business Partnership Agreement</h1>
+<form id="businessForm"
+      action="https://api.web3forms.com/submit"
+      method="POST">
 
-  <p class="intro">
-    Omaha Restoration™ connects businesses with
-    independent contractors and qualified service
-    providers for construction, restoration, repair,
-    maintenance, and other property-related services.
+  <input type="hidden"
+         name="access_key"
+         value="1e7fcd38-95a7-4b9e-8e93-d25b3b6e1c3d">
+
+  <input type="hidden"
+         name="subject"
+         value="New Omaha Restoration Business Agreement">
+
+  <input type="hidden"
+         name="from_name"
+         value="Omaha Restoration Business Portal">
+
+  <input type="hidden"
+         name="redirect"
+         value="https://omaharestoration.store/enrollment-submitted.html">
+
+  <input type="hidden"
+         name="Agreement_Version"
+         value="OR-BCSA-2026-V5">
+
+  <input type="hidden"
+         name="Business_Status"
+         value="Submitted for Review - Pending Written Acceptance">
+
+  <input type="hidden"
+         name="Application_Reference"
+         id="applicationReference">
+
+  <input type="hidden"
+         name="Submission_Timestamp_UTC"
+         id="timestamp">
+
+  <input type="hidden"
+         name="Browser_User_Agent"
+         id="userAgent">
+
+  <input type="hidden"
+         name="Agreement_Confirmation"
+         value="Electronic acceptance of OR-BCSA-2026-V5">
+
+  <input type="hidden"
+         name="Agreement_Text"
+         id="agreementText">
+
+  <input type="hidden"
+         name="Submission_Method"
+         value="Traditional HTML Electronic Registration">
+
+  <input type="hidden"
+         name="Agreement_Scroll_Completed"
+         id="agreementScrollCompleted"
+         value="No">
+
+  <input type="hidden"
+         name="Agreement_Review_Timestamp_UTC"
+         id="agreementReviewTimestamp">
+
+  <input type="hidden"
+         name="Agreement_Acceptance_Timestamp_UTC"
+         id="agreementAcceptanceTimestamp">
+
+  <input type="hidden"
+         name="Compensation_Schedule"
+         value="Standard sourcing $150 per authorized person. Rush sourcing $300 per authorized person. Contractor compensation is separate. Recurring discounts require written approval.">
+
+<!-- SECTION 1 -->
+
+<div class="section first">
+
+  <h2>1. Company Profile</h2>
+
+  <p>
+    Provide your legal business and contact information.
   </p>
 
-  <noscript>
+</div>
 
-    <div class="card">
-      JavaScript must be enabled to electronically
-      sign and submit this Agreement.
-    </div>
+<div class="grid">
 
-  </noscript>
+<div class="field full">
 
-  <form id="businessAgreement"
-        action="https://api.web3forms.com/submit"
-        method="POST">
+  <label for="business">
+    Legal Business Name *
+  </label>
 
-    <!-- WEB3FORMS CONFIGURATION -->
+  <input id="business"
+         type="text"
+         name="Legal_Business_Name"
+         autocomplete="organization"
+         required>
 
-    <input type="hidden"
-           name="access_key"
-           value="1e7fcd38-95a7-4b9e-8e93-d25b3b6e1c3d">
+</div>
 
-    <input type="hidden"
-           name="subject"
-           id="emailSubject"
-           value="New Signed Omaha Restoration Business Agreement">
+<div class="field">
 
-    <input type="hidden"
-           name="from_name"
-           value="Omaha Restoration Business Portal">
+  <label for="contact">
+    Primary Contact Name *
+  </label>
 
-    <input type="hidden"
-           name="redirect"
-           value="https://omaharestoration.store/enrollment-submitted.html">
+  <input id="contact"
+         type="text"
+         name="Primary_Contact_Name"
+         autocomplete="name"
+         required>
 
-    <input type="hidden"
-           name="Agreement_Version"
-           value="OR-BCSA-2026-V4">
+</div>
 
-    <input type="hidden"
-           name="Submission_Status"
-           value="Pending Review and Written Acceptance">
+<div class="field">
 
-    <input type="hidden"
-           name="Agreement_Reference"
-           id="agreementReference">
+  <label for="phone">
+    Direct Contact Phone *
+  </label>
 
-    <input type="hidden"
-           name="Submission_Timestamp_UTC"
-           id="timestamp">
+  <input id="phone"
+         type="tel"
+         name="Direct_Phone"
+         autocomplete="tel"
+         required>
 
-    <input type="hidden"
-           name="Agreement_Text"
-           id="agreementText">
+</div>
 
-    <input type="hidden"
-           name="Agreement_Acceptance_Timestamp_UTC"
-           id="acceptanceTimestamp">
+<div class="field">
 
-    <input type="hidden"
-           name="Browser_User_Agent"
-           id="userAgent">
+  <label for="email">
+    Business Email *
+  </label>
 
-    <input type="hidden"
-           name="Submission_Method"
-           value="Traditional HTML Electronic Agreement">
+  <input id="email"
+         type="email"
+         name="Email_Address"
+         autocomplete="email"
+         required>
 
-    <input type="hidden"
-           name="Compensation_Schedule"
-           value="Standard $150 per person. Rush $300 per person. Recurring discounts require separate written approval.">
+</div>
 
-    <!-- BUSINESS INFORMATION -->
+<div class="field">
 
-    <div class="card">
+  <label for="businessType">
+    Business Type *
+  </label>
 
-      <h2>1. Business Information</h2>
+  <select id="businessType"
+          name="Business_Type"
+          required>
 
-      <div class="grid">
+    <option value="">Select business type</option>
+    <option>General Contractor</option>
+    <option>Restoration Company</option>
+    <option>Property Management Company</option>
+    <option>Construction Company</option>
+    <option>Real Estate Company</option>
+    <option>Property Maintenance Company</option>
+    <option>Commercial Business</option>
+    <option>Other Business</option>
 
-        <div class="field full">
+  </select>
 
-          <label for="businessName">
-            Legal Business Name *
-          </label>
+</div>
 
-          <input id="businessName"
-                 name="Legal_Business_Name"
-                 type="text"
-                 autocomplete="organization"
-                 maxlength="200"
-                 placeholder="Enter business name"
-                 required>
+<div class="field full">
 
-        </div>
+  <label for="address">
+    Business Mailing Address *
+  </label>
 
-        <div class="field">
+  <input id="address"
+         type="text"
+         name="Business_Address"
+         autocomplete="street-address"
+         required>
 
-          <label for="fullName">
-            Your Full Legal Name *
-          </label>
+</div>
 
-          <input id="fullName"
-                 name="Authorized_Representative"
-                 type="text"
-                 autocomplete="name"
-                 maxlength="150"
-                 placeholder="First and last name"
-                 required>
-
-        </div>
+<div class="field">
 
-        <div class="field">
-
-          <label for="position">
-            Your Position *
-          </label>
-
-          <select id="position"
-                  name="Position"
-                  required>
-
-            <option value="">Select position</option>
-            <option>Owner</option>
-            <option>Co-Owner</option>
-            <option>President</option>
-            <option>Vice President</option>
-            <option>Manager</option>
-            <option>Project Manager</option>
-            <option>Authorized Representative</option>
-            <option>Other</option>
-
-          </select>
-
-        </div>
-
-        <div class="field">
-
-          <label for="phone">
-            Business Phone *
-          </label>
-
-          <input id="phone"
-                 name="Business_Phone"
-                 type="tel"
-                 autocomplete="tel"
-                 maxlength="30"
-                 placeholder="Phone number"
-                 required>
-
-        </div>
-
-        <div class="field">
-
-          <label for="email">
-            Business Email *
-          </label>
-
-          <input id="email"
-                 name="Email_Address"
-                 type="email"
-                 autocomplete="email"
-                 maxlength="200"
-                 placeholder="Business email"
-                 required>
-
-        </div>
-
-        <div class="field full">
-
-          <label for="address">
-            Business Address *
-          </label>
-
-          <input id="address"
-                 name="Business_Address"
-                 type="text"
-                 autocomplete="street-address"
-                 maxlength="250"
-                 placeholder="Street address"
-                 required>
-
-        </div>
-
-        <div class="field">
-
-          <label for="city">
-            City *
-          </label>
-
-          <input id="city"
-                 name="City"
-                 type="text"
-                 autocomplete="address-level2"
-                 maxlength="100"
-                 placeholder="City"
-                 required>
-
-        </div>
-
-        <div class="field">
-
-          <label for="state">
-            State *
-          </label>
-
-          <select id="state"
-                  name="State"
-                  autocomplete="address-level1"
-                  required>
-
-            <option value="">Select state</option>
-            <option value="NE">Nebraska</option>
-            <option value="IA">Iowa</option>
-            <option value="AL">Alabama</option>
-            <option value="AK">Alaska</option>
-            <option value="AZ">Arizona</option>
-            <option value="AR">Arkansas</option>
-            <option value="CA">California</option>
-            <option value="CO">Colorado</option>
-            <option value="CT">Connecticut</option>
-            <option value="DE">Delaware</option>
-            <option value="DC">District of Columbia</option>
-            <option value="FL">Florida</option>
-            <option value="GA">Georgia</option>
-            <option value="HI">Hawaii</option>
-            <option value="ID">Idaho</option>
-            <option value="IL">Illinois</option>
-            <option value="IN">Indiana</option>
-            <option value="KS">Kansas</option>
-            <option value="KY">Kentucky</option>
-            <option value="LA">Louisiana</option>
-            <option value="ME">Maine</option>
-            <option value="MD">Maryland</option>
-            <option value="MA">Massachusetts</option>
-            <option value="MI">Michigan</option>
-            <option value="MN">Minnesota</option>
-            <option value="MS">Mississippi</option>
-            <option value="MO">Missouri</option>
-            <option value="MT">Montana</option>
-            <option value="NV">Nevada</option>
-            <option value="NH">New Hampshire</option>
-            <option value="NJ">New Jersey</option>
-            <option value="NM">New Mexico</option>
-            <option value="NY">New York</option>
-            <option value="NC">North Carolina</option>
-            <option value="ND">North Dakota</option>
-            <option value="OH">Ohio</option>
-            <option value="OK">Oklahoma</option>
-            <option value="OR">Oregon</option>
-            <option value="PA">Pennsylvania</option>
-            <option value="RI">Rhode Island</option>
-            <option value="SC">South Carolina</option>
-            <option value="SD">South Dakota</option>
-            <option value="TN">Tennessee</option>
-            <option value="TX">Texas</option>
-            <option value="UT">Utah</option>
-            <option value="VT">Vermont</option>
-            <option value="VA">Virginia</option>
-            <option value="WA">Washington</option>
-            <option value="WV">West Virginia</option>
-            <option value="WI">Wisconsin</option>
-            <option value="WY">Wyoming</option>
+  <label for="city">
+    City *
+  </label>
 
-          </select>
-
-        </div>
-
-        <div class="field">
-
-          <label for="zip">
-            ZIP Code *
-          </label>
-
-          <input id="zip"
-                 name="ZIP_Code"
-                 type="text"
-                 inputmode="numeric"
-                 autocomplete="postal-code"
-                 pattern="[0-9]{5}(-[0-9]{4})?"
-                 maxlength="10"
-                 placeholder="ZIP code"
-                 required>
-
-        </div>
-
-        <div class="field">
+  <input id="city"
+         type="text"
+         name="City"
+         autocomplete="address-level2"
+         required>
 
-          <label for="website">
-            Website (Optional)
-          </label>
-
-          <input id="website"
-                 name="Business_Website"
-                 type="text"
-                 maxlength="250"
-                 placeholder="Website address">
+</div>
 
-        </div>
+<div class="field">
 
-      </div>
-
-    </div>
+  <label for="state">
+    State *
+  </label>
 
-    <!-- PRICING -->
+  <input id="state"
+         type="text"
+         name="State"
+         autocomplete="address-level1"
+         required>
 
-    <div class="card" id="pricingTerms">
+</div>
 
-      <h2>2. Sourcing Rates</h2>
+<div class="field">
 
-      <div class="fee-grid">
+  <label for="zip">
+    ZIP Code *
+  </label>
 
-        <div class="fee-card">
+  <input id="zip"
+         type="text"
+         name="ZIP_Code"
+         inputmode="numeric"
+         autocomplete="postal-code"
+         pattern="[0-9]{5}(-[0-9]{4})?"
+         maxlength="10"
+         required>
 
-          <div class="fee-label">STANDARD</div>
+</div>
 
-          <div class="price">$150</div>
+<div class="field">
 
-          <div class="per-person">PER PERSON</div>
+  <label for="website">
+    Business Website (Optional)
+  </label>
 
-          <p>At least 24 hours' advance notice.</p>
+  <input id="website"
+         type="url"
+         name="Business_Website"
+         placeholder="https://">
 
-        </div>
+</div>
 
-        <div class="fee-card rush">
+</div>
 
-          <div class="fee-label">RUSH</div>
+<div class="note">
 
-          <div class="price">$300</div>
+  No enrollment fee, automatic subscription,
+  or minimum assignment commitment is required.
 
-          <div class="per-person">PER PERSON</div>
+  Sourcing fees apply only to separately
+  authorized assignments and applicable
+  agreed cancellation charges.
 
-          <p>Less than 24 hours' advance notice.</p>
+</div>
 
-        </div>
+<!-- SECTION 2 -->
 
-      </div>
+<div class="section">
 
-      <h3>Recurring Business Rates</h3>
+  <h2>2. Business Sourcing Requirements</h2>
 
-      <div class="table-wrap">
+  <p>
+    Tell us about your anticipated contractor needs.
+    This information does not authorize an assignment
+    or create a payment obligation.
+  </p>
 
-        <table>
+</div>
 
-          <thead>
+<div class="grid">
 
-            <tr>
-              <th>Monthly Volume</th>
-              <th>Standard / Person</th>
-              <th>Rush / Person</th>
-            </tr>
+<div class="field">
 
-          </thead>
+  <label for="frequency">
+    Anticipated Sourcing Frequency
+  </label>
 
-          <tbody>
+  <select id="frequency"
+          name="Anticipated_Sourcing_Frequency">
 
-            <tr>
-              <td>1–4 people</td>
-              <td>$150</td>
-              <td>$300</td>
-            </tr>
+    <option value="Not Specified">
+      Select frequency
+    </option>
 
-            <tr>
-              <td>5–9 people</td>
-              <td>$125</td>
-              <td>$275</td>
-            </tr>
+    <option>Occasional Projects</option>
+    <option>Weekly</option>
+    <option>Monthly</option>
+    <option>Recurring Business Needs</option>
+    <option>Emergency or As Needed</option>
 
-            <tr>
-              <td>10–19 people</td>
-              <td>$100</td>
-              <td>$250</td>
-            </tr>
-
-            <tr>
-              <td>20+ people</td>
-              <td>$75</td>
-              <td>$225</td>
-            </tr>
+  </select>
 
-          </tbody>
+</div>
 
-        </table>
+<div class="field">
 
-      </div>
-
-      <p class="small">
-        Recurring discounts require a separately
-        approved written monthly volume agreement.
-        Standard rates apply unless alternative
-        pricing is approved in writing.
-      </p>
-
-      <div class="note">
-
-        <strong>Per-Person Pricing:</strong>
-
-        All rates apply per authorized person,
-        including individuals from the same
-        contracting company. Contractor labor
-        rates and project compensation are
-        negotiated separately.
-
-      </div>
-
-      <div class="note">
-
-        No enrollment fee. No automatic monthly
-        subscription. Pay only for separately
-        authorized sourcing services and
-        applicable agreed cancellation charges.
-
-      </div>
-
-    </div>
-
-    <!-- AGREEMENT -->
-
-    <div class="card">
-
-      <h2>3. Agreement Terms</h2>
-
-      <div class="version">
-        OR-BCSA-2026-V4 | VERSION 4.0
-      </div>
-
-      <p class="small">
-        Please review the complete Agreement
-        before signing below.
-      </p>
-
-      <div class="legal"
-           id="legalAgreement"
-           tabindex="0"
-           role="region"
-           aria-label="Business Partnership Agreement Terms">
-
-        <section>
-
-          <h3>1. Parties and Services</h3>
-
-          <p>
-            This Business Contractor Sourcing and
-            Referral Agreement ("Agreement") is between
-            Murrays Empire LLC, a Nebraska limited
-            liability company operating under the brand
-            Omaha Restoration™ ("Company"), and the
-            business identified in this form ("Client").
-          </p>
-
-          <p>
-            Company provides independent contractor
-            sourcing, introductions, referrals, and
-            administrative coordination in exchange
-            for agreed compensation.
-          </p>
-
-          <p>
-            Company does not directly perform physical
-            construction, supervise job-site activities,
-            administer payroll, supply employees,
-            operate as an employer of record, or
-            guarantee project completion.
-          </p>
-
-          <p>
-            Nothing in this Agreement creates an
-            employment relationship, legal partnership,
-            joint venture, franchise, or agency between
-            the parties. Neither party may bind the
-            other without written authorization.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>2. Pricing and Assignment Authorization</h3>
-
-          <p>
-            Standard sourcing is $150 per person for
-            requests made at least 24 hours before
-            the requested arrival. Rush sourcing is
-            $300 per person for requests made less
-            than 24 hours before the requested arrival.
-            Rush pricing does not guarantee availability.
-          </p>
-
-          <p>
-            Fees are calculated individually for each
-            authorized person, including multiple
-            individuals from the same contracting
-            company.
-          </p>
-
-          <p>
-            Recurring discounts require a separate
-            written agreement establishing applicable
-            rates, monthly commitment, billing period,
-            and any shortfall adjustments.
-          </p>
-
-          <p>
-            Before each compensated assignment, Client
-            must affirmatively approve the requested
-            services, location, number of people,
-            required qualifications, arrival requirements,
-            applicable fees, paying party, and any
-            cancellation or repeat-assignment terms.
-          </p>
-
-          <p>
-            Email, text message, or electronic acceptance
-            may establish written authorization.
-            Unauthorized additional personnel do not
-            automatically generate additional charges.
-            Silence does not constitute acceptance.
-          </p>
-
-          <p>
-            No undisclosed or retroactive compensation
-            changes may be imposed. Assignment-specific
-            pricing modifications require mutual
-            written acceptance.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>3. Payment Terms and Collections</h3>
-
-          <p>
-            The applicable sourcing fee becomes earned
-            when an authorized individual arrives at
-            the agreed location and is available and
-            appropriately qualified to perform the
-            requested services.
-          </p>
-
-          <p>
-            Earned fees and lawfully assessed cancellation
-            charges are payable within five (5) business
-            days after the applicable payment trigger,
-            unless otherwise agreed in writing.
-          </p>
-
-          <p>
-            Sourcing fees are independent of hours worked,
-            contractor compensation, project revenue,
-            subsequent construction payments, and project
-            completion.
-          </p>
-
-          <p>
-            Payments must be made through an authorized
-            business payment method designated by Company.
-            Client shall identify the applicable invoice
-            or assignment when submitting payment.
-          </p>
-
-          <p>
-            Client shall reasonably cooperate in confirming
-            qualifying arrivals and promptly report
-            material assignment discrepancies.
-          </p>
-
-          <p>
-            Overdue, undisputed amounts may accrue a
-            non-compounding late charge of 1.5% per
-            month, or the maximum rate permitted by
-            applicable law, whichever is less.
-          </p>
-
-          <p>
-            Company may suspend additional sourcing
-            services while undisputed balances remain
-            overdue and pursue lawful collection remedies.
-          </p>
-
-          <p>
-            Reasonable collection expenses, court costs,
-            and attorney fees may be recovered only to
-            the extent permitted by applicable law or
-            awarded by a court or arbitrator under an
-            enforceable contractual provision.
-          </p>
-
-          <p>
-            Client shall provide written notice of
-            invoice disputes within ten (10) business
-            days after receiving the invoice, identifying
-            the disputed amount, reason, and reasonably
-            available supporting documentation.
-          </p>
-
-          <p>
-            Both parties shall attempt to resolve
-            disputes in good faith. Undisputed amounts
-            remain payable by their original deadlines.
-            This notice requirement does not waive
-            rights or defenses that cannot lawfully
-            be waived.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>4. Independent Contractor Compensation</h3>
-
-          <p>
-            Hourly rates, daily rates, project pricing,
-            construction scope, and payment arrangements
-            are negotiated independently between Client
-            and the service provider.
-          </p>
-
-          <p>
-            Company does not establish or administer
-            those payments and is not responsible for
-            paying the service provider's labor,
-            wages, materials, equipment, or other
-            independently negotiated expenses.
-          </p>
-
-          <p>
-            Actual worker classification depends on
-            applicable law and the circumstances of
-            the working relationship, not contractual
-            labels alone.
-          </p>
-
-          <p>
-            Client and each service provider remain
-            responsible for their respective lawful
-            tax, insurance, employment, and contractual
-            obligations.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>5. Cancellations and Replacements</h3>
-
-          <p>
-            When accepted in the assignment authorization,
-            Client cancellation before confirmed travel
-            begins incurs no fee.
-          </p>
-
-          <p>
-            Client cancellation after confirmed travel
-            begins may incur 50% of the authorized
-            sourcing fee, to the extent reasonably
-            related to anticipated losses and legally
-            enforceable.
-          </p>
-
-          <p>
-            Cancellation after qualifying arrival does
-            not eliminate the earned sourcing fee.
-          </p>
-
-          <p>
-            Except for an applicable Client-initiated
-            cancellation charge, no sourcing fee is
-            owed for an individual who cancels, fails
-            to arrive, or fails to satisfy the agreed
-            arrival and qualification requirements.
-          </p>
-
-          <p>
-            Replacement efforts are subject to
-            availability and do not create duplicate
-            sourcing charges. Unearned payments and
-            billing errors shall be refunded or corrected.
-          </p>
-
-          <p>
-            Company shall not collect both a full
-            sourcing fee and a separate cancellation
-            fee for the same individual assignment.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>6. Non-Circumvention and Repeat Assignments</h3>
-
-          <p>
-            For twelve (12) months following a documented
-            introduction, Client shall not intentionally
-            bypass Company to avoid expressly agreed
-            sourcing fees for qualifying assignments.
-          </p>
-
-          <p>
-            Client shall not knowingly use an affiliated
-            business, intermediary, subcontractor,
-            alternative payment arrangement, or false
-            assignment information to conceal qualifying
-            work or evade lawfully agreed fees.
-          </p>
-
-          <p>
-            New assignments involving introduced service
-            providers may generate additional fees only
-            where repeat-assignment obligations, scope,
-            pricing, duration, and payment triggers
-            were expressly accepted in writing.
-          </p>
-
-          <p>
-            Additional visits necessary to complete
-            the original assignment do not automatically
-            generate new fees.
-          </p>
-
-          <p>
-            This provision does not prohibit legitimate
-            direct communication, lawful worker mobility,
-            or independently established business
-            relationships.
-          </p>
-
-          <p>
-            Client shall promptly disclose relevant
-            pre-existing relationships concerning the
-            same assignment and report qualifying
-            repeat assignments within two (2)
-            business days.
-          </p>
-
-          <p>
-            Intentional circumvention constitutes a
-            material breach. Company may pursue
-            lawfully recoverable unpaid fees and
-            proven damages without imposing
-            unauthorized penalties.
-          </p>
-
-          <p>
-            Applicable non-circumvention obligations
-            survive termination for the remainder
-            of the original twelve-month period.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>7. Separate Compensation Agreements</h3>
-
-          <p>
-            Company may maintain separate compensation
-            agreements with independent contracting
-            businesses.
-          </p>
-
-          <p>
-            Compensation from both Client and a service
-            provider shall not be collected unless
-            legally permitted, disclosed to the affected
-            parties, and affirmatively accepted before
-            the compensated introduction.
-          </p>
-
-          <p>
-            Company may reduce or waive fees through
-            written authorization.
-          </p>
-
-          <p>
-            Client is not responsible for another
-            party's separate compensation obligations
-            unless expressly agreed in writing.
-          </p>
-
-          <p>
-            No compensation arrangement authorizes
-            prohibited employment-placement fees,
-            unlawful wage deductions, or undisclosed
-            duplicate charges.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>8. Responsibilities and Qualifications</h3>
-
-          <p>
-            Service providers must possess applicable
-            registrations, licenses, insurance, and
-            qualifications required by law and the
-            accepted assignment.
-          </p>
-
-          <p>
-            Company shall not knowingly represent
-            unverified qualifications as verified
-            or authorize independent assignments
-            before applicable credential requirements
-            have been satisfied.
-          </p>
-
-          <p>
-            Client shall independently evaluate service
-            providers, provide accurate project
-            information, coordinate property access,
-            disclose known safety concerns, and
-            comply with applicable workplace and
-            construction requirements.
-          </p>
-
-          <p>
-            Client and service providers are responsible
-            for independently negotiated construction
-            contracts, permits, supervision, safety,
-            workmanship, warranties, and project
-            performance according to their respective
-            legal and contractual obligations.
-          </p>
-
-          <p>
-            Company does not guarantee continuous
-            availability, workmanship, construction
-            pricing, insurance coverage, or project
-            completion.
-          </p>
-
-          <p>
-            Company may decline or suspend assignments
-            involving unsafe conditions, unlawful
-            activities, inaccurate project information,
-            or unresolved qualification concerns.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>9. Liability, Indemnification and Legal Compliance</h3>
-
-          <p>
-            Each party remains responsible for its
-            own acts, omissions, negligence, misconduct,
-            and legal obligations.
-          </p>
-
-          <p>
-            Company does not assume construction
-            obligations independently undertaken
-            by Client or service providers.
-          </p>
-
-          <p>
-            To the extent permitted by applicable law,
-            Client shall indemnify and hold harmless
-            Murrays Empire LLC, Omaha Restoration™,
-            and their respective owners, members,
-            managers, and authorized representatives
-            against third-party claims, damages,
-            liabilities, and reasonable defense
-            expenses to the extent caused by:
-          </p>
-
-          <ul>
-
-            <li>
-              Client's negligent acts or omissions.
-            </li>
-
-            <li>
-              Client's material contractual breaches.
-            </li>
-
-            <li>
-              Client's unlawful conduct or misconduct.
-            </li>
-
-            <li>
-              Unsafe conditions for which Client
-              is legally responsible.
-            </li>
-
-            <li>
-              Acts of Client's personnel for which
-              Client is legally responsible.
-            </li>
-
-            <li>
-              Client's failure to satisfy applicable
-              legal or regulatory obligations.
-            </li>
-
-          </ul>
-
-          <p>
-            This provision does not require Client
-            to indemnify Company for Company's own
-            negligence, misconduct, or other liability
-            where prohibited by applicable law.
-          </p>
-
-          <p>
-            Company shall provide reasonably prompt
-            notice of an indemnifiable claim and
-            reasonably cooperate in its resolution.
-            Neither party may impose a settlement
-            obligation on the other without written
-            consent.
-          </p>
-
-          <p>
-            Activities requiring contractor registration,
-            employment-agency licensing, trade licensing,
-            insurance, or other governmental authorization
-            shall not proceed until applicable requirements
-            have been satisfied.
-          </p>
-
-          <p>
-            No prohibited employment-placement fees,
-            unlawful wage deductions, worker
-            misclassification, fraudulent insurance
-            activities, or other unlawful compensation
-            arrangements are authorized.
-          </p>
-
-          <p>
-            Company does not negotiate or adjust
-            insurance claims.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>10. Confidentiality and Business Records</h3>
-
-          <p>
-            Both parties shall reasonably protect
-            confidential business, customer, property,
-            and contractor information and use it
-            only for legitimate business, contractual,
-            or legal purposes.
-          </p>
-
-          <p>
-            Neither party may improperly sell,
-            disclose, distribute, or misuse confidential
-            information received through the
-            sourcing relationship.
-          </p>
-
-          <p>
-            Client may not misrepresent its relationship
-            with Company, claim unauthorized authority,
-            or use Company trademarks or branding
-            without written permission.
-          </p>
-
-          <p>
-            Relevant assignment authorizations,
-            arrival confirmations, invoices, payments,
-            and agreement records shall be retained
-            for at least three (3) years, or longer
-            when required by law or an existing dispute.
-          </p>
-
-          <p>
-            Upon reasonable written request, Client
-            shall provide relevant documentation
-            necessary to verify authorized assignments,
-            qualifying arrivals, and applicable
-            sourcing compensation.
-          </p>
-
-          <p>
-            Client consents to transmission of submitted
-            business information and electronic
-            signatures through a third-party form
-            processing service for agreement
-            administration and recordkeeping.
-          </p>
-
-          <p>
-            Applicable confidentiality and recordkeeping
-            obligations survive termination.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>11. Termination and Binding Arbitration</h3>
-
-          <p>
-            This Agreement is non-exclusive and does
-            not guarantee a minimum number of assignments.
-            No automatic monthly subscription or
-            annual renewal commitment is established.
-          </p>
-
-          <p>
-            Either party may terminate this Agreement
-            upon fifteen (15) calendar days' written
-            notice.
-          </p>
-
-          <p>
-            Company may suspend services or terminate
-            immediately upon written notice for fraud,
-            unlawful conduct, serious safety concerns,
-            intentional circumvention, material
-            nonpayment, or an incurable material breach.
-          </p>
-
-          <p>
-            Termination does not eliminate lawfully
-            earned fees, outstanding payment obligations,
-            or applicable surviving confidentiality,
-            indemnification, non-circumvention,
-            recordkeeping, and dispute-resolution
-            provisions.
-          </p>
-
-          <p>
-            This Agreement is governed by Nebraska law,
-            subject to mandatory applicable laws in
-            other jurisdictions.
-          </p>
-
-          <p>
-            Before commencing arbitration, the
-            complaining party shall provide written
-            notice describing the dispute and
-            requested remedy. The parties shall
-            attempt good-faith informal resolution
-            for fifteen (15) calendar days, unless
-            urgent legal relief is necessary.
-          </p>
-
-          <p>
-            Except for eligible small-claims matters,
-            disputes arising from or relating to
-            this Agreement shall be resolved through
-            binding arbitration administered by the
-            American Arbitration Association under
-            its applicable Commercial Arbitration Rules.
-          </p>
-
-          <p>
-            Arbitration shall take place in Douglas
-            County, Nebraska, unless the parties
-            agree otherwise in writing or mandatory
-            applicable law requires another location.
-          </p>
-
-          <p>
-            Unless applicable rules require otherwise,
-            one neutral arbitrator shall decide
-            the dispute.
-          </p>
-
-          <p>
-            Filing fees, administrative expenses,
-            and arbitrator compensation shall initially
-            be allocated according to applicable
-            arbitration rules and mandatory law.
-          </p>
-
-          <p>
-            The arbitrator may award costs and
-            attorney fees only when authorized by
-            applicable law or an enforceable
-            contractual provision.
-          </p>
-
-          <p>
-            Either party may instead bring an
-            eligible claim in a court of competent
-            small-claims jurisdiction.
-          </p>
-
-          <p>
-            Either party may seek temporary judicial
-            relief where legally available without
-            waiving applicable arbitration obligations.
-            A court of competent jurisdiction may
-            enter judgment upon an arbitration award.
-          </p>
-
-          <p>
-            By accepting this Agreement, the parties
-            acknowledge that covered disputes will
-            generally be resolved by an arbitrator
-            rather than through a court trial or
-            jury trial.
-          </p>
-
-          <p>
-            Business days exclude Saturdays, Sundays,
-            and observed United States federal holidays.
-          </p>
-
-        </section>
-
-        <section>
-
-          <h3>12. Electronic Acceptance and Entire Agreement</h3>
-
-          <p>
-            The individual signing represents that
-            they possess authority to bind the
-            identified business and voluntarily
-            consent to electronic signatures
-            and electronic records.
-          </p>
-
-          <p>
-            Submission constitutes Client's offer
-            to enter this Agreement. The Agreement
-            becomes effective upon written acceptance
-            by an authorized representative of
-            Murrays Empire LLC.
-          </p>
-
-          <p>
-            Submission alone does not guarantee
-            approval or establish an individual
-            sourcing charge.
-          </p>
-
-          <p>
-            This Agreement, accepted assignment
-            authorizations, and mutually accepted
-            written amendments establish the
-            commercial sourcing relationship.
-          </p>
-
-          <p>
-            Assignment-specific written terms control
-            expressly identified assignment details.
-            Other provisions remain effective unless
-            expressly modified through mutual written
-            acceptance.
-          </p>
-
-          <p>
-            Material changes require mutual written
-            acceptance. Neither party may unilaterally
-            impose retroactive compensation changes.
-          </p>
-
-          <p>
-            Unenforceable provisions shall be severed
-            to the extent permitted by law. Failure
-            to enforce a provision does not
-            automatically waive future enforcement.
-          </p>
-
-          <p>
-            Neither party may transfer this Agreement
-            to an unrelated third party without the
-            other party's written consent, except
-            where otherwise permitted by law.
-          </p>
-
-          <p>
-            Required notices may be delivered through
-            designated business email addresses or
-            another documented written method.
-          </p>
-
-          <p>
-            Both parties shall receive or have access
-            to a copy of the mutually accepted Agreement.
-            Official notices to Company may be sent
-            to murraysempirellc@gmail.com.
-          </p>
-
-        </section>
-
-      </div>
-
-    </div>
-
-    <!-- ELECTRONIC SIGNATURE -->
-
-    <div class="card">
-
-      <h2>4. Sign Agreement</h2>
-
-      <label class="ack"
-             id="acceptanceLabel">
-
-        <input type="checkbox"
-               id="agreementAccepted"
-               name="Agreement_Accepted"
-               value="Yes"
-               required>
-
-        <span id="acceptanceText">
-
-          I have read, understand, and accept the
-          complete OR-BCSA-2026-V4 Agreement,
-          including pricing, payment obligations,
-          non-circumvention, indemnification,
-          and binding arbitration.
-
-          I confirm that I am authorized to bind
-          the identified business and consent to
-          electronic signatures, electronic records,
-          and third-party processing of this submission.
-
-          I intend my typed name to serve as my
-          electronic signature.
-
-        </span>
-
-      </label>
-
-      <div class="grid">
-
-        <div class="field full">
-
-          <label for="signature">
-            Electronic Signature *
-          </label>
-
-          <input id="signature"
-                 name="Electronic_Signature"
-                 type="text"
-                 maxlength="150"
-                 autocomplete="off"
-                 placeholder="Type your full legal name"
-                 required>
-
-          <p class="small">
-            Your signature must match your full
-            legal name entered above.
-          </p>
-
-        </div>
-
-        <div class="field full">
-
-          <label for="signatureDate">
-            Date Signed
-          </label>
-
-          <input id="signatureDate"
-                 name="Signature_Date_Central"
-                 type="text"
-                 readonly>
-
-        </div>
-
-      </div>
-
-      <div class="note">
-
-        No payment is required to submit this
-        Agreement. All submissions are subject
-        to review and written acceptance by
-        Murrays Empire LLC.
-
-      </div>
-
-      <div class="error"
-           id="formError"
-           role="alert"
-           aria-live="assertive"
-           tabindex="-1">
-      </div>
-
-      <button type="submit"
-              id="submitButton"
-              disabled>
-
-        Sign &amp; Submit Agreement
-
-      </button>
-
-    </div>
-
-  </form>
-
-  <footer>
-
-    <div class="brand">
-      OMAHA RESTORATION™
-    </div>
-
-    Powered by Murrays Empire LLC
-
-    <br>
-
-    Omaha, Nebraska
-
-    <br><br>
-
-    <a href="mailto:murraysempirellc@gmail.com">
-      murraysempirellc@gmail.com
-    </a>
-
-    <br><br>
-
-    Omaha Restoration™ operates as an independent
-    contractor sourcing and referral network.
-    Physical contracting services are performed
-    by independent service providers.
-
-    <br><br>
-
-    © <span id="year"></span>
-    Murrays Empire LLC. All Rights Reserved.
-
-    <br>
-
-    OR-BCSA-2026-V4
-
-  </footer>
+  <label for="serviceArea">
+    Primary Project Location
+  </label>
+
+  <input id="serviceArea"
+         type="text"
+         name="Primary_Project_Location"
+         placeholder="City or service area">
+
+</div>
+
+<div class="field full">
+
+  <label for="services">
+    Types of Contractors Needed
+  </label>
+
+  <textarea id="services"
+            name="Anticipated_Contractor_Needs"
+            rows="4"
+            placeholder="Describe the types of contractors or services your business may need"></textarea>
+
+</div>
+
+</div>
+
+<!-- SECTION 3 -->
+
+<div class="section">
+
+  <h2>3. Business Partnership Agreement</h2>
+
+  <p>
+    Review our sourcing rates and complete contractual terms.
+  </p>
+
+</div>
+
+<div class="fee-grid">
+
+<div class="fee-card">
+
+  <strong>$150</strong>
+
+  <span>STANDARD SOURCING — PER PERSON</span>
+
+  <p>
+    Requests made at least 24 hours before
+    the requested arrival time.
+  </p>
+
+</div>
+
+<div class="fee-card">
+
+  <strong>$300</strong>
+
+  <span>RUSH SOURCING — PER PERSON</span>
+
+  <p>
+    Requests made less than 24 hours before
+    the requested arrival time.
+    Subject to availability.
+  </p>
+
+</div>
+
+</div>
+
+<h3>Recurring Business Rates</h3>
+
+<div class="table-wrap">
+
+<table class="fee-table">
+
+<thead>
+
+<tr>
+  <th>Monthly Volume</th>
+  <th>Standard / Person</th>
+  <th>Rush / Person</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+  <td>1–4 people</td>
+  <td>$150</td>
+  <td>$300</td>
+</tr>
+
+<tr>
+  <td>5–9 people</td>
+  <td>$125</td>
+  <td>$275</td>
+</tr>
+
+<tr>
+  <td>10–19 people</td>
+  <td>$100</td>
+  <td>$250</td>
+</tr>
+
+<tr>
+  <td>20+ people</td>
+  <td>$75</td>
+  <td>$225</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="note">
+
+  <strong>Recurring Business Discounts:</strong>
+
+  Discounted rates require a separate written
+  monthly volume agreement approved by
+  Omaha Restoration™.
+
+  Standard rates apply unless alternative
+  pricing is expressly accepted in writing.
+
+</div>
+
+<div class="note">
+
+  <strong>IMPORTANT — SEPARATE SOURCING FEE:</strong>
+
+  <br><br>
+
+  All fees charged by Omaha Restoration™
+  under this Agreement are exclusively for
+  contractor sourcing, referral, introduction,
+  and administrative coordination services.
+
+  <br><br>
+
+  These fees do not include contractor labor,
+  materials, equipment, or project expenses.
+
+  <br><br>
+
+  Contractors independently establish their
+  own pricing and payment arrangements
+  directly with your business.
+
+  <br><br>
+
+  Omaha Restoration™ sourcing fees are separate
+  from and payable in addition to any amount
+  charged by the contractor, regardless of
+  the contractor's pricing or total project
+  value, subject to the payment conditions
+  established in this Agreement.
+
+</div>
+
+<div class="legal-top">
+
+  <strong>
+    OMAHA RESTORATION™ BUSINESS AGREEMENT
+  </strong>
+
+  <span class="version">
+    OR-BCSA-2026-V5
+  </span>
+
+</div>
+
+<div class="agreement-review"
+     id="agreementReview"
+     role="status"
+     aria-live="polite"
+     tabindex="-1">
+
+  <strong>AGREEMENT REVIEW REQUIRED</strong>
+
+  Please read the entire Omaha Restoration™
+  Business Agreement before signing and
+  submitting your application. You must scroll
+  to the bottom of the agreement to continue.
+
+</div>
+
+<div class="legal"
+     id="legalAgreement"
+     tabindex="0"
+     role="region"
+     aria-label="Omaha Restoration Business Agreement"
+     aria-describedby="agreementReview">
+
+<h3>1. Parties &amp; Agreement Purpose</h3>
+
+<p>
+This Business Contractor Sourcing and Referral
+Agreement ("Agreement") is entered into between
+Murrays Empire LLC, a Nebraska limited liability
+company operating under the brand Omaha Restoration™
+("Company"), and the business identified in
+this registration form ("Client").
+</p>
+
+<p>
+The purpose of this Agreement is to establish
+the terms under which Company provides independent
+contractor sourcing, introductions, referrals,
+and administrative coordination in exchange
+for agreed sourcing compensation.
+</p>
+
+<p>
+Submission does not guarantee acceptance,
+contractor availability, project completion,
+exclusive service arrangements, or a minimum
+number of assignments.
+</p>
+
+<h3>2. Independent Contractor Sourcing Platform</h3>
+
+<p>
+Omaha Restoration™ operates as an independent
+contractor sourcing, referral, and project-routing
+network.
+</p>
+
+<p>
+Company does not directly perform restoration,
+construction, mitigation, plumbing, electrical,
+roofing, HVAC, drywall, painting, mold remediation,
+or other physical contracting services.
+</p>
+
+<p>
+Company does not supply employees, administer
+payroll, supervise job-site activities, operate
+as an employer of record, or guarantee the
+performance of independent service providers.
+</p>
+
+<p>
+Physical contracting services are independently
+estimated, contracted, managed, and performed
+by properly authorized service providers.
+</p>
+
+<p>
+Nothing in this Agreement establishes an
+employment relationship, agency, franchise,
+joint venture, or legal partnership between
+the parties.
+</p>
+
+<p>
+Neither party may bind the other without
+express written authorization.
+</p>
+
+<h3>3. Definitions</h3>
+
+<h4>3.1 Sourcing Services</h4>
+
+<p>
+Sourcing Services means identifying, contacting,
+introducing, and coordinating independent
+service providers in response to Client's
+authorized business request.
+</p>
+
+<h4>3.2 Authorized Assignment</h4>
+
+<p>
+An Authorized Assignment means a documented
+request accepted by Company and Client
+identifying the requested services, location,
+number of people, required qualifications,
+arrival requirements, applicable sourcing
+fees, paying party, and applicable
+assignment-specific conditions.
+</p>
+
+<h4>3.3 Qualifying Arrival</h4>
+
+<p>
+Qualifying Arrival occurs when an authorized
+individual arrives at the agreed location
+and is available and appropriately qualified
+to perform the requested services.
+</p>
+
+<h4>3.4 Business Day</h4>
+
+<p>
+A Business Day means Monday through Friday,
+excluding observed United States federal holidays.
+</p>
+
+<h3>4. Required Sourcing Compensation</h3>
+
+<h4>4.1 Standard Sourcing</h4>
+
+<p>
+Client agrees to pay One Hundred Fifty Dollars
+($150.00) per authorized person for standard
+sourcing requests made at least twenty-four
+(24) hours before the requested arrival time.
+</p>
+
+<h4>4.2 Rush Sourcing</h4>
+
+<p>
+Client agrees to pay Three Hundred Dollars
+($300.00) per authorized person for rush
+sourcing requests made less than twenty-four
+(24) hours before the requested arrival time.
+</p>
+
+<p>
+Rush pricing does not guarantee availability
+or arrival within a specific time.
+</p>
+
+<h4>4.3 Per-Person Compensation</h4>
+
+<p>
+Sourcing fees are calculated individually
+for each authorized person, including multiple
+individuals from the same contracting company.
+</p>
+
+<p>
+Unauthorized additional personnel do not
+automatically generate additional sourcing fees.
+</p>
+
+<h4>4.4 Recurring Business Discounts</h4>
+
+<p>
+The following monthly volume rates may be
+available under a separately approved written
+recurring business agreement:
+</p>
+
+<ul>
+<li>1–4 people: $150 standard / $300 rush per person.</li>
+<li>5–9 people: $125 standard / $275 rush per person.</li>
+<li>10–19 people: $100 standard / $250 rush per person.</li>
+<li>20 or more people: $75 standard / $225 rush per person.</li>
+</ul>
+
+<p>
+Recurring discounts require a separate written
+agreement establishing applicable rates,
+monthly commitments, billing periods, and
+any shortfall adjustments.
+</p>
+
+<p>
+Standard rates apply unless alternative
+pricing is expressly accepted in writing.
+</p>
+
+<h4>4.5 Separate Contractor Compensation</h4>
+
+<p>
+All sourcing fees payable to Company under
+this Agreement are exclusively for contractor
+sourcing, referral, introduction, and
+administrative coordination services.
+</p>
+
+<p>
+Company's sourcing fees do not include
+contractor labor, wages, materials, equipment,
+transportation, or other project expenses.
+</p>
+
+<p>
+Hourly rates, daily rates, project pricing,
+construction scope, and payment arrangements
+are independently negotiated between Client
+and the service provider.
+</p>
+
+<p>
+Company does not establish, control, collect,
+or administer those independently negotiated
+project payments and is not responsible
+for paying the service provider.
+</p>
+
+<p>
+The authorized sourcing fee is separate
+from and payable in addition to contractor
+compensation.
+</p>
+
+<p>
+Company's sourcing fee is independent of
+hours worked, contractor compensation,
+project revenue, construction payments,
+project profitability, and project completion.
+</p>
+
+<p>
+Changes in contractor pricing do not reduce
+or increase the authorized sourcing fee
+unless Company and Client expressly agree
+otherwise in writing.
+</p>
+
+<h4>4.6 Assignment Authorization</h4>
+
+<p>
+Before each compensated assignment, Client
+must affirmatively approve the requested
+services, location, number of people,
+required qualifications, arrival requirements,
+applicable fees, paying party, and applicable
+cancellation or repeat-assignment terms.
+</p>
+
+<p>
+Email, text message, or electronic acceptance
+may establish written authorization.
+</p>
+
+<p>
+Silence does not constitute acceptance.
+Submission of this Agreement alone does
+not authorize an individual assignment.
+</p>
+
+<p>
+No undisclosed or retroactive compensation
+changes may be imposed.
+</p>
+
+<p>
+Assignment-specific pricing modifications
+require mutual written acceptance.
+</p>
+
+<h4>4.7 Payment Trigger &amp; Deadline</h4>
+
+<p>
+The applicable sourcing fee becomes earned
+upon Qualifying Arrival of an authorized
+individual.
+</p>
+
+<p>
+Earned sourcing fees and lawfully assessed
+cancellation charges are payable within
+five (5) Business Days after the applicable
+payment trigger, unless otherwise agreed
+in writing.
+</p>
+
+<p>
+Project cancellation following Qualifying
+Arrival does not eliminate an earned
+sourcing fee.
+</p>
+
+<p>
+Payment of an earned sourcing fee is not
+contingent upon project completion, contractor
+payment, customer payment, insurance proceeds,
+or Client's receipt of project revenue.
+</p>
+
+<h4>4.8 Payment Methods</h4>
+
+<p>
+Payments must be made using an authorized
+business payment method designated by Company.
+</p>
+
+<p>
+Client shall identify the applicable invoice
+or assignment when submitting payment.
+</p>
+
+<h4>4.9 Late Payments &amp; Collections</h4>
+
+<p>
+Overdue, undisputed amounts may accrue a
+late charge of 1.5% per month, without
+compounding, or the maximum rate permitted
+by applicable law, whichever is less.
+</p>
+
+<p>
+Company may suspend additional sourcing
+services while undisputed balances remain
+overdue and pursue lawful collection remedies.
+</p>
+
+<p>
+Reasonable collection expenses, court costs,
+and attorney fees may be recovered only
+to the extent permitted by applicable law
+or awarded by a court or arbitrator under
+an enforceable contractual provision.
+</p>
+
+<h4>4.10 Payment Disputes</h4>
+
+<p>
+Client shall provide written notice of
+invoice disputes within ten (10) Business
+Days after receiving the invoice.
+</p>
+
+<p>
+Notice shall identify the disputed amount,
+reason, and reasonably available supporting
+documentation.
+</p>
+
+<p>
+The parties shall attempt to resolve disputes
+in good faith. Undisputed amounts remain
+payable by their original deadlines.
+</p>
+
+<p>
+This notice requirement does not waive
+rights or defenses that cannot lawfully
+be waived.
+</p>
+
+<h3>5. Cancellations &amp; Replacements</h3>
+
+<p>
+When accepted in the assignment authorization,
+Client cancellation before confirmed travel
+begins incurs no sourcing fee.
+</p>
+
+<p>
+Client cancellation after confirmed travel
+begins may incur fifty percent (50%) of
+the authorized sourcing fee, to the extent
+reasonably related to anticipated losses
+and legally enforceable.
+</p>
+
+<p>
+Cancellation after Qualifying Arrival does
+not eliminate the earned sourcing fee.
+</p>
+
+<p>
+Except for an applicable Client-initiated
+cancellation charge, no sourcing fee is
+owed for an individual who cancels, fails
+to arrive, or fails to satisfy agreed
+arrival and qualification requirements.
+</p>
+
+<p>
+Replacement efforts are subject to availability
+and do not create duplicate sourcing charges
+for the same individual assignment.
+</p>
+
+<p>
+Unearned payments and billing errors shall
+be refunded or corrected.
+</p>
+
+<p>
+Company shall not collect both a full
+sourcing fee and a separate cancellation
+fee for the same individual assignment.
+</p>
+
+<h3>6. Non-Circumvention &amp; Repeat Assignments</h3>
+
+<h4>6.1 Protected Introduction Period</h4>
+
+<p>
+For twelve (12) months following a documented
+introduction, Client shall not intentionally
+bypass Company to avoid expressly agreed
+sourcing fees for qualifying assignments.
+</p>
+
+<h4>6.2 Repeat Assignments</h4>
+
+<p>
+New assignments involving introduced service
+providers may generate additional sourcing
+fees only where repeat-assignment obligations,
+scope, pricing, duration, and payment triggers
+were expressly accepted in writing.
+</p>
+
+<p>
+Additional visits necessary to complete
+the original assignment do not automatically
+generate new sourcing fees.
+</p>
+
+<h4>6.3 Direct Contractor Communication</h4>
+
+<p>
+Client may communicate directly with introduced
+service providers to negotiate pricing,
+coordinate scheduling, arrange property access,
+and administer independently contracted work.
+</p>
+
+<p>
+Direct communication is permitted provided
+it is not intentionally used to evade
+expressly agreed sourcing compensation.
+</p>
+
+<h4>6.4 Fee Avoidance</h4>
+
+<p>
+Client shall not knowingly use affiliated
+businesses, intermediaries, subcontractors,
+alternative payment arrangements, or false
+assignment information to conceal qualifying
+work or avoid lawfully agreed sourcing fees.
+</p>
+
+<h4>6.5 Existing Business Relationships</h4>
+
+<p>
+This section does not prohibit lawful worker
+mobility or independently established business
+relationships.
+</p>
+
+<p>
+Client shall promptly disclose relevant
+pre-existing relationships concerning the
+same assignment.
+</p>
+
+<h4>6.6 Reporting &amp; Enforcement</h4>
+
+<p>
+Client shall report qualifying repeat
+assignments within two (2) Business Days.
+</p>
+
+<p>
+Intentional circumvention constitutes a
+material breach. Company may pursue lawfully
+recoverable unpaid fees and proven damages
+without imposing unauthorized penalties.
+</p>
+
+<p>
+Applicable non-circumvention obligations
+survive termination for the remainder of
+the original twelve-month protected period.
+</p>
+
+<h3>7. Separate Compensation Agreements</h3>
+
+<p>
+Company may maintain separate compensation
+agreements with independent contracting
+businesses.
+</p>
+
+<p>
+Compensation from both Client and a service
+provider shall not be collected unless legally
+permitted, disclosed to the affected parties,
+and affirmatively accepted before the
+compensated introduction.
+</p>
+
+<p>
+Company may reduce or waive fees through
+written authorization.
+</p>
+
+<p>
+Client is not responsible for another party's
+separate compensation obligations unless
+expressly agreed in writing.
+</p>
+
+<p>
+No compensation arrangement authorizes
+prohibited employment-placement fees,
+unlawful wage deductions, or undisclosed
+duplicate charges.
+</p>
+
+<h3>8. Responsibilities &amp; Qualifications</h3>
+
+<p>
+Independent service providers must possess
+applicable registrations, licenses, insurance,
+and qualifications required by law and
+the accepted assignment.
+</p>
+
+<p>
+Company shall not knowingly represent
+unverified qualifications as verified
+or authorize independent assignments
+before applicable credential requirements
+have been satisfied.
+</p>
+
+<p>
+Client shall independently evaluate service
+providers, provide accurate project information,
+coordinate property access, disclose known
+safety concerns, and comply with applicable
+workplace and construction requirements.
+</p>
+
+<p>
+Client and service providers remain responsible
+for independently negotiated construction
+contracts, permits, supervision, safety,
+workmanship, warranties, and project
+performance according to their respective
+legal and contractual obligations.
+</p>
+
+<p>
+Actual worker classification depends upon
+applicable law and the circumstances of
+the working relationship, not contractual
+labels alone.
+</p>
+
+<p>
+Client and service providers remain responsible
+for their respective lawful tax, insurance,
+employment, and contractual obligations.
+</p>
+
+<p>
+Company does not guarantee continuous
+availability, workmanship, construction
+pricing, insurance coverage, or project
+completion.
+</p>
+
+<p>
+Company may decline or suspend assignments
+involving unsafe conditions, unlawful
+activities, inaccurate project information,
+or unresolved qualification concerns.
+</p>
+
+<h3>9. Liability, Indemnification &amp; Legal Compliance</h3>
+
+<p>
+Each party remains responsible for its
+own acts, omissions, negligence, misconduct,
+and legal obligations.
+</p>
+
+<p>
+Company does not assume construction
+obligations independently undertaken
+by Client or service providers.
+</p>
+
+<p>
+To the extent permitted by applicable law,
+Client shall indemnify and hold harmless
+Murrays Empire LLC, Omaha Restoration™,
+and their respective owners, members,
+managers, and authorized representatives
+against third-party claims, damages,
+liabilities, and reasonable defense
+expenses to the extent caused by:
+</p>
+
+<ul>
+<li>Client's negligent acts or omissions.</li>
+<li>Client's material contractual breaches.</li>
+<li>Client's unlawful conduct or misconduct.</li>
+<li>Unsafe conditions for which Client is legally responsible.</li>
+<li>Acts of Client's personnel for which Client is legally responsible.</li>
+<li>Client's failure to satisfy applicable legal or regulatory obligations.</li>
+</ul>
+
+<p>
+This provision does not require Client
+to indemnify Company for Company's own
+negligence, misconduct, or other liability
+where prohibited by applicable law.
+</p>
+
+<p>
+Company shall provide reasonably prompt
+notice of an indemnifiable claim and
+reasonably cooperate in its resolution.
+</p>
+
+<p>
+Neither party may impose a settlement
+obligation on the other without written
+consent.
+</p>
+
+<p>
+Activities requiring contractor registration,
+employment-agency licensing, trade licensing,
+insurance, or other governmental authorization
+shall not proceed until applicable requirements
+have been satisfied.
+</p>
+
+<p>
+No prohibited employment-placement fees,
+unlawful wage deductions, worker
+misclassification, fraudulent insurance
+activities, or other unlawful compensation
+arrangements are authorized.
+</p>
+
+<p>
+Company does not negotiate or adjust
+insurance claims.
+</p>
+
+<h3>10. Confidentiality &amp; Business Records</h3>
+
+<p>
+Both parties shall reasonably protect
+confidential business, customer, property,
+and contractor information and use it
+only for legitimate business, contractual,
+or legal purposes.
+</p>
+
+<p>
+Neither party may improperly sell, disclose,
+distribute, or misuse confidential information
+received through the sourcing relationship.
+</p>
+
+<p>
+Client may not misrepresent its relationship
+with Company, claim unauthorized authority,
+or use Company trademarks or branding
+without written permission.
+</p>
+
+<p>
+Relevant assignment authorizations, arrival
+confirmations, invoices, payments, and
+agreement records shall be retained for
+at least three (3) years, or longer when
+required by law or an existing dispute.
+</p>
+
+<p>
+Client shall reasonably cooperate in
+confirming qualifying arrivals and promptly
+report material assignment discrepancies.
+</p>
+
+<p>
+Upon reasonable written request, Client
+shall provide relevant documentation
+necessary to verify authorized assignments,
+qualifying arrivals, and applicable
+sourcing compensation.
+</p>
+
+<p>
+Client consents to transmission of submitted
+business information and electronic
+signatures through a third-party form
+processing service for agreement
+administration and recordkeeping.
+</p>
+
+<p>
+Applicable confidentiality and recordkeeping
+obligations survive termination.
+</p>
+
+<h3>11. Term &amp; Termination</h3>
+
+<p>
+This Agreement is non-exclusive and does
+not guarantee a minimum number of assignments.
+</p>
+
+<p>
+No automatic monthly subscription or
+annual renewal commitment is established.
+</p>
+
+<p>
+Either party may terminate this Agreement
+upon fifteen (15) calendar days' written
+notice.
+</p>
+
+<p>
+Company may suspend services or terminate
+immediately upon written notice for fraud,
+unlawful conduct, serious safety concerns,
+intentional circumvention, material
+nonpayment, or an incurable material breach.
+</p>
+
+<p>
+Termination does not eliminate lawfully
+earned fees, outstanding payment obligations,
+or applicable surviving confidentiality,
+indemnification, non-circumvention,
+recordkeeping, and dispute-resolution
+provisions.
+</p>
+
+<h3>12. Nebraska Law &amp; Binding Arbitration</h3>
+
+<p>
+This Agreement is governed by Nebraska law,
+subject to mandatory applicable laws
+in other jurisdictions.
+</p>
+
+<p>
+Before commencing arbitration, the complaining
+party shall provide written notice describing
+the dispute and requested remedy.
+</p>
+
+<p>
+The parties shall attempt good-faith
+informal resolution for fifteen (15)
+calendar days, unless urgent legal relief
+is necessary.
+</p>
+
+<p>
+Except for eligible small-claims matters,
+disputes arising from or relating to this
+Agreement shall be resolved through binding
+arbitration administered by the American
+Arbitration Association under its applicable
+Commercial Arbitration Rules.
+</p>
+
+<p>
+Arbitration shall take place in Douglas
+County, Nebraska, unless the parties agree
+otherwise in writing or mandatory applicable
+law requires another location.
+</p>
+
+<p>
+Unless applicable rules require otherwise,
+one neutral arbitrator shall decide
+the dispute.
+</p>
+
+<p>
+Filing fees, administrative expenses,
+and arbitrator compensation shall initially
+be allocated according to applicable
+arbitration rules and mandatory law.
+</p>
+
+<p>
+The arbitrator may award costs and attorney
+fees only when authorized by applicable law
+or an enforceable contractual provision.
+</p>
+
+<p>
+Either party may instead bring an eligible
+claim in a court of competent small-claims
+jurisdiction.
+</p>
+
+<p>
+Either party may seek temporary judicial
+relief where legally available without
+waiving applicable arbitration obligations.
+</p>
+
+<p>
+A court of competent jurisdiction may
+enter judgment upon an arbitration award.
+</p>
+
+<p>
+By accepting this Agreement, the parties
+acknowledge that covered disputes will
+generally be resolved by an arbitrator
+rather than through a court trial or
+jury trial.
+</p>
+
+<h3>13. Assignment, Notices &amp; Entire Agreement</h3>
+
+<p>
+This Agreement, accepted assignment
+authorizations, and mutually accepted
+written amendments establish the
+commercial sourcing relationship.
+</p>
+
+<p>
+Assignment-specific written terms control
+expressly identified assignment details.
+Other provisions remain effective unless
+expressly modified through mutual written
+acceptance.
+</p>
+
+<p>
+Material changes require mutual written
+acceptance. Neither party may unilaterally
+impose retroactive compensation changes.
+</p>
+
+<p>
+Unenforceable provisions shall be severed
+to the extent permitted by law.
+</p>
+
+<p>
+Failure to enforce a provision does not
+automatically waive future enforcement.
+</p>
+
+<p>
+Neither party may transfer this Agreement
+to an unrelated third party without the
+other party's written consent, except
+where otherwise permitted by law.
+</p>
+
+<p>
+Required notices may be delivered through
+designated business email addresses or
+another documented written method.
+</p>
+
+<p>
+Official notices to Company may be sent
+to murraysempirellc@gmail.com.
+</p>
+
+<p>
+Both parties shall receive or have access
+to a copy of the mutually accepted Agreement.
+</p>
+
+<h3>14. Electronic Signature &amp; Acceptance</h3>
+
+<p>
+By electronically signing and submitting
+this Agreement, Client confirms:
+</p>
+
+<ul>
+<li>It has reviewed the complete Agreement.</li>
+<li>It understands the $150 standard sourcing fee per authorized person.</li>
+<li>It understands the $300 rush sourcing fee per authorized person.</li>
+<li>It understands that sourcing fees are separate from contractor charges.</li>
+<li>It accepts the applicable payment deadlines.</li>
+<li>It accepts applicable cancellation and repeat-assignment provisions.</li>
+<li>It accepts applicable reporting and verification requirements.</li>
+<li>It accepts the non-circumvention provisions.</li>
+<li>It accepts the indemnification and arbitration provisions.</li>
+<li>The signer is authorized to bind the identified business.</li>
+</ul>
+
+<p>
+The parties consent to electronic records
+and signatures to the extent permitted
+by applicable law.
+</p>
+
+<p>
+Submission constitutes Client's offer
+to enter this Agreement.
+</p>
+
+<p>
+The Agreement becomes effective only
+upon Company's documented written acceptance.
+</p>
+
+<p>
+Submission alone does not establish
+an individual sourcing charge or guarantee
+contractor availability.
+</p>
+
+</div>
+
+<div class="note">
+
+<strong>Important:</strong>
+
+Read the complete Agreement before signing.
+Submitting this form does not automatically
+authorize an assignment or create a
+sourcing charge.
+
+Each compensated assignment requires
+separate authorization.
+
+</div>
+
+<label class="ack danger">
+
+<input type="checkbox"
+       name="Independent_Contractor_Relationship_Accepted"
+       value="Yes"
+       required>
+
+<span>
+I understand that Omaha Restoration™
+provides contractor sourcing and referral
+services and does not directly perform
+physical contracting services, administer
+contractor payroll, or supervise independent
+service providers.
+</span>
+
+</label>
+
+<label class="ack danger">
+
+<input type="checkbox"
+       name="Fee_Terms_Accepted"
+       value="Yes"
+       required>
+
+<span>
+I specifically understand and accept
+the <strong>$150 standard sourcing fee
+and $300 rush sourcing fee per authorized
+person.</strong>
+
+I understand that these fees are separate
+from and payable in addition to contractor
+labor, materials, equipment, and project
+charges.
+
+I accept the applicable payment deadlines
+and assignment-specific written terms.
+</span>
+
+</label>
+
+<label class="ack">
+
+<input type="checkbox"
+       name="Non_Circumvention_Accepted"
+       value="Yes"
+       required>
+
+<span>
+I understand that I may communicate
+directly with introduced service providers
+for legitimate business purposes but may
+not intentionally bypass Omaha Restoration™
+to avoid expressly agreed sourcing fees.
+
+I accept the twelve-month protected
+introduction provisions.
+</span>
+
+</label>
+
+<label class="ack locked"
+       id="agreementAcceptanceLabel">
+
+<input type="checkbox"
+       id="agreementAccepted"
+       name="Agreement_Accepted"
+       value="Yes"
+       required
+       disabled>
+
+<span>
+I confirm that I have read, understood,
+and agree to the entire OR-BCSA-2026-V5
+Omaha Restoration™ Business Contractor
+Sourcing and Referral Agreement, including
+non-circumvention, assignment authorization,
+payment obligations, cancellation terms,
+indemnification, and binding arbitration.
+
+I am authorized to bind the identified business.
+</span>
+
+</label>
+
+<!-- SECTION 4 -->
+
+<div class="section">
+
+<h2>4. Electronic Signature</h2>
+
+<p>
+Complete the required fields to finalize your Agreement.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="field">
+
+<label for="signer">
+Authorized Signer Name *
+</label>
+
+<input id="signer"
+       type="text"
+       name="Signature_Printed_Name"
+       required>
+
+</div>
+
+<div class="field">
+
+<label for="title">
+Title / Position *
+</label>
+
+<input id="title"
+       type="text"
+       name="Signature_Title"
+       placeholder="Owner, Member, President"
+       required>
+
+</div>
+
+<div class="field">
+
+<label for="signatureDate">
+Date Signed (Central Time)
+</label>
+
+<input id="signatureDate"
+       type="text"
+       name="Signature_Date_Central"
+       readonly>
+
+</div>
+
+<div class="field">
+
+<label for="signature">
+Electronic Signature *
+</label>
+
+<input id="signature"
+       type="text"
+       name="Electronic_Signature"
+       placeholder="Type your full name"
+       required>
+
+</div>
+
+</div>
+
+<label class="ack">
+
+<input type="checkbox"
+       name="Electronic_Signature_Consent"
+       value="Yes"
+       required>
+
+<span>
+I intend my typed name to serve as my
+electronic signature and consent to
+electronic execution of this Agreement,
+electronic records, and third-party
+processing of this submission.
+</span>
+
+</label>
+
+<div class="note">
+
+<strong>Agreement Review:</strong>
+
+Your signed Agreement will be submitted
+to Omaha Restoration™ for review and
+written acceptance.
+
+No payment is required to submit
+this Agreement.
+
+</div>
+
+<div class="error"
+     id="formError"
+     role="alert"
+     aria-live="assertive"
+     tabindex="-1">
+</div>
+
+<button type="submit"
+        id="submitBtn"
+        disabled>
+
+Sign &amp; Submit Agreement
+
+</button>
+
+</form>
+
+</div>
+
+<footer>
+
+<div class="brand">
+Omaha Restoration™
+</div>
+
+Omaha Restoration™ is operated by Murrays Empire LLC.
+
+Omaha Restoration™ is an independent contractor
+sourcing, referral, and project-routing network
+and does not perform physical restoration services.
+
+Independent service providers are responsible
+for their independently contracted services,
+licensing, registration, insurance, permits,
+safety, and workmanship.
+
+<br><br>
+
+Omaha, Nebraska
+
+<br>
+
+<a href="mailto:murraysempirellc@gmail.com"
+   style="color:#bdc7d2;">
+murraysempirellc@gmail.com
+</a>
+
+<br><br>
+
+© <span id="year"></span>
+Murrays Empire LLC. All Rights Reserved.
+
+<br>
+
+OR-BCSA-2026-V5
+
+</footer>
 
 </main>
 
@@ -1835,30 +2243,62 @@
   "use strict";
 
   const form =
-    document.getElementById("businessAgreement");
+    document.getElementById("businessForm");
 
   const button =
-    document.getElementById("submitButton");
+    document.getElementById("submitBtn");
 
   const error =
     document.getElementById("formError");
 
+  const legalAgreement =
+    document.getElementById("legalAgreement");
+
+  const agreementReview =
+    document.getElementById("agreementReview");
+
   const agreementAccepted =
     document.getElementById("agreementAccepted");
 
-  const acceptanceTimestamp =
-    document.getElementById("acceptanceTimestamp");
+  const acceptanceLabel =
+    document.getElementById("agreementAcceptanceLabel");
 
-  let initialized = false;
+  const scrollCompleted =
+    document.getElementById("agreementScrollCompleted");
+
+  const reviewTimestamp =
+    document.getElementById("agreementReviewTimestamp");
+
+  const acceptanceTimestamp =
+    document.getElementById("agreementAcceptanceTimestamp");
+
+  const agreementVersion =
+    "OR-BCSA-2026-V5";
+
+  const reviewRequiredMessage =
+    "Please read the entire Omaha Restoration™ " +
+    "Business Agreement before signing and " +
+    "submitting your application. You must scroll " +
+    "to the bottom of the agreement to continue.";
+
   let submitting = false;
+  let initialized = false;
+  let agreementReviewed = false;
+  let reviewCompletedAt = "";
   let acceptedAt = "";
 
-  /* AUTOMATIC COPYRIGHT YEAR */
+  const scrollBehavior =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ? "auto"
+    : "smooth";
 
   document.getElementById("year").textContent =
     new Date().getFullYear();
 
-  /* AUTOMATIC AGREEMENT REFERENCE */
+  document.getElementById("userAgent").value =
+    navigator.userAgent;
+
+  /* APPLICATION REFERENCE */
 
   function generateReference(){
 
@@ -1884,7 +2324,7 @@
 
   }
 
-  /* AUTOMATIC CENTRAL TIME DATE */
+  /* CENTRAL TIME SIGNATURE RECORD */
 
   function setTime(){
 
@@ -1926,53 +2366,21 @@
 
   function captureAgreement(){
 
-    const pricing =
-      document.getElementById("pricingTerms")
-        .innerText.trim();
+    const agreementText =
+      legalAgreement.innerText.trim();
 
-    const terms =
-      document.getElementById("legalAgreement")
-        .innerText.trim();
-
-    const consent =
-      document.getElementById("acceptanceText")
-        .innerText.trim();
-
-    if(!pricing || !terms || !consent){
+    if(!agreementText){
 
       throw new Error(
-        "The complete agreement could not be captured."
+        "The business agreement could not be captured."
       );
 
     }
 
-    document.getElementById("agreementText").value = [
-
-      "OMAHA RESTORATION™",
-
-      "Powered by Murrays Empire LLC",
-
-      "Business Contractor Sourcing and Referral Agreement",
-
-      "Document ID: OR-BCSA-2026-V4",
-
-      "Version: 4.0",
-
-      "",
-
-      pricing,
-
-      "",
-
-      terms,
-
-      "",
-
-      "ELECTRONIC ACCEPTANCE",
-
-      consent
-
-    ].join("\n");
+    document.getElementById("agreementText").value =
+      agreementVersion +
+      "\n\n" +
+      agreementText;
 
   }
 
@@ -1986,7 +2394,7 @@
 
   }
 
-  /* DISPLAY ERRORS */
+  /* DISPLAY VALIDATION ERRORS */
 
   function clearError(){
 
@@ -2004,29 +2412,150 @@
 
     if(target.focus){
 
-      target.focus();
+      target.focus({
+        preventScroll:true
+      });
 
     }
 
     target.scrollIntoView({
 
-      behavior:window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches ? "auto" : "smooth",
-
+      behavior:scrollBehavior,
       block:"center"
 
     });
 
   }
 
-  /* RECORD AGREEMENT ACCEPTANCE */
+  /* RESET AGREEMENT REVIEW */
+
+  function resetAgreementReview(){
+
+    agreementReviewed = false;
+    reviewCompletedAt = "";
+    acceptedAt = "";
+
+    scrollCompleted.value = "No";
+    reviewTimestamp.value = "";
+    acceptanceTimestamp.value = "";
+
+    agreementAccepted.checked = false;
+    agreementAccepted.disabled = true;
+
+    acceptanceLabel.classList.add("locked");
+
+    agreementReview.classList.remove(
+      "completed",
+      "attention"
+    );
+
+    agreementReview.innerHTML =
+      "<strong>AGREEMENT REVIEW REQUIRED</strong>" +
+      reviewRequiredMessage;
+
+    legalAgreement.scrollTop = 0;
+
+  }
+
+  /* VERIFY AGREEMENT SCROLL COMPLETION */
+
+  function checkAgreementReview(){
+
+    if(!initialized || agreementReviewed){
+      return;
+    }
+
+    const totalHeight =
+      legalAgreement.scrollHeight;
+
+    const visibleHeight =
+      legalAgreement.clientHeight;
+
+    const currentPosition =
+      legalAgreement.scrollTop;
+
+    if(visibleHeight <= 0){
+      return;
+    }
+
+    const remaining =
+      totalHeight -
+      visibleHeight -
+      currentPosition;
+
+    if(remaining <= 2){
+
+      agreementReviewed = true;
+
+      reviewCompletedAt =
+        new Date().toISOString();
+
+      scrollCompleted.value = "Yes";
+
+      reviewTimestamp.value =
+        reviewCompletedAt;
+
+      agreementAccepted.disabled = false;
+
+      acceptanceLabel.classList.remove(
+        "locked"
+      );
+
+      agreementReview.classList.remove(
+        "attention"
+      );
+
+      agreementReview.classList.add(
+        "completed"
+      );
+
+      agreementReview.innerHTML =
+        "<strong>AGREEMENT REVIEW COMPLETED</strong>" +
+        "Please confirm that you have read, " +
+        "understood, and accepted the entire " +
+        "Business Agreement.";
+
+      if(
+        error.textContent.indexOf(
+          "AGREEMENT REVIEW REQUIRED"
+        ) === 0
+      ){
+
+        clearError();
+
+      }
+
+    }
+
+  }
+
+  legalAgreement.addEventListener(
+
+    "scroll",
+    checkAgreementReview,
+    {passive:true}
+
+  );
+
+  /* RECORD EXPLICIT AGREEMENT ACCEPTANCE */
 
   agreementAccepted.addEventListener(
 
     "change",
 
     function(){
+
+      if(!agreementReviewed){
+
+        agreementAccepted.checked = false;
+        agreementAccepted.disabled = true;
+
+        acceptedAt = "";
+        acceptanceTimestamp.value = "";
+
+        return;
+
+      }
 
       if(agreementAccepted.checked){
 
@@ -2047,34 +2576,107 @@
 
   );
 
-  /* INITIALIZE AGREEMENT */
+  /* REQUIRE AGREEMENT REVIEW BEFORE SUBMISSION */
+
+  function requireAgreementReview(){
+
+    if(
+      agreementReviewed &&
+      reviewCompletedAt
+    ){
+
+      return true;
+
+    }
+
+    agreementReview.classList.add(
+      "attention"
+    );
+
+    showError(
+
+      "AGREEMENT REVIEW REQUIRED. " +
+      reviewRequiredMessage,
+
+      agreementReview
+
+    );
+
+    return false;
+
+  }
+
+  /* DISPLAY WARNING IF LOCKED CHECKBOX IS SELECTED */
+
+  acceptanceLabel.addEventListener(
+
+    "click",
+
+    function(event){
+
+      if(!agreementReviewed){
+
+        event.preventDefault();
+
+        requireAgreementReview();
+
+      }
+
+    }
+
+  );
+
+  /* CHECK AGREEMENT BEFORE NATIVE FORM VALIDATION */
+
+  button.addEventListener(
+
+    "click",
+
+    function(event){
+
+      if(!requireAgreementReview()){
+
+        event.preventDefault();
+
+      }
+
+    }
+
+  );
+
+  /* INITIALIZE REGISTRATION */
 
   try{
 
-    agreementAccepted.checked = false;
-
-    acceptanceTimestamp.value = "";
-
-    document.getElementById("userAgent").value =
-      navigator.userAgent;
+    resetAgreementReview();
 
     setTime();
 
     captureAgreement();
 
     document.getElementById(
-      "agreementReference"
+      "applicationReference"
     ).value = generateReference();
 
     initialized = true;
 
     button.disabled = false;
 
+    form.noValidate = true;
+
+    if(
+      legalAgreement.clientHeight > 0 &&
+      legalAgreement.scrollHeight <=
+      legalAgreement.clientHeight + 2
+    ){
+
+      checkAgreementReview();
+
+    }
+
   }catch(initializationError){
 
     initialized = false;
-
-    button.disabled = true;
 
     showError(
 
@@ -2084,9 +2686,11 @@
 
     );
 
+    button.disabled = true;
+
   }
 
-  /* TRADITIONAL HTML FORM SUBMISSION */
+  /* VALIDATE BEFORE TRADITIONAL HTML POST */
 
   form.addEventListener("submit",function(event){
 
@@ -2100,7 +2704,42 @@
 
     clearError();
 
-    /* REQUIRED FIELD VALIDATION */
+    /* MANDATORY AGREEMENT REVIEW */
+
+    if(!requireAgreementReview()){
+
+      event.preventDefault();
+
+      return;
+
+    }
+
+    /* MANDATORY AGREEMENT ACCEPTANCE */
+
+    if(
+      !agreementAccepted.checked ||
+      agreementAccepted.disabled ||
+      !acceptedAt
+    ){
+
+      event.preventDefault();
+
+      showError(
+
+        "AGREEMENT ACCEPTANCE REQUIRED. " +
+        "Please confirm that you have read, " +
+        "understood, and accepted the entire " +
+        "Business Agreement.",
+
+        agreementAccepted
+
+      );
+
+      return;
+
+    }
+
+    /* VALIDATE REQUIRED FORM FIELDS */
 
     if(!form.checkValidity()){
 
@@ -2112,55 +2751,11 @@
 
     }
 
-    const requiredFields =
-      form.querySelectorAll(
-        'input[required]:not([type="checkbox"])'
-      );
-
-    for(const field of requiredFields){
-
-      if(!field.value.trim()){
-
-        event.preventDefault();
-
-        showError(
-
-          "Please complete all required information.",
-
-          field
-
-        );
-
-        return;
-
-      }
-
-    }
-
-    /* AGREEMENT ACCEPTANCE VALIDATION */
-
-    if(!agreementAccepted.checked || !acceptedAt){
-
-      event.preventDefault();
-
-      showError(
-
-        "Please confirm that you have read " +
-        "and accepted the complete Agreement.",
-
-        agreementAccepted
-
-      );
-
-      return;
-
-    }
-
     /* ELECTRONIC SIGNATURE MUST MATCH */
 
-    const fullName = normalizeName(
+    const signer = normalizeName(
 
-      document.getElementById("fullName").value
+      document.getElementById("signer").value
 
     );
 
@@ -2170,14 +2765,14 @@
 
     );
 
-    if(!fullName || fullName !== signature){
+    if(!signer || signer !== signature){
 
       event.preventDefault();
 
       showError(
 
         "Your electronic signature must match " +
-        "your full legal name.",
+        "your Authorized Signer Name.",
 
         document.getElementById("signature")
 
@@ -2187,7 +2782,7 @@
 
     }
 
-    /* PREPARE COMPLETE AGREEMENT RECORD */
+    /* PREPARE COMPLETE SUBMISSION RECORD */
 
     try{
 
@@ -2195,21 +2790,17 @@
 
       captureAgreement();
 
+      scrollCompleted.value = "Yes";
+
+      reviewTimestamp.value =
+        reviewCompletedAt;
+
       acceptanceTimestamp.value =
         acceptedAt;
 
-      const businessName =
-        document.getElementById("businessName")
-          .value.trim()
-          .replace(/[\r\n]/g," ");
-
-      document.getElementById("emailSubject").value =
-        "SIGNED BUSINESS AGREEMENT - " +
-        businessName;
-
       const referenceField =
         document.getElementById(
-          "agreementReference"
+          "applicationReference"
         );
 
       if(!referenceField.value){
@@ -2231,7 +2822,11 @@
 
         !referenceField.value ||
 
-        !acceptanceTimestamp.value ||
+        !agreementReviewed ||
+
+        !reviewCompletedAt ||
+
+        !acceptedAt ||
 
         !agreementAccepted.checked
 
@@ -2251,7 +2846,7 @@
 
       showError(
 
-        "The Agreement could not be prepared. " +
+        "The agreement could not be prepared. " +
         preparationError.message
 
       );
@@ -2272,29 +2867,24 @@
     form.setAttribute("aria-busy","true");
 
     /*
-      IMPORTANT:
-
-      Do not prevent the default submission here.
+      DO NOT PREVENT DEFAULT HERE.
 
       The browser submits the complete form
       directly to Web3Forms using traditional
-      HTML POST.
+      HTML POST, exactly like contractors.html.
 
       No fetch.
       No AJAX.
       No JSON conversion.
-      No JavaScript success redirect.
+      No JavaScript redirect.
 
-      Web3Forms processes the submission and
-      handles the configured redirect.
-
-      This follows the same submission method
-      as contractors.html.
+      Web3Forms processes the submission
+      and handles the configured redirect.
     */
 
   });
 
-  /* RESTORE FORM IF USER RETURNS */
+  /* RESTORE BUTTON IF USER RETURNS TO PAGE */
 
   window.addEventListener("pageshow",function(event){
 
@@ -2304,19 +2894,25 @@
 
     if(event.persisted){
 
-      agreementAccepted.checked = false;
-
-      acceptedAt = "";
-
-      acceptanceTimestamp.value = "";
+      resetAgreementReview();
 
       clearError();
 
-      setTime();
-
     }
 
-    if(initialized){
+    if(
+
+      initialized &&
+
+      document.getElementById(
+        "agreementText"
+      ).value &&
+
+      document.getElementById(
+        "applicationReference"
+      ).value
+
+    ){
 
       button.disabled = false;
 
