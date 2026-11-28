@@ -487,6 +487,24 @@ textarea:focus{
   margin-bottom:12px;
 }
 
+.protection-note{
+  background:#fff8eb;
+  border:2px solid var(--gold);
+  border-radius:12px;
+  padding:22px;
+  margin:24px 0;
+  color:#34485d;
+  font-size:13px;
+  line-height:1.8;
+}
+
+.protection-note strong{
+  display:block;
+  color:var(--navy);
+  font-size:15px;
+  margin-bottom:10px;
+}
+
 .signature-panel{
   background:#f8fafc;
   border:1px solid #d5dde6;
@@ -562,7 +580,7 @@ button{
 
 #submitBtn:disabled{
   opacity:.65;
-  cursor:wait;
+  cursor:not-allowed;
 }
 
 button:focus-visible,
@@ -616,6 +634,7 @@ footer{
   .signature-panel{padding:16px}
   .ack{padding:16px;gap:12px}
   .fee-card{padding:22px}
+  .protection-note{padding:16px}
 
 }
 
@@ -694,7 +713,8 @@ footer{
   .field,
   .ack,
   .note,
-  .payment-note{break-inside:avoid}
+  .payment-note,
+  .protection-note{break-inside:avoid}
 
   .ack.locked{opacity:1}
 
@@ -741,7 +761,7 @@ Omaha Restoration™ connects businesses with independent contractors and qualif
 
 <div class="overview-item">
 <strong>Assignment-Based Sourcing</strong>
-<span>Separately authorized assignments.</span>
+<span>Initial assignments and qualifying repeat engagements.</span>
 </div>
 
 </div>
@@ -772,28 +792,32 @@ JavaScript must be enabled to complete and electronically sign this Agreement.
 <label for="business">Legal Business Name *</label>
 <input id="business" type="text"
 name="Legal_Business_Name"
-autocomplete="organization" required>
+autocomplete="organization"
+maxlength="200" required>
 </div>
 
 <div class="field">
 <label for="contact">Primary Contact Name *</label>
 <input id="contact" type="text"
 name="Primary_Contact_Name"
-autocomplete="name" required>
+autocomplete="name"
+maxlength="150" required>
 </div>
 
 <div class="field">
 <label for="phone">Direct Contact Phone *</label>
 <input id="phone" type="tel"
 name="Direct_Phone"
-autocomplete="tel" required>
+autocomplete="tel"
+maxlength="40" required>
 </div>
 
 <div class="field">
 <label for="email">Business Email *</label>
 <input id="email" type="email"
 name="email"
-autocomplete="email" required>
+autocomplete="email"
+maxlength="254" required>
 </div>
 
 <div class="field">
@@ -817,21 +841,24 @@ autocomplete="email" required>
 <label for="address">Business Mailing Address *</label>
 <input id="address" type="text"
 name="Business_Address"
-autocomplete="street-address" required>
+autocomplete="street-address"
+maxlength="250" required>
 </div>
 
 <div class="field">
 <label for="city">City *</label>
 <input id="city" type="text"
 name="City"
-autocomplete="address-level2" required>
+autocomplete="address-level2"
+maxlength="100" required>
 </div>
 
 <div class="field">
 <label for="state">State *</label>
 <input id="state" type="text"
 name="State"
-autocomplete="address-level1" required>
+autocomplete="address-level1"
+maxlength="100" required>
 </div>
 
 <div class="field">
@@ -848,15 +875,18 @@ maxlength="10" required>
 <label for="website">Business Website (Optional)</label>
 <input id="website" type="url"
 name="Business_Website"
-placeholder="https://">
+placeholder="https://"
+maxlength="500">
 </div>
 
 </div>
 
 <div class="note">
+
 No enrollment fee, automatic subscription, or minimum assignment commitment is required.
 
-Sourcing fees apply only to separately authorized assignments and applicable agreed cancellation charges.
+Sourcing fees apply to separately authorized initial assignments, qualifying repeat engagements during the applicable twelve-month protected period, and applicable agreed cancellation charges.
+
 </div>
 
 <!-- SECTION 2 -->
@@ -866,7 +896,7 @@ Sourcing fees apply only to separately authorized assignments and applicable agr
 <div>
 <h2>Business Sourcing Requirements</h2>
 <p>
-Tell us about your anticipated contractor needs. This information does not authorize an assignment or create a payment obligation.
+Tell us about your anticipated contractor needs. This information does not authorize an initial assignment or independently create a payment obligation.
 </p>
 </div>
 </div>
@@ -891,7 +921,8 @@ Tell us about your anticipated contractor needs. This information does not autho
 <label for="serviceArea">Primary Project Location</label>
 <input id="serviceArea" type="text"
 name="Primary_Project_Location"
-placeholder="City or service area">
+placeholder="City or service area"
+maxlength="250">
 </div>
 
 <div class="field full">
@@ -899,6 +930,7 @@ placeholder="City or service area">
 <textarea id="services"
 name="Anticipated_Contractor_Needs"
 rows="4"
+maxlength="3000"
 placeholder="Describe the types of contractors or services your business may need"></textarea>
 </div>
 
@@ -928,7 +960,7 @@ Requests made at least 24 hours before the requested arrival time.
 <strong>$300</strong>
 <span>RUSH SOURCING — PER PERSON</span>
 <p>
-Requests made less than 24 hours before the requested arrival time. Subject to availability.
+Requests made less than 24 hours before the requested arrival time. Subject to availability and written authorization.
 </p>
 </div>
 
@@ -992,7 +1024,7 @@ Standard rates apply unless alternative pricing is expressly accepted in writing
 
 <strong>IMPORTANT — SEPARATE SOURCING FEE:</strong>
 
-All fees charged by Omaha Restoration™ under this Agreement are exclusively for contractor sourcing, referral, introduction, and administrative coordination services.
+All fees charged by Omaha Restoration™ under this Agreement are exclusively for contractor sourcing, referral, introduction, and related administrative services.
 
 <br><br>
 
@@ -1008,11 +1040,35 @@ Omaha Restoration™ sourcing fees are separate from and payable in addition to 
 
 </div>
 
+<div class="protection-note">
+
+<strong>IMPORTANT — 12-MONTH REPEAT ENGAGEMENT PROTECTION</strong>
+
+When Omaha Restoration™ introduces a contractor through an authorized assignment, qualifying new engagements of that introduced contractor during the following twelve months are subject to the applicable sourcing fee, including engagements arranged directly with the contractor.
+
+<br><br>
+
+The standard direct repeat-engagement fee is $150 per covered person unless an applicable written discount or alternative rate has been agreed.
+
+<br><br>
+
+You may communicate and work directly with introduced contractors. However, direct engagement does not eliminate an applicable sourcing fee.
+
+<br><br>
+
+Additional visits necessary to complete the original project are not separately charged as new engagements.
+
+<br><br>
+
+Signing this Agreement expressly accepts these repeat-engagement obligations without requiring separate fee authorization for each qualifying direct repeat engagement.
+
+</div>
+
 <div class="legal-top">
 
 <div>
 <strong>OMAHA RESTORATION™ BUSINESS AGREEMENT</strong>
-<span class="version">OR-BCSA-2026-V5</span>
+<span class="version">OR-BCSA-2026-V6</span>
 </div>
 
 <button type="button" class="print-button" id="printAgreement">
@@ -1029,7 +1085,7 @@ tabindex="-1">
 
 <strong>AGREEMENT REVIEW REQUIRED</strong>
 
-Please read the entire Omaha Restoration™ Business Agreement before signing and submitting your application. You must scroll to the bottom of the agreement to continue.
+Please read the entire Omaha Restoration™ Business Agreement before signing and submitting your application. You must reach the bottom of the agreement to continue.
 
 </div>
 
@@ -1047,11 +1103,19 @@ This Business Contractor Sourcing and Referral Agreement ("Agreement") is entere
 </p>
 
 <p>
-The purpose of this Agreement is to establish the terms under which Company provides independent contractor sourcing, introductions, referrals, and administrative coordination in exchange for agreed sourcing compensation.
+The purpose of this Agreement is to establish the terms under which Company provides independent contractor sourcing, introductions, referrals, and related administrative services in exchange for agreed sourcing compensation.
+</p>
+
+<p>
+Compensation includes fees for authorized initial assignments and qualifying repeat engagements arising from protected introductions, as expressly established in this Agreement.
 </p>
 
 <p>
 Submission does not guarantee acceptance, contractor availability, project completion, exclusive service arrangements, or a minimum number of assignments.
+</p>
+
+<p>
+The individual signing this Agreement represents that the individual possesses actual authority to enter into this Agreement on behalf of Client.
 </p>
 
 <h3>2. Independent Contractor Sourcing Platform</h3>
@@ -1080,30 +1144,100 @@ Nothing in this Agreement establishes an employment relationship, agency, franch
 Neither party may bind the other without express written authorization.
 </p>
 
+<p>
+Company's contractual compensation rights do not establish ownership or control over any independent service provider or restrict a person's lawful ability to work.
+</p>
+
 <h3>3. Definitions</h3>
 
 <h4>3.1 Sourcing Services</h4>
 
 <p>
-Sourcing Services means identifying, contacting, introducing, and coordinating independent service providers in response to Client's authorized business request.
+Sourcing Services means identifying, contacting, introducing, and facilitating communication with independent service providers in response to Client's authorized business request.
 </p>
 
 <h4>3.2 Authorized Assignment</h4>
 
 <p>
-An Authorized Assignment means a documented request accepted by Company and Client identifying the requested services, location, number of people, required qualifications, arrival requirements, applicable sourcing fees, paying party, and applicable assignment-specific conditions.
+An Authorized Assignment means a documented initial or additional sourcing request accepted by Company and Client identifying the requested services, location, number of people, required qualifications, arrival requirements, applicable sourcing fees, paying party, and applicable assignment-specific conditions.
 </p>
 
 <h4>3.3 Qualifying Arrival</h4>
 
 <p>
-Qualifying Arrival occurs when an authorized individual arrives at the agreed location and is available and appropriately qualified to perform the requested services.
+Qualifying Arrival occurs when an authorized or covered individual arrives at the agreed location and is available and appropriately qualified to perform the requested services.
+</p>
+
+<p>
+For a qualifying repeat engagement, actual commencement of the separately agreed services by a covered individual may also establish the applicable payment trigger where the engagement and commencement are documented.
 </p>
 
 <h4>3.4 Business Day</h4>
 
 <p>
 A Business Day means Monday through Friday, excluding observed United States federal holidays.
+</p>
+
+<h4>3.5 Documented Introduction</h4>
+
+<p>
+A Documented Introduction means Company's identifiable introduction of an independent service provider or individual contractor to Client in connection with an Authorized Assignment after this Agreement becomes effective.
+</p>
+
+<p>
+Documentation may include assignment records, emails, text messages, introduction notices, acknowledged contact information, or other reliable contemporaneous records identifying the parties and introduction date.
+</p>
+
+<p>
+Merely possessing publicly available contact information, without an actual introduction or referral, does not establish a Documented Introduction.
+</p>
+
+<h4>3.6 Protected Introduction Period</h4>
+
+<p>
+The Protected Introduction Period begins on the date of the first qualifying Documented Introduction of the applicable service provider or individual and continues for twelve (12) calendar months.
+</p>
+
+<p>
+The period does not automatically restart because of repeat engagements, subsequent communications, or termination of this Agreement.
+</p>
+
+<h4>3.7 Covered Individual</h4>
+
+<p>
+A Covered Individual means an individual contractor or service provider representative specifically identified and introduced by Company through an Authorized Assignment.
+</p>
+
+<p>
+A substitute individual deliberately engaged to conceal or replace an otherwise covered engagement may be treated as covered only where the facts establish intentional circumvention involving the protected introduction.
+</p>
+
+<p>
+An introduction of one individual does not automatically make every employee, representative, subcontractor, or unrelated worker of that individual's business a Covered Individual.
+</p>
+
+<h4>3.8 Qualifying Repeat Engagement</h4>
+
+<p>
+A Qualifying Repeat Engagement means a new and separately agreed project or distinct engagement of a Covered Individual by Client during the applicable Protected Introduction Period, where the engagement arises from or materially benefits from Company's Documented Introduction.
+</p>
+
+<p>
+A Qualifying Repeat Engagement may occur at the original property or another property and may be arranged directly or indirectly.
+</p>
+
+<p>
+Routine continuation of the original assignment, ordinary return visits, warranty work, corrective work, and additional activities reasonably necessary to complete the original agreed project do not constitute separate engagements solely because they occur on another day or require additional visits.
+</p>
+
+<h4>3.9 Written Authorization</h4>
+
+<p>
+Written Authorization includes documented affirmative acceptance through email, text message, electronic signature, or another reliable written communication by an authorized representative of the applicable party.
+</p>
+
+<p>
+Silence, unanswered messages, or mere receipt of an invoice do not independently constitute Written Authorization.
 </p>
 
 <h3>4. Required Sourcing Compensation</h3>
@@ -1117,7 +1251,7 @@ Client agrees to pay One Hundred Fifty Dollars ($150.00) per authorized person f
 <h4>4.2 Rush Sourcing</h4>
 
 <p>
-Client agrees to pay Three Hundred Dollars ($300.00) per authorized person for rush sourcing requests made less than twenty-four (24) hours before the requested arrival time.
+Client agrees to pay Three Hundred Dollars ($300.00) per authorized person for rush sourcing requests made less than twenty-four (24) hours before the requested arrival time, where rush pricing has been expressly authorized in writing.
 </p>
 
 <p>
@@ -1127,11 +1261,15 @@ Rush pricing does not guarantee availability or arrival within a specific time.
 <h4>4.3 Per-Person Compensation</h4>
 
 <p>
-Sourcing fees are calculated individually for each authorized person, including multiple individuals from the same contracting company.
+Sourcing fees are calculated individually for each authorized or Covered Individual, including multiple individuals from the same contracting company when each individual satisfies the applicable authorization or repeat-engagement requirements.
 </p>
 
 <p>
 Unauthorized additional personnel do not automatically generate additional sourcing fees.
+</p>
+
+<p>
+A single individual shall not be charged multiple sourcing fees for the same engagement merely because the individual performs multiple tasks or attends the property on multiple days.
 </p>
 
 <h4>4.4 Recurring Business Discounts</h4>
@@ -1148,17 +1286,21 @@ The following monthly volume rates may be available under a separately approved 
 </ul>
 
 <p>
-Recurring discounts require a separate written agreement establishing applicable rates, monthly commitments, billing periods, and any shortfall adjustments.
+Recurring discounts require a separate written agreement establishing applicable rates, monthly commitments, billing periods, qualifying engagements, and any shortfall adjustments.
 </p>
 
 <p>
 Standard rates apply unless alternative pricing is expressly accepted in writing.
 </p>
 
+<p>
+A volume discount does not apply retroactively unless expressly agreed in writing.
+</p>
+
 <h4>4.5 Separate Contractor Compensation</h4>
 
 <p>
-All sourcing fees payable to Company under this Agreement are exclusively for contractor sourcing, referral, introduction, and administrative coordination services.
+All sourcing fees payable to Company under this Agreement are exclusively for contractor sourcing, referral, introduction, and related administrative services, including agreed compensation attributable to qualifying subsequent use of protected introductions.
 </p>
 
 <p>
@@ -1174,7 +1316,7 @@ Company does not establish, control, collect, or administer those independently 
 </p>
 
 <p>
-The authorized sourcing fee is separate from and payable in addition to contractor compensation.
+The applicable sourcing fee is separate from and payable in addition to contractor compensation.
 </p>
 
 <p>
@@ -1182,21 +1324,29 @@ Company's sourcing fee is independent of hours worked, contractor compensation, 
 </p>
 
 <p>
-Changes in contractor pricing do not reduce or increase the authorized sourcing fee unless Company and Client expressly agree otherwise in writing.
+Changes in contractor pricing do not reduce or increase the applicable sourcing fee unless Company and Client expressly agree otherwise in writing.
 </p>
 
 <h4>4.6 Assignment Authorization</h4>
 
 <p>
-Before each compensated assignment, Client must affirmatively approve the requested services, location, number of people, required qualifications, arrival requirements, applicable fees, paying party, and applicable cancellation or repeat-assignment terms.
+Before each new compensated sourcing request made to Company, Client must affirmatively approve the requested services, location, number of people, required qualifications, arrival requirements, applicable fees, paying party, and applicable cancellation conditions.
 </p>
 
 <p>
-Email, text message, or electronic acceptance may establish written authorization.
+Email, text message, or electronic acceptance may establish Written Authorization.
 </p>
 
 <p>
-Silence does not constitute acceptance. Submission of this Agreement alone does not authorize an individual assignment.
+Silence does not constitute acceptance. Submission of this Agreement alone does not authorize an initial assignment.
+</p>
+
+<p>
+Notwithstanding the separate authorization requirement for new sourcing requests made to Company, Client expressly authorizes the repeat-engagement compensation established in Sections 4.11 and 6 by entering into this Agreement.
+</p>
+
+<p>
+No separate fee approval is required for a Qualifying Repeat Engagement arranged directly or indirectly by Client during the applicable Protected Introduction Period.
 </p>
 
 <p>
@@ -1210,11 +1360,23 @@ Assignment-specific pricing modifications require mutual written acceptance.
 <h4>4.7 Payment Trigger &amp; Deadline</h4>
 
 <p>
-The applicable sourcing fee becomes earned upon Qualifying Arrival of an authorized individual.
+The applicable sourcing fee becomes earned upon Qualifying Arrival of an authorized or Covered Individual.
+</p>
+
+<p>
+For Qualifying Repeat Engagements, documented commencement of separately agreed services by a Covered Individual also establishes the payment trigger where applicable.
 </p>
 
 <p>
 Earned sourcing fees and lawfully assessed cancellation charges are payable within five (5) Business Days after the applicable payment trigger, unless otherwise agreed in writing.
+</p>
+
+<p>
+Company shall provide an invoice or written payment statement identifying the applicable engagement, amount, and basis for the charge.
+</p>
+
+<p>
+Where Company could not reasonably issue an invoice because Client failed to report a qualifying engagement, Client's reporting failure does not eliminate an otherwise earned fee. Company may issue the invoice upon discovery, subject to applicable law.
 </p>
 
 <p>
@@ -1235,10 +1397,18 @@ Payments must be made using an authorized business payment method designated by 
 Client shall identify the applicable invoice or assignment when submitting payment.
 </p>
 
+<p>
+Payment to a service provider does not constitute payment of Company's separate sourcing fee unless Company expressly authorizes that payment arrangement in writing.
+</p>
+
 <h4>4.9 Late Payments &amp; Collections</h4>
 
 <p>
 Overdue, undisputed amounts may accrue a late charge of 1.5% per month, without compounding, or the maximum rate permitted by applicable law, whichever is less.
+</p>
+
+<p>
+No late charge shall accrue before Company provides the applicable invoice or written payment statement.
 </p>
 
 <p>
@@ -1267,6 +1437,44 @@ The parties shall attempt to resolve disputes in good faith. Undisputed amounts 
 This notice requirement does not waive rights or defenses that cannot lawfully be waived.
 </p>
 
+<h4>4.11 Repeat Engagement Compensation</h4>
+
+<p>
+For each Qualifying Repeat Engagement during the applicable Protected Introduction Period, Client agrees to pay One Hundred Fifty Dollars ($150.00) per Covered Individual, unless an applicable alternative rate or volume discount has been expressly agreed in writing.
+</p>
+
+<p>
+This obligation applies whether the engagement is arranged through Company, directly with the introduced service provider, or indirectly through another person or business acting on Client's behalf.
+</p>
+
+<p>
+The repeat-engagement fee is compensation expressly agreed in consideration of Company's original sourcing and introduction services and the subsequent qualifying commercial use of that introduction.
+</p>
+
+<p>
+Company is not required to perform a second introduction, participate in scheduling, negotiate the new project, or provide additional sourcing services for the agreed repeat-engagement fee to become payable.
+</p>
+
+<p>
+Direct repeat engagements are charged at the applicable standard rate. Rush pricing applies only where Client separately authorizes rush sourcing services from Company.
+</p>
+
+<p>
+Client's acceptance of this Agreement constitutes advance written acceptance of these defined repeat-engagement obligations.
+</p>
+
+<p>
+No additional signature, separate fee authorization, or subsequent approval is required for a Qualifying Repeat Engagement satisfying this Agreement.
+</p>
+
+<p>
+A repeat-engagement fee shall not be charged in addition to a separate initial sourcing fee for the same individual and same engagement.
+</p>
+
+<p>
+No fee shall be collected under this section where prohibited by applicable law.
+</p>
+
 <h3>5. Cancellations &amp; Replacements</h3>
 
 <p>
@@ -1286,6 +1494,10 @@ Except for an applicable Client-initiated cancellation charge, no sourcing fee i
 </p>
 
 <p>
+A direct repeat engagement canceled before Qualifying Arrival or commencement of services does not generate a repeat-engagement fee. Cancellation charges for direct repeat engagements require separate written authorization.
+</p>
+
+<p>
 Replacement efforts are subject to availability and do not create duplicate sourcing charges for the same individual assignment.
 </p>
 
@@ -1297,62 +1509,196 @@ Unearned payments and billing errors shall be refunded or corrected.
 Company shall not collect both a full sourcing fee and a separate cancellation fee for the same individual assignment.
 </p>
 
-<h3>6. Non-Circumvention &amp; Repeat Assignments</h3>
+<h3>6. Non-Circumvention &amp; Repeat Engagements</h3>
 
-<h4>6.1 Protected Introduction Period</h4>
-
-<p>
-For twelve (12) months following a documented introduction, Client shall not intentionally bypass Company to avoid expressly agreed sourcing fees for qualifying assignments.
-</p>
-
-<h4>6.2 Repeat Assignments</h4>
+<h4>6.1 Twelve-Month Protected Introduction</h4>
 
 <p>
-New assignments involving introduced service providers may generate additional sourcing fees only where repeat-assignment obligations, scope, pricing, duration, and payment triggers were expressly accepted in writing.
+For twelve (12) calendar months following each applicable Documented Introduction, Client agrees to honor the sourcing and repeat-engagement compensation obligations established in this Agreement.
 </p>
 
 <p>
-Additional visits necessary to complete the original assignment do not automatically generate new sourcing fees.
-</p>
-
-<h4>6.3 Direct Contractor Communication</h4>
-
-<p>
-Client may communicate directly with introduced service providers to negotiate pricing, coordinate scheduling, arrange property access, and administer independently contracted work.
+The protection applies to qualifying commercial engagements arising from Company's documented introduction of the applicable Covered Individual.
 </p>
 
 <p>
-Direct communication is permitted provided it is not intentionally used to evade expressly agreed sourcing compensation.
+Client shall not intentionally bypass, exclude, conceal, or misrepresent Company's introduction for the purpose of avoiding lawfully agreed compensation.
 </p>
 
-<h4>6.4 Fee Avoidance</h4>
+<h4>6.2 Direct Repeat Engagements</h4>
 
 <p>
-Client shall not knowingly use affiliated businesses, intermediaries, subcontractors, alternative payment arrangements, or false assignment information to conceal qualifying work or avoid lawfully agreed sourcing fees.
-</p>
-
-<h4>6.5 Existing Business Relationships</h4>
-
-<p>
-This section does not prohibit lawful worker mobility or independently established business relationships.
+Client may independently contact, negotiate with, and engage introduced service providers during the Protected Introduction Period.
 </p>
 
 <p>
-Client shall promptly disclose relevant pre-existing relationships concerning the same assignment.
-</p>
-
-<h4>6.6 Reporting &amp; Enforcement</h4>
-
-<p>
-Client shall report qualifying repeat assignments within two (2) Business Days.
+However, each Qualifying Repeat Engagement is subject to the applicable compensation established in Section 4.11, regardless of whether Company participates in arranging the subsequent engagement.
 </p>
 
 <p>
-Intentional circumvention constitutes a material breach. Company may pursue lawfully recoverable unpaid fees and proven damages without imposing unauthorized penalties.
+By accepting this Agreement, Client expressly agrees to these repeat-engagement fees in advance.
 </p>
 
 <p>
-Applicable non-circumvention obligations survive termination for the remainder of the original twelve-month protected period.
+A separate sourcing request or additional fee authorization is not required for a qualifying direct repeat engagement.
+</p>
+
+<h4>6.3 Different Properties &amp; New Projects</h4>
+
+<p>
+The applicable protection is not limited to the original property, customer, job address, or type of service.
+</p>
+
+<p>
+A new project involving a Covered Individual may qualify for compensation when Client engages that individual at another property or for another distinct project during the applicable Protected Introduction Period.
+</p>
+
+<p>
+The new engagement must satisfy the definition of a Qualifying Repeat Engagement.
+</p>
+
+<h4>6.4 Original Project Exception</h4>
+
+<p>
+Additional visits reasonably necessary to complete the original agreed project, including ordinary continuation, corrective work, warranty work, and completion of the original contracted scope, do not independently generate additional sourcing fees.
+</p>
+
+<p>
+A genuinely separate project or separately agreed engagement is not exempt merely because it involves the same property, customer, contractor, invoice account, or general category of work.
+</p>
+
+<p>
+Whether an engagement is separate shall be determined from its actual commercial substance, including scope, authorization, timing, and contractual purpose, rather than its label alone.
+</p>
+
+<h4>6.5 Indirect Engagement &amp; Fee Avoidance</h4>
+
+<p>
+Client shall not knowingly use affiliated businesses, owners, managers, employees, agents, intermediaries, subcontractors, nominees, alternative payment arrangements, or other third parties to conceal qualifying engagements or avoid lawfully agreed sourcing fees.
+</p>
+
+<p>
+Where Client knowingly arranges or directs a qualifying engagement through another person or business acting on Client's behalf, Client remains responsible for the applicable compensation to the extent permitted by law.
+</p>
+
+<p>
+Client shall not intentionally rename, restructure, combine, divide, backdate, or mischaracterize assignments or engagements for the purpose of avoiding applicable sourcing compensation.
+</p>
+
+<p>
+This provision does not impose contractual obligations on unrelated third parties that have not accepted this Agreement.
+</p>
+
+<h4>6.6 Existing Business Relationships</h4>
+
+<p>
+This Agreement does not impose repeat-engagement fees on independently established business relationships that existed before Company's applicable Documented Introduction and were not materially generated through Company's introduction.
+</p>
+
+<p>
+Client shall disclose known relevant pre-existing relationships before accepting the initial introduction or promptly after identifying the relationship.
+</p>
+
+<p>
+Client shall provide reasonably available supporting documentation when a pre-existing relationship is asserted as a basis for disputing a sourcing or repeat-engagement fee.
+</p>
+
+<p>
+A failure to disclose a pre-existing relationship does not automatically establish a fee obligation where reliable evidence demonstrates that the engagement was independently established and otherwise falls outside this Agreement.
+</p>
+
+<p>
+Company retains the right to compensation for separately authorized sourcing services actually provided, even where a pre-existing relationship exists, if the applicable fee was expressly agreed.
+</p>
+
+<h4>6.7 Reporting Requirements</h4>
+
+<p>
+Client shall notify Company of each Qualifying Repeat Engagement within two (2) Business Days after agreeing to the engagement.
+</p>
+
+<p>
+The notification shall identify the Covered Individual, applicable project or location, anticipated start date, and number of Covered Individuals engaged.
+</p>
+
+<p>
+Client shall also confirm Qualifying Arrival or commencement of services within two (2) Business Days after the applicable event.
+</p>
+
+<p>
+Reporting may be completed through Company's designated business email address or another documented written communication method.
+</p>
+
+<p>
+Failure to report an engagement does not eliminate an otherwise earned and legally enforceable sourcing fee.
+</p>
+
+<h4>6.8 Verification &amp; Records</h4>
+
+<p>
+Company may reasonably request relevant records necessary to verify a qualifying engagement, including engagement confirmations, project dates, relevant communications, work authorizations, or appropriately redacted invoices.
+</p>
+
+<p>
+Client shall provide reasonably available relevant documentation within ten (10) Business Days after receiving a reasonable written request, unless additional time is reasonably necessary and communicated to Company.
+</p>
+
+<p>
+Company's verification rights are limited to information reasonably necessary to establish the existence, scope, timing, and applicable compensation of a covered engagement.
+</p>
+
+<p>
+Client is not required to disclose unrelated financial records, unrelated customer information, trade secrets, or privileged information.
+</p>
+
+<h4>6.9 Termination Does Not Eliminate Protection</h4>
+
+<p>
+Termination, expiration, suspension, account closure, or discontinuation of future sourcing services does not eliminate the applicable Protected Introduction Period for introductions completed before termination.
+</p>
+
+<p>
+Qualifying Repeat Engagements entered into during the original Protected Introduction Period remain subject to the applicable compensation obligations, even if Qualifying Arrival or commencement of services occurs after the period expires.
+</p>
+
+<p>
+This provision does not automatically extend or restart the original twelve-month period.
+</p>
+
+<p>
+Engagements independently entered into after the applicable Protected Introduction Period expires do not generate repeat-engagement fees solely because of the original introduction.
+</p>
+
+<h4>6.10 Enforcement &amp; Remedies</h4>
+
+<p>
+Intentional circumvention, material concealment of qualifying engagements, or deliberate avoidance of lawfully agreed sourcing compensation constitutes a material breach of this Agreement.
+</p>
+
+<p>
+Company may suspend future sourcing services, terminate the Agreement, invoice lawfully earned and unpaid fees, and pursue actual recoverable damages and other remedies permitted by applicable law.
+</p>
+
+<p>
+Company shall not impose arbitrary penalties, duplicate recovery, or compensation unsupported by this Agreement or applicable law.
+</p>
+
+<h4>6.11 No Exclusivity or Restriction on Lawful Work</h4>
+
+<p>
+Client is not required to obtain all contractors through Company.
+</p>
+
+<p>
+Client may use unrelated contractors, maintain independent business relationships, and independently negotiate construction services.
+</p>
+
+<p>
+This section establishes defined commercial compensation obligations arising from protected introductions. It does not prohibit lawful worker mobility, impose a noncompetition restriction, or grant Company ownership of any service provider.
+</p>
+
+<p>
+All obligations under this section apply only to the extent permitted by applicable law.
 </p>
 
 <h3>7. Separate Compensation Agreements</h3>
@@ -1366,7 +1712,19 @@ Compensation from both Client and a service provider shall not be collected unle
 </p>
 
 <p>
+Where lawful dual compensation has been properly disclosed and accepted, Client's compensation obligations remain separate from the service provider's compensation obligations.
+</p>
+
+<p>
+A service provider's payment to Company does not automatically satisfy Client's separate sourcing fee, and Client's payment does not automatically satisfy the service provider's separate obligations.
+</p>
+
+<p>
 Company may reduce or waive fees through written authorization.
+</p>
+
+<p>
+A waiver applicable to one engagement does not automatically waive fees for another engagement.
 </p>
 
 <p>
@@ -1393,6 +1751,10 @@ Client shall independently evaluate service providers, provide accurate project 
 
 <p>
 Client and service providers remain responsible for independently negotiated construction contracts, permits, supervision, safety, workmanship, warranties, and project performance according to their respective legal and contractual obligations.
+</p>
+
+<p>
+For directly arranged repeat engagements, Client and the service provider remain responsible for confirming that all applicable qualifications, registrations, licensing, insurance, and legal requirements remain satisfied.
 </p>
 
 <p>
@@ -1451,11 +1813,15 @@ Activities requiring contractor registration, employment-agency licensing, trade
 </p>
 
 <p>
-No prohibited employment-placement fees, unlawful wage deductions, worker misclassification, fraudulent insurance activities, or other unlawful compensation arrangements are authorized.
+No prohibited employment-placement fees, unlawful wage deductions, worker misclassification, fraudulent insurance activities, unlawful restraints on worker mobility, or other unlawful compensation arrangements are authorized.
 </p>
 
 <p>
 Company does not negotiate or adjust insurance claims.
+</p>
+
+<p>
+If an applicable law prohibits a particular sourcing or repeat-engagement fee, Company shall not demand or collect that prohibited fee.
 </p>
 
 <h3>10. Confidentiality &amp; Business Records</h3>
@@ -1473,7 +1839,7 @@ Client may not misrepresent its relationship with Company, claim unauthorized au
 </p>
 
 <p>
-Relevant assignment authorizations, arrival confirmations, invoices, payments, and agreement records shall be retained for at least three (3) years, or longer when required by law or an existing dispute.
+Relevant assignment authorizations, introduction records, repeat-engagement confirmations, arrival confirmations, invoices, payments, and agreement records shall be retained for at least three (3) years following the applicable transaction or event, or longer when required by law or an existing dispute.
 </p>
 
 <p>
@@ -1481,7 +1847,11 @@ Client shall reasonably cooperate in confirming qualifying arrivals and promptly
 </p>
 
 <p>
-Upon reasonable written request, Client shall provide relevant documentation necessary to verify authorized assignments, qualifying arrivals, and applicable sourcing compensation.
+Upon reasonable written request, Client shall provide relevant documentation necessary to verify authorized assignments, protected introductions, qualifying repeat engagements, qualifying arrivals, and applicable sourcing compensation.
+</p>
+
+<p>
+Verification requests shall remain subject to the reasonable limitations established in Section 6.8.
 </p>
 
 <p>
@@ -1512,6 +1882,14 @@ Company may suspend services or terminate immediately upon written notice for fr
 
 <p>
 Termination does not eliminate lawfully earned fees, outstanding payment obligations, or applicable surviving confidentiality, indemnification, non-circumvention, recordkeeping, and dispute-resolution provisions.
+</p>
+
+<p>
+The repeat-engagement obligations established in Sections 4.11 and 6 survive termination for the remainder of each applicable original Protected Introduction Period and for collection of lawfully earned fees arising from qualifying engagements entered into during that period.
+</p>
+
+<p>
+Termination does not create an additional enrollment, cancellation, subscription, or termination penalty.
 </p>
 
 <h3>12. Nebraska Law &amp; Binding Arbitration</h3>
@@ -1575,11 +1953,23 @@ Assignment-specific written terms control expressly identified assignment detail
 </p>
 
 <p>
+A general assignment authorization, scheduling communication, contractor invoice, or independent construction agreement does not automatically waive Company's separate sourcing or repeat-engagement compensation rights.
+</p>
+
+<p>
+Any modification or waiver of the repeat-engagement obligations must specifically identify the affected obligation or engagement and be affirmatively accepted in writing by Company.
+</p>
+
+<p>
 Material changes require mutual written acceptance. Neither party may unilaterally impose retroactive compensation changes.
 </p>
 
 <p>
-Unenforceable provisions shall be severed to the extent permitted by law.
+This version applies prospectively following its effective date. Earlier introductions or transactions remain governed by the agreements applicable to those transactions unless the parties expressly agree to a lawful written amendment.
+</p>
+
+<p>
+Unenforceable provisions shall be severed to the extent permitted by law. Severability does not authorize collection of otherwise prohibited compensation.
 </p>
 
 <p>
@@ -1588,6 +1978,10 @@ Failure to enforce a provision does not automatically waive future enforcement.
 
 <p>
 Neither party may transfer this Agreement to an unrelated third party without the other party's written consent, except where otherwise permitted by law.
+</p>
+
+<p>
+A change in Client's trade name, ownership, management, or organizational structure does not automatically extinguish obligations of the original contracting entity. Liability of another entity or successor shall be determined under applicable law and any valid written assumption of obligations.
 </p>
 
 <p>
@@ -1614,8 +2008,13 @@ By electronically signing and submitting this Agreement, Client confirms:
 <li>It understands the $300 rush sourcing fee per authorized person.</li>
 <li>It understands that sourcing fees are separate from contractor charges.</li>
 <li>It accepts the applicable payment deadlines.</li>
-<li>It accepts applicable cancellation and repeat-assignment provisions.</li>
+<li>It accepts applicable cancellation provisions.</li>
+<li>It expressly accepts the twelve-month Protected Introduction Period.</li>
+<li>It expressly accepts the applicable sourcing fee for each Qualifying Repeat Engagement.</li>
+<li>It understands that direct repeat engagements ordinarily incur the $150 standard fee per Covered Individual, unless an applicable written alternative rate applies.</li>
+<li>It understands that separate fee authorization is not required for qualifying direct repeat engagements.</li>
 <li>It accepts applicable reporting and verification requirements.</li>
+<li>It understands that applicable repeat-engagement obligations survive termination for the remainder of the original protected period.</li>
 <li>It accepts the non-circumvention provisions.</li>
 <li>It accepts the indemnification and arbitration provisions.</li>
 <li>The signer is authorized to bind the identified business.</li>
@@ -1634,7 +2033,15 @@ The Agreement becomes effective only upon Company's documented written acceptanc
 </p>
 
 <p>
+Company's written acceptance should identify the applicable agreement version, Client, submission reference, and effective date.
+</p>
+
+<p>
 Submission alone does not establish an individual sourcing charge or guarantee contractor availability.
+</p>
+
+<p>
+Once effective, the Agreement establishes advance acceptance of the defined repeat-engagement compensation obligations without requiring separate approval for each qualifying direct repeat engagement.
 </p>
 
 </div>
@@ -1649,9 +2056,9 @@ Go to End of Agreement
 
 <strong>Important:</strong>
 
-Read the complete Agreement before signing. Submitting this form does not automatically authorize an assignment or create a sourcing charge.
+Read the complete Agreement before signing. Submitting this form does not automatically authorize an initial assignment or create an immediate sourcing charge.
 
-Each compensated assignment requires separate authorization.
+New sourcing requests made to Omaha Restoration™ require separate authorization. Qualifying direct repeat engagements are subject to the advance authorization established in this Agreement.
 
 </div>
 
@@ -1697,17 +2104,55 @@ I accept the applicable payment deadlines and assignment-specific written terms.
 
 <span class="ack-copy">
 
-I understand that I may communicate directly with introduced service providers for legitimate business purposes but may not intentionally bypass Omaha Restoration™ to avoid expressly agreed sourcing fees.
+I confirm that I have read, understood, and agree to the entire OR-BCSA-2026-V6 Omaha Restoration™ Business Contractor Sourcing and Referral Agreement, including non-circumvention, repeat-engagement compensation, assignment authorization, payment obligations, cancellation terms, indemnification, and binding arbitration.
 
-I accept the twelve-month protected introduction provisions.
+I am authorized to bind the identified business.
+
+</span>
+
+</span>
+
+</label>
+
+<label class="ack locked" id="repeatAcceptanceLabel">
+
+<input type="checkbox"
+id="repeatAccepted"
+name="Repeat_Engagement_Accepted"
+value="Yes"
+required disabled>
+
+<span id="repeatAcceptanceCopy">
+
+<span class="ack-title">12-Month Non-Circumvention &amp; Repeat Engagement Acceptance</span>
+
+<span class="ack-copy">
+
+I expressly understand and agree that each Qualifying Repeat Engagement of a Covered Individual introduced by Omaha Restoration™ during the applicable twelve-month Protected Introduction Period is subject to the applicable sourcing fee, including engagements arranged directly or indirectly without further involvement by Omaha Restoration™.
 
 </span>
 
 <span class="ack-copy">
 
-I confirm that I have read, understood, and agree to the entire OR-BCSA-2026-V5 Omaha Restoration™ Business Contractor Sourcing and Referral Agreement, including non-circumvention, assignment authorization, payment obligations, cancellation terms, indemnification, and binding arbitration.
+I understand that the standard direct repeat-engagement fee is <strong>$150 per Covered Individual per qualifying new engagement</strong>, unless an applicable written alternative rate or discount applies.
 
-I am authorized to bind the identified business.
+</span>
+
+<span class="ack-copy">
+
+I expressly authorize these defined repeat-engagement fees in advance and understand that separate fee authorization is not required for each qualifying direct repeat engagement.
+
+</span>
+
+<span class="ack-copy">
+
+I understand that ordinary return visits to complete the original project do not generate separate repeat-engagement fees.
+
+</span>
+
+<span class="ack-copy">
+
+I agree to the two-business-day reporting requirements and understand that the applicable twelve-month protection survives termination for the remainder of the original protected period.
 
 </span>
 
@@ -1723,7 +2168,8 @@ I am authorized to bind the identified business.
 <label for="signer">Authorized Signer Name *</label>
 <input id="signer" type="text"
 name="Signature_Printed_Name"
-autocomplete="name" required>
+autocomplete="name"
+maxlength="150" required>
 </div>
 
 <div class="field">
@@ -1731,6 +2177,7 @@ autocomplete="name" required>
 <input id="title" type="text"
 name="Signature_Title"
 placeholder="Owner, Member, President"
+maxlength="150"
 required>
 </div>
 
@@ -1746,6 +2193,7 @@ readonly>
 <input id="signature" type="text"
 name="Electronic_Signature"
 placeholder="Type your full name"
+maxlength="150"
 required>
 </div>
 
@@ -1777,6 +2225,8 @@ Your signed Agreement will be submitted to Omaha Restoration™ for review and w
 
 No payment is required to submit this Agreement.
 
+You may use the Print / Save Agreement button to retain a copy of the completed form before submitting.
+
 </div>
 
 <div class="error"
@@ -1791,7 +2241,7 @@ Sign &amp; Submit Agreement
 
 <p class="submission-caption">
 Omaha Restoration™ Business Partnership Network
-&nbsp;|&nbsp; OR-BCSA-2026-V5
+&nbsp;|&nbsp; OR-BCSA-2026-V6
 </p>
 
 </form>
@@ -1800,8 +2250,10 @@ Omaha Restoration™ Business Partnership Network
 WEB3FORMS DELIVERY FORM
 
 Seven transmitted fields.
-Separate business access key.
+Existing business access key.
+Existing business redirect.
 Traditional HTML POST.
+Complete agreement included in message.
 -->
 
 <form id="deliveryForm"
@@ -1870,7 +2322,7 @@ Murrays Empire LLC. All Rights Reserved.
 
 <br>
 
-OR-BCSA-2026-V5
+OR-BCSA-2026-V6
 
 </footer>
 
@@ -1882,7 +2334,7 @@ OR-BCSA-2026-V5
 
 "use strict";
 
-const AGREEMENT_VERSION = "OR-BCSA-2026-V5";
+const AGREEMENT_VERSION = "OR-BCSA-2026-V6";
 
 const $ = function(id){
   return document.getElementById(id);
@@ -1897,15 +2349,23 @@ const legalAgreement = $("legalAgreement");
 const agreementReview = $("agreementReview");
 const agreementAccepted = $("agreementAccepted");
 const acceptanceLabel = $("agreementAcceptanceLabel");
+
+const repeatAccepted = $("repeatAccepted");
+const repeatAcceptanceLabel = $("repeatAcceptanceLabel");
+
 const signatureConsent = $("electronicSignatureConsent");
 
 let submitting = false;
 let initialized = false;
 let agreementReviewed = false;
+
 let reviewCompletedAt = "";
 let acceptedAt = "";
+let repeatAcceptedAt = "";
 let consentAt = "";
+
 let reviewMethod = "Not completed";
+let submissionReference = "";
 
 const scrollBehavior =
 window.matchMedia(
@@ -2029,17 +2489,24 @@ AGREEMENT REVIEW
 function resetAgreementReview(){
 
   agreementReviewed = false;
+
   reviewCompletedAt = "";
   acceptedAt = "";
+  repeatAcceptedAt = "";
   consentAt = "";
+
   reviewMethod = "Not completed";
 
   agreementAccepted.checked = false;
   agreementAccepted.disabled = true;
 
+  repeatAccepted.checked = false;
+  repeatAccepted.disabled = true;
+
   signatureConsent.checked = false;
 
   acceptanceLabel.classList.add("locked");
+  repeatAcceptanceLabel.classList.add("locked");
 
   agreementReview.classList.remove(
     "completed"
@@ -2049,8 +2516,8 @@ function resetAgreementReview(){
   "<strong>AGREEMENT REVIEW REQUIRED</strong>" +
   "Please read the entire Omaha Restoration™ " +
   "Business Agreement before signing and " +
-  "submitting your application. You must scroll " +
-  "to the bottom of the agreement to continue.";
+  "submitting your application. You must reach " +
+  "the bottom of the agreement to continue.";
 
   legalAgreement.scrollTop = 0;
 
@@ -2092,8 +2559,10 @@ function checkAgreementReview(){
     }
 
     agreementAccepted.disabled = false;
+    repeatAccepted.disabled = false;
 
     acceptanceLabel.classList.remove("locked");
+    repeatAcceptanceLabel.classList.remove("locked");
 
     agreementReview.classList.add("completed");
 
@@ -2101,7 +2570,8 @@ function checkAgreementReview(){
     "<strong>END OF AGREEMENT REACHED</strong>" +
     "Please confirm that you have read, " +
     "understood, and accepted the entire " +
-    "Business Agreement.";
+    "Business Agreement, including the " +
+    "twelve-month repeat-engagement obligations.";
 
   }
 
@@ -2149,6 +2619,26 @@ agreementAccepted.addEventListener(
   }
 );
 
+repeatAccepted.addEventListener(
+  "change",
+  function(){
+
+    if(!agreementReviewed){
+
+      repeatAccepted.checked = false;
+      repeatAcceptedAt = "";
+
+      return;
+
+    }
+
+    repeatAcceptedAt = repeatAccepted.checked
+    ? new Date().toISOString()
+    : "";
+
+  }
+);
+
 signatureConsent.addEventListener(
   "change",
   function(){
@@ -2160,29 +2650,105 @@ signatureConsent.addEventListener(
   }
 );
 
-acceptanceLabel.addEventListener(
-  "click",
-  function(event){
+function requireAgreementReview(event){
 
-    if(!agreementReviewed){
+  if(!agreementReviewed){
 
-      event.preventDefault();
+    event.preventDefault();
 
-      showError(
-        "Please reach the end of the agreement " +
-        "before confirming contractual acceptance.",
-        agreementReview
-      );
-
-    }
+    showError(
+      "Please reach the end of the agreement " +
+      "before confirming contractual acceptance.",
+      agreementReview
+    );
 
   }
+
+}
+
+acceptanceLabel.addEventListener(
+  "click",
+  requireAgreementReview
+);
+
+repeatAcceptanceLabel.addEventListener(
+  "click",
+  requireAgreementReview
 );
 
 $("printAgreement").addEventListener(
   "click",
   function(){
+
+    $("signatureDate").value =
+    centralDate(new Date());
+
     window.print();
+
+  }
+);
+
+/*
+========================================
+RESET ACCEPTANCE AFTER MATERIAL EDITS
+========================================
+*/
+
+const materialFields = [
+
+  "business",
+  "contact",
+  "phone",
+  "email",
+  "businessType",
+  "address",
+  "city",
+  "state",
+  "zip",
+  "website",
+  "signer",
+  "title"
+
+];
+
+materialFields.forEach(function(fieldId){
+
+  $(fieldId).addEventListener(
+    "input",
+    function(){
+
+      if(
+        agreementAccepted.checked ||
+        repeatAccepted.checked ||
+        signatureConsent.checked
+      ){
+
+        agreementAccepted.checked = false;
+        repeatAccepted.checked = false;
+        signatureConsent.checked = false;
+
+        acceptedAt = "";
+        repeatAcceptedAt = "";
+        consentAt = "";
+
+      }
+
+    }
+  );
+
+});
+
+$("signature").addEventListener(
+  "input",
+  function(){
+
+    if(signatureConsent.checked){
+
+      signatureConsent.checked = false;
+      consentAt = "";
+
+    }
+
   }
 );
 
@@ -2196,9 +2762,16 @@ function getBusinessData(){
 
   const now = new Date();
 
+  if(!submissionReference){
+
+    submissionReference =
+    generateReference();
+
+  }
+
   return {
 
-    reference:generateReference(),
+    reference:submissionReference,
 
     status:
     "Submitted for Review - Pending Written Acceptance",
@@ -2248,10 +2821,15 @@ function getBusinessData(){
 
     acceptanceTimestamp:acceptedAt,
 
+    repeatAcceptanceTimestamp:repeatAcceptedAt,
+
     consentTimestamp:consentAt,
 
     agreementAccepted:
     agreementAccepted.checked ? "Yes" : "No",
+
+    repeatAccepted:
+    repeatAccepted.checked ? "Yes" : "No",
 
     electronicConsent:
     signatureConsent.checked ? "Yes" : "No",
@@ -2263,7 +2841,19 @@ function getBusinessData(){
     agreementAccepted.checked ? "Yes" : "No",
 
     nonCircumventionAccepted:
-    agreementAccepted.checked ? "Yes" : "No",
+    repeatAccepted.checked ? "Yes" : "No",
+
+    fullAgreementText:
+    legalAgreement.innerText.trim(),
+
+    contractualAcceptanceText:
+    $("acceptanceCopy").innerText.trim(),
+
+    repeatAcceptanceText:
+    $("repeatAcceptanceCopy").innerText.trim(),
+
+    electronicConsentText:
+    $("signatureConsentCopy").innerText.trim(),
 
     userAgent:navigator.userAgent
 
@@ -2302,7 +2892,7 @@ function buildMessage(data){
     "Status: " +
     data.status,
 
-    "Submission Timestamp UTC: " +
+    "Submission Timestamp UTC (Client Device): " +
     data.submittedAt,
 
     "",
@@ -2363,9 +2953,15 @@ function buildMessage(data){
 
     "Rush sourcing: $300 per authorized person.",
 
+    "Qualifying direct repeat engagements: $150 per Covered Individual per qualifying new engagement, unless an applicable written alternative rate applies.",
+
     "Contractor compensation is separate.",
 
     "Recurring discounts require written approval.",
+
+    "Protected Introduction Period: 12 calendar months from the applicable documented introduction.",
+
+    "Separate fee authorization for qualifying direct repeat engagements: Not required under the accepted Agreement.",
 
     "",
 
@@ -2393,8 +2989,14 @@ function buildMessage(data){
     "Non-Circumvention Accepted: " +
     data.nonCircumventionAccepted,
 
-    "Acceptance Timestamp UTC: " +
+    "Repeat Engagement Compensation Accepted: " +
+    data.repeatAccepted,
+
+    "Contractual Acceptance Timestamp UTC: " +
     data.acceptanceTimestamp,
+
+    "Repeat Engagement Acceptance Timestamp UTC: " +
+    data.repeatAcceptanceTimestamp,
 
     "",
 
@@ -2429,9 +3031,52 @@ function buildMessage(data){
     "Browser User Agent: " +
     data.userAgent,
 
+    "Timestamps and browser information are client-reported.",
+
     "",
 
-    "Submitted for Omaha Restoration review and documented written acceptance. Submission alone does not authorize an assignment or create a sourcing charge.",
+    "COMPLETE CONTRACTUAL ACCEPTANCE TEXT",
+    "--------------------------------",
+
+    data.contractualAcceptanceText,
+
+    "",
+
+    "COMPLETE REPEAT ENGAGEMENT ACCEPTANCE TEXT",
+    "--------------------------------",
+
+    data.repeatAcceptanceText,
+
+    "",
+
+    "COMPLETE ELECTRONIC CONSENT TEXT",
+    "--------------------------------",
+
+    data.electronicConsentText,
+
+    "",
+
+    "COMPLETE AGREEMENT TEXT",
+    "--------------------------------",
+
+    "Agreement Version: " +
+    AGREEMENT_VERSION,
+
+    "",
+
+    data.fullAgreementText,
+
+    "",
+
+    "END OF COMPLETE AGREEMENT TEXT",
+
+    "",
+
+    "Submitted for Omaha Restoration review and documented written acceptance.",
+
+    "Submission alone does not authorize an initial assignment or create an immediate sourcing charge.",
+
+    "Upon written acceptance, qualifying repeat engagements are governed by the advance compensation authorization contained in this Agreement.",
 
     "",
 
@@ -2459,7 +3104,7 @@ message
 
 No AJAX.
 No fetch.
-No full agreement text payload.
+Existing business delivery configuration.
 ========================================
 */
 
@@ -2475,6 +3120,8 @@ function sendSubmission(data){
     !data.reference ||
     !data.business ||
     !data.email ||
+    !data.fullAgreementText ||
+    !data.repeatAcceptanceTimestamp ||
     !message
   ){
 
@@ -2575,6 +3222,23 @@ form.addEventListener(
 
     }
 
+    if(
+      !repeatAccepted.checked ||
+      repeatAccepted.disabled ||
+      !repeatAcceptedAt
+    ){
+
+      showError(
+        "Acceptance of the twelve-month " +
+        "non-circumvention and repeat-engagement " +
+        "provisions is required.",
+        repeatAccepted
+      );
+
+      return;
+
+    }
+
     if(!form.reportValidity()){
       return;
     }
@@ -2584,9 +3248,11 @@ form.addEventListener(
       "business",
       "contact",
       "phone",
+      "email",
       "address",
       "city",
       "state",
+      "zip",
       "signer",
       "title",
       "signature"
@@ -2673,7 +3339,8 @@ try{
 
   if(
     !legalAgreement.innerText.trim() ||
-    legalAgreement.querySelectorAll("h3").length !== 14
+    legalAgreement.querySelectorAll("h3").length !== 14 ||
+    !$("repeatAcceptanceCopy").innerText.trim()
   ){
 
     throw new Error(
@@ -2681,6 +3348,17 @@ try{
     );
 
   }
+
+  if(!window.crypto || !window.crypto.getRandomValues){
+
+    throw new Error(
+      "Secure reference generation is unavailable."
+    );
+
+  }
+
+  submissionReference =
+  generateReference();
 
   $("signatureDate").value =
   centralDate(new Date());
